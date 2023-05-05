@@ -1,0 +1,11 @@
+C:\Users\Suri\source\repos\Server\Server\bin\Release\Server.exe.config
+C:\Users\Suri\source\repos\Server\Server\bin\Release\Server.exe
+C:\Users\Suri\source\repos\Server\Server\bin\Release\Server.pdb
+C:\Users\Suri\source\repos\Server\Server\obj\Release\Server.csproj.AssemblyReference.cache
+C:\Users\Suri\source\repos\Server\Server\obj\Release\Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\Suri\source\repos\Server\Server\obj\Release\Server.Form1.resources
+C:\Users\Suri\source\repos\Server\Server\obj\Release\Server.Properties.Resources.resources
+C:\Users\Suri\source\repos\Server\Server\obj\Release\Server.csproj.GenerateResource.cache
+C:\Users\Suri\source\repos\Server\Server\obj\Release\Server.csproj.CoreCompileInputs.cache
+C:\Users\Suri\source\repos\Server\Server\obj\Release\Server.exe
+C:\Users\Suri\source\repos\Server\Server\obj\Release\Server.pdb
