@@ -37,14 +37,22 @@ namespace Server
         {
 
         }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
 
+
+            if (server != null)
+            {
+                server.Stop();
+                server = null;
+            }
+        }
         private void Init()
         {
-            server = new TcpListener(IPAddress.Any, 5417);
+            server = new TcpListener(IPAddress.Any, 9999);
             client = default(TcpClient);
             server.Start();
             ShowMessage("서버 오픈");
-
             while (true)
             {
                 num++;
@@ -63,8 +71,6 @@ namespace Server
                 c_Client.EReceived += new CClient.ShowTextHandler(OnReceived);
                 c_Client.StartClient(client, clientList);
             }
-            client.Close();
-            server.Stop();
         }
         private void OnReceived(string msg, string nickName)
         {
@@ -72,10 +78,11 @@ namespace Server
             ShowMessage(str);
             SendMessageAll(msg, nickName, true);
         }
-        private void Disconnected(TcpClient clientSocket)
+        private void Disconnected(TcpClient clientSocket, string User)
         {
             if (clientList.ContainsKey(clientSocket))
                 clientList.Remove(clientSocket);
+            SendMessageAll(User + "님이 접속을 종료했습니다.", "", false);
         }
         private void ShowMessage(string text)
         {
@@ -116,10 +123,11 @@ namespace Server
     {
         TcpClient clientSocket = null;
         public Dictionary<TcpClient, string> clientList = null;
-        public delegate void DisconnectedHandler(TcpClient clientSocket);
+        public delegate void DisconnectedHandler(TcpClient clientSocket, string User);
         public event DisconnectedHandler EDisconnected;
         public delegate void ShowTextHandler(string text, string nickName);
         public event ShowTextHandler EReceived;
+        string sName;
         public void StartClient(TcpClient socket, Dictionary<TcpClient, string> List)
         {
             clientSocket = socket;
@@ -127,6 +135,7 @@ namespace Server
             Thread t = new Thread(ChattingSystem);
             t.IsBackground = true;
             t.Start();
+            sName = clientList[clientSocket].ToString();
         }
 
         private void ChattingSystem()
@@ -152,7 +161,7 @@ namespace Server
                 if (clientSocket != null)
                 {
                     if (EDisconnected != null)
-                        EDisconnected(clientSocket);
+                        EDisconnected(clientSocket, sName);
 
                     clientSocket.Close();
                     nStream.Close();
@@ -163,7 +172,7 @@ namespace Server
                 if (clientSocket != null)
                 {
                     if (EDisconnected != null)
-                        EDisconnected(clientSocket);
+                        EDisconnected(clientSocket, sName);
                     clientSocket.Close();
                     nStream.Close();
                 }
