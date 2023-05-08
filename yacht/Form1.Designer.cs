@@ -1,6 +1,6 @@
 ﻿namespace yatch
 {
-    partial class Form1
+    partial class YachtGame
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
