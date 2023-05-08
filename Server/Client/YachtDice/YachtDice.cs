@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace yatch
+namespace Client
 {
-    public partial class Form1 : Form
+    public partial class YachtDice : Form
     {
-        public Form1()
+        public YachtDice()
         {
             InitializeComponent();
         }
@@ -20,7 +20,6 @@ namespace yatch
         Image[] images = {
              Properties.Resources._1, Properties.Resources._2, Properties.Resources._3, Properties.Resources._4, Properties.Resources._5, Properties.Resources._6
         };
-
 
         private int nbuttonClickCount = 0;
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +68,5 @@ namespace yatch
             timer.Start();
         }
 
-        
     }
 }

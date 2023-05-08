@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EDDE05E7-46E7-45E2-80D3-E9EABAA899B2}</ProjectGuid>
+    <ProjectGuid>{8FD24BBF-F7FE-4DF8-85DE-2B8456D15C95}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>yatch</RootNamespace>
-    <AssemblyName>yatch</AssemblyName>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,17 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="YachtDice\YachtDice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YachtDice\YachtDice.Designer.cs">
+      <DependentUpon>YachtDice.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -67,6 +64,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="YachtDice\YachtDice.resx">
+      <DependentUpon>YachtDice.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,22 +81,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\1.png" />
+    <None Include="Resources\Dice1.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\2.png" />
+    <None Include="Resources\1.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\3.png" />
+    <None Include="Resources\2.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\4.png" />
+    <None Include="Resources\3.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\5.png" />
+    <None Include="Resources\4.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\6.png" />
+    <None Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

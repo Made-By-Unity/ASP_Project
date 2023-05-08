@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace yatch
+namespace Client
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace yatch
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new YachtDice());
         }
     }
 }

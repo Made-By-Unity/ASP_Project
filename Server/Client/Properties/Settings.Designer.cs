@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace yatch.Properties
+namespace Client.Properties
 {
 
 
