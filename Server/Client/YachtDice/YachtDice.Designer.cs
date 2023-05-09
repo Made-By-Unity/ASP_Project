@@ -36,9 +36,8 @@
             this.pbDice5 = new System.Windows.Forms.PictureBox();
             this.RollDisplay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.BtnRecord = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.RoundDisplay = new System.Windows.Forms.Label();
+            this.lbRoundDisplay = new System.Windows.Forms.Label();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.txtAces = new System.Windows.Forms.TextBox();
             this.txtDeuces = new System.Windows.Forms.TextBox();
@@ -71,6 +70,11 @@
             this.txtFullHouse = new System.Windows.Forms.TextBox();
             this.txt4kind = new System.Windows.Forms.TextBox();
             this.txtChoice = new System.Windows.Forms.TextBox();
+            this.cbDice1 = new System.Windows.Forms.CheckBox();
+            this.cbDice2 = new System.Windows.Forms.CheckBox();
+            this.cbDice3 = new System.Windows.Forms.CheckBox();
+            this.cbDice4 = new System.Windows.Forms.CheckBox();
+            this.cbDice5 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice3)).BeginInit();
@@ -89,7 +93,7 @@
             // 
             // btnRoll
             // 
-            this.btnRoll.Location = new System.Drawing.Point(174, 583);
+            this.btnRoll.Location = new System.Drawing.Point(505, 582);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(91, 34);
             this.btnRoll.TabIndex = 1;
@@ -136,7 +140,7 @@
             // RollDisplay
             // 
             this.RollDisplay.AutoSize = true;
-            this.RollDisplay.Location = new System.Drawing.Point(342, 443);
+            this.RollDisplay.Location = new System.Drawing.Point(457, 593);
             this.RollDisplay.Name = "RollDisplay";
             this.RollDisplay.Size = new System.Drawing.Size(11, 12);
             this.RollDisplay.TabIndex = 4;
@@ -145,20 +149,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(302, 443);
+            this.label2.Location = new System.Drawing.Point(474, 593);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 12);
+            this.label2.Size = new System.Drawing.Size(21, 12);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Roll :";
-            // 
-            // BtnRecord
-            // 
-            this.BtnRecord.Location = new System.Drawing.Point(383, 583);
-            this.BtnRecord.Name = "BtnRecord";
-            this.BtnRecord.Size = new System.Drawing.Size(88, 34);
-            this.BtnRecord.TabIndex = 8;
-            this.BtnRecord.Text = "Record";
-            this.BtnRecord.UseVisualStyleBackColor = true;
+            this.label2.Text = "/ 3";
             // 
             // label1
             // 
@@ -169,14 +164,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Round : ";
             // 
-            // RoundDisplay
+            // lbRoundDisplay
             // 
-            this.RoundDisplay.AutoSize = true;
-            this.RoundDisplay.Location = new System.Drawing.Point(457, 74);
-            this.RoundDisplay.Name = "RoundDisplay";
-            this.RoundDisplay.Size = new System.Drawing.Size(11, 12);
-            this.RoundDisplay.TabIndex = 3;
-            this.RoundDisplay.Text = "1";
+            this.lbRoundDisplay.AutoSize = true;
+            this.lbRoundDisplay.Location = new System.Drawing.Point(457, 74);
+            this.lbRoundDisplay.Name = "lbRoundDisplay";
+            this.lbRoundDisplay.Size = new System.Drawing.Size(11, 12);
+            this.lbRoundDisplay.TabIndex = 3;
+            this.lbRoundDisplay.Text = "1";
             // 
             // txtCategory
             // 
@@ -322,6 +317,7 @@
             this.txtSixesScore.Size = new System.Drawing.Size(91, 26);
             this.txtSixesScore.TabIndex = 25;
             this.txtSixesScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSixesScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFivesScore
             // 
@@ -334,6 +330,7 @@
             this.txtFivesScore.Size = new System.Drawing.Size(91, 26);
             this.txtFivesScore.TabIndex = 24;
             this.txtFivesScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFivesScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFoursScore
             // 
@@ -346,6 +343,7 @@
             this.txtFoursScore.Size = new System.Drawing.Size(91, 26);
             this.txtFoursScore.TabIndex = 23;
             this.txtFoursScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFoursScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtThreesScore
             // 
@@ -358,6 +356,7 @@
             this.txtThreesScore.Size = new System.Drawing.Size(91, 26);
             this.txtThreesScore.TabIndex = 22;
             this.txtThreesScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtThreesScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtDeucesScore
             // 
@@ -370,6 +369,7 @@
             this.txtDeucesScore.Size = new System.Drawing.Size(91, 26);
             this.txtDeucesScore.TabIndex = 21;
             this.txtDeucesScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDeucesScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtAcesScore
             // 
@@ -382,6 +382,7 @@
             this.txtAcesScore.Size = new System.Drawing.Size(91, 26);
             this.txtAcesScore.TabIndex = 20;
             this.txtAcesScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAcesScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtPlayer
             // 
@@ -419,6 +420,7 @@
             this.txtYachtScore.Size = new System.Drawing.Size(91, 26);
             this.txtYachtScore.TabIndex = 43;
             this.txtYachtScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtYachtScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtLSScore
             // 
@@ -431,6 +433,7 @@
             this.txtLSScore.Size = new System.Drawing.Size(91, 26);
             this.txtLSScore.TabIndex = 42;
             this.txtLSScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLSScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtSSScore
             // 
@@ -443,6 +446,7 @@
             this.txtSSScore.Size = new System.Drawing.Size(91, 26);
             this.txtSSScore.TabIndex = 41;
             this.txtSSScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSSScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFHScore
             // 
@@ -455,6 +459,7 @@
             this.txtFHScore.Size = new System.Drawing.Size(91, 26);
             this.txtFHScore.TabIndex = 40;
             this.txtFHScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtFHScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txt4KindScore
             // 
@@ -467,6 +472,7 @@
             this.txt4KindScore.Size = new System.Drawing.Size(91, 26);
             this.txt4KindScore.TabIndex = 39;
             this.txt4KindScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt4KindScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtChoiceScore
             // 
@@ -479,6 +485,7 @@
             this.txtChoiceScore.Size = new System.Drawing.Size(91, 26);
             this.txtChoiceScore.TabIndex = 38;
             this.txtChoiceScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtChoiceScore.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtTotal
             // 
@@ -564,12 +571,67 @@
             this.txtChoice.TabIndex = 29;
             this.txtChoice.Text = "Choice";
             // 
+            // cbDice1
+            // 
+            this.cbDice1.AutoSize = true;
+            this.cbDice1.Location = new System.Drawing.Point(81, 458);
+            this.cbDice1.Name = "cbDice1";
+            this.cbDice1.Size = new System.Drawing.Size(51, 16);
+            this.cbDice1.TabIndex = 45;
+            this.cbDice1.Text = "Lock";
+            this.cbDice1.UseVisualStyleBackColor = true;
+            // 
+            // cbDice2
+            // 
+            this.cbDice2.AutoSize = true;
+            this.cbDice2.Location = new System.Drawing.Point(193, 458);
+            this.cbDice2.Name = "cbDice2";
+            this.cbDice2.Size = new System.Drawing.Size(51, 16);
+            this.cbDice2.TabIndex = 46;
+            this.cbDice2.Text = "Lock";
+            this.cbDice2.UseVisualStyleBackColor = true;
+            // 
+            // cbDice3
+            // 
+            this.cbDice3.AutoSize = true;
+            this.cbDice3.Location = new System.Drawing.Point(305, 458);
+            this.cbDice3.Name = "cbDice3";
+            this.cbDice3.Size = new System.Drawing.Size(51, 16);
+            this.cbDice3.TabIndex = 47;
+            this.cbDice3.Text = "Lock";
+            this.cbDice3.UseVisualStyleBackColor = true;
+            // 
+            // cbDice4
+            // 
+            this.cbDice4.AutoSize = true;
+            this.cbDice4.Location = new System.Drawing.Point(417, 458);
+            this.cbDice4.Name = "cbDice4";
+            this.cbDice4.Size = new System.Drawing.Size(51, 16);
+            this.cbDice4.TabIndex = 48;
+            this.cbDice4.Text = "Lock";
+            this.cbDice4.UseVisualStyleBackColor = true;
+            // 
+            // cbDice5
+            // 
+            this.cbDice5.AutoSize = true;
+            this.cbDice5.Location = new System.Drawing.Point(529, 458);
+            this.cbDice5.Name = "cbDice5";
+            this.cbDice5.Size = new System.Drawing.Size(51, 16);
+            this.cbDice5.TabIndex = 49;
+            this.cbDice5.Text = "Lock";
+            this.cbDice5.UseVisualStyleBackColor = true;
+            // 
             // YachtDice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(657, 638);
+            this.Controls.Add(this.cbDice5);
+            this.Controls.Add(this.cbDice4);
+            this.Controls.Add(this.cbDice3);
+            this.Controls.Add(this.cbDice2);
+            this.Controls.Add(this.cbDice1);
             this.Controls.Add(this.txtTotalScore);
             this.Controls.Add(this.txtYachtScore);
             this.Controls.Add(this.txtLSScore);
@@ -602,10 +664,9 @@
             this.Controls.Add(this.txtDeuces);
             this.Controls.Add(this.txtAces);
             this.Controls.Add(this.txtCategory);
-            this.Controls.Add(this.BtnRecord);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.RollDisplay);
-            this.Controls.Add(this.RoundDisplay);
+            this.Controls.Add(this.lbRoundDisplay);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRoll);
             this.Controls.Add(this.pbDice5);
@@ -635,9 +696,8 @@
         private System.Windows.Forms.PictureBox pbDice5;
         private System.Windows.Forms.Label RollDisplay;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BtnRecord;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label RoundDisplay;
+        private System.Windows.Forms.Label lbRoundDisplay;
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.TextBox txtAces;
         private System.Windows.Forms.TextBox txtDeuces;
@@ -670,5 +730,10 @@
         private System.Windows.Forms.TextBox txtFullHouse;
         private System.Windows.Forms.TextBox txt4kind;
         private System.Windows.Forms.TextBox txtChoice;
+        private System.Windows.Forms.CheckBox cbDice1;
+        private System.Windows.Forms.CheckBox cbDice2;
+        private System.Windows.Forms.CheckBox cbDice3;
+        private System.Windows.Forms.CheckBox cbDice4;
+        private System.Windows.Forms.CheckBox cbDice5;
     }
 }
