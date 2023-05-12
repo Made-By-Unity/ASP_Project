@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Packetdll\Packetdll.csproj">
+      <Project>{c892b635-4a3f-4c4e-af33-4f169c964b03}</Project>
+      <Name>Packetdll</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
