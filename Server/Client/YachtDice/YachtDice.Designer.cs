@@ -84,7 +84,7 @@
             // 
             // pbDice1
             // 
-            this.pbDice1.Location = new System.Drawing.Point(62, 480);
+            this.pbDice1.Location = new System.Drawing.Point(221, 214);
             this.pbDice1.Name = "pbDice1";
             this.pbDice1.Size = new System.Drawing.Size(86, 78);
             this.pbDice1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,7 +93,7 @@
             // 
             // btnRoll
             // 
-            this.btnRoll.Location = new System.Drawing.Point(505, 582);
+            this.btnRoll.Location = new System.Drawing.Point(664, 316);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(91, 34);
             this.btnRoll.TabIndex = 1;
@@ -103,7 +103,7 @@
             // 
             // pbDice2
             // 
-            this.pbDice2.Location = new System.Drawing.Point(174, 480);
+            this.pbDice2.Location = new System.Drawing.Point(333, 214);
             this.pbDice2.Name = "pbDice2";
             this.pbDice2.Size = new System.Drawing.Size(86, 78);
             this.pbDice2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -112,7 +112,7 @@
             // 
             // pbDice3
             // 
-            this.pbDice3.Location = new System.Drawing.Point(286, 480);
+            this.pbDice3.Location = new System.Drawing.Point(445, 214);
             this.pbDice3.Name = "pbDice3";
             this.pbDice3.Size = new System.Drawing.Size(86, 78);
             this.pbDice3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -121,7 +121,7 @@
             // 
             // pbDice4
             // 
-            this.pbDice4.Location = new System.Drawing.Point(398, 480);
+            this.pbDice4.Location = new System.Drawing.Point(557, 214);
             this.pbDice4.Name = "pbDice4";
             this.pbDice4.Size = new System.Drawing.Size(86, 78);
             this.pbDice4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +130,7 @@
             // 
             // pbDice5
             // 
-            this.pbDice5.Location = new System.Drawing.Point(510, 480);
+            this.pbDice5.Location = new System.Drawing.Point(669, 214);
             this.pbDice5.Name = "pbDice5";
             this.pbDice5.Size = new System.Drawing.Size(86, 78);
             this.pbDice5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -140,7 +140,7 @@
             // RollDisplay
             // 
             this.RollDisplay.AutoSize = true;
-            this.RollDisplay.Location = new System.Drawing.Point(457, 593);
+            this.RollDisplay.Location = new System.Drawing.Point(616, 327);
             this.RollDisplay.Name = "RollDisplay";
             this.RollDisplay.Size = new System.Drawing.Size(11, 12);
             this.RollDisplay.TabIndex = 4;
@@ -149,7 +149,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(474, 593);
+            this.label2.Location = new System.Drawing.Point(633, 327);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(21, 12);
             this.label2.TabIndex = 5;
@@ -158,7 +158,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(398, 74);
+            this.label1.Location = new System.Drawing.Point(237, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 2;
@@ -167,7 +167,7 @@
             // lbRoundDisplay
             // 
             this.lbRoundDisplay.AutoSize = true;
-            this.lbRoundDisplay.Location = new System.Drawing.Point(457, 74);
+            this.lbRoundDisplay.Location = new System.Drawing.Point(296, 24);
             this.lbRoundDisplay.Name = "lbRoundDisplay";
             this.lbRoundDisplay.Size = new System.Drawing.Size(11, 12);
             this.lbRoundDisplay.TabIndex = 3;
@@ -178,7 +178,7 @@
             this.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCategory.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtCategory.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtCategory.Location = new System.Drawing.Point(113, 74);
+            this.txtCategory.Location = new System.Drawing.Point(12, 10);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.ReadOnly = true;
             this.txtCategory.Size = new System.Drawing.Size(91, 26);
@@ -190,7 +190,7 @@
             this.txtAces.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAces.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAces.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtAces.Location = new System.Drawing.Point(113, 106);
+            this.txtAces.Location = new System.Drawing.Point(12, 42);
             this.txtAces.Name = "txtAces";
             this.txtAces.ReadOnly = true;
             this.txtAces.Size = new System.Drawing.Size(91, 26);
@@ -202,7 +202,7 @@
             this.txtDeuces.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeuces.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeuces.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtDeuces.Location = new System.Drawing.Point(113, 138);
+            this.txtDeuces.Location = new System.Drawing.Point(12, 74);
             this.txtDeuces.Name = "txtDeuces";
             this.txtDeuces.ReadOnly = true;
             this.txtDeuces.Size = new System.Drawing.Size(91, 26);
@@ -214,7 +214,7 @@
             this.txtThrees.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtThrees.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThrees.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtThrees.Location = new System.Drawing.Point(113, 170);
+            this.txtThrees.Location = new System.Drawing.Point(12, 106);
             this.txtThrees.Name = "txtThrees";
             this.txtThrees.ReadOnly = true;
             this.txtThrees.Size = new System.Drawing.Size(91, 26);
@@ -226,7 +226,7 @@
             this.txtFours.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFours.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFours.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtFours.Location = new System.Drawing.Point(113, 202);
+            this.txtFours.Location = new System.Drawing.Point(12, 138);
             this.txtFours.Name = "txtFours";
             this.txtFours.ReadOnly = true;
             this.txtFours.Size = new System.Drawing.Size(91, 26);
@@ -238,7 +238,7 @@
             this.txtFives.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFives.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFives.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtFives.Location = new System.Drawing.Point(113, 234);
+            this.txtFives.Location = new System.Drawing.Point(12, 170);
             this.txtFives.Name = "txtFives";
             this.txtFives.ReadOnly = true;
             this.txtFives.Size = new System.Drawing.Size(91, 26);
@@ -250,7 +250,7 @@
             this.txtSixes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSixes.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixes.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtSixes.Location = new System.Drawing.Point(113, 266);
+            this.txtSixes.Location = new System.Drawing.Point(12, 202);
             this.txtSixes.Name = "txtSixes";
             this.txtSixes.ReadOnly = true;
             this.txtSixes.Size = new System.Drawing.Size(91, 26);
@@ -262,7 +262,7 @@
             this.txtSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSubtotal.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotal.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtSubtotal.Location = new System.Drawing.Point(113, 298);
+            this.txtSubtotal.Location = new System.Drawing.Point(12, 234);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.ReadOnly = true;
             this.txtSubtotal.Size = new System.Drawing.Size(91, 26);
@@ -274,7 +274,7 @@
             this.txtBonus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBonus.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonus.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtBonus.Location = new System.Drawing.Point(113, 330);
+            this.txtBonus.Location = new System.Drawing.Point(12, 266);
             this.txtBonus.Name = "txtBonus";
             this.txtBonus.ReadOnly = true;
             this.txtBonus.Size = new System.Drawing.Size(91, 26);
@@ -286,7 +286,7 @@
             this.txtBonusAble.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBonusAble.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonusAble.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtBonusAble.Location = new System.Drawing.Point(210, 330);
+            this.txtBonusAble.Location = new System.Drawing.Point(109, 266);
             this.txtBonusAble.Name = "txtBonusAble";
             this.txtBonusAble.ReadOnly = true;
             this.txtBonusAble.Size = new System.Drawing.Size(91, 26);
@@ -298,7 +298,7 @@
             this.txtSubtotalScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSubtotalScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotalScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtSubtotalScore.Location = new System.Drawing.Point(210, 298);
+            this.txtSubtotalScore.Location = new System.Drawing.Point(109, 234);
             this.txtSubtotalScore.Name = "txtSubtotalScore";
             this.txtSubtotalScore.ReadOnly = true;
             this.txtSubtotalScore.Size = new System.Drawing.Size(91, 26);
@@ -311,7 +311,7 @@
             this.txtSixesScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSixesScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixesScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtSixesScore.Location = new System.Drawing.Point(210, 266);
+            this.txtSixesScore.Location = new System.Drawing.Point(109, 202);
             this.txtSixesScore.Name = "txtSixesScore";
             this.txtSixesScore.ReadOnly = true;
             this.txtSixesScore.Size = new System.Drawing.Size(91, 26);
@@ -324,7 +324,7 @@
             this.txtFivesScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFivesScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFivesScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtFivesScore.Location = new System.Drawing.Point(210, 234);
+            this.txtFivesScore.Location = new System.Drawing.Point(109, 170);
             this.txtFivesScore.Name = "txtFivesScore";
             this.txtFivesScore.ReadOnly = true;
             this.txtFivesScore.Size = new System.Drawing.Size(91, 26);
@@ -337,7 +337,7 @@
             this.txtFoursScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFoursScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFoursScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtFoursScore.Location = new System.Drawing.Point(210, 202);
+            this.txtFoursScore.Location = new System.Drawing.Point(109, 138);
             this.txtFoursScore.Name = "txtFoursScore";
             this.txtFoursScore.ReadOnly = true;
             this.txtFoursScore.Size = new System.Drawing.Size(91, 26);
@@ -350,7 +350,7 @@
             this.txtThreesScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtThreesScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThreesScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtThreesScore.Location = new System.Drawing.Point(210, 170);
+            this.txtThreesScore.Location = new System.Drawing.Point(109, 106);
             this.txtThreesScore.Name = "txtThreesScore";
             this.txtThreesScore.ReadOnly = true;
             this.txtThreesScore.Size = new System.Drawing.Size(91, 26);
@@ -363,7 +363,7 @@
             this.txtDeucesScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeucesScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeucesScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtDeucesScore.Location = new System.Drawing.Point(210, 138);
+            this.txtDeucesScore.Location = new System.Drawing.Point(109, 74);
             this.txtDeucesScore.Name = "txtDeucesScore";
             this.txtDeucesScore.ReadOnly = true;
             this.txtDeucesScore.Size = new System.Drawing.Size(91, 26);
@@ -373,10 +373,11 @@
             // 
             // txtAcesScore
             // 
+            this.txtAcesScore.BackColor = System.Drawing.SystemColors.Control;
             this.txtAcesScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAcesScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAcesScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtAcesScore.Location = new System.Drawing.Point(210, 106);
+            this.txtAcesScore.Location = new System.Drawing.Point(109, 42);
             this.txtAcesScore.Name = "txtAcesScore";
             this.txtAcesScore.ReadOnly = true;
             this.txtAcesScore.Size = new System.Drawing.Size(91, 26);
@@ -389,7 +390,7 @@
             this.txtPlayer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPlayer.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPlayer.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtPlayer.Location = new System.Drawing.Point(210, 74);
+            this.txtPlayer.Location = new System.Drawing.Point(109, 10);
             this.txtPlayer.Name = "txtPlayer";
             this.txtPlayer.ReadOnly = true;
             this.txtPlayer.Size = new System.Drawing.Size(91, 26);
@@ -402,7 +403,7 @@
             this.txtTotalScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotalScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtTotalScore.Location = new System.Drawing.Point(437, 330);
+            this.txtTotalScore.Location = new System.Drawing.Point(109, 503);
             this.txtTotalScore.Name = "txtTotalScore";
             this.txtTotalScore.ReadOnly = true;
             this.txtTotalScore.Size = new System.Drawing.Size(91, 26);
@@ -414,7 +415,7 @@
             this.txtYachtScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYachtScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYachtScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtYachtScore.Location = new System.Drawing.Point(437, 298);
+            this.txtYachtScore.Location = new System.Drawing.Point(109, 471);
             this.txtYachtScore.Name = "txtYachtScore";
             this.txtYachtScore.ReadOnly = true;
             this.txtYachtScore.Size = new System.Drawing.Size(91, 26);
@@ -427,7 +428,7 @@
             this.txtLSScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLSScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLSScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtLSScore.Location = new System.Drawing.Point(437, 266);
+            this.txtLSScore.Location = new System.Drawing.Point(109, 439);
             this.txtLSScore.Name = "txtLSScore";
             this.txtLSScore.ReadOnly = true;
             this.txtLSScore.Size = new System.Drawing.Size(91, 26);
@@ -440,7 +441,7 @@
             this.txtSSScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSSScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSSScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtSSScore.Location = new System.Drawing.Point(437, 234);
+            this.txtSSScore.Location = new System.Drawing.Point(109, 407);
             this.txtSSScore.Name = "txtSSScore";
             this.txtSSScore.ReadOnly = true;
             this.txtSSScore.Size = new System.Drawing.Size(91, 26);
@@ -453,7 +454,7 @@
             this.txtFHScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFHScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFHScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtFHScore.Location = new System.Drawing.Point(437, 202);
+            this.txtFHScore.Location = new System.Drawing.Point(109, 375);
             this.txtFHScore.Name = "txtFHScore";
             this.txtFHScore.ReadOnly = true;
             this.txtFHScore.Size = new System.Drawing.Size(91, 26);
@@ -466,7 +467,7 @@
             this.txt4KindScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt4KindScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4KindScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txt4KindScore.Location = new System.Drawing.Point(437, 170);
+            this.txt4KindScore.Location = new System.Drawing.Point(109, 343);
             this.txt4KindScore.Name = "txt4KindScore";
             this.txt4KindScore.ReadOnly = true;
             this.txt4KindScore.Size = new System.Drawing.Size(91, 26);
@@ -479,7 +480,7 @@
             this.txtChoiceScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChoiceScore.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoiceScore.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtChoiceScore.Location = new System.Drawing.Point(437, 138);
+            this.txtChoiceScore.Location = new System.Drawing.Point(109, 311);
             this.txtChoiceScore.Name = "txtChoiceScore";
             this.txtChoiceScore.ReadOnly = true;
             this.txtChoiceScore.Size = new System.Drawing.Size(91, 26);
@@ -492,7 +493,7 @@
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotal.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtTotal.Location = new System.Drawing.Point(340, 330);
+            this.txtTotal.Location = new System.Drawing.Point(12, 503);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(91, 26);
@@ -504,7 +505,7 @@
             this.txtYacht.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYacht.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYacht.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtYacht.Location = new System.Drawing.Point(340, 298);
+            this.txtYacht.Location = new System.Drawing.Point(12, 471);
             this.txtYacht.Name = "txtYacht";
             this.txtYacht.ReadOnly = true;
             this.txtYacht.Size = new System.Drawing.Size(91, 26);
@@ -516,7 +517,7 @@
             this.txtLStraight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLStraight.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLStraight.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtLStraight.Location = new System.Drawing.Point(340, 266);
+            this.txtLStraight.Location = new System.Drawing.Point(12, 439);
             this.txtLStraight.Name = "txtLStraight";
             this.txtLStraight.ReadOnly = true;
             this.txtLStraight.Size = new System.Drawing.Size(91, 26);
@@ -528,7 +529,7 @@
             this.txtSStraight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSStraight.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSStraight.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtSStraight.Location = new System.Drawing.Point(340, 234);
+            this.txtSStraight.Location = new System.Drawing.Point(12, 407);
             this.txtSStraight.Name = "txtSStraight";
             this.txtSStraight.ReadOnly = true;
             this.txtSStraight.Size = new System.Drawing.Size(91, 26);
@@ -540,7 +541,7 @@
             this.txtFullHouse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFullHouse.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFullHouse.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtFullHouse.Location = new System.Drawing.Point(340, 202);
+            this.txtFullHouse.Location = new System.Drawing.Point(12, 375);
             this.txtFullHouse.Name = "txtFullHouse";
             this.txtFullHouse.ReadOnly = true;
             this.txtFullHouse.Size = new System.Drawing.Size(91, 26);
@@ -552,7 +553,7 @@
             this.txt4kind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt4kind.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4kind.Font = new System.Drawing.Font("굴림", 12F);
-            this.txt4kind.Location = new System.Drawing.Point(340, 170);
+            this.txt4kind.Location = new System.Drawing.Point(12, 343);
             this.txt4kind.Name = "txt4kind";
             this.txt4kind.ReadOnly = true;
             this.txt4kind.Size = new System.Drawing.Size(91, 26);
@@ -564,7 +565,7 @@
             this.txtChoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChoice.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoice.Font = new System.Drawing.Font("굴림", 12F);
-            this.txtChoice.Location = new System.Drawing.Point(340, 138);
+            this.txtChoice.Location = new System.Drawing.Point(12, 311);
             this.txtChoice.Name = "txtChoice";
             this.txtChoice.ReadOnly = true;
             this.txtChoice.Size = new System.Drawing.Size(91, 26);
@@ -574,7 +575,7 @@
             // cbDice1
             // 
             this.cbDice1.AutoSize = true;
-            this.cbDice1.Location = new System.Drawing.Point(81, 458);
+            this.cbDice1.Location = new System.Drawing.Point(240, 192);
             this.cbDice1.Name = "cbDice1";
             this.cbDice1.Size = new System.Drawing.Size(51, 16);
             this.cbDice1.TabIndex = 45;
@@ -584,7 +585,7 @@
             // cbDice2
             // 
             this.cbDice2.AutoSize = true;
-            this.cbDice2.Location = new System.Drawing.Point(193, 458);
+            this.cbDice2.Location = new System.Drawing.Point(352, 192);
             this.cbDice2.Name = "cbDice2";
             this.cbDice2.Size = new System.Drawing.Size(51, 16);
             this.cbDice2.TabIndex = 46;
@@ -594,7 +595,7 @@
             // cbDice3
             // 
             this.cbDice3.AutoSize = true;
-            this.cbDice3.Location = new System.Drawing.Point(305, 458);
+            this.cbDice3.Location = new System.Drawing.Point(464, 192);
             this.cbDice3.Name = "cbDice3";
             this.cbDice3.Size = new System.Drawing.Size(51, 16);
             this.cbDice3.TabIndex = 47;
@@ -604,7 +605,7 @@
             // cbDice4
             // 
             this.cbDice4.AutoSize = true;
-            this.cbDice4.Location = new System.Drawing.Point(417, 458);
+            this.cbDice4.Location = new System.Drawing.Point(576, 192);
             this.cbDice4.Name = "cbDice4";
             this.cbDice4.Size = new System.Drawing.Size(51, 16);
             this.cbDice4.TabIndex = 48;
@@ -614,7 +615,7 @@
             // cbDice5
             // 
             this.cbDice5.AutoSize = true;
-            this.cbDice5.Location = new System.Drawing.Point(529, 458);
+            this.cbDice5.Location = new System.Drawing.Point(688, 192);
             this.cbDice5.Name = "cbDice5";
             this.cbDice5.Size = new System.Drawing.Size(51, 16);
             this.cbDice5.TabIndex = 49;
@@ -626,7 +627,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(657, 638);
+            this.ClientSize = new System.Drawing.Size(775, 543);
             this.Controls.Add(this.cbDice5);
             this.Controls.Add(this.cbDice4);
             this.Controls.Add(this.cbDice3);
@@ -683,7 +684,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDice5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

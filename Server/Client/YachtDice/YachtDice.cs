@@ -83,7 +83,7 @@ namespace Client
             ClearText(txtYachtScore);
 
             // SubScore 갱신
-            int iSubScore = TextToScore(txtAcesScore) + TextToScore(txtDeucesScore) + TextToScore(txtThreesScore) 
+            int iSubScore = TextToScore(txtAcesScore) + TextToScore(txtDeucesScore) + TextToScore(txtThreesScore)
                             + TextToScore(txtFoursScore) + TextToScore(txtFivesScore) + TextToScore(txtSixesScore);
 
             txtSubtotalScore.Text = iSubScore.ToString() + " / 63";
@@ -168,8 +168,8 @@ namespace Client
             void Timer_Tick(object ss, EventArgs ee)
             {
                 Random random = new Random(DateTime.Now.Millisecond);
-                
-                if(false == cbDice1.Checked)
+
+                if (false == cbDice1.Checked)
                 {
                     m_arrDices[0] = random.Next(1, 7);
                     pbDice1.Image = m_images[m_arrDices[0] - 1];
@@ -269,15 +269,15 @@ namespace Client
 
             for (int i = 0; i < iDice; i++)
             {
-                if(3 == arrNumCount[i])
+                if (3 == arrNumCount[i])
                     iThreeDice = i;
             }
 
-            if(0 <= iThreeDice)
+            if (0 <= iThreeDice)
             {
                 for (int i = 0; i < iDice; i++)
                 {
-                    if(2 == arrNumCount[i])
+                    if (2 == arrNumCount[i])
                         iTwoDice = i;
                 }
 
@@ -305,7 +305,7 @@ namespace Client
             }
 
             int iStraightCount = 1;
-            if(0 <= iSmallOne)
+            if (0 <= iSmallOne)
             {
                 for (int i = iSmallOne + 1; i < iDice; i++)
                 {
@@ -314,7 +314,7 @@ namespace Client
                 }
             }
 
-            if(4 <= iStraightCount)
+            if (4 <= iStraightCount)
                 UpdateScoreText(txtSSScore, Convert.ToString(15));
 
             // Large Straight
@@ -342,7 +342,7 @@ namespace Client
             if (false == tbScore.Enabled || string.Empty == tbScore.Text)
                 return;
 
-            if(false == btnRoll.Enabled)
+            if (false == btnRoll.Enabled)
             {
                 if (0 < m_iRollCount)
                     return;
