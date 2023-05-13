@@ -10,13 +10,26 @@ namespace Packetdll
     public enum PacketType : int
     {
         Login = 0,
-        Login_RESULT,
-        Member_REGISTER,
-        Member_REGISTER_RESULT
+        Login_Result,
+        Entry,
+        Entry_Result,
+        RollStart,
+        RollStart_Result,
+        RollEnd,
+        RollEnd_Result,
+        Lock,
+        Lock_Result,
+        Select,
+        Select_Result,
+        GameOver,
+        GameOver_Result,
+        Chatting,
+        Chatting_Result,
+        Disconnect,
     }
     public class Packet
     {
-        public int packet_Type;
+        public PacketType packet_Type;
         public int packet_Length;
 
         public Packet()
@@ -61,8 +74,99 @@ namespace Packetdll
     [Serializable]
     public class Login : Packet
     {
-        public string id_str { get; set; }
-        public string pw_str { get; set; }
+        public string nickName { get; set; }
 
+    }
+    [Serializable]
+    public class LoginResult : Packet
+    {
+        public uint uID { get; set; }
+        public List<string> usernames { get; set; }
+        public string LoginMessage { get; set; }
+    }
+    [Serializable]
+    public class Entry : Packet
+    {
+        public int kindOfGame { get; set; }
+    }
+    [Serializable]
+    public class EntryResult : Packet
+    {
+        public uint maxPlayerCount { get; set; }
+        public int kindOfGame { get; set; }
+    }
+    [Serializable]
+    public class RollStart : Packet
+    {
+        public int remainRollCount { get; set; }
+    }
+    [Serializable]
+    public class RollStartResult : Packet
+    {
+        public int remainRollCount { get; set; }
+    }
+    [Serializable]
+    public class RollEnd : Packet
+    {
+        public int dice1 { get; set; }
+        public int dice2 { get; set; }
+        public int dice3 { get; set; }
+        public int dice4 { get; set; }
+        public int dice5 { get; set; }
+    }
+    [Serializable]
+    public class RollEndResult : Packet
+    {
+        public int dice1 { get; set; }
+        public int dice2 { get; set; }
+        public int dice3 { get; set; }
+        public int dice4 { get; set; }
+        public int dice5 { get; set; }
+    }
+    [Serializable]
+    public class Lock : Packet
+    {
+        public int lockNumber { get; set; }
+        public bool isLock { get; set; }
+    }
+    [Serializable]
+    public class LockResult : Packet
+    {
+        public int lockNumber { get; set; }
+        public bool isLock { get; set; }
+    }
+    [Serializable]
+    public class Select : Packet
+    {
+        //Enum 알아서 정의해주세요
+    }
+    public class SelectResult : Packet
+    {
+        //Enum 알아서 정의해주세요
+    }
+    [Serializable]
+    public class GameOver : Packet
+    {
+        public string result { get; set; }
+    }
+    [Serializable]
+    public class GameOverResult : Packet
+    {
+        public string result { get; set; }
+    }
+    [Serializable]
+    public class Chatting : Packet
+    {
+        public string chat { get; set; }
+    }
+    [Serializable]
+    public class ChattingResult : Packet
+    {
+        public string chat { get; set; }
+    }
+    [Serializable]
+    public class Disconnect : Packet
+    {
+        public string chat { get; set; }
     }
 }
