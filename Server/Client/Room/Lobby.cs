@@ -59,7 +59,6 @@ namespace Client.Room
                         Application.Run(new YachtDice());
                     }
                 }
-
             }
         }
 
@@ -69,7 +68,11 @@ namespace Client.Room
             for (int i = 0; i < listNickName.Count; i++)
             {
                 TextBox tbPlayer = (Controls.Find("tbPlayer" + (i + 1).ToString(), true)[0] as TextBox);
-                tbPlayer.Text = listNickName[i];
+
+                tbPlayer.Invoke(new MethodInvoker(delegate
+                {
+                    tbPlayer.Text = listNickName[i];
+                }));
             }
         }
 
