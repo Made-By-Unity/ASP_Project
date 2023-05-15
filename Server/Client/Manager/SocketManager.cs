@@ -20,6 +20,7 @@ namespace Client.Manager
         private NetworkStream m_Stream = null;
         private string m_strNickName = String.Empty;
         private uint m_iID;
+        private List<string> m_listNickName = new List<string>();
 
         private SocketManager()
         {
@@ -54,11 +55,17 @@ namespace Client.Manager
             get { return m_iID; }
             set { m_iID = value; }
         }
+        public List<string> NickNameList
+        {
+            get { return m_listNickName; }
+            set { m_listNickName = value; }
+        }
 
-        public void Binding(string _strNickName)
+        public void Binding(string _strServerIP, string _strNickName)
         {
             //m_ClientSocket.Connect("192.168.0.15", 9999);
             m_ClientSocket.Connect("220.75.181.221", 9999);
+            //m_ClientSocket.Connect(_strServerIP, 9999);
             m_Stream = m_ClientSocket.GetStream();
             m_strNickName = _strNickName;
 
@@ -71,4 +78,6 @@ namespace Client.Manager
             m_Stream.Flush();
         }
     }
+
+
 }

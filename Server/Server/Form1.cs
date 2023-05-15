@@ -196,7 +196,6 @@ namespace Server
                                 loginResult.LoginMessage = msg;
                                 loginResult.usernames = nickNames;
                                 Packet.Serialize(loginResult).CopyTo(buff, 0);
-                                int a = 0;
                                 //buff = Encoding.Unicode.GetBytes(msg);
 
                             }

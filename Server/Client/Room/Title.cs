@@ -14,8 +14,7 @@ using Packetdll;
 using Client.Manager;
 using System.IO;
 using System.Runtime.InteropServices.ComTypes;
-//using static System.Net.Mime.MediaTypeNames;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Client.Room;
 
 namespace Client.Title
 {
@@ -27,11 +26,10 @@ namespace Client.Title
         {
             InitializeComponent();
         }
-        private void GetMessage()
+        private void GetPacket()
         {
             while (true)
             {
-                //int BUFFERSIZE = SocketManager.GetInst().Socket.ReceiveBufferSize;
                 byte[] buffer = new byte[1024 * 4];
                 SocketManager.GetInst().Stream.Read(buffer, 0, buffer.Length);
 
@@ -41,28 +39,41 @@ namespace Client.Title
 
                 LoginResult pkLoginResult = (LoginResult)Packet.Deserialize(buffer);
                 SocketManager.GetInst().UID = pkLoginResult.uID;
+                SocketManager.GetInst().NickNameList = pkLoginResult.usernames;
 
                 DialogResult dr = MessageBox.Show(pkLoginResult.LoginMessage, "어서오세요!", MessageBoxButtons.OK);
                 if(dr == DialogResult.OK)
                 {
-                    Application.Run(new YachtDice());
-
-                    if (this.InvokeRequired)
-                    {
-                        this.BeginInvoke(new MethodInvoker(delegate
-                        {
-                            this.Close();
-                        }));
-                    }
+                    OpenLobby();
                 }
             }
         }
 
+        private void OpenLobby()
+        {
+            Lobby lobby = null;
+
+            Thread thread = new Thread(() =>
+            {
+                lobby = new Lobby();
+                Application.Run(lobby);
+            });
+
+            thread.Start();
+
+            while(lobby == null || !lobby.IsHandleCreated || !lobby.Visible)
+            {
+                Thread.Sleep(10);
+            }
+
+            this.Invoke(new MethodInvoker(delegate { this.Close(); }));
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SocketManager.GetInst().Binding(tbNickName.Text);
+            SocketManager.GetInst().Binding(tbServerIP.Text, tbNickName.Text);
 
-            m_tHandler = new Thread(GetMessage);
+            m_tHandler = new Thread(GetPacket);
             m_tHandler.IsBackground = true;
             m_tHandler.Start();
         }
