@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Packetdll;
+using System.IO;
 
 
 namespace Server
@@ -24,6 +25,7 @@ namespace Server
         TcpClient client = null;
         Dictionary<TcpClient, string> clientList = new Dictionary<TcpClient, string>();
         static uint num = 0;
+        List<string> nickNames = new List<string>();
 
         public Form1()
         {
@@ -61,27 +63,38 @@ namespace Server
                 NetworkStream stream = client.GetStream();
                 byte[] buffer = new byte[1024];
                 int bytes = stream.Read(buffer, 0, buffer.Length);
-                string nickName = Encoding.Unicode.GetString(buffer, 0, bytes);
-                nickName = nickName.Substring(0, nickName.IndexOf("$"));
+
+                Packet packet = (Packet)Packet.Deserialize(buffer);
+                if (packet.packet_Type != PacketType.Login)
+                    continue;
+                Login login = (Login)Packet.Deserialize(buffer);
+
+                //string nickName = Encoding.Unicode.GetString(buffer, 0, bytes);
+                //nickName = nickName.Substring(0, nickName.IndexOf("$"));
+                string nickName = login.nickName;
                 clientList.Add(client, nickName);
-                SendMessageAll(nickName + " 님이 참여하셨습니다. ", "", false);
+                nickNames.Add(nickName);   
+                SendMessageAll(nickName + " 님이 참여하셨습니다. ", "", false, packet);
                 CClient c_Client = new CClient();
                 c_Client.EDisconnected += new CClient.DisconnectedHandler(Disconnected);
                 c_Client.EReceived += new CClient.ShowTextHandler(OnReceived);
                 c_Client.StartClient(client, clientList);
             }
         }
-        private void OnReceived(string msg, string nickName)
+        private void OnReceived(string msg, string nickName, Packet packet)
         {
             string str = "From client " + nickName + " : " + msg;
             ShowMessage(str);
-            SendMessageAll(msg, nickName, true);
+            SendMessageAll(msg, nickName, true, packet);
         }
         private void Disconnected(TcpClient clientSocket, string User)
         {
             if (clientList.ContainsKey(clientSocket))
                 clientList.Remove(clientSocket);
-            SendMessageAll(User + "님이 접속을 종료했습니다.", "", false);
+            Packet packet=new Packet();
+            packet.packet_Type = PacketType.Disconnect;
+            SendMessageAll(User + "님이 접속을 종료했습니다.", "", false, packet);
+            //nickList에서 지워주기
         }
         private void ShowMessage(string text)
         {
@@ -96,7 +109,7 @@ namespace Server
                 textBox1.AppendText(text + Environment.NewLine);
         }
 
-        public void SendMessageAll(string msg, string nickName, bool b)
+        public void SendMessageAll(string msg, string nickName, bool b, Packet packet)
         {
             foreach (KeyValuePair<TcpClient, string> pair in clientList)
             {
@@ -105,11 +118,96 @@ namespace Server
                 byte[] buff = null;
                 if (b)
                 {
-                    buff = Encoding.Unicode.GetBytes(nickName + " : " + msg);
+                    //buff = Encoding.Unicode.GetBytes(nickName + " : " + msg);
+                    switch (packet.packet_Type)
+                    {
+                        case PacketType.Entry:
+                            {
+                                Entry entry = (Entry)Packet.Deserialize(buff);
+                                EntryResult entryResult = new EntryResult();
+                                entryResult.maxPlayerCount = num;
+                                entryResult.kindOfGame = entry.kindOfGame;
+                                Packet.Serialize(entryResult).CopyTo(buff, 0);
+                            }
+                            break;
+                        case PacketType.RollStart:
+                            {
+                                RollStart rollStart = (RollStart)Packet.Deserialize(buff);
+                                RollStartResult rollStartResult = new RollStartResult();
+                                rollStartResult.remainRollCount = rollStart.remainRollCount;
+                                Packet.Serialize(rollStartResult).CopyTo(buff, 0);
+                            }
+                            break;
+                        case PacketType.RollEnd:
+                            {
+                                RollEnd rollEnd = (RollEnd)Packet.Deserialize(buff);
+                                RollEndResult rollEndResult = new RollEndResult();
+                                rollEndResult.dice1 = rollEnd.dice1;
+                                rollEndResult.dice2 = rollEnd.dice2;
+                                rollEndResult.dice3 = rollEnd.dice3;
+                                rollEndResult.dice4 = rollEnd.dice4;
+                                rollEndResult.dice5 = rollEnd.dice5;
+                                Packet.Serialize(rollEndResult).CopyTo(buff, 0);
+                            }
+                            break;
+                        case PacketType.Lock:
+                            {
+                                Lock clock = (Lock)Packet.Deserialize(buff);
+                                LockResult lockResult = new LockResult();
+                                lockResult.lockNumber=clock.lockNumber;
+                                lockResult.isLock=clock.isLock;
+                                Packet.Serialize(lockResult).CopyTo(buff, 0);
+                            }
+                            break;
+                        case PacketType.Select:
+                            {
+                                Select cselect = (Select)Packet.Deserialize(buff);
+                                SelectResult selectResult = new SelectResult();
+                                //나중에 정의
+                                Packet.Serialize(selectResult).CopyTo(buff, 0);
+                            }
+                            break;
+                        case PacketType.GameOver:
+                            {
+                                GameOver gameover = (GameOver)Packet.Deserialize(buff);
+                                GameOverResult gameoverResult = new GameOverResult();
+                                gameoverResult.result=gameover.result;
+                                Packet.Serialize(gameoverResult).CopyTo(buff, 0);
+                            }
+                            break;
+                        case PacketType.Chatting:
+                            {
+                                ChattingResult chattingResult = new ChattingResult();
+                                chattingResult.chat = msg;
+                                Packet.Serialize(chattingResult).CopyTo(buff, 0);
+                            }
+                            break;
+                    }
                 }
                 else
                 {
-                    buff = Encoding.Unicode.GetBytes(msg);
+                    switch (packet.packet_Type)
+                    {
+                        case PacketType.Login:
+                            {
+                                LoginResult loginResult = new LoginResult();
+                                loginResult.packet_Type = PacketType.Login_Result;
+                                loginResult.uID = num;
+                                loginResult.LoginMessage = msg;
+                                Packet.Serialize(loginResult).CopyTo(buff, 0);
+                                //buff = Encoding.Unicode.GetBytes(msg);
+
+                            }
+                            break;
+                        case PacketType.Disconnect:
+                            {
+                                ChattingResult chattingResult = new ChattingResult();
+                                chattingResult.chat = msg;
+                                Packet.Serialize(chattingResult).CopyTo(buff, 0);
+                            }
+                            break;
+                    }
+                  
                 }
                 nStream.Write(buff, 0, buff.Length);
                 nStream.Flush();
@@ -124,20 +222,20 @@ namespace Server
         public Dictionary<TcpClient, string> clientList = null;
         public delegate void DisconnectedHandler(TcpClient clientSocket, string User);
         public event DisconnectedHandler EDisconnected;
-        public delegate void ShowTextHandler(string text, string nickName);
+        public delegate void ShowTextHandler(string text, string nickName, Packet packet);
         public event ShowTextHandler EReceived;
         string sName;
         public void StartClient(TcpClient socket, Dictionary<TcpClient, string> List)
         {
             clientSocket = socket;
             clientList = List;
-            Thread t = new Thread(ChattingSystem);
+            Thread t = new Thread(Broadcast);
             t.IsBackground = true;
             t.Start();
             sName = clientList[clientSocket].ToString();
         }
 
-        private void ChattingSystem()
+        private void Broadcast()
         {
             NetworkStream nStream = null;
             try
@@ -149,10 +247,18 @@ namespace Server
                 {
                     nStream = clientSocket.GetStream();
                     bytes = nStream.Read(buff, 0, buff.Length);
-                    msg = Encoding.Unicode.GetString(buff, 0, bytes);
-                    msg = msg.Substring(0, msg.IndexOf("$"));
+                    //msg = Encoding.Unicode.GetString(buff, 0, bytes);
+                    //msg = msg.Substring(0, msg.IndexOf("$"));
+                    Packet packet = (Packet)Packet.Deserialize(buff);
+                    if (packet == null)
+                        continue;
+                    if (packet.packet_Type == PacketType.Chatting)
+                    {
+                        Chatting chatting = (Chatting)Packet.Deserialize(buff);
+                        msg = chatting.chat;
+                    }
                     if (EReceived != null)
-                        EReceived(msg, clientList[clientSocket].ToString());
+                        EReceived(msg, clientList[clientSocket].ToString(), packet);
                 }
             }
             catch (SocketException e)
