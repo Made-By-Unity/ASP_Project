@@ -115,7 +115,7 @@ namespace Server
             {
                 TcpClient client = pair.Key as TcpClient;
                 NetworkStream nStream = client.GetStream();
-                byte[] buff = null;
+                byte[] buff = new byte[1024*4];
                 if (b)
                 {
                     //buff = Encoding.Unicode.GetBytes(nickName + " : " + msg);
@@ -194,7 +194,9 @@ namespace Server
                                 loginResult.packet_Type = PacketType.Login_Result;
                                 loginResult.uID = num;
                                 loginResult.LoginMessage = msg;
+                                loginResult.usernames = nickNames;
                                 Packet.Serialize(loginResult).CopyTo(buff, 0);
+                                int a = 0;
                                 //buff = Encoding.Unicode.GetBytes(msg);
 
                             }
