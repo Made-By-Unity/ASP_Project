@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Client.Manager;
 
 namespace Client
 {
@@ -14,6 +15,9 @@ namespace Client
         [STAThread]
         static void Main()
         {
+            // 초기화
+            SocketManager.GetInst();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new YachtDice());
