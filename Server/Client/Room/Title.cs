@@ -14,6 +14,8 @@ using Packetdll;
 using Client.Manager;
 using System.IO;
 using System.Runtime.InteropServices.ComTypes;
+//using static System.Net.Mime.MediaTypeNames;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Client.Title
 {
@@ -44,7 +46,14 @@ namespace Client.Title
                 if(dr == DialogResult.OK)
                 {
                     Application.Run(new YachtDice());
-                    this.Close();
+
+                    if (this.InvokeRequired)
+                    {
+                        this.BeginInvoke(new MethodInvoker(delegate
+                        {
+                            this.Close();
+                        }));
+                    }
                 }
             }
         }
