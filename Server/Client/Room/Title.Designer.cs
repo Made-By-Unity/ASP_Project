@@ -30,11 +30,12 @@
         {
             this.btnLogin = new System.Windows.Forms.Button();
             this.tbNickName = new System.Windows.Forms.TextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(393, 182);
+            this.btnLogin.Location = new System.Drawing.Point(360, 182);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 0;
@@ -44,19 +45,27 @@
             // 
             // tbNickName
             // 
-            this.tbNickName.Location = new System.Drawing.Point(111, 184);
+            this.tbNickName.Location = new System.Drawing.Point(139, 184);
             this.tbNickName.Name = "tbNickName";
             this.tbNickName.Size = new System.Drawing.Size(168, 21);
             this.tbNickName.TabIndex = 1;
             // 
-            // Tile
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(139, 132);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(168, 21);
+            this.maskedTextBox1.TabIndex = 2;
+            // 
+            // Title
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 350);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.tbNickName);
             this.Controls.Add(this.btnLogin);
-            this.Name = "Tile";
+            this.Name = "Title";
             this.Text = "Tile";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -67,5 +76,6 @@
 
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox tbNickName;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

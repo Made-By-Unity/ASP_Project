@@ -27,6 +27,7 @@ namespace Packetdll
         Chatting_Result,
         Disconnect,
     }
+    [Serializable]
     public class Packet
     {
         public PacketType packet_Type;

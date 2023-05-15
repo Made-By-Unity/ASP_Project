@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Packetdll;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace Client.Manager
 
         private TcpClient m_ClientSocket = null;
         private NetworkStream m_Stream = null;
-        private string m_strNickName;
+        private string m_strNickName = String.Empty;
+        private uint m_iID;
 
         private SocketManager()
         {
@@ -37,19 +39,35 @@ namespace Client.Manager
             get { return m_ClientSocket; }
         }
 
+        public Stream Stream
+        {
+            get { return m_Stream; }
+        }
+
         public string NickName
         {
             get { return m_strNickName; }
         }
 
+        public uint UID
+        {
+            get { return m_iID; }
+            set { m_iID = value; }
+        }
+
         public void Binding(string _strNickName)
         {
-            m_ClientSocket.Connect("192.168.0.6", 9999);
+            //m_ClientSocket.Connect("192.168.0.6", 9999);
+            m_ClientSocket.Connect("220.75.181.221", 9999);
             m_Stream = m_ClientSocket.GetStream();
-
             m_strNickName = _strNickName;
-            byte[] buffer = Encoding.Unicode.GetBytes(_strNickName + "$");
-            m_Stream.Write(buffer, 0, buffer.Length);
+
+            byte[] buff = new byte[1024 * 4];
+            Login pkLogin = new Login();
+            pkLogin.packet_Type = PacketType.Login;
+            pkLogin.nickName = m_strNickName;
+            Packet.Serialize(pkLogin).CopyTo(buff, 0);
+            m_Stream.Write(buff, 0, buff.Length);
             m_Stream.Flush();
         }
     }

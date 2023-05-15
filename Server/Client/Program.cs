@@ -20,7 +20,7 @@ namespace Client
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new YachtDice());
+            Application.Run(new Title.Title());
         }
     }
 }
