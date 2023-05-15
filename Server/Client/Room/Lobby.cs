@@ -69,10 +69,17 @@ namespace Client.Room
             {
                 TextBox tbPlayer = (Controls.Find("tbPlayer" + (i + 1).ToString(), true)[0] as TextBox);
 
-                tbPlayer.Invoke(new MethodInvoker(delegate
+                if(this.IsHandleCreated)
+                {
+                    tbPlayer.Invoke(new MethodInvoker(delegate
+                    {
+                        tbPlayer.Text = listNickName[i];
+                    }));
+                }
+                else
                 {
                     tbPlayer.Text = listNickName[i];
-                }));
+                }
             }
         }
 
