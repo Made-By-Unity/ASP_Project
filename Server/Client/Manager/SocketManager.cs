@@ -64,8 +64,10 @@ namespace Client.Manager
         public void Binding(string _strServerIP, string _strNickName)
         {
             //m_ClientSocket.Connect("192.168.0.15", 9999);
-            m_ClientSocket.Connect("220.75.181.221", 9999);
+            //m_ClientSocket.Connect("220.75.181.221", 9999);
+            m_ClientSocket.Connect("192.168.0.6", 9999);
             //m_ClientSocket.Connect(_strServerIP, 9999);
+            
             m_Stream = m_ClientSocket.GetStream();
             m_strNickName = _strNickName;
 

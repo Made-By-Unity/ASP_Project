@@ -123,8 +123,10 @@ namespace Server
                     {
                         case PacketType.Entry:
                             {
-                                Entry entry = (Entry)Packet.Deserialize(buff);
+                                //Entry entry = (Entry)Packet.Deserialize(buff);
+                                Entry entry = (Entry)packet;
                                 EntryResult entryResult = new EntryResult();
+                                entryResult.packet_Type = PacketType.Entry_Result;
                                 entryResult.maxPlayerCount = num;
                                 entryResult.kindOfGame = entry.kindOfGame;
                                 Packet.Serialize(entryResult).CopyTo(buff, 0);
@@ -132,7 +134,8 @@ namespace Server
                             break;
                         case PacketType.RollStart:
                             {
-                                RollStart rollStart = (RollStart)Packet.Deserialize(buff);
+                                //RollStart rollStart = (RollStart)Packet.Deserialize(buff);
+                                RollStart rollStart = (RollStart)packet;
                                 RollStartResult rollStartResult = new RollStartResult();
                                 rollStartResult.remainRollCount = rollStart.remainRollCount;
                                 Packet.Serialize(rollStartResult).CopyTo(buff, 0);
@@ -140,7 +143,8 @@ namespace Server
                             break;
                         case PacketType.RollEnd:
                             {
-                                RollEnd rollEnd = (RollEnd)Packet.Deserialize(buff);
+                                //RollEnd rollEnd = (RollEnd)Packet.Deserialize(buff);
+                                RollEnd rollEnd = (RollEnd)packet;
                                 RollEndResult rollEndResult = new RollEndResult();
                                 rollEndResult.dice1 = rollEnd.dice1;
                                 rollEndResult.dice2 = rollEnd.dice2;
@@ -152,7 +156,8 @@ namespace Server
                             break;
                         case PacketType.Lock:
                             {
-                                Lock clock = (Lock)Packet.Deserialize(buff);
+                                //Lock clock = (Lock)Packet.Deserialize(buff);
+                                Lock clock = (Lock)packet;
                                 LockResult lockResult = new LockResult();
                                 lockResult.lockNumber=clock.lockNumber;
                                 lockResult.isLock=clock.isLock;
@@ -161,7 +166,8 @@ namespace Server
                             break;
                         case PacketType.Select:
                             {
-                                Select cselect = (Select)Packet.Deserialize(buff);
+                                //Select cselect = (Select)Packet.Deserialize(buff);
+                                Select cselect = (Select)packet;
                                 SelectResult selectResult = new SelectResult();
                                 //나중에 정의
                                 Packet.Serialize(selectResult).CopyTo(buff, 0);
@@ -169,7 +175,8 @@ namespace Server
                             break;
                         case PacketType.GameOver:
                             {
-                                GameOver gameover = (GameOver)Packet.Deserialize(buff);
+                               //GameOver gameover = (GameOver)Packet.Deserialize(buff);
+                                GameOver gameover = (GameOver)packet;
                                 GameOverResult gameoverResult = new GameOverResult();
                                 gameoverResult.result=gameover.result;
                                 Packet.Serialize(gameoverResult).CopyTo(buff, 0);

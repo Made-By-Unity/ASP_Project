@@ -66,7 +66,11 @@ namespace Client.Title
                 Thread.Sleep(10);
             }
 
-            this.Invoke(new MethodInvoker(delegate { this.Close(); }));
+            this.Invoke(new MethodInvoker(delegate 
+            {
+                m_tHandler.Abort();
+                this.Close(); 
+            }));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

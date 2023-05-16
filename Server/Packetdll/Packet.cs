@@ -75,12 +75,14 @@ namespace Packetdll
     [Serializable]
     public class Login : Packet
     {
+        public Login() { packet_Type = PacketType.Login; }
         public string nickName { get; set; }
 
     }
     [Serializable]
     public class LoginResult : Packet
     {
+        public LoginResult() { packet_Type = PacketType.Login_Result; }
         public uint uID { get; set; }
         public List<string> usernames { get; set; }
         public string LoginMessage { get; set; }
@@ -88,27 +90,32 @@ namespace Packetdll
     [Serializable]
     public class Entry : Packet
     {
+        public Entry() { packet_Type = PacketType.Entry; }
         public int kindOfGame { get; set; }
     }
     [Serializable]
     public class EntryResult : Packet
     {
+        public EntryResult() { packet_Type = PacketType.Entry_Result; }
         public uint maxPlayerCount { get; set; }
         public int kindOfGame { get; set; }
     }
     [Serializable]
     public class RollStart : Packet
     {
+        public RollStart() { packet_Type = PacketType.RollStart; }
         public int remainRollCount { get; set; }
     }
     [Serializable]
     public class RollStartResult : Packet
     {
+        public RollStartResult() { packet_Type = PacketType.RollStart_Result; }
         public int remainRollCount { get; set; }
     }
     [Serializable]
     public class RollEnd : Packet
     {
+        public RollEnd() { packet_Type = PacketType.RollEnd; }
         public int dice1 { get; set; }
         public int dice2 { get; set; }
         public int dice3 { get; set; }
@@ -118,6 +125,7 @@ namespace Packetdll
     [Serializable]
     public class RollEndResult : Packet
     {
+        public RollEndResult() { packet_Type = PacketType.RollEnd_Result; }
         public int dice1 { get; set; }
         public int dice2 { get; set; }
         public int dice3 { get; set; }
@@ -127,47 +135,56 @@ namespace Packetdll
     [Serializable]
     public class Lock : Packet
     {
+        public Lock() { packet_Type = PacketType.Lock; }
         public int lockNumber { get; set; }
         public bool isLock { get; set; }
     }
     [Serializable]
     public class LockResult : Packet
     {
+        public LockResult() { packet_Type = PacketType.Lock_Result; }
         public int lockNumber { get; set; }
         public bool isLock { get; set; }
     }
     [Serializable]
     public class Select : Packet
     {
+        public Select() { packet_Type = PacketType.Select; }
         //Enum 알아서 정의해주세요
     }
     public class SelectResult : Packet
     {
+        public SelectResult() { packet_Type = PacketType.Select_Result; }
         //Enum 알아서 정의해주세요
     }
     [Serializable]
     public class GameOver : Packet
     {
+        public GameOver() { packet_Type = PacketType.GameOver; }
         public string result { get; set; }
     }
     [Serializable]
     public class GameOverResult : Packet
     {
+        public GameOverResult() { packet_Type = PacketType.GameOver_Result; }
         public string result { get; set; }
     }
     [Serializable]
     public class Chatting : Packet
     {
+        public Chatting() { packet_Type = PacketType.Chatting; }
         public string chat { get; set; }
     }
     [Serializable]
     public class ChattingResult : Packet
     {
+        public ChattingResult() { packet_Type = PacketType.Chatting_Result; }
         public string chat { get; set; }
     }
     [Serializable]
     public class Disconnect : Packet
     {
+        public Disconnect() { packet_Type = PacketType.Disconnect; }
         public string chat { get; set; }
     }
 }

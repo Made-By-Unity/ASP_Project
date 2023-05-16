@@ -46,13 +46,13 @@ namespace Client.Room
                 Packet packet = (Packet)Packet.Deserialize(buffer);
                 if (packet.packet_Type == PacketType.Login_Result)
                 {
-                    LoginResult pkLoginResult = (LoginResult)Packet.Deserialize(buffer);
+                    LoginResult pkLoginResult = (LoginResult)packet;
                     SocketManager.GetInst().NickNameList = pkLoginResult.usernames;
                     UpdatePlayer();
                 }
                 else if(packet.packet_Type == PacketType.Entry_Result)
                 {
-                    EntryResult pkEntryResult = (EntryResult)Packet.Deserialize(buffer);
+                    EntryResult pkEntryResult = (EntryResult)packet;
                     
                     if(1 == pkEntryResult.kindOfGame)
                     {
@@ -85,7 +85,7 @@ namespace Client.Room
 
         private void btnGameStart_Click(object sender, EventArgs e)
         {
-            string strSelected = lbGameList.SelectedItem.ToString();
+            string strSelected = cbGame.SelectedItem.ToString();
 
             byte[] buff = new byte[1024 * 4];
             Entry pkEntry = new Entry();
