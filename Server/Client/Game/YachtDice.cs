@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Client.Manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,9 +32,152 @@ namespace Client
              Properties.Resources._1, Properties.Resources._2, Properties.Resources._3, Properties.Resources._4, Properties.Resources._5, Properties.Resources._6
         };
 
+        TextBox[] m_P1Scores;
+        TextBox[] m_P2Scores;
+        TextBox[] m_P3Scores;
+        TextBox[] m_P4Scores;
+   
+
         public YachtDice()
         {
             InitializeComponent();
+
+            // 점수판 관리를 편하게 하기 위해 각 플레이어 점수판마다 하나씩 작성
+            m_P1Scores = new TextBox[16] { txtPlayer1,
+                                           txtAcesScore1, 
+                                           txtDeucesScore1,
+                                           txtThreesScore1, 
+                                           txtFoursScore1, 
+                                           txtFivesScore1,
+                                           txtSixesScore1, 
+                                           txtSubtotalScore1, 
+                                           txtBonusAble1, 
+                                           txtChoiceScore1, 
+                                           txt4KindScore1,
+                                           txtFHScore1, 
+                                           txtSSScore1, 
+                                           txtLSScore1, 
+                                           txtYachtScore1, 
+                                           txtTotalScore1};
+
+            m_P2Scores = new TextBox[16] { txtPlayer2,
+                                           txtAcesScore2,
+                                           txtDeucesScore2,
+                                           txtThreesScore2,
+                                           txtFoursScore2,
+                                           txtFivesScore2,
+                                           txtSixesScore2,
+                                           txtSubtotalScore2,
+                                           txtBonusAble2,
+                                           txtChoiceScore2,
+                                           txt4KindScore2,
+                                           txtFHScore2,
+                                           txtSSScore2,
+                                           txtLSScore2,
+                                           txtYachtScore2,
+                                           txtTotalScore2};
+
+            m_P3Scores = new TextBox[16] { txtPlayer3,
+                                           txtAcesScore3,
+                                           txtDeucesScore3,
+                                           txtThreesScore3,
+                                           txtFoursScore3,
+                                           txtFivesScore3,
+                                           txtSixesScore3,
+                                           txtSubtotalScore3,
+                                           txtBonusAble3,
+                                           txtChoiceScore3,
+                                           txt4KindScore3,
+                                           txtFHScore3,
+                                           txtSSScore3,
+                                           txtLSScore3,
+                                           txtYachtScore3,
+                                           txtTotalScore3};
+
+            m_P4Scores = new TextBox[16] { txtPlayer4,
+                                           txtAcesScore4,
+                                           txtDeucesScore4,
+                                           txtThreesScore4,
+                                           txtFoursScore4,
+                                           txtFivesScore4,
+                                           txtSixesScore4,
+                                           txtSubtotalScore4,
+                                           txtBonusAble4,
+                                           txtChoiceScore4,
+                                           txt4KindScore4,
+                                           txtFHScore4,
+                                           txtSSScore4,
+                                           txtLSScore4,
+                                           txtYachtScore4,
+                                           txtTotalScore4};
+
+            // 현재 게임에 접속한 인원수대로 점수표 활성화
+            int iPlayerCount = SocketManager.GetInst().NickNameList.Count;
+            txtPlayer1.Text = SocketManager.GetInst().NickNameList[0];
+            if(2 <= iPlayerCount)
+            {
+                txtPlayer2.Text = SocketManager.GetInst().NickNameList[1];
+                foreach (TextBox control in m_P2Scores)
+                {
+                    control.Visible = true;
+                }
+
+                if(3 <= iPlayerCount)
+                {
+                    txtPlayer3.Text = SocketManager.GetInst().NickNameList[2];
+                    foreach (TextBox control in m_P3Scores)
+                    {
+                        control.Visible = true;
+                    }
+
+                    if (4 == iPlayerCount)
+                    {
+                        txtPlayer4.Text = SocketManager.GetInst().NickNameList[3];
+                        foreach (TextBox control in m_P4Scores)
+                        {
+                            control.Visible = true;
+                        }
+                    }
+                }
+            }
+
+            // 자신의 점수판만 활성화
+            switch (SocketManager.GetInst().UID)
+            {
+                case 1:
+                    {
+                        foreach (TextBox control in m_P1Scores)
+                        {
+                            control.Enabled = true;
+                        }
+                    }
+                    break;
+                case 2:
+                    {
+                        foreach (TextBox control in m_P2Scores)
+                        {
+                            control.Enabled = true;
+                        }
+                    }
+                    break;
+                case 3:
+                    {
+                        foreach (TextBox control in m_P3Scores)
+                        {
+                            control.Enabled = true;
+                        }
+                    }
+                    break;
+                case 4:
+                    {
+                        foreach (TextBox control in m_P4Scores)
+                        {
+                            control.Enabled = true;
+                        }
+                    }
+                    break;
+            }
+
             Reset();
         }
 
@@ -68,34 +213,34 @@ namespace Client
             RollDisplay.Text = m_iRollCount.ToString();
 
             // Score Text 클리어
-            ClearText(txtAcesScore);
-            ClearText(txtDeucesScore);
-            ClearText(txtThreesScore);
-            ClearText(txtFoursScore);
-            ClearText(txtFivesScore);
-            ClearText(txtSixesScore);
+            ClearText(txtAcesScore1);
+            ClearText(txtDeucesScore1);
+            ClearText(txtThreesScore1);
+            ClearText(txtFoursScore1);
+            ClearText(txtFivesScore1);
+            ClearText(txtSixesScore1);
 
-            ClearText(txtChoiceScore);
-            ClearText(txt4KindScore);
-            ClearText(txtFHScore);
-            ClearText(txtSSScore);
-            ClearText(txtLSScore);
-            ClearText(txtYachtScore);
+            ClearText(txtChoiceScore1);
+            ClearText(txt4KindScore1);
+            ClearText(txtFHScore1);
+            ClearText(txtSSScore1);
+            ClearText(txtLSScore1);
+            ClearText(txtYachtScore1);
 
             // SubScore 갱신
-            int iSubScore = TextToScore(txtAcesScore) + TextToScore(txtDeucesScore) + TextToScore(txtThreesScore)
-                            + TextToScore(txtFoursScore) + TextToScore(txtFivesScore) + TextToScore(txtSixesScore);
+            int iSubScore = TextToScore(txtAcesScore1) + TextToScore(txtDeucesScore1) + TextToScore(txtThreesScore1)
+                            + TextToScore(txtFoursScore1) + TextToScore(txtFivesScore1) + TextToScore(txtSixesScore1);
 
-            txtSubtotalScore.Text = iSubScore.ToString() + " / 63";
+            txtSubtotalScore1.Text = iSubScore.ToString() + " / 63";
 
             if (63 <= iSubScore)
-                txtBonusAble.Text = "v";
+                txtBonusAble1.Text = "v";
 
             // TotalScore 갱신
-            int iTotalScore = iSubScore + TextToScore(txtChoiceScore) + TextToScore(txt4KindScore) + TextToScore(txtFHScore)
-                                + TextToScore(txtSSScore) + TextToScore(txtLSScore) + TextToScore(txtYachtScore);
+            int iTotalScore = iSubScore + TextToScore(txtChoiceScore1) + TextToScore(txt4KindScore1) + TextToScore(txtFHScore1)
+                                + TextToScore(txtSSScore1) + TextToScore(txtLSScore1) + TextToScore(txtYachtScore1);
 
-            txtTotalScore.Text = iTotalScore.ToString();
+            txtTotalScore1.Text = iTotalScore.ToString();
 
             if (YACTH_MODE.SINGLE == m_eMode)
             {
@@ -243,25 +388,25 @@ namespace Client
                 iTotal += num;
             }
 
-            UpdateScoreText(txtAcesScore, (arrNumCount[0] * 1).ToString());
-            UpdateScoreText(txtDeucesScore, (arrNumCount[1] * 2).ToString());
-            UpdateScoreText(txtThreesScore, (arrNumCount[2] * 3).ToString());
-            UpdateScoreText(txtFoursScore, (arrNumCount[3] * 4).ToString());
-            UpdateScoreText(txtFivesScore, (arrNumCount[4] * 5).ToString());
-            UpdateScoreText(txtSixesScore, (arrNumCount[5] * 6).ToString());
+            UpdateScoreText(txtAcesScore1, (arrNumCount[0] * 1).ToString());
+            UpdateScoreText(txtDeucesScore1, (arrNumCount[1] * 2).ToString());
+            UpdateScoreText(txtThreesScore1, (arrNumCount[2] * 3).ToString());
+            UpdateScoreText(txtFoursScore1, (arrNumCount[3] * 4).ToString());
+            UpdateScoreText(txtFivesScore1, (arrNumCount[4] * 5).ToString());
+            UpdateScoreText(txtSixesScore1, (arrNumCount[5] * 6).ToString());
 
             // 족보 점수 갱신
 
             // Choice
-            UpdateScoreText(txtChoiceScore, iTotal.ToString());
+            UpdateScoreText(txtChoiceScore1, iTotal.ToString());
 
-            UpdateScoreText(txt4KindScore, Convert.ToString(0));
+            UpdateScoreText(txt4KindScore1, Convert.ToString(0));
 
             // 4 of a Kind
             for (int i = 0; i < iDice; i++)
             {
                 if (4 <= arrNumCount[i])
-                    UpdateScoreText(txt4KindScore, iTotal.ToString());
+                    UpdateScoreText(txt4KindScore1, iTotal.ToString());
             }
 
             // Full House
@@ -282,17 +427,17 @@ namespace Client
                 }
 
                 if (0 <= iTwoDice)
-                    UpdateScoreText(txtFHScore, iTotal.ToString());
+                    UpdateScoreText(txtFHScore1, iTotal.ToString());
                 else
-                    UpdateScoreText(txtFHScore, Convert.ToString(0));
+                    UpdateScoreText(txtFHScore1, Convert.ToString(0));
             }
             else
             {
-                UpdateScoreText(txtFHScore, Convert.ToString(0));
+                UpdateScoreText(txtFHScore1, Convert.ToString(0));
             }
 
             // Small Straight
-            UpdateScoreText(txtSSScore, Convert.ToString(0));
+            UpdateScoreText(txtSSScore1, Convert.ToString(0));
             int iSmallOne = -1;
 
             for (int i = 0; i < iDice; i++)
@@ -315,21 +460,21 @@ namespace Client
             }
 
             if (4 <= iStraightCount)
-                UpdateScoreText(txtSSScore, Convert.ToString(15));
+                UpdateScoreText(txtSSScore1, Convert.ToString(15));
 
             // Large Straight
-            UpdateScoreText(txtLSScore, Convert.ToString(0));
+            UpdateScoreText(txtLSScore1, Convert.ToString(0));
 
             if (5 == iStraightCount)
-                UpdateScoreText(txtLSScore, Convert.ToString(30));
+                UpdateScoreText(txtLSScore1, Convert.ToString(30));
 
             // Yacht
-            UpdateScoreText(txtYachtScore, Convert.ToString(0));
+            UpdateScoreText(txtYachtScore1, Convert.ToString(0));
             foreach (int num in arrNumCount)
             {
                 if (5 == num)
                 {
-                    UpdateScoreText(txtYachtScore, Convert.ToString(50));
+                    UpdateScoreText(txtYachtScore1, Convert.ToString(50));
                     break;
                 }
             }
