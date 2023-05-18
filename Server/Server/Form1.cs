@@ -56,7 +56,7 @@ namespace Server
             ShowMessage("서버 오픈");
             while (true)
             {
-                num++;
+                
                 client = server.AcceptTcpClient();
                 ShowMessage("> Connection From Client");
 
@@ -79,6 +79,7 @@ namespace Server
                 c_Client.EDisconnected += new CClient.DisconnectedHandler(Disconnected);
                 c_Client.EReceived += new CClient.ShowTextHandler(OnReceived);
                 c_Client.StartClient(client, clientList);
+                num++;
             }
         }
         private void OnReceived(string msg, string nickName, Packet packet)
