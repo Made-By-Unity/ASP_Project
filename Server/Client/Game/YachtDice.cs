@@ -420,7 +420,12 @@ namespace Client
         private int TextToScore(TextBox _TextBox)
         {
             if (false == _TextBox.Enabled)
+            {
+                if (_TextBox.Text == String.Empty)
+                    return 0;
+
                 return Int32.Parse(_TextBox.Text);
+            }
 
             return 0;
         }
