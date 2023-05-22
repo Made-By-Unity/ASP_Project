@@ -170,7 +170,8 @@ namespace Server
                                 //Select cselect = (Select)Packet.Deserialize(buff);
                                 Select cselect = (Select)packet;
                                 SelectResult selectResult = new SelectResult();
-                                //나중에 정의
+                                selectResult.eScoreType = cselect.eScoreType;
+                                selectResult.iScore = cselect.iScore;
                                 Packet.Serialize(selectResult).CopyTo(buff, 0);
                             }
                             break;

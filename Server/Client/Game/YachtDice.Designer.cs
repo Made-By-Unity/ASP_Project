@@ -143,6 +143,7 @@
             // 
             // btnRoll
             // 
+            this.btnRoll.Enabled = false;
             this.btnRoll.Location = new System.Drawing.Point(102, 492);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(91, 34);
@@ -1372,7 +1373,6 @@
             // 
             // tmrRoll
             // 
-            this.tmrRoll.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // YachtDice
             // 

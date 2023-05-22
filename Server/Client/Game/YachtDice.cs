@@ -1,4 +1,5 @@
 ﻿using Client.Manager;
+using Client.Room;
 using Packetdll;
 using System;
 using System.Collections.Generic;
@@ -142,7 +143,7 @@ namespace Client
             // 자신의 점수판만 활성화
             switch (SocketManager.GetInst().UID)
             {
-                case 1:
+                case 0:
                     {
                         foreach (TextBox control in m_P1Scores)
                         {
@@ -150,7 +151,7 @@ namespace Client
                         }
                     }
                     break;
-                case 2:
+                case 1:
                     {
                         foreach (TextBox control in m_P2Scores)
                         {
@@ -158,7 +159,7 @@ namespace Client
                         }
                     }
                     break;
-                case 3:
+                case 2:
                     {
                         foreach (TextBox control in m_P3Scores)
                         {
@@ -166,7 +167,7 @@ namespace Client
                         }
                     }
                     break;
-                case 4:
+                case 3:
                     {
                         foreach (TextBox control in m_P4Scores)
                         {
@@ -192,22 +193,48 @@ namespace Client
                 {
                     case PacketType.RollStart_Result:
                         {
+                            RollStartResult pkRSR = (RollStartResult)packet;
                             if (m_iCurrPlayerID != SocketManager.GetInst().UID)
                             {
                                 RollDiceImage(false);
                             }
+
+                            RollDisplay.Invoke(new MethodInvoker(() =>
+                            {
+                                RollDisplay.Text = pkRSR.remainRollCount.ToString();
+                            }));
                         }
                         break;
                     case PacketType.RollEnd_Result:
                         {
+                            tmrRoll.Stop();
                             RollEndResult pkRER = (RollEndResult)packet;
                             if (m_iCurrPlayerID != SocketManager.GetInst().UID)
                             {
-                                pbDice1.Image = m_images[pkRER.dice1 - 1];
-                                pbDice2.Image = m_images[pkRER.dice2 - 1];
-                                pbDice3.Image = m_images[pkRER.dice3 - 1];
-                                pbDice4.Image = m_images[pkRER.dice4 - 1];
-                                pbDice5.Image = m_images[pkRER.dice5 - 1];
+                                pbDice1.Invoke(new MethodInvoker(() =>
+                                {
+                                    pbDice1.Image = m_images[pkRER.dice1 - 1];
+                                }));
+
+                                pbDice2.Invoke(new MethodInvoker(() =>
+                                {
+                                    pbDice2.Image = m_images[pkRER.dice2 - 1];
+                                }));
+
+                                pbDice3.Invoke(new MethodInvoker(() =>
+                                {
+                                    pbDice3.Image = m_images[pkRER.dice3 - 1];
+                                }));
+
+                                pbDice4.Invoke(new MethodInvoker(() =>
+                                {
+                                    pbDice4.Image = m_images[pkRER.dice4 - 1];
+                                }));
+
+                                pbDice5.Invoke(new MethodInvoker(() =>
+                                {
+                                    pbDice5.Image = m_images[pkRER.dice5 - 1];
+                                }));
                             }
 
                             TextBox[] arrTB = null;
@@ -386,6 +413,9 @@ namespace Client
             // Score Text 클리어
             foreach (TextBox item in _arrTB)
             {
+                if (item == _arrTB[0])
+                    continue;
+
                 ClearText(item);
             }
 
@@ -445,11 +475,38 @@ namespace Client
         // 주사위가 굴려진후 입력 방지 해제
         private void UnlockRolling()
         {
-            cbDice1.Enabled = true;
-            cbDice2.Enabled = true;
-            cbDice3.Enabled = true;
-            cbDice4.Enabled = true;
-            cbDice5.Enabled = true;
+            cbDice1.Invoke(new MethodInvoker(() =>
+            {
+                cbDice1.Enabled = true;
+            }));
+
+            cbDice2.Invoke(new MethodInvoker(() =>
+            {
+                cbDice2.Enabled = true;
+            }));
+
+            cbDice3.Invoke(new MethodInvoker(() =>
+            {
+                cbDice3.Enabled = true;
+            }));
+
+            cbDice4.Invoke(new MethodInvoker(() =>
+            {
+                cbDice4.Enabled = true;
+            }));
+
+            cbDice5.Invoke(new MethodInvoker(() =>
+            {
+                cbDice5.Enabled = true;
+            }));
+
+            if(m_iCurrPlayerID == SocketManager.GetInst().UID && 0 < m_iRollCount)
+            {
+                btnRoll.Invoke(new MethodInvoker(() =>
+                {
+                    btnRoll.Enabled = true;
+                }));
+            }
         }
 
         // 현재 턴인 플레이어만 누를수 있음
@@ -457,35 +514,15 @@ namespace Client
         {
             LockRolling();
 
-            //3번 누르지 않았으면 활성화
-            if (0 < --m_iRollCount)
-            {
-                btnRoll.Enabled = true;
-            }
-
             // 패킷 전송
             byte[] buff = new byte[1024 * 4];
             RollStart pkRollStart = new RollStart();
-            pkRollStart.remainRollCount = m_iRollCount;
+            pkRollStart.remainRollCount = --m_iRollCount;
             Packet.Serialize(pkRollStart).CopyTo(buff, 0);
             SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
             SocketManager.GetInst().Stream.Flush();
 
-            bool bRollEnd = RollDiceImage(false);
-
-            if(true == bRollEnd)
-            {
-                buff = new byte[1024 * 4];
-                RollEnd pkRollEnd = new RollEnd();
-                pkRollEnd.dice1 = m_arrDices[0];
-                pkRollEnd.dice2 = m_arrDices[1];
-                pkRollEnd.dice3 = m_arrDices[2];
-                pkRollEnd.dice4 = m_arrDices[3];
-                pkRollEnd.dice5 = m_arrDices[4];
-                Packet.Serialize(pkRollEnd).CopyTo(buff, 0);
-                SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
-                SocketManager.GetInst().Stream.Flush();
-            }
+            RollDiceImage(false);
         }
 
         private void cbLock_CheckChanged(object sender, EventArgs e)
@@ -527,59 +564,69 @@ namespace Client
         }
 
 
-        private bool RollDiceImage(bool _bWait)
+        private void RollDiceImage(bool _bWait)
         {
             // 이미지 연속 출력 연출 위한 타이머
             m_iRollRandomCount = 0;
 
-            tmrRoll.Start();
-
-            if(false == _bWait)
+            void Timer_Tick(object ss, EventArgs ee)
             {
-                while(true)
+                Random random = new Random(DateTime.Now.Millisecond);
+
+                if (false == cbDice1.Checked)
                 {
-                    if (6 <= m_iRollRandomCount)
+                    m_arrDices[0] = random.Next(1, 7);
+                    pbDice1.Image = m_images[m_arrDices[0] - 1];
+                }
+                if (false == cbDice2.Checked)
+                {
+                    m_arrDices[1] = random.Next(1, 7);
+                    pbDice2.Image = m_images[m_arrDices[1] - 1];
+                }
+                if (false == cbDice3.Checked)
+                {
+                    m_arrDices[2] = random.Next(1, 7);
+                    pbDice3.Image = m_images[m_arrDices[2] - 1];
+                }
+                if (false == cbDice4.Checked)
+                {
+                    m_arrDices[3] = random.Next(1, 7);
+                    pbDice4.Image = m_images[m_arrDices[3] - 1];
+                }
+                if (false == cbDice5.Checked)
+                {
+                    m_arrDices[4] = random.Next(1, 7);
+                    pbDice5.Image = m_images[m_arrDices[4] - 1];
+                }
+
+                m_iRollRandomCount++;
+
+                if(false == _bWait)
+                {
+                    if(6 <= m_iRollRandomCount)
                     {
-                        return true;
+                        tmrRoll.Stop();
+                        RollEnd();
                     }
                 }
             }
 
-            return false;
+            tmrRoll.Tick += Timer_Tick;
+            tmrRoll.Start();
         }
 
-        // 이미지 출력
-        void Timer_Tick(object ss, EventArgs ee)
+        private void RollEnd()
         {
-            Random random = new Random(DateTime.Now.Millisecond);
-
-            if (false == cbDice1.Checked)
-            {
-                m_arrDices[0] = random.Next(1, 7);
-                pbDice1.Image = m_images[m_arrDices[0] - 1];
-            }
-            if (false == cbDice2.Checked)
-            {
-                m_arrDices[1] = random.Next(1, 7);
-                pbDice2.Image = m_images[m_arrDices[1] - 1];
-            }
-            if (false == cbDice3.Checked)
-            {
-                m_arrDices[2] = random.Next(1, 7);
-                pbDice3.Image = m_images[m_arrDices[2] - 1];
-            }
-            if (false == cbDice4.Checked)
-            {
-                m_arrDices[3] = random.Next(1, 7);
-                pbDice4.Image = m_images[m_arrDices[3] - 1];
-            }
-            if (false == cbDice5.Checked)
-            {
-                m_arrDices[4] = random.Next(1, 7);
-                pbDice5.Image = m_images[m_arrDices[4] - 1];
-            }
-
-            m_iRollRandomCount++;
+            byte[] buff = new byte[1024 * 4];
+            RollEnd pkRollEnd = new RollEnd();
+            pkRollEnd.dice1 = m_arrDices[0];
+            pkRollEnd.dice2 = m_arrDices[1];
+            pkRollEnd.dice3 = m_arrDices[2];
+            pkRollEnd.dice4 = m_arrDices[3];
+            pkRollEnd.dice5 = m_arrDices[4];
+            Packet.Serialize(pkRollEnd).CopyTo(buff, 0);
+            SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
+            SocketManager.GetInst().Stream.Flush();
         }
 
         private void UpdateScoreText(TextBox _TextBox, string _strText)
@@ -587,7 +634,10 @@ namespace Client
             if (false == _TextBox.Enabled)
                 return;
 
-            _TextBox.Text = _strText;
+            _TextBox.Invoke(new MethodInvoker(() =>
+            {
+                _TextBox.Text = _strText;
+            }));
         }
 
         private void UpdateScore(TextBox[] _arrTexBox)
