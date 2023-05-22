@@ -170,6 +170,7 @@ namespace Packetdll
         public ScoreType eScoreType { get; set; }
         public int iScore { get; set; }
     }
+    [Serializable]
     public class SelectResult : Packet
     {
         public SelectResult() { packet_Type = PacketType.Select_Result; }

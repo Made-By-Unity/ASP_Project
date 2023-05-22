@@ -96,6 +96,15 @@ namespace Server
             packet.packet_Type = PacketType.Disconnect;
             SendMessageAll(User + "님이 접속을 종료했습니다.", "", false, packet);
             //nickList에서 지워주기
+            for(int i=0;i<nickNames.Count;i++)
+            {
+                if (nickNames[i]== User)
+                {
+                    nickNames.RemoveAt(i);
+                    break;
+                }
+            }
+            num--;
         }
         private void ShowMessage(string text)
         {
@@ -189,6 +198,38 @@ namespace Server
                                 ChattingResult chattingResult = new ChattingResult();
                                 chattingResult.chat = msg;
                                 Packet.Serialize(chattingResult).CopyTo(buff, 0);
+                            }
+                            break;
+
+                        case PacketType.K_RollStart:
+                            {
+                                K_RollStart rollStart = (K_RollStart)packet;
+                                K_RollStartResult rollStartResult = new K_RollStartResult();
+                                Packet.Serialize(rollStartResult).CopyTo(buff, 0);
+                            }
+                            break;
+                        case PacketType.K_RollEnd:
+                            {
+                                K_RollEnd rollEnd = (K_RollEnd)packet;
+                                K_RollEndResult rollEndResult = new K_RollEndResult();
+                                rollEndResult.result = rollEnd.result;
+                                Packet.Serialize(rollEndResult).CopyTo(buff, 0);
+                            }
+                            break;
+                        case PacketType.K_Select:
+                            {
+                                K_Select select = (K_Select)packet;
+                                K_SelectResult selectResult = new K_SelectResult();
+                                //Enum 정리
+                                Packet.Serialize(selectResult).CopyTo(buff, 0);
+                            }
+                            break;
+                        case PacketType.K_GameOver:
+                            {
+                                K_GameOver gameover = (K_GameOver)packet;
+                                K_GameOverResult gameoverResult = new K_GameOverResult();
+                                gameoverResult.result=gameover.result;
+                                Packet.Serialize(gameoverResult).CopyTo(buff, 0);
                             }
                             break;
                     }
