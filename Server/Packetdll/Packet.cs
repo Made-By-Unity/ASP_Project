@@ -25,6 +25,17 @@ namespace Packetdll
         GameOver_Result,
         Chatting,
         Chatting_Result,
+
+        K_RollStart,
+        K_RollStart_Result,
+        K_RollEnd,
+        K_RollEnd_Result,
+        K_Select,
+        K_Select_Result,
+        K_GameOver,
+        K_GameOver_Result,
+
+
         Disconnect
     }
 
@@ -206,5 +217,53 @@ namespace Packetdll
     {
         public Disconnect() { packet_Type = PacketType.Disconnect; }
         public string chat { get; set; }
+    }
+
+
+    [Serializable]
+    public class K_RollStart : Packet
+    {
+        public K_RollStart() { packet_Type = PacketType.K_RollStart; }
+    }
+    [Serializable]
+    public class K_RollEnd : Packet
+    {
+        public K_RollEnd() { packet_Type = PacketType.K_RollEnd; }
+        public int result { get; set; }
+    }
+    [Serializable]
+    public class K_RollStartResult : Packet
+    {
+        public K_RollStartResult() { packet_Type = PacketType.K_RollStart_Result; }
+    }
+    [Serializable]
+    public class K_RollEndResult : Packet
+    {
+        public K_RollEndResult() { packet_Type = PacketType.K_RollEnd_Result; }
+        public int result { get; set; }
+    }
+    [Serializable]
+    public class K_Select : Packet
+    {
+        public K_Select() { packet_Type = PacketType.K_Select; }
+        //Enum정의
+    }
+    [Serializable]
+    public class K_SelectResult : Packet
+    {
+        public K_SelectResult() { packet_Type = PacketType.K_Select_Result; }
+        //Enum정의
+    }
+    [Serializable]
+    public class K_GameOver : Packet
+    {
+        public K_GameOver() { packet_Type = PacketType.K_GameOver; }
+        public string result { get; set; }
+    }
+    [Serializable]
+    public class K_GameOverResult : Packet
+    {
+        public K_GameOverResult() { packet_Type = PacketType.K_GameOver_Result; }
+        public string result { get; set; }
     }
 }
