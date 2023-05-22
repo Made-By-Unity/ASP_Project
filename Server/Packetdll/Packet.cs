@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Packetdll;
+
 namespace Packetdll
 {
     public enum PacketType : int
@@ -25,8 +25,25 @@ namespace Packetdll
         GameOver_Result,
         Chatting,
         Chatting_Result,
-        Disconnect,
+        Disconnect
     }
+
+    public enum ScoreType : int
+    {
+        ACES,
+        DEUCES,
+        THREES,
+        FOURS,
+        FIVES,
+        SIXES,
+        CHOICE,
+        FOUR_OF_KIND,
+        FULLHOUSE,
+        SMALL_STRAIGHT,
+        LARGE_STRAIGHT,
+        YACHT
+    }
+
     [Serializable]
     public class Packet
     {
@@ -150,12 +167,14 @@ namespace Packetdll
     public class Select : Packet
     {
         public Select() { packet_Type = PacketType.Select; }
-        //Enum 알아서 정의해주세요
+        public ScoreType eScoreType { get; set; }
+        public int iScore { get; set; }
     }
     public class SelectResult : Packet
     {
         public SelectResult() { packet_Type = PacketType.Select_Result; }
-        //Enum 알아서 정의해주세요
+        public ScoreType eScoreType { get; set; }
+        public int iScore { get; set; }
     }
     [Serializable]
     public class GameOver : Packet

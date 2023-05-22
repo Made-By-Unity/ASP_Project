@@ -1,4 +1,5 @@
 ﻿using Client.Manager;
+using Packetdll;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,25 +8,20 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Client
 {
-    enum YACTH_MODE
-    {
-        SINGLE,
-        MULTI
-    }
-
     public partial class YachtDice : Form
     {
-        private YACTH_MODE m_eMode = YACTH_MODE.SINGLE;
+        Thread m_tHandler;
 
         private int m_iRollCount = 3;
-        private bool m_bClientTurn = false;
-
         private int m_iRound = 1;
+        private int m_iRollRandomCount = 0;
+
+        private int m_iCurrPlayerID = 0;
 
         int[] m_arrDices = new int[5];
         Image[] m_images = {
@@ -37,10 +33,12 @@ namespace Client
         TextBox[] m_P3Scores;
         TextBox[] m_P4Scores;
    
-
         public YachtDice()
         {
             InitializeComponent();
+
+            m_tHandler = new Thread(GetPacket);
+            m_tHandler.Start();
 
             // 점수판 관리를 편하게 하기 위해 각 플레이어 점수판마다 하나씩 작성
             m_P1Scores = new TextBox[16] { txtPlayer1,
@@ -181,17 +179,187 @@ namespace Client
             Reset();
         }
 
+        private void GetPacket()
+        {
+            while (true)
+            {
+                byte[] buffer = new byte[1024 * 4];
+                SocketManager.GetInst().Stream.Read(buffer, 0, buffer.Length);
+
+                Packet packet = (Packet)Packet.Deserialize(buffer);
+
+                switch (packet.packet_Type)
+                {
+                    case PacketType.RollStart_Result:
+                        {
+                            if (m_iCurrPlayerID != SocketManager.GetInst().UID)
+                            {
+                                RollDiceImage(false);
+                            }
+                        }
+                        break;
+                    case PacketType.RollEnd_Result:
+                        {
+                            RollEndResult pkRER = (RollEndResult)packet;
+                            if (m_iCurrPlayerID != SocketManager.GetInst().UID)
+                            {
+                                pbDice1.Image = m_images[pkRER.dice1 - 1];
+                                pbDice2.Image = m_images[pkRER.dice2 - 1];
+                                pbDice3.Image = m_images[pkRER.dice3 - 1];
+                                pbDice4.Image = m_images[pkRER.dice4 - 1];
+                                pbDice5.Image = m_images[pkRER.dice5 - 1];
+                            }
+
+                            TextBox[] arrTB = null;
+
+                            if (m_iCurrPlayerID == 0)
+                                arrTB = m_P1Scores;
+                            else if (m_iCurrPlayerID == 1)
+                                arrTB = m_P2Scores;
+                            else if (m_iCurrPlayerID == 2)
+                                arrTB = m_P3Scores;
+                            else if (m_iCurrPlayerID == 3)
+                                arrTB = m_P4Scores;
+
+                            UpdateScore(arrTB);
+                        }
+                        break;
+                    case PacketType.Lock_Result:
+                        {
+                            LockResult pkLR = (LockResult)packet;
+                            if (m_iCurrPlayerID != SocketManager.GetInst().UID)
+                            {
+                                switch (pkLR.lockNumber)
+                                {
+                                    case 1:
+                                        cbDice1.Checked = pkLR.isLock;
+                                        break;
+                                    case 2:
+                                        cbDice2.Checked = pkLR.isLock;
+                                        break;
+                                    case 3:
+                                        cbDice3.Checked = pkLR.isLock;
+                                        break;
+                                    case 4:
+                                        cbDice4.Checked = pkLR.isLock;
+                                        break;
+                                    case 5:
+                                        cbDice5.Checked = pkLR.isLock;
+                                        break;
+                                }
+                            }
+                        }
+                        break;
+                    case PacketType.Select_Result:
+                        {
+                            SelectResult pkSR = (SelectResult)packet;
+                            if (m_iCurrPlayerID != SocketManager.GetInst().UID)
+                            {
+                                TextBox[] arrTB = null;
+                                switch (m_iCurrPlayerID)
+                                {
+                                    case 0:
+                                        arrTB = m_P1Scores;
+                                        break;
+                                    case 1:
+                                        arrTB = m_P2Scores;
+                                        break;
+                                    case 2:
+                                        arrTB = m_P3Scores;
+                                        break;
+                                    case 3:
+                                        arrTB = m_P4Scores;
+                                        break;
+                                }
+
+                                switch (pkSR.eScoreType)
+                                {
+                                    case ScoreType.ACES:
+                                        arrTB[1].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.DEUCES:
+                                        arrTB[2].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.THREES:
+                                        arrTB[3].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.FOURS:
+                                        arrTB[4].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.FIVES:
+                                        arrTB[5].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.SIXES:
+                                        arrTB[6].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.CHOICE:
+                                        arrTB[9].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.FOUR_OF_KIND:
+                                        arrTB[10].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.FULLHOUSE:
+                                        arrTB[11].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.SMALL_STRAIGHT:
+                                        arrTB[12].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.LARGE_STRAIGHT:
+                                        arrTB[13].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                    case ScoreType.YACHT:
+                                        arrTB[14].Text = Convert.ToString(pkSR.iScore);
+                                        break;
+                                }
+                            }
+
+                            if (SocketManager.GetInst().NickNameList.Count + 1 <= ++m_iCurrPlayerID)
+                            {
+                                m_iCurrPlayerID = 0;
+                                UpdateRound();
+                            }
+
+                            Reset();
+                        }
+                        break;
+                    case PacketType.GameOver_Result:
+                        break;
+                    case PacketType.Disconnect:
+                        break;
+                }
+            }
+        }
+
         // 플레이 턴이 들어왔을 때 초기상태로 되돌림
         public void Reset()
         {
-            m_iRollCount = 3;
-            btnRoll.Enabled = true;
 
-            cbDice1.Enabled = false;
-            cbDice2.Enabled = false;
-            cbDice3.Enabled = false;
-            cbDice4.Enabled = false;
-            cbDice5.Enabled = false;
+            int iPlayerCount = SocketManager.GetInst().NickNameList.Count;
+            UpdateTotalScore(m_P1Scores);
+            if (2 <= iPlayerCount)
+            {
+                UpdateTotalScore(m_P2Scores);
+                if (3 <= iPlayerCount)
+                {
+                    UpdateTotalScore(m_P3Scores);
+                    if (4 == iPlayerCount)
+                    {
+                        UpdateTotalScore(m_P4Scores);
+                    }
+                }
+            }
+
+            m_iRollCount = 3;
+
+            if(m_iCurrPlayerID == SocketManager.GetInst().UID)
+            {
+                btnRoll.Enabled = true;
+                cbDice1.Enabled = false;
+                cbDice2.Enabled = false;
+                cbDice3.Enabled = false;
+                cbDice4.Enabled = false;
+                cbDice5.Enabled = false;
+            }
 
             cbDice1.Checked = false;
             cbDice2.Checked = false;
@@ -211,42 +379,30 @@ namespace Client
             btnRoll.Enabled = false;
             m_iRollCount = 3;
             RollDisplay.Text = m_iRollCount.ToString();
+        }
 
+        private void UpdateTotalScore(TextBox[] _arrTB)
+        {
             // Score Text 클리어
-            ClearText(txtAcesScore1);
-            ClearText(txtDeucesScore1);
-            ClearText(txtThreesScore1);
-            ClearText(txtFoursScore1);
-            ClearText(txtFivesScore1);
-            ClearText(txtSixesScore1);
-
-            ClearText(txtChoiceScore1);
-            ClearText(txt4KindScore1);
-            ClearText(txtFHScore1);
-            ClearText(txtSSScore1);
-            ClearText(txtLSScore1);
-            ClearText(txtYachtScore1);
+            foreach (TextBox item in _arrTB)
+            {
+                ClearText(item);
+            }
 
             // SubScore 갱신
-            int iSubScore = TextToScore(txtAcesScore1) + TextToScore(txtDeucesScore1) + TextToScore(txtThreesScore1)
-                            + TextToScore(txtFoursScore1) + TextToScore(txtFivesScore1) + TextToScore(txtSixesScore1);
+            int iSubScore = TextToScore(_arrTB[1]) + TextToScore(_arrTB[2]) + TextToScore(_arrTB[3])
+                            + TextToScore(_arrTB[4]) + TextToScore(_arrTB[5]) + TextToScore(_arrTB[6]);
 
-            txtSubtotalScore1.Text = iSubScore.ToString() + " / 63";
+            _arrTB[7].Text = iSubScore.ToString() + " / 63";
 
             if (63 <= iSubScore)
-                txtBonusAble1.Text = "v";
+                _arrTB[8].Text = "v";
 
             // TotalScore 갱신
-            int iTotalScore = iSubScore + TextToScore(txtChoiceScore1) + TextToScore(txt4KindScore1) + TextToScore(txtFHScore1)
-                                + TextToScore(txtSSScore1) + TextToScore(txtLSScore1) + TextToScore(txtYachtScore1);
+            int iTotalScore = iSubScore + TextToScore(_arrTB[9]) + TextToScore(_arrTB[10]) + TextToScore(_arrTB[11])
+                                + TextToScore(_arrTB[12]) + TextToScore(_arrTB[13]) + TextToScore(_arrTB[14]);
 
-            txtTotalScore1.Text = iTotalScore.ToString();
-
-            if (YACTH_MODE.SINGLE == m_eMode)
-            {
-                Reset();
-                UpdateRound();
-            }
+            _arrTB[15].Text = iTotalScore.ToString();
         }
 
         public void UpdateRound()
@@ -284,15 +440,6 @@ namespace Client
         // 주사위가 굴려진후 입력 방지 해제
         private void UnlockRolling()
         {
-            //3번 누르지 않았으면 활성화
-            if (0 < --m_iRollCount)
-            {
-                btnRoll.Enabled = true;
-            }
-            RollDisplay.Text = m_iRollCount.ToString();
-
-            // 앞으로 Roll할 수 있는 횟수 표시
-
             cbDice1.Enabled = true;
             cbDice2.Enabled = true;
             cbDice3.Enabled = true;
@@ -300,57 +447,134 @@ namespace Client
             cbDice5.Enabled = true;
         }
 
+        // 현재 턴인 플레이어만 누를수 있음
         private void btnRoll_Click(object sender, EventArgs e)
         {
             LockRolling();
 
-            // 이미지 연속 출력 연출 위한 타이머
-            Timer timer = new Timer();
-            timer.Interval = 100;
-            int ncount = 0;
-
-            // 이미지 출력
-            void Timer_Tick(object ss, EventArgs ee)
+            //3번 누르지 않았으면 활성화
+            if (0 < --m_iRollCount)
             {
-                Random random = new Random(DateTime.Now.Millisecond);
+                btnRoll.Enabled = true;
+            }
 
-                if (false == cbDice1.Checked)
-                {
-                    m_arrDices[0] = random.Next(1, 7);
-                    pbDice1.Image = m_images[m_arrDices[0] - 1];
-                }
-                if (false == cbDice2.Checked)
-                {
-                    m_arrDices[1] = random.Next(1, 7);
-                    pbDice2.Image = m_images[m_arrDices[1] - 1];
-                }
-                if (false == cbDice3.Checked)
-                {
-                    m_arrDices[2] = random.Next(1, 7);
-                    pbDice3.Image = m_images[m_arrDices[2] - 1];
-                }
-                if (false == cbDice4.Checked)
-                {
-                    m_arrDices[3] = random.Next(1, 7);
-                    pbDice4.Image = m_images[m_arrDices[3] - 1];
-                }
-                if (false == cbDice5.Checked)
-                {
-                    m_arrDices[4] = random.Next(1, 7);
-                    pbDice5.Image = m_images[m_arrDices[4] - 1];
-                }
+            // 패킷 전송
+            byte[] buff = new byte[1024 * 4];
+            RollStart pkRollStart = new RollStart();
+            pkRollStart.remainRollCount = m_iRollCount;
+            Packet.Serialize(pkRollStart).CopyTo(buff, 0);
+            SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
+            SocketManager.GetInst().Stream.Flush();
 
-                ncount++;
+            bool bRollEnd = RollDiceImage(false);
 
-                if (ncount == 6)
+            if(true == bRollEnd)
+            {
+                buff = new byte[1024 * 4];
+                RollEnd pkRollEnd = new RollEnd();
+                pkRollEnd.dice1 = m_arrDices[0];
+                pkRollEnd.dice2 = m_arrDices[1];
+                pkRollEnd.dice3 = m_arrDices[2];
+                pkRollEnd.dice4 = m_arrDices[3];
+                pkRollEnd.dice5 = m_arrDices[4];
+                Packet.Serialize(pkRollEnd).CopyTo(buff, 0);
+                SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
+                SocketManager.GetInst().Stream.Flush();
+            }
+        }
+
+        private void cbLock_CheckChanged(object sender, EventArgs e)
+        {
+            if (m_iCurrPlayerID != SocketManager.GetInst().UID)
+                return;
+
+            CheckBox cbChanged = (CheckBox)sender;
+
+            bool bChecked = cbChanged.Checked;
+
+            int iNum = 0;
+            switch (cbChanged.Text)
+            {
+                case "cbDice1":
+                    iNum = 1;
+                    break;
+                case "cbDice2":
+                    iNum = 2;
+                    break;
+                case "cbDice3":
+                    iNum = 3;
+                    break;
+                case "cbDice4":
+                    iNum = 4;
+                    break;
+                case "cbDice5":
+                    iNum = 5;
+                    break;
+            }
+
+            byte[] buff = new byte[1024 * 4];
+            Lock pkLock = new Lock();
+            pkLock.isLock = bChecked;
+            pkLock.lockNumber = iNum;
+            Packet.Serialize(pkLock).CopyTo(buff, 0);
+            SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
+            SocketManager.GetInst().Stream.Flush();
+        }
+
+
+        private bool RollDiceImage(bool _bWait)
+        {
+            // 이미지 연속 출력 연출 위한 타이머
+            m_iRollRandomCount = 0;
+
+            tmrRoll.Start();
+
+            if(false == _bWait)
+            {
+                while(true)
                 {
-                    timer.Stop();
-                    UpdateScore();
+                    if (6 <= m_iRollRandomCount)
+                    {
+                        return true;
+                    }
                 }
             }
 
-            timer.Tick += Timer_Tick;
-            timer.Start();
+            return false;
+        }
+
+        // 이미지 출력
+        void Timer_Tick(object ss, EventArgs ee)
+        {
+            Random random = new Random(DateTime.Now.Millisecond);
+
+            if (false == cbDice1.Checked)
+            {
+                m_arrDices[0] = random.Next(1, 7);
+                pbDice1.Image = m_images[m_arrDices[0] - 1];
+            }
+            if (false == cbDice2.Checked)
+            {
+                m_arrDices[1] = random.Next(1, 7);
+                pbDice2.Image = m_images[m_arrDices[1] - 1];
+            }
+            if (false == cbDice3.Checked)
+            {
+                m_arrDices[2] = random.Next(1, 7);
+                pbDice3.Image = m_images[m_arrDices[2] - 1];
+            }
+            if (false == cbDice4.Checked)
+            {
+                m_arrDices[3] = random.Next(1, 7);
+                pbDice4.Image = m_images[m_arrDices[3] - 1];
+            }
+            if (false == cbDice5.Checked)
+            {
+                m_arrDices[4] = random.Next(1, 7);
+                pbDice5.Image = m_images[m_arrDices[4] - 1];
+            }
+
+            m_iRollRandomCount++;
         }
 
         private void UpdateScoreText(TextBox _TextBox, string _strText)
@@ -361,7 +585,7 @@ namespace Client
             _TextBox.Text = _strText;
         }
 
-        private void UpdateScore()
+        private void UpdateScore(TextBox[] _arrTexBox)
         {
             UnlockRolling();
             const int iDice = 6;
@@ -388,25 +612,34 @@ namespace Client
                 iTotal += num;
             }
 
-            UpdateScoreText(txtAcesScore1, (arrNumCount[0] * 1).ToString());
-            UpdateScoreText(txtDeucesScore1, (arrNumCount[1] * 2).ToString());
-            UpdateScoreText(txtThreesScore1, (arrNumCount[2] * 3).ToString());
-            UpdateScoreText(txtFoursScore1, (arrNumCount[3] * 4).ToString());
-            UpdateScoreText(txtFivesScore1, (arrNumCount[4] * 5).ToString());
-            UpdateScoreText(txtSixesScore1, (arrNumCount[5] * 6).ToString());
+            //txtSubtotalScore1,: 7
+            //txtBonusAble1,    : 8
+            //txtTotalScore1};  : 15
+
+            // Aces 갱신
+            UpdateScoreText(_arrTexBox[1], (arrNumCount[0] * 1).ToString());
+            // Dueces 갱신
+            UpdateScoreText(_arrTexBox[2], (arrNumCount[1] * 2).ToString());
+            // Threes 갱신
+            UpdateScoreText(_arrTexBox[3], (arrNumCount[2] * 3).ToString());
+            // Fours 갱신
+            UpdateScoreText(_arrTexBox[4], (arrNumCount[3] * 4).ToString());
+            // Fives 갱신
+            UpdateScoreText(_arrTexBox[5], (arrNumCount[4] * 5).ToString());
+            // Sixes 갱신
+            UpdateScoreText(_arrTexBox[6], (arrNumCount[5] * 6).ToString());
 
             // 족보 점수 갱신
 
             // Choice
-            UpdateScoreText(txtChoiceScore1, iTotal.ToString());
-
-            UpdateScoreText(txt4KindScore1, Convert.ToString(0));
+            UpdateScoreText(_arrTexBox[9], iTotal.ToString());
 
             // 4 of a Kind
+            UpdateScoreText(_arrTexBox[10], Convert.ToString(0));
             for (int i = 0; i < iDice; i++)
             {
                 if (4 <= arrNumCount[i])
-                    UpdateScoreText(txt4KindScore1, iTotal.ToString());
+                    UpdateScoreText(_arrTexBox[10], iTotal.ToString());
             }
 
             // Full House
@@ -427,17 +660,17 @@ namespace Client
                 }
 
                 if (0 <= iTwoDice)
-                    UpdateScoreText(txtFHScore1, iTotal.ToString());
+                    UpdateScoreText(_arrTexBox[11], iTotal.ToString());
                 else
-                    UpdateScoreText(txtFHScore1, Convert.ToString(0));
+                    UpdateScoreText(_arrTexBox[11], Convert.ToString(0));
             }
             else
             {
-                UpdateScoreText(txtFHScore1, Convert.ToString(0));
+                UpdateScoreText(_arrTexBox[11], Convert.ToString(0));
             }
 
             // Small Straight
-            UpdateScoreText(txtSSScore1, Convert.ToString(0));
+            UpdateScoreText(_arrTexBox[12], Convert.ToString(0));
             int iSmallOne = -1;
 
             for (int i = 0; i < iDice; i++)
@@ -460,21 +693,21 @@ namespace Client
             }
 
             if (4 <= iStraightCount)
-                UpdateScoreText(txtSSScore1, Convert.ToString(15));
+                UpdateScoreText(_arrTexBox[12], Convert.ToString(15));
 
             // Large Straight
-            UpdateScoreText(txtLSScore1, Convert.ToString(0));
+            UpdateScoreText(_arrTexBox[13], Convert.ToString(0));
 
             if (5 == iStraightCount)
-                UpdateScoreText(txtLSScore1, Convert.ToString(30));
+                UpdateScoreText(_arrTexBox[13], Convert.ToString(30));
 
             // Yacht
-            UpdateScoreText(txtYachtScore1, Convert.ToString(0));
+            UpdateScoreText(_arrTexBox[14], Convert.ToString(0));
             foreach (int num in arrNumCount)
             {
                 if (5 == num)
                 {
-                    UpdateScoreText(txtYachtScore1, Convert.ToString(50));
+                    UpdateScoreText(_arrTexBox[14], Convert.ToString(50));
                     break;
                 }
             }
@@ -482,6 +715,9 @@ namespace Client
 
         private void Score_DoubleClick(object sender, EventArgs e)
         {
+            if (m_iCurrPlayerID != SocketManager.GetInst().UID)
+                return;
+
             TextBox tbScore = (TextBox)sender;
 
             if (false == tbScore.Enabled || string.Empty == tbScore.Text)
@@ -492,6 +728,68 @@ namespace Client
                 if (0 < m_iRollCount)
                     return;
             }
+
+            // 패킷 전송
+            byte[] buff = new byte[1024 * 4];
+            Select pkSelect = new Select();
+
+            if(tbScore.Text.Contains("txtAcesScore"))
+            {
+                pkSelect.eScoreType = ScoreType.ACES;
+            }
+            else if(tbScore.Text.Contains("txtDeucesScore"))
+            {
+                pkSelect.eScoreType = ScoreType.DEUCES;
+            }
+            else if (tbScore.Text.Contains("txtThreesScore"))
+            {
+                pkSelect.eScoreType = ScoreType.THREES;
+            }
+            else if (tbScore.Text.Contains("txtFoursScore"))
+            {
+                pkSelect.eScoreType = ScoreType.FOURS;
+            }
+            else if (tbScore.Text.Contains("txtFivesScore"))
+            {
+                pkSelect.eScoreType = ScoreType.FIVES;
+            }
+            else if (tbScore.Text.Contains("txtSixesScore"))
+            {
+                pkSelect.eScoreType = ScoreType.SIXES;
+            }
+            else if (tbScore.Text.Contains("txtChoiceScore"))
+            {
+                pkSelect.eScoreType = ScoreType.CHOICE;
+            }
+            else if (tbScore.Text.Contains("txt4KindScore"))
+            {
+                pkSelect.eScoreType = ScoreType.FOUR_OF_KIND;
+            }
+            else if (tbScore.Text.Contains("txtAcesScore"))
+            {
+                pkSelect.eScoreType = ScoreType.ACES;
+            }
+            else if (tbScore.Text.Contains("txtFHScore"))
+            {
+                pkSelect.eScoreType = ScoreType.FULLHOUSE;
+            }
+            else if (tbScore.Text.Contains("txtSSScore"))
+            {
+                pkSelect.eScoreType = ScoreType.SMALL_STRAIGHT;
+            }
+            else if (tbScore.Text.Contains("txtSSScore"))
+            {
+                pkSelect.eScoreType = ScoreType.LARGE_STRAIGHT;
+            }
+            else if (tbScore.Text.Contains("txtYachtScore"))
+            {
+                pkSelect.eScoreType = ScoreType.SMALL_STRAIGHT;
+            }
+
+            pkSelect.iScore = Convert.ToInt32(tbScore.Text);
+            Packet.Serialize(pkSelect).CopyTo(buff, 0);
+            SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
+            SocketManager.GetInst().Stream.Flush();
 
             tbScore.Enabled = false;
             TurnEnd();

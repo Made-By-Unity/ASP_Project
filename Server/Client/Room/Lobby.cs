@@ -23,8 +23,8 @@ namespace Client.Room
         {
             InitializeComponent();
 
-            // 1번 플레이어(방장) 시 시작 버튼 활성화
-            if(1 == SocketManager.GetInst().UID)
+            // 0번 플레이어(방장) 시 시작 버튼 활성화
+            if(0 == SocketManager.GetInst().UID)
             {
                 btnGameStart.Enabled = true;
             }
