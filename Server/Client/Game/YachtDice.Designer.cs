@@ -336,7 +336,6 @@
             // 
             this.txtBonusAble1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBonusAble1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtBonusAble1.Enabled = false;
             this.txtBonusAble1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtBonusAble1.Location = new System.Drawing.Point(406, 273);
             this.txtBonusAble1.Name = "txtBonusAble1";
@@ -349,7 +348,6 @@
             // 
             this.txtSubtotalScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSubtotalScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSubtotalScore1.Enabled = false;
             this.txtSubtotalScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSubtotalScore1.Location = new System.Drawing.Point(406, 241);
             this.txtSubtotalScore1.Name = "txtSubtotalScore1";
@@ -363,7 +361,6 @@
             // 
             this.txtSixesScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSixesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSixesScore1.Enabled = false;
             this.txtSixesScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSixesScore1.Location = new System.Drawing.Point(406, 209);
             this.txtSixesScore1.Name = "txtSixesScore1";
@@ -377,7 +374,6 @@
             // 
             this.txtFivesScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFivesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFivesScore1.Enabled = false;
             this.txtFivesScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFivesScore1.Location = new System.Drawing.Point(406, 177);
             this.txtFivesScore1.Name = "txtFivesScore1";
@@ -391,7 +387,6 @@
             // 
             this.txtFoursScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFoursScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFoursScore1.Enabled = false;
             this.txtFoursScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFoursScore1.Location = new System.Drawing.Point(406, 145);
             this.txtFoursScore1.Name = "txtFoursScore1";
@@ -405,7 +400,6 @@
             // 
             this.txtThreesScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtThreesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtThreesScore1.Enabled = false;
             this.txtThreesScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtThreesScore1.Location = new System.Drawing.Point(406, 113);
             this.txtThreesScore1.Name = "txtThreesScore1";
@@ -419,7 +413,6 @@
             // 
             this.txtDeucesScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeucesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtDeucesScore1.Enabled = false;
             this.txtDeucesScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtDeucesScore1.Location = new System.Drawing.Point(406, 81);
             this.txtDeucesScore1.Name = "txtDeucesScore1";
@@ -434,7 +427,6 @@
             this.txtAcesScore1.BackColor = System.Drawing.SystemColors.Control;
             this.txtAcesScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAcesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtAcesScore1.Enabled = false;
             this.txtAcesScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtAcesScore1.Location = new System.Drawing.Point(406, 49);
             this.txtAcesScore1.Name = "txtAcesScore1";
@@ -461,7 +453,6 @@
             // 
             this.txtTotalScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtTotalScore1.Enabled = false;
             this.txtTotalScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtTotalScore1.Location = new System.Drawing.Point(406, 510);
             this.txtTotalScore1.Name = "txtTotalScore1";
@@ -474,7 +465,6 @@
             // 
             this.txtYachtScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYachtScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtYachtScore1.Enabled = false;
             this.txtYachtScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtYachtScore1.Location = new System.Drawing.Point(406, 478);
             this.txtYachtScore1.Name = "txtYachtScore1";
@@ -488,7 +478,6 @@
             // 
             this.txtLSScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLSScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtLSScore1.Enabled = false;
             this.txtLSScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtLSScore1.Location = new System.Drawing.Point(406, 446);
             this.txtLSScore1.Name = "txtLSScore1";
@@ -502,7 +491,6 @@
             // 
             this.txtSSScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSSScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSSScore1.Enabled = false;
             this.txtSSScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSSScore1.Location = new System.Drawing.Point(406, 414);
             this.txtSSScore1.Name = "txtSSScore1";
@@ -516,7 +504,6 @@
             // 
             this.txtFHScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFHScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFHScore1.Enabled = false;
             this.txtFHScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFHScore1.Location = new System.Drawing.Point(406, 382);
             this.txtFHScore1.Name = "txtFHScore1";
@@ -530,7 +517,6 @@
             // 
             this.txt4KindScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt4KindScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txt4KindScore1.Enabled = false;
             this.txt4KindScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txt4KindScore1.Location = new System.Drawing.Point(406, 350);
             this.txt4KindScore1.Name = "txt4KindScore1";
@@ -544,7 +530,6 @@
             // 
             this.txtChoiceScore1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChoiceScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtChoiceScore1.Enabled = false;
             this.txtChoiceScore1.Font = new System.Drawing.Font("굴림", 12F);
             this.txtChoiceScore1.Location = new System.Drawing.Point(406, 318);
             this.txtChoiceScore1.Name = "txtChoiceScore1";
@@ -641,6 +626,7 @@
             // cbDice1
             // 
             this.cbDice1.AutoSize = true;
+            this.cbDice1.Enabled = false;
             this.cbDice1.Location = new System.Drawing.Point(143, 61);
             this.cbDice1.Name = "cbDice1";
             this.cbDice1.Size = new System.Drawing.Size(51, 16);
@@ -652,6 +638,7 @@
             // cbDice2
             // 
             this.cbDice2.AutoSize = true;
+            this.cbDice2.Enabled = false;
             this.cbDice2.Location = new System.Drawing.Point(143, 153);
             this.cbDice2.Name = "cbDice2";
             this.cbDice2.Size = new System.Drawing.Size(51, 16);
@@ -663,6 +650,7 @@
             // cbDice3
             // 
             this.cbDice3.AutoSize = true;
+            this.cbDice3.Enabled = false;
             this.cbDice3.Location = new System.Drawing.Point(143, 245);
             this.cbDice3.Name = "cbDice3";
             this.cbDice3.Size = new System.Drawing.Size(51, 16);
@@ -674,6 +662,7 @@
             // cbDice4
             // 
             this.cbDice4.AutoSize = true;
+            this.cbDice4.Enabled = false;
             this.cbDice4.Location = new System.Drawing.Point(143, 337);
             this.cbDice4.Name = "cbDice4";
             this.cbDice4.Size = new System.Drawing.Size(51, 16);
@@ -685,6 +674,7 @@
             // cbDice5
             // 
             this.cbDice5.AutoSize = true;
+            this.cbDice5.Enabled = false;
             this.cbDice5.Location = new System.Drawing.Point(143, 429);
             this.cbDice5.Name = "cbDice5";
             this.cbDice5.Size = new System.Drawing.Size(51, 16);
@@ -697,7 +687,6 @@
             // 
             this.txtTotalScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtTotalScore2.Enabled = false;
             this.txtTotalScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtTotalScore2.Location = new System.Drawing.Point(502, 510);
             this.txtTotalScore2.Name = "txtTotalScore2";
@@ -711,7 +700,6 @@
             // 
             this.txtYachtScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYachtScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtYachtScore2.Enabled = false;
             this.txtYachtScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtYachtScore2.Location = new System.Drawing.Point(502, 478);
             this.txtYachtScore2.Name = "txtYachtScore2";
@@ -725,7 +713,6 @@
             // 
             this.txtLSScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLSScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtLSScore2.Enabled = false;
             this.txtLSScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtLSScore2.Location = new System.Drawing.Point(502, 446);
             this.txtLSScore2.Name = "txtLSScore2";
@@ -739,7 +726,6 @@
             // 
             this.txtSSScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSSScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSSScore2.Enabled = false;
             this.txtSSScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSSScore2.Location = new System.Drawing.Point(502, 414);
             this.txtSSScore2.Name = "txtSSScore2";
@@ -753,7 +739,6 @@
             // 
             this.txtFHScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFHScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFHScore2.Enabled = false;
             this.txtFHScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFHScore2.Location = new System.Drawing.Point(502, 382);
             this.txtFHScore2.Name = "txtFHScore2";
@@ -767,7 +752,6 @@
             // 
             this.txt4KindScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt4KindScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txt4KindScore2.Enabled = false;
             this.txt4KindScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txt4KindScore2.Location = new System.Drawing.Point(502, 350);
             this.txt4KindScore2.Name = "txt4KindScore2";
@@ -781,7 +765,6 @@
             // 
             this.txtChoiceScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChoiceScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtChoiceScore2.Enabled = false;
             this.txtChoiceScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtChoiceScore2.Location = new System.Drawing.Point(502, 318);
             this.txtChoiceScore2.Name = "txtChoiceScore2";
@@ -795,7 +778,6 @@
             // 
             this.txtBonusAble2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBonusAble2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtBonusAble2.Enabled = false;
             this.txtBonusAble2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtBonusAble2.Location = new System.Drawing.Point(502, 273);
             this.txtBonusAble2.Name = "txtBonusAble2";
@@ -809,7 +791,6 @@
             // 
             this.txtSubtotalScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSubtotalScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSubtotalScore2.Enabled = false;
             this.txtSubtotalScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSubtotalScore2.Location = new System.Drawing.Point(502, 241);
             this.txtSubtotalScore2.Name = "txtSubtotalScore2";
@@ -824,7 +805,6 @@
             // 
             this.txtSixesScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSixesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSixesScore2.Enabled = false;
             this.txtSixesScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSixesScore2.Location = new System.Drawing.Point(502, 209);
             this.txtSixesScore2.Name = "txtSixesScore2";
@@ -838,7 +818,6 @@
             // 
             this.txtFivesScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFivesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFivesScore2.Enabled = false;
             this.txtFivesScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFivesScore2.Location = new System.Drawing.Point(502, 177);
             this.txtFivesScore2.Name = "txtFivesScore2";
@@ -852,7 +831,6 @@
             // 
             this.txtFoursScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFoursScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFoursScore2.Enabled = false;
             this.txtFoursScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFoursScore2.Location = new System.Drawing.Point(502, 145);
             this.txtFoursScore2.Name = "txtFoursScore2";
@@ -866,7 +844,6 @@
             // 
             this.txtThreesScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtThreesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtThreesScore2.Enabled = false;
             this.txtThreesScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtThreesScore2.Location = new System.Drawing.Point(502, 113);
             this.txtThreesScore2.Name = "txtThreesScore2";
@@ -880,7 +857,6 @@
             // 
             this.txtDeucesScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeucesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtDeucesScore2.Enabled = false;
             this.txtDeucesScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtDeucesScore2.Location = new System.Drawing.Point(502, 81);
             this.txtDeucesScore2.Name = "txtDeucesScore2";
@@ -895,7 +871,6 @@
             this.txtAcesScore2.BackColor = System.Drawing.SystemColors.Control;
             this.txtAcesScore2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAcesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtAcesScore2.Enabled = false;
             this.txtAcesScore2.Font = new System.Drawing.Font("굴림", 12F);
             this.txtAcesScore2.Location = new System.Drawing.Point(502, 49);
             this.txtAcesScore2.Name = "txtAcesScore2";
@@ -923,7 +898,6 @@
             // 
             this.txtTotalScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtTotalScore3.Enabled = false;
             this.txtTotalScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtTotalScore3.Location = new System.Drawing.Point(599, 510);
             this.txtTotalScore3.Name = "txtTotalScore3";
@@ -937,7 +911,6 @@
             // 
             this.txtYachtScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYachtScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtYachtScore3.Enabled = false;
             this.txtYachtScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtYachtScore3.Location = new System.Drawing.Point(599, 478);
             this.txtYachtScore3.Name = "txtYachtScore3";
@@ -951,7 +924,6 @@
             // 
             this.txtLSScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLSScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtLSScore3.Enabled = false;
             this.txtLSScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtLSScore3.Location = new System.Drawing.Point(599, 446);
             this.txtLSScore3.Name = "txtLSScore3";
@@ -965,7 +937,6 @@
             // 
             this.txtSSScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSSScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSSScore3.Enabled = false;
             this.txtSSScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSSScore3.Location = new System.Drawing.Point(599, 414);
             this.txtSSScore3.Name = "txtSSScore3";
@@ -979,7 +950,6 @@
             // 
             this.txtFHScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFHScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFHScore3.Enabled = false;
             this.txtFHScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFHScore3.Location = new System.Drawing.Point(599, 382);
             this.txtFHScore3.Name = "txtFHScore3";
@@ -993,7 +963,6 @@
             // 
             this.txt4KindScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt4KindScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txt4KindScore3.Enabled = false;
             this.txt4KindScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txt4KindScore3.Location = new System.Drawing.Point(599, 350);
             this.txt4KindScore3.Name = "txt4KindScore3";
@@ -1007,7 +976,6 @@
             // 
             this.txtChoiceScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChoiceScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtChoiceScore3.Enabled = false;
             this.txtChoiceScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtChoiceScore3.Location = new System.Drawing.Point(599, 318);
             this.txtChoiceScore3.Name = "txtChoiceScore3";
@@ -1021,7 +989,6 @@
             // 
             this.txtBonusAble3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBonusAble3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtBonusAble3.Enabled = false;
             this.txtBonusAble3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtBonusAble3.Location = new System.Drawing.Point(599, 273);
             this.txtBonusAble3.Name = "txtBonusAble3";
@@ -1035,7 +1002,6 @@
             // 
             this.txtSubtotalScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSubtotalScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSubtotalScore3.Enabled = false;
             this.txtSubtotalScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSubtotalScore3.Location = new System.Drawing.Point(599, 241);
             this.txtSubtotalScore3.Name = "txtSubtotalScore3";
@@ -1050,7 +1016,6 @@
             // 
             this.txtSixesScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSixesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSixesScore3.Enabled = false;
             this.txtSixesScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSixesScore3.Location = new System.Drawing.Point(599, 209);
             this.txtSixesScore3.Name = "txtSixesScore3";
@@ -1064,7 +1029,6 @@
             // 
             this.txtFivesScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFivesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFivesScore3.Enabled = false;
             this.txtFivesScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFivesScore3.Location = new System.Drawing.Point(599, 177);
             this.txtFivesScore3.Name = "txtFivesScore3";
@@ -1078,7 +1042,6 @@
             // 
             this.txtFoursScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFoursScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFoursScore3.Enabled = false;
             this.txtFoursScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFoursScore3.Location = new System.Drawing.Point(599, 145);
             this.txtFoursScore3.Name = "txtFoursScore3";
@@ -1092,7 +1055,6 @@
             // 
             this.txtThreesScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtThreesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtThreesScore3.Enabled = false;
             this.txtThreesScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtThreesScore3.Location = new System.Drawing.Point(599, 113);
             this.txtThreesScore3.Name = "txtThreesScore3";
@@ -1106,7 +1068,6 @@
             // 
             this.txtDeucesScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeucesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtDeucesScore3.Enabled = false;
             this.txtDeucesScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtDeucesScore3.Location = new System.Drawing.Point(599, 81);
             this.txtDeucesScore3.Name = "txtDeucesScore3";
@@ -1121,7 +1082,6 @@
             this.txtAcesScore3.BackColor = System.Drawing.SystemColors.Control;
             this.txtAcesScore3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAcesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtAcesScore3.Enabled = false;
             this.txtAcesScore3.Font = new System.Drawing.Font("굴림", 12F);
             this.txtAcesScore3.Location = new System.Drawing.Point(599, 49);
             this.txtAcesScore3.Name = "txtAcesScore3";
@@ -1149,7 +1109,6 @@
             // 
             this.txtTotalScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtTotalScore4.Enabled = false;
             this.txtTotalScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtTotalScore4.Location = new System.Drawing.Point(695, 510);
             this.txtTotalScore4.Name = "txtTotalScore4";
@@ -1163,7 +1122,6 @@
             // 
             this.txtYachtScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYachtScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtYachtScore4.Enabled = false;
             this.txtYachtScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtYachtScore4.Location = new System.Drawing.Point(695, 478);
             this.txtYachtScore4.Name = "txtYachtScore4";
@@ -1177,7 +1135,6 @@
             // 
             this.txtLSScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLSScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtLSScore4.Enabled = false;
             this.txtLSScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtLSScore4.Location = new System.Drawing.Point(695, 446);
             this.txtLSScore4.Name = "txtLSScore4";
@@ -1191,7 +1148,6 @@
             // 
             this.txtSSScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSSScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSSScore4.Enabled = false;
             this.txtSSScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSSScore4.Location = new System.Drawing.Point(695, 414);
             this.txtSSScore4.Name = "txtSSScore4";
@@ -1205,7 +1161,6 @@
             // 
             this.txtFHScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFHScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFHScore4.Enabled = false;
             this.txtFHScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFHScore4.Location = new System.Drawing.Point(695, 382);
             this.txtFHScore4.Name = "txtFHScore4";
@@ -1219,7 +1174,6 @@
             // 
             this.txt4KindScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt4KindScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txt4KindScore4.Enabled = false;
             this.txt4KindScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txt4KindScore4.Location = new System.Drawing.Point(695, 350);
             this.txt4KindScore4.Name = "txt4KindScore4";
@@ -1233,7 +1187,6 @@
             // 
             this.txtChoiceScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChoiceScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtChoiceScore4.Enabled = false;
             this.txtChoiceScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtChoiceScore4.Location = new System.Drawing.Point(695, 318);
             this.txtChoiceScore4.Name = "txtChoiceScore4";
@@ -1247,7 +1200,6 @@
             // 
             this.txtBonusAble4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBonusAble4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtBonusAble4.Enabled = false;
             this.txtBonusAble4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtBonusAble4.Location = new System.Drawing.Point(695, 273);
             this.txtBonusAble4.Name = "txtBonusAble4";
@@ -1261,7 +1213,6 @@
             // 
             this.txtSubtotalScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSubtotalScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSubtotalScore4.Enabled = false;
             this.txtSubtotalScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSubtotalScore4.Location = new System.Drawing.Point(695, 241);
             this.txtSubtotalScore4.Name = "txtSubtotalScore4";
@@ -1276,7 +1227,6 @@
             // 
             this.txtSixesScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSixesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSixesScore4.Enabled = false;
             this.txtSixesScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtSixesScore4.Location = new System.Drawing.Point(695, 209);
             this.txtSixesScore4.Name = "txtSixesScore4";
@@ -1290,7 +1240,6 @@
             // 
             this.txtFivesScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFivesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFivesScore4.Enabled = false;
             this.txtFivesScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFivesScore4.Location = new System.Drawing.Point(695, 177);
             this.txtFivesScore4.Name = "txtFivesScore4";
@@ -1304,7 +1253,6 @@
             // 
             this.txtFoursScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFoursScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtFoursScore4.Enabled = false;
             this.txtFoursScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtFoursScore4.Location = new System.Drawing.Point(695, 145);
             this.txtFoursScore4.Name = "txtFoursScore4";
@@ -1318,7 +1266,6 @@
             // 
             this.txtThreesScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtThreesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtThreesScore4.Enabled = false;
             this.txtThreesScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtThreesScore4.Location = new System.Drawing.Point(695, 113);
             this.txtThreesScore4.Name = "txtThreesScore4";
@@ -1332,7 +1279,6 @@
             // 
             this.txtDeucesScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDeucesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtDeucesScore4.Enabled = false;
             this.txtDeucesScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtDeucesScore4.Location = new System.Drawing.Point(695, 81);
             this.txtDeucesScore4.Name = "txtDeucesScore4";
@@ -1347,7 +1293,6 @@
             this.txtAcesScore4.BackColor = System.Drawing.SystemColors.Control;
             this.txtAcesScore4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAcesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtAcesScore4.Enabled = false;
             this.txtAcesScore4.Font = new System.Drawing.Font("굴림", 12F);
             this.txtAcesScore4.Location = new System.Drawing.Point(695, 49);
             this.txtAcesScore4.Name = "txtAcesScore4";
@@ -1370,9 +1315,6 @@
             this.txtPlayer4.Text = "Score";
             this.txtPlayer4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPlayer4.Visible = false;
-            // 
-            // tmrRoll
-            // 
             // 
             // YachtDice
             // 

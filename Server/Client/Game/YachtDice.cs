@@ -230,25 +230,25 @@ namespace Client
                                 {
                                     pbDice2.Image = m_images[pkRER.dice2 - 1];
                                 }));
-                                m_arrDices[1] = pkRER.dice1;
+                                m_arrDices[1] = pkRER.dice2;
 
                                 pbDice3.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice3.Image = m_images[pkRER.dice3 - 1];
                                 }));
-                                m_arrDices[2] = pkRER.dice1;
+                                m_arrDices[2] = pkRER.dice3;
 
                                 pbDice4.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice4.Image = m_images[pkRER.dice4 - 1];
                                 }));
-                                m_arrDices[3] = pkRER.dice1;
+                                m_arrDices[3] = pkRER.dice4;
 
                                 pbDice5.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice5.Image = m_images[pkRER.dice5 - 1];
                                 }));
-                                m_arrDices[4] = pkRER.dice1;
+                                m_arrDices[4] = pkRER.dice5;
                             }
 
                             TextBox[] arrTB = null;
@@ -317,45 +317,52 @@ namespace Client
                                         break;
                                 }
 
+                                TextBox tbSelected = null;
                                 switch (pkSR.eScoreType)
                                 {
                                     case ScoreType.ACES:
-                                        arrTB[1].Invoke(new Action(() => arrTB[1].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[1];
                                         break;
                                     case ScoreType.DEUCES:
-                                        arrTB[2].Invoke(new Action(() => arrTB[2].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[2];
                                         break;
                                     case ScoreType.THREES:
-                                        arrTB[3].Invoke(new Action(() => arrTB[3].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[3];
                                         break;
                                     case ScoreType.FOURS:
-                                        arrTB[4].Invoke(new Action(() => arrTB[4].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[4];
                                         break;
                                     case ScoreType.FIVES:
-                                        arrTB[5].Invoke(new Action(() => arrTB[5].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[5];
                                         break;
                                     case ScoreType.SIXES:
-                                        arrTB[6].Invoke(new Action(() => arrTB[6].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[6];
                                         break;
                                     case ScoreType.CHOICE:
-                                        arrTB[9].Invoke(new Action(() => arrTB[9].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[9];
                                         break;
                                     case ScoreType.FOUR_OF_KIND:
-                                        arrTB[10].Invoke(new Action(() => arrTB[10].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[10];
                                         break;
                                     case ScoreType.FULLHOUSE:
-                                        arrTB[11].Invoke(new Action(() => arrTB[11].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[11];
                                         break;
                                     case ScoreType.SMALL_STRAIGHT:
-                                        arrTB[12].Invoke(new Action(() => arrTB[12].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[12];
                                         break;
                                     case ScoreType.LARGE_STRAIGHT:
-                                        arrTB[13].Invoke(new Action(() => arrTB[13].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[13];
                                         break;
                                     case ScoreType.YACHT:
-                                        arrTB[14].Invoke(new Action(() => arrTB[14].Text = Convert.ToString(pkSR.iScore)));
+                                        tbSelected = arrTB[14];
                                         break;
                                 }
+
+                                tbSelected.Invoke(new Action(() =>
+                                {
+                                    tbSelected.Text = pkSR.iScore.ToString();
+                                    tbSelected.Enabled = false;
+                                }));
                             }
 
                             UpdateScore();
