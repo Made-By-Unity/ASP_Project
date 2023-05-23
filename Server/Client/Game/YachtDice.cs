@@ -20,7 +20,7 @@ namespace Client
         Thread m_tHandler = null;
 
         private int m_iRollCount = 3;
-        private int m_iRound = 11;
+        private int m_iRound = 1;
         private int m_iRollRandomCount = 0;
 
         private int m_iCurrPlayerID = 0;
