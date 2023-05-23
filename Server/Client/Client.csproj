@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game\Knucklebone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game\Knucklebone.Designer.cs">
+      <DependentUpon>Knucklebone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager\SocketManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +73,9 @@
     <Compile Include="Game\YachtDice.Designer.cs">
       <DependentUpon>YachtDice.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Game\Knucklebone.resx">
+      <DependentUpon>Knucklebone.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
