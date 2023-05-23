@@ -16,11 +16,11 @@ namespace Client
 {
     public partial class YachtDice : Form
     {
-        Lobby m_fLobby = null;
+        Lobby m_fLobby;
         Thread m_tHandler = null;
 
         private int m_iRollCount = 3;
-        private int m_iRound = 12;
+        private int m_iRound = 1;
         private int m_iRollRandomCount = 0;
 
         private int m_iCurrPlayerID = 0;
@@ -35,7 +35,10 @@ namespace Client
         TextBox[] m_P3Scores;
         TextBox[] m_P4Scores;
 
-        public Form Lobby { get; set; }
+        public Lobby Lobby { 
+            get { return m_fLobby; } 
+            set { m_fLobby = value; }
+        }
    
         public YachtDice()
         {
@@ -312,57 +315,51 @@ namespace Client
                                 switch (pkSR.eScoreType)
                                 {
                                     case ScoreType.ACES:
-                                        arrTB[1].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[1].Invoke(new Action(() => arrTB[1].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.DEUCES:
-                                        arrTB[2].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[2].Invoke(new Action(() => arrTB[2].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.THREES:
-                                        arrTB[3].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[3].Invoke(new Action(() => arrTB[3].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.FOURS:
-                                        arrTB[4].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[4].Invoke(new Action(() => arrTB[4].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.FIVES:
-                                        arrTB[5].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[5].Invoke(new Action(() => arrTB[5].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.SIXES:
-                                        arrTB[6].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[6].Invoke(new Action(() => arrTB[6].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.CHOICE:
-                                        arrTB[9].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[9].Invoke(new Action(() => arrTB[9].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.FOUR_OF_KIND:
-                                        arrTB[10].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[10].Invoke(new Action(() => arrTB[10].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.FULLHOUSE:
-                                        arrTB[11].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[11].Invoke(new Action(() => arrTB[11].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.SMALL_STRAIGHT:
-                                        arrTB[12].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[12].Invoke(new Action(() => arrTB[12].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.LARGE_STRAIGHT:
-                                        arrTB[13].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[13].Invoke(new Action(() => arrTB[13].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                     case ScoreType.YACHT:
-                                        arrTB[14].Text = Convert.ToString(pkSR.iScore);
+                                        arrTB[14].Invoke(new Action(() => arrTB[14].Text = Convert.ToString(pkSR.iScore)));
                                         break;
                                 }
                             }
 
+                            UpdateScore();
                             if (SocketManager.GetInst().NickNameList.Count <= ++m_iCurrPlayerID)
                             {
                                 m_iCurrPlayerID = 0;
-                                //UpdateRound();
+                                this.Invoke(new Action(() => UpdateRound()));
                             }
-
                             Reset();
-
-                            if (SocketManager.GetInst().NickNameList.Count <= ++m_iCurrPlayerID)
-                            {
-                                UpdateRound();
-                            }
-
                         }
                         break;
                     case PacketType.GameOver_Result:
@@ -372,7 +369,7 @@ namespace Client
                             DialogResult dr = MessageBox.Show(pkGOR.result, "게임 결과", MessageBoxButtons.OK);
                             if (dr == DialogResult.OK)
                             {
-                                BackToLobby();
+                                this.Invoke(new Action(() => BackToLobby()));
                             }
                         }
                         break;
@@ -384,31 +381,17 @@ namespace Client
 
         private void BackToLobby()
         {
-            Thread thread = new Thread(() =>
-            {
-                if(m_fLobby != null)
-                {
-                    m_fLobby.Return();
-                    Application.Run(m_fLobby);
-                }
-            });
-
-            thread.Start();
-
-            while (m_fLobby == null || !m_fLobby.IsHandleCreated || !m_fLobby.Visible)
-            {
-                Thread.Sleep(10);
-            }
-
             this.Invoke(new MethodInvoker(delegate
             {
+                if (m_fLobby != null)
+                    m_fLobby.Show();
+
                 m_tHandler.Abort();
                 this.Close();
             }));
         }
 
-        // 플레이 턴이 들어왔을 때 초기상태로 되돌림
-        public void Reset()
+        private void UpdateScore()
         {
             int iPlayerCount = SocketManager.GetInst().NickNameList.Count;
             UpdateTotalScore(m_P1Scores);
@@ -424,7 +407,11 @@ namespace Client
                     }
                 }
             }
+        }
 
+        // 플레이 턴이 들어왔을 때 초기상태로 되돌림
+        private void Reset()
+        {
             m_iRollCount = 3;
 
             // 자신이 현재 플레이어라면 주사위를 굴릴수 있게 세팅
@@ -538,10 +525,21 @@ namespace Client
             {
                 Dictionary<string, int> dicScore = new Dictionary<string, int>();
 
-                dicScore.Add(txtPlayer1.Text, Convert.ToInt32(txtTotalScore1.Text));
-                dicScore.Add(txtPlayer2.Text, Convert.ToInt32(txtTotalScore2.Text));
-                dicScore.Add(txtPlayer3.Text, Convert.ToInt32(txtTotalScore3.Text));
-                dicScore.Add(txtPlayer4.Text, Convert.ToInt32(txtTotalScore4.Text));
+                int iPlayerCount = SocketManager.GetInst().NickNameList.Count;
+                
+                dicScore.Add(txtPlayer1.Text, Convert.ToInt32(TextToScore(txtTotalScore1)));
+                if (2 <= iPlayerCount)
+                {
+                    dicScore.Add(txtPlayer2.Text, Convert.ToInt32(TextToScore(txtTotalScore2)));
+                    if (3 <= iPlayerCount)
+                    {
+                        dicScore.Add(txtPlayer3.Text, Convert.ToInt32(TextToScore(txtTotalScore3)));
+                        if (4 == iPlayerCount)
+                        {
+                            dicScore.Add(txtPlayer4.Text, Convert.ToInt32(TextToScore(txtTotalScore4)));
+                        }
+                    }
+                }
 
                 dicScore.OrderByDescending(item => item.Value);
 
@@ -582,15 +580,10 @@ namespace Client
 
         private int TextToScore(TextBox _TextBox)
         {
-            if (false == _TextBox.Enabled)
-            {
-                if (_TextBox.Text == String.Empty)
-                    return 0;
+            if (_TextBox.Text == String.Empty)
+                return 0;
 
-                return Int32.Parse(_TextBox.Text);
-            }
-
-            return 0;
+            return Int32.Parse(_TextBox.Text);
         }
 
         // 주사위를 굴리는 도중 입력 방지
