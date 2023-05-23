@@ -673,7 +673,7 @@ namespace Client
             bool bChecked = cbChanged.Checked;
 
             int iNum = 0;
-            switch (cbChanged.Text)
+            switch (cbChanged.Name)
             {
                 case "cbDice1":
                     iNum = 1;
