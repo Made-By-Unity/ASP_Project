@@ -424,31 +424,34 @@ namespace Client
         // 플레이 턴이 들어왔을 때 초기상태로 되돌림
         private void Reset()
         {
+            // 롤카운트 리필
             m_iRollCount = 3;
+            RollDisplay.Invoke(new Action(() => RollDisplay.Text = m_iRollCount.ToString()));
 
             // 자신이 현재 플레이어라면 주사위를 굴릴수 있게 세팅
             if(m_iCurrPlayerID == SocketManager.GetInst().UID)
             {
                 if (btnRoll.InvokeRequired)
                     btnRoll.Invoke(new MethodInvoker(() => { btnRoll.Enabled = true; }));
-                
-                if (cbDice1.InvokeRequired)
-                    cbDice1.Invoke(new MethodInvoker(() => { cbDice1.Enabled = false; }));
-
-                if (cbDice2.InvokeRequired)
-                    cbDice2.Invoke(new MethodInvoker(() => { cbDice2.Enabled = false; }));
-
-                if (cbDice3.InvokeRequired)
-                    cbDice3.Invoke(new MethodInvoker(() => { cbDice3.Enabled = false; }));
-
-                if (cbDice4.InvokeRequired)
-                    cbDice4.Invoke(new MethodInvoker(() => { cbDice4.Enabled = false; }));
-
-                if (cbDice5.InvokeRequired)
-                    cbDice5.Invoke(new MethodInvoker(() => { cbDice5.Enabled = false; }));
             }
 
-            // 다이스 락 상태 해제
+            // 다이스 전부 잠굼
+            if (cbDice1.InvokeRequired)
+                cbDice1.Invoke(new MethodInvoker(() => { cbDice1.Enabled = false; }));
+
+            if (cbDice2.InvokeRequired)
+                cbDice2.Invoke(new MethodInvoker(() => { cbDice2.Enabled = false; }));
+
+            if (cbDice3.InvokeRequired)
+                cbDice3.Invoke(new MethodInvoker(() => { cbDice3.Enabled = false; }));
+
+            if (cbDice4.InvokeRequired)
+                cbDice4.Invoke(new MethodInvoker(() => { cbDice4.Enabled = false; }));
+
+            if (cbDice5.InvokeRequired)
+                cbDice5.Invoke(new MethodInvoker(() => { cbDice5.Enabled = false; }));
+
+            // 다이스 락 체크 조건 초기화
             if (cbDice1.InvokeRequired)
                 cbDice1.Invoke(new MethodInvoker(() => { cbDice1.Checked = false; }));
 
