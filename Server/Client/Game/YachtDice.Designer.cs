@@ -1455,7 +1455,6 @@
             this.Controls.Add(this.pbDice1);
             this.Name = "YachtDice";
             this.Text = "YachtDice";
-            this.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pbDice1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice3)).EndInit();
