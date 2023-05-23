@@ -59,6 +59,7 @@ namespace Client.Room
                     {
                         YachtDice fYacht = new YachtDice();
                         fYacht.Lobby = this;
+                        this.Visible = false;
                         Application.Run(fYacht);
                     }
                 }
@@ -107,8 +108,6 @@ namespace Client.Room
             Packet.Serialize(pkEntry).CopyTo(buff, 0);
             SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
             SocketManager.GetInst().Stream.Flush();
-
-            this.Visible = false;
         }
     }
 }

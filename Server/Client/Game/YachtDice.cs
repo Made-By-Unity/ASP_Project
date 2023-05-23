@@ -224,26 +224,31 @@ namespace Client
                                 {
                                     pbDice1.Image = m_images[pkRER.dice1 - 1];
                                 }));
+                                m_arrDices[0] = pkRER.dice1;
 
                                 pbDice2.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice2.Image = m_images[pkRER.dice2 - 1];
                                 }));
+                                m_arrDices[1] = pkRER.dice1;
 
                                 pbDice3.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice3.Image = m_images[pkRER.dice3 - 1];
                                 }));
+                                m_arrDices[2] = pkRER.dice1;
 
                                 pbDice4.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice4.Image = m_images[pkRER.dice4 - 1];
                                 }));
+                                m_arrDices[3] = pkRER.dice1;
 
                                 pbDice5.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice5.Image = m_images[pkRER.dice5 - 1];
                                 }));
+                                m_arrDices[4] = pkRER.dice1;
                             }
 
                             TextBox[] arrTB = null;
