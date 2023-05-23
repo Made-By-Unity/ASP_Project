@@ -16,10 +16,11 @@ namespace Client
 {
     public partial class YachtDice : Form
     {
-        Thread m_tHandler;
+        Lobby m_fLobby = null;
+        Thread m_tHandler = null;
 
         private int m_iRollCount = 3;
-        private int m_iRound = 1;
+        private int m_iRound = 12;
         private int m_iRollRandomCount = 0;
 
         private int m_iCurrPlayerID = 0;
@@ -33,6 +34,8 @@ namespace Client
         TextBox[] m_P2Scores;
         TextBox[] m_P3Scores;
         TextBox[] m_P4Scores;
+
+        public Form Lobby { get; set; }
    
         public YachtDice()
         {
@@ -178,6 +181,9 @@ namespace Client
             }
 
             Reset();
+
+            if(m_iCurrPlayerID == SocketManager.GetInst().UID)
+                btnRoll.Enabled = true;
         }
 
         private void GetPacket()
@@ -256,24 +262,28 @@ namespace Client
                             LockResult pkLR = (LockResult)packet;
                             if (m_iCurrPlayerID != SocketManager.GetInst().UID)
                             {
+                                CheckBox cbTmp = null;
                                 switch (pkLR.lockNumber)
                                 {
                                     case 1:
-                                        cbDice1.Checked = pkLR.isLock;
+                                        cbTmp = cbDice1;
                                         break;
                                     case 2:
-                                        cbDice2.Checked = pkLR.isLock;
+                                        cbTmp = cbDice2;
                                         break;
                                     case 3:
-                                        cbDice3.Checked = pkLR.isLock;
+                                        cbTmp = cbDice3;
                                         break;
                                     case 4:
-                                        cbDice4.Checked = pkLR.isLock;
+                                        cbTmp = cbDice4;
                                         break;
                                     case 5:
-                                        cbDice5.Checked = pkLR.isLock;
+                                        cbTmp = cbDice5;
                                         break;
                                 }
+
+                                if (cbTmp.InvokeRequired)
+                                    cbTmp.Invoke(new MethodInvoker(() => cbTmp.Checked = pkLR.isLock));
                             }
                         }
                         break;
@@ -340,16 +350,31 @@ namespace Client
                                 }
                             }
 
-                            if (SocketManager.GetInst().NickNameList.Count + 1 <= ++m_iCurrPlayerID)
+                            if (SocketManager.GetInst().NickNameList.Count <= ++m_iCurrPlayerID)
                             {
                                 m_iCurrPlayerID = 0;
-                                UpdateRound();
+                                //UpdateRound();
                             }
 
                             Reset();
+
+                            if (SocketManager.GetInst().NickNameList.Count <= ++m_iCurrPlayerID)
+                            {
+                                UpdateRound();
+                            }
+
                         }
                         break;
                     case PacketType.GameOver_Result:
+                        {
+                            GameOverResult pkGOR = (GameOverResult)packet;
+
+                            DialogResult dr = MessageBox.Show(pkGOR.result, "게임 결과", MessageBoxButtons.OK);
+                            if (dr == DialogResult.OK)
+                            {
+                                BackToLobby();
+                            }
+                        }
                         break;
                     case PacketType.Disconnect:
                         break;
@@ -357,10 +382,34 @@ namespace Client
             }
         }
 
+        private void BackToLobby()
+        {
+            Thread thread = new Thread(() =>
+            {
+                if(m_fLobby != null)
+                {
+                    m_fLobby.Return();
+                    Application.Run(m_fLobby);
+                }
+            });
+
+            thread.Start();
+
+            while (m_fLobby == null || !m_fLobby.IsHandleCreated || !m_fLobby.Visible)
+            {
+                Thread.Sleep(10);
+            }
+
+            this.Invoke(new MethodInvoker(delegate
+            {
+                m_tHandler.Abort();
+                this.Close();
+            }));
+        }
+
         // 플레이 턴이 들어왔을 때 초기상태로 되돌림
         public void Reset()
         {
-
             int iPlayerCount = SocketManager.GetInst().NickNameList.Count;
             UpdateTotalScore(m_P1Scores);
             if (2 <= iPlayerCount)
@@ -378,27 +427,59 @@ namespace Client
 
             m_iRollCount = 3;
 
+            // 자신이 현재 플레이어라면 주사위를 굴릴수 있게 세팅
             if(m_iCurrPlayerID == SocketManager.GetInst().UID)
             {
-                btnRoll.Enabled = true;
-                cbDice1.Enabled = false;
-                cbDice2.Enabled = false;
-                cbDice3.Enabled = false;
-                cbDice4.Enabled = false;
-                cbDice5.Enabled = false;
+                if (btnRoll.InvokeRequired)
+                    btnRoll.Invoke(new MethodInvoker(() => { btnRoll.Enabled = true; }));
+                
+                if (cbDice1.InvokeRequired)
+                    cbDice1.Invoke(new MethodInvoker(() => { cbDice1.Enabled = false; }));
+
+                if (cbDice2.InvokeRequired)
+                    cbDice2.Invoke(new MethodInvoker(() => { cbDice2.Enabled = false; }));
+
+                if (cbDice3.InvokeRequired)
+                    cbDice3.Invoke(new MethodInvoker(() => { cbDice3.Enabled = false; }));
+
+                if (cbDice4.InvokeRequired)
+                    cbDice4.Invoke(new MethodInvoker(() => { cbDice4.Enabled = false; }));
+
+                if (cbDice5.InvokeRequired)
+                    cbDice5.Invoke(new MethodInvoker(() => { cbDice5.Enabled = false; }));
             }
 
-            cbDice1.Checked = false;
-            cbDice2.Checked = false;
-            cbDice3.Checked = false;
-            cbDice4.Checked = false;
-            cbDice5.Checked = false;
+            // 다이스 락 상태 해제
+            if (cbDice1.InvokeRequired)
+                cbDice1.Invoke(new MethodInvoker(() => { cbDice1.Checked = false; }));
 
-            pbDice1.Image = null;
-            pbDice2.Image = null;
-            pbDice3.Image = null;
-            pbDice4.Image = null;
-            pbDice5.Image = null;
+            if (cbDice2.InvokeRequired)
+                cbDice2.Invoke(new MethodInvoker(() => { cbDice2.Checked = false; }));
+
+            if (cbDice3.InvokeRequired)
+                cbDice3.Invoke(new MethodInvoker(() => { cbDice3.Checked = false; }));
+
+            if (cbDice4.InvokeRequired)
+                cbDice4.Invoke(new MethodInvoker(() => { cbDice4.Checked = false; }));
+
+            if (cbDice5.InvokeRequired)
+                cbDice5.Invoke(new MethodInvoker(() => { cbDice5.Checked = false; }));
+
+            // 다이스 이미지 초기화
+            if (pbDice1.InvokeRequired)
+                pbDice1.Invoke(new MethodInvoker(() => { pbDice1.Image = null; }));
+
+            if (pbDice2.InvokeRequired)
+                pbDice2.Invoke(new MethodInvoker(() => { pbDice2.Image = null; }));
+
+            if (pbDice3.InvokeRequired)
+                pbDice3.Invoke(new MethodInvoker(() => { pbDice3.Image = null; }));
+
+            if (pbDice4.InvokeRequired)
+                pbDice4.Invoke(new MethodInvoker(() => { pbDice4.Image = null; }));
+
+            if (pbDice5.InvokeRequired)
+                pbDice5.Invoke(new MethodInvoker(() => { pbDice5.Image = null; }));
         }
 
         private void TurnEnd()
@@ -423,28 +504,80 @@ namespace Client
             int iSubScore = TextToScore(_arrTB[1]) + TextToScore(_arrTB[2]) + TextToScore(_arrTB[3])
                             + TextToScore(_arrTB[4]) + TextToScore(_arrTB[5]) + TextToScore(_arrTB[6]);
 
-            _arrTB[7].Text = iSubScore.ToString() + " / 63";
+            if (_arrTB[7].InvokeRequired)
+            {
+                _arrTB[7].Invoke(new MethodInvoker(() =>
+                {
+                    _arrTB[7].Text = iSubScore.ToString() + " / 63";
+                }));
+            }
 
             if (63 <= iSubScore)
-                _arrTB[8].Text = "v";
+            {
+                if (_arrTB[8].InvokeRequired)
+                {
+                    _arrTB[8].Invoke(new MethodInvoker(() =>
+                    {
+                        _arrTB[8].Text = "v";
+                    }));
+                }
+            }
 
             // TotalScore 갱신
             int iTotalScore = iSubScore + TextToScore(_arrTB[9]) + TextToScore(_arrTB[10]) + TextToScore(_arrTB[11])
                                 + TextToScore(_arrTB[12]) + TextToScore(_arrTB[13]) + TextToScore(_arrTB[14]);
-
-            _arrTB[15].Text = iTotalScore.ToString();
+            
+            if (_arrTB[15].InvokeRequired)
+                _arrTB[15].Invoke(new MethodInvoker(() => { _arrTB[15].Text = iTotalScore.ToString(); }));
         }
 
         public void UpdateRound()
         {
-            m_iRound++;
-            lbRoundDisplay.Text = m_iRound.ToString();
+            // 12 라운드 종료시 첫번째 플레이어가 게임 종료 패킷 전송
+            if (12 < ++m_iRound && 0 == SocketManager.GetInst().UID)
+            {
+                Dictionary<string, int> dicScore = new Dictionary<string, int>();
+
+                dicScore.Add(txtPlayer1.Text, Convert.ToInt32(txtTotalScore1.Text));
+                dicScore.Add(txtPlayer2.Text, Convert.ToInt32(txtTotalScore2.Text));
+                dicScore.Add(txtPlayer3.Text, Convert.ToInt32(txtTotalScore3.Text));
+                dicScore.Add(txtPlayer4.Text, Convert.ToInt32(txtTotalScore4.Text));
+
+                dicScore.OrderByDescending(item => item.Value);
+
+                string strResult = null;
+
+                int iRank = 0;
+                foreach (var item in dicScore)
+                {
+                    strResult += (++iRank).ToString();
+                    strResult += "등 : " + item.Key + " / " + item.Value.ToString() + "점\n";
+                }
+
+                // 패킷 전송
+                byte[] buff = new byte[1024 * 4];
+                GameOver pkGameOver = new GameOver();
+                pkGameOver.result = strResult;
+                Packet.Serialize(pkGameOver).CopyTo(buff, 0);
+                SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
+                SocketManager.GetInst().Stream.Flush();
+
+                return;
+            }
+
+            lbRoundDisplay.Invoke(new MethodInvoker(() =>
+            {
+                lbRoundDisplay.Text = m_iRound.ToString();
+            }));
         }
 
         private void ClearText(TextBox _TextBox)
         {
             if (true == _TextBox.Enabled)
-                _TextBox.Text = null;
+            {
+                if(_TextBox.InvokeRequired)
+                    _TextBox.Invoke(new MethodInvoker(() => { _TextBox.Text = null; }));
+            }
         }
 
         private int TextToScore(TextBox _TextBox)

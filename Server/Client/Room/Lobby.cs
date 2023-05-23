@@ -32,6 +32,7 @@ namespace Client.Room
             // 플레이어 닉네임 작성
             UpdatePlayer();
 
+            cbGame.SelectedIndex = 0;
             m_tHandler = new Thread(GetPacket);
             m_tHandler.Start();
         }
@@ -56,10 +57,17 @@ namespace Client.Room
                     
                     if(1 == pkEntryResult.kindOfGame)
                     {
-                        Application.Run(new YachtDice());
+                        YachtDice fYacht = new YachtDice();
+                        fYacht.Lobby = this;
+                        Application.Run(fYacht);
                     }
                 }
             }
+        }
+
+        public void Return()
+        {
+            this.Invoke(new Action(() => this.Visible = true));            
         }
 
         private void UpdatePlayer()
