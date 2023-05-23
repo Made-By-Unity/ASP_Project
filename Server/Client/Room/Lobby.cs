@@ -59,7 +59,8 @@ namespace Client.Room
                     {
                         YachtDice fYacht = new YachtDice();
                         fYacht.Lobby = this;
-                        this.Visible = false;
+                        this.Invoke(new Action(()=>this.Visible = false));
+                        
                         Application.Run(fYacht);
                     }
                 }
