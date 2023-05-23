@@ -708,6 +708,7 @@
             this.txtYachtScore2.TabIndex = 64;
             this.txtYachtScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtYachtScore2.Visible = false;
+            this.txtYachtScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtLSScore2
             // 
@@ -721,6 +722,7 @@
             this.txtLSScore2.TabIndex = 63;
             this.txtLSScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLSScore2.Visible = false;
+            this.txtLSScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtSSScore2
             // 
@@ -734,6 +736,7 @@
             this.txtSSScore2.TabIndex = 62;
             this.txtSSScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSSScore2.Visible = false;
+            this.txtSSScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFHScore2
             // 
@@ -747,6 +750,7 @@
             this.txtFHScore2.TabIndex = 61;
             this.txtFHScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFHScore2.Visible = false;
+            this.txtFHScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txt4KindScore2
             // 
@@ -760,6 +764,7 @@
             this.txt4KindScore2.TabIndex = 60;
             this.txt4KindScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt4KindScore2.Visible = false;
+            this.txt4KindScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtChoiceScore2
             // 
@@ -773,6 +778,7 @@
             this.txtChoiceScore2.TabIndex = 59;
             this.txtChoiceScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChoiceScore2.Visible = false;
+            this.txtChoiceScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtBonusAble2
             // 
@@ -813,6 +819,7 @@
             this.txtSixesScore2.TabIndex = 56;
             this.txtSixesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSixesScore2.Visible = false;
+            this.txtSixesScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFivesScore2
             // 
@@ -826,6 +833,7 @@
             this.txtFivesScore2.TabIndex = 55;
             this.txtFivesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFivesScore2.Visible = false;
+            this.txtFivesScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFoursScore2
             // 
@@ -839,6 +847,7 @@
             this.txtFoursScore2.TabIndex = 54;
             this.txtFoursScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFoursScore2.Visible = false;
+            this.txtFoursScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtThreesScore2
             // 
@@ -852,6 +861,7 @@
             this.txtThreesScore2.TabIndex = 53;
             this.txtThreesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtThreesScore2.Visible = false;
+            this.txtThreesScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtDeucesScore2
             // 
@@ -865,6 +875,7 @@
             this.txtDeucesScore2.TabIndex = 52;
             this.txtDeucesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDeucesScore2.Visible = false;
+            this.txtDeucesScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtAcesScore2
             // 
@@ -879,6 +890,7 @@
             this.txtAcesScore2.TabIndex = 51;
             this.txtAcesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAcesScore2.Visible = false;
+            this.txtAcesScore2.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtPlayer2
             // 
@@ -919,6 +931,7 @@
             this.txtYachtScore3.TabIndex = 80;
             this.txtYachtScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtYachtScore3.Visible = false;
+            this.txtYachtScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtLSScore3
             // 
@@ -932,6 +945,7 @@
             this.txtLSScore3.TabIndex = 79;
             this.txtLSScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLSScore3.Visible = false;
+            this.txtLSScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtSSScore3
             // 
@@ -945,6 +959,7 @@
             this.txtSSScore3.TabIndex = 78;
             this.txtSSScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSSScore3.Visible = false;
+            this.txtSSScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFHScore3
             // 
@@ -958,6 +973,7 @@
             this.txtFHScore3.TabIndex = 77;
             this.txtFHScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFHScore3.Visible = false;
+            this.txtFHScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txt4KindScore3
             // 
@@ -971,6 +987,7 @@
             this.txt4KindScore3.TabIndex = 76;
             this.txt4KindScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt4KindScore3.Visible = false;
+            this.txt4KindScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtChoiceScore3
             // 
@@ -984,6 +1001,7 @@
             this.txtChoiceScore3.TabIndex = 75;
             this.txtChoiceScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChoiceScore3.Visible = false;
+            this.txtChoiceScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtBonusAble3
             // 
@@ -1024,6 +1042,7 @@
             this.txtSixesScore3.TabIndex = 72;
             this.txtSixesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSixesScore3.Visible = false;
+            this.txtSixesScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFivesScore3
             // 
@@ -1037,6 +1056,7 @@
             this.txtFivesScore3.TabIndex = 71;
             this.txtFivesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFivesScore3.Visible = false;
+            this.txtFivesScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFoursScore3
             // 
@@ -1050,6 +1070,7 @@
             this.txtFoursScore3.TabIndex = 70;
             this.txtFoursScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFoursScore3.Visible = false;
+            this.txtFoursScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtThreesScore3
             // 
@@ -1063,6 +1084,7 @@
             this.txtThreesScore3.TabIndex = 69;
             this.txtThreesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtThreesScore3.Visible = false;
+            this.txtThreesScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtDeucesScore3
             // 
@@ -1076,6 +1098,7 @@
             this.txtDeucesScore3.TabIndex = 68;
             this.txtDeucesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDeucesScore3.Visible = false;
+            this.txtDeucesScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtAcesScore3
             // 
@@ -1090,6 +1113,7 @@
             this.txtAcesScore3.TabIndex = 67;
             this.txtAcesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAcesScore3.Visible = false;
+            this.txtAcesScore3.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtPlayer3
             // 
@@ -1130,6 +1154,7 @@
             this.txtYachtScore4.TabIndex = 96;
             this.txtYachtScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtYachtScore4.Visible = false;
+            this.txtYachtScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtLSScore4
             // 
@@ -1143,6 +1168,7 @@
             this.txtLSScore4.TabIndex = 95;
             this.txtLSScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLSScore4.Visible = false;
+            this.txtLSScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtSSScore4
             // 
@@ -1156,6 +1182,7 @@
             this.txtSSScore4.TabIndex = 94;
             this.txtSSScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSSScore4.Visible = false;
+            this.txtSSScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFHScore4
             // 
@@ -1169,6 +1196,7 @@
             this.txtFHScore4.TabIndex = 93;
             this.txtFHScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFHScore4.Visible = false;
+            this.txtFHScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txt4KindScore4
             // 
@@ -1182,6 +1210,7 @@
             this.txt4KindScore4.TabIndex = 92;
             this.txt4KindScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt4KindScore4.Visible = false;
+            this.txt4KindScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtChoiceScore4
             // 
@@ -1195,6 +1224,7 @@
             this.txtChoiceScore4.TabIndex = 91;
             this.txtChoiceScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChoiceScore4.Visible = false;
+            this.txtChoiceScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtBonusAble4
             // 
@@ -1235,6 +1265,7 @@
             this.txtSixesScore4.TabIndex = 88;
             this.txtSixesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSixesScore4.Visible = false;
+            this.txtSixesScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFivesScore4
             // 
@@ -1248,6 +1279,7 @@
             this.txtFivesScore4.TabIndex = 87;
             this.txtFivesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFivesScore4.Visible = false;
+            this.txtFivesScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtFoursScore4
             // 
@@ -1261,6 +1293,7 @@
             this.txtFoursScore4.TabIndex = 86;
             this.txtFoursScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFoursScore4.Visible = false;
+            this.txtFoursScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtThreesScore4
             // 
@@ -1274,6 +1307,7 @@
             this.txtThreesScore4.TabIndex = 85;
             this.txtThreesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtThreesScore4.Visible = false;
+            this.txtThreesScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtDeucesScore4
             // 
@@ -1287,6 +1321,7 @@
             this.txtDeucesScore4.TabIndex = 84;
             this.txtDeucesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDeucesScore4.Visible = false;
+            this.txtDeucesScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtAcesScore4
             // 
@@ -1301,6 +1336,7 @@
             this.txtAcesScore4.TabIndex = 83;
             this.txtAcesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAcesScore4.Visible = false;
+            this.txtAcesScore4.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             // 
             // txtPlayer4
             // 
@@ -1419,6 +1455,7 @@
             this.Controls.Add(this.pbDice1);
             this.Name = "YachtDice";
             this.Text = "YachtDice";
+            this.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pbDice1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice3)).EndInit();

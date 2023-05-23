@@ -926,55 +926,55 @@ namespace Client
             byte[] buff = new byte[1024 * 4];
             Select pkSelect = new Select();
 
-            if(tbScore.Text.Contains("txtAcesScore"))
+            if(tbScore.Name.Contains("txtAcesScore"))
             {
                 pkSelect.eScoreType = ScoreType.ACES;
             }
-            else if(tbScore.Text.Contains("txtDeucesScore"))
+            else if(tbScore.Name.Contains("txtDeucesScore"))
             {
                 pkSelect.eScoreType = ScoreType.DEUCES;
             }
-            else if (tbScore.Text.Contains("txtThreesScore"))
+            else if (tbScore.Name.Contains("txtThreesScore"))
             {
                 pkSelect.eScoreType = ScoreType.THREES;
             }
-            else if (tbScore.Text.Contains("txtFoursScore"))
+            else if (tbScore.Name.Contains("txtFoursScore"))
             {
                 pkSelect.eScoreType = ScoreType.FOURS;
             }
-            else if (tbScore.Text.Contains("txtFivesScore"))
+            else if (tbScore.Name.Contains("txtFivesScore"))
             {
                 pkSelect.eScoreType = ScoreType.FIVES;
             }
-            else if (tbScore.Text.Contains("txtSixesScore"))
+            else if (tbScore.Name.Contains("txtSixesScore"))
             {
                 pkSelect.eScoreType = ScoreType.SIXES;
             }
-            else if (tbScore.Text.Contains("txtChoiceScore"))
+            else if (tbScore.Name.Contains("txtChoiceScore"))
             {
                 pkSelect.eScoreType = ScoreType.CHOICE;
             }
-            else if (tbScore.Text.Contains("txt4KindScore"))
+            else if (tbScore.Name.Contains("txt4KindScore"))
             {
                 pkSelect.eScoreType = ScoreType.FOUR_OF_KIND;
             }
-            else if (tbScore.Text.Contains("txtAcesScore"))
+            else if (tbScore.Name.Contains("txtAcesScore"))
             {
                 pkSelect.eScoreType = ScoreType.ACES;
             }
-            else if (tbScore.Text.Contains("txtFHScore"))
+            else if (tbScore.Name.Contains("txtFHScore"))
             {
                 pkSelect.eScoreType = ScoreType.FULLHOUSE;
             }
-            else if (tbScore.Text.Contains("txtSSScore"))
+            else if (tbScore.Name.Contains("txtSSScore"))
             {
                 pkSelect.eScoreType = ScoreType.SMALL_STRAIGHT;
             }
-            else if (tbScore.Text.Contains("txtSSScore"))
+            else if (tbScore.Name.Contains("txtSSScore"))
             {
                 pkSelect.eScoreType = ScoreType.LARGE_STRAIGHT;
             }
-            else if (tbScore.Text.Contains("txtYachtScore"))
+            else if (tbScore.Name.Contains("txtYachtScore"))
             {
                 pkSelect.eScoreType = ScoreType.SMALL_STRAIGHT;
             }
