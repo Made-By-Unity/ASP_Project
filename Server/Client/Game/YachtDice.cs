@@ -416,7 +416,7 @@ namespace Client
                     if (4 == iPlayerCount)
                     {
                         UpdateTotalScore(m_P4Scores);
-                    }%
+                    }
                 }
             }
         }
