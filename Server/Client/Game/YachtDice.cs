@@ -426,7 +426,8 @@ namespace Client
         {
             // 롤카운트 리필
             m_iRollCount = 3;
-            RollDisplay.Invoke(new Action(() => RollDisplay.Text = m_iRollCount.ToString()));
+            if(RollDisplay.InvokeRequired)
+                RollDisplay.Invoke(new Action(() => RollDisplay.Text = m_iRollCount.ToString()));
 
             // 자신이 현재 플레이어라면 주사위를 굴릴수 있게 세팅
             if(m_iCurrPlayerID == SocketManager.GetInst().UID)
