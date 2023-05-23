@@ -416,7 +416,7 @@ namespace Client
                     if (4 == iPlayerCount)
                     {
                         UpdateTotalScore(m_P4Scores);
-                    }
+                    }%
                 }
             }
         }
@@ -617,30 +617,33 @@ namespace Client
         // 주사위가 굴려진후 입력 방지 해제
         private void UnlockRolling()
         {
-            cbDice1.Invoke(new MethodInvoker(() =>
+            if(m_iCurrPlayerID == SocketManager.GetInst().UID)
             {
-                cbDice1.Enabled = true;
-            }));
+                cbDice1.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice1.Enabled = true;
+                }));
 
-            cbDice2.Invoke(new MethodInvoker(() =>
-            {
-                cbDice2.Enabled = true;
-            }));
+                cbDice2.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice2.Enabled = true;
+                }));
 
-            cbDice3.Invoke(new MethodInvoker(() =>
-            {
-                cbDice3.Enabled = true;
-            }));
+                cbDice3.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice3.Enabled = true;
+                }));
 
-            cbDice4.Invoke(new MethodInvoker(() =>
-            {
-                cbDice4.Enabled = true;
-            }));
+                cbDice4.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice4.Enabled = true;
+                }));
 
-            cbDice5.Invoke(new MethodInvoker(() =>
-            {
-                cbDice5.Enabled = true;
-            }));
+                cbDice5.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice5.Enabled = true;
+                }));
+            }
 
             if(m_iCurrPlayerID == SocketManager.GetInst().UID && 0 < m_iRollCount)
             {
