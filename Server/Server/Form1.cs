@@ -121,147 +121,138 @@ namespace Server
 
         public void SendMessageAll(string msg, string nickName, bool b, Packet packet)
         {
+            byte[] buff = new byte[1024 * 4];
+            switch (packet.packet_Type)
+            {
+                case PacketType.Entry:
+                    {
+                        //Entry entry = (Entry)Packet.Deserialize(buff);
+                        Entry entry = (Entry)packet;
+                        EntryResult entryResult = new EntryResult();
+                        entryResult.packet_Type = PacketType.Entry_Result;
+                        entryResult.maxPlayerCount = num;
+                        entryResult.kindOfGame = entry.kindOfGame;
+                        Packet.Serialize(entryResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.RollStart:
+                    {
+                        //RollStart rollStart = (RollStart)Packet.Deserialize(buff);
+                        RollStart rollStart = (RollStart)packet;
+                        RollStartResult rollStartResult = new RollStartResult();
+                        rollStartResult.remainRollCount = rollStart.remainRollCount;
+                        Packet.Serialize(rollStartResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.RollEnd:
+                    {
+                        //RollEnd rollEnd = (RollEnd)Packet.Deserialize(buff);
+                        RollEnd rollEnd = (RollEnd)packet;
+                        RollEndResult rollEndResult = new RollEndResult();
+                        rollEndResult.dice1 = rollEnd.dice1;
+                        rollEndResult.dice2 = rollEnd.dice2;
+                        rollEndResult.dice3 = rollEnd.dice3;
+                        rollEndResult.dice4 = rollEnd.dice4;
+                        rollEndResult.dice5 = rollEnd.dice5;
+                        Packet.Serialize(rollEndResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.Lock:
+                    {
+                        //Lock clock = (Lock)Packet.Deserialize(buff);
+                        Lock clock = (Lock)packet;
+                        LockResult lockResult = new LockResult();
+                        lockResult.lockNumber = clock.lockNumber;
+                        lockResult.isLock = clock.isLock;
+                        Packet.Serialize(lockResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.Select:
+                    {
+                        //Select cselect = (Select)Packet.Deserialize(buff);
+                        Select cselect = (Select)packet;
+                        SelectResult selectResult = new SelectResult();
+                        selectResult.eScoreType = cselect.eScoreType;
+                        selectResult.iScore = cselect.iScore;
+                        Packet.Serialize(selectResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.GameOver:
+                    {
+                        //GameOver gameover = (GameOver)Packet.Deserialize(buff);
+                        GameOver gameover = (GameOver)packet;
+                        GameOverResult gameoverResult = new GameOverResult();
+                        gameoverResult.result = gameover.result;
+                        Packet.Serialize(gameoverResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.Chatting:
+                    {
+                        ChattingResult chattingResult = new ChattingResult();
+                        chattingResult.chat = msg;
+                        Packet.Serialize(chattingResult).CopyTo(buff, 0);
+                    }
+                    break;
+
+                case PacketType.K_RollStart:
+                    {
+                        K_RollStart rollStart = (K_RollStart)packet;
+                        K_RollStartResult rollStartResult = new K_RollStartResult();
+                        Packet.Serialize(rollStartResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.K_RollEnd:
+                    {
+                        K_RollEnd rollEnd = (K_RollEnd)packet;
+                        K_RollEndResult rollEndResult = new K_RollEndResult();
+                        rollEndResult.result = rollEnd.result;
+                        Packet.Serialize(rollEndResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.K_Select:
+                    {
+                        K_Select select = (K_Select)packet;
+                        K_SelectResult selectResult = new K_SelectResult();
+                        //Enum 정리
+                        Packet.Serialize(selectResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.K_GameOver:
+                    {
+                        K_GameOver gameover = (K_GameOver)packet;
+                        K_GameOverResult gameoverResult = new K_GameOverResult();
+                        gameoverResult.result = gameover.result;
+                        Packet.Serialize(gameoverResult).CopyTo(buff, 0);
+                    }
+                    break;
+                case PacketType.Login:
+                    {
+                        LoginResult loginResult = new LoginResult();
+                        loginResult.packet_Type = PacketType.Login_Result;
+                        loginResult.uID = num;
+                        loginResult.LoginMessage = msg;
+                        loginResult.usernames = nickNames;
+                        Packet.Serialize(loginResult).CopyTo(buff, 0);
+                        //buff = Encoding.Unicode.GetBytes(msg);
+
+                    }
+                    break;
+                case PacketType.Disconnect:
+                    {
+                        ChattingResult chattingResult = new ChattingResult();
+                        chattingResult.chat = msg;
+                        Packet.Serialize(chattingResult).CopyTo(buff, 0);
+                    }
+                    break;
+            }
             foreach (KeyValuePair<TcpClient, string> pair in clientList)
             {
                 TcpClient client = pair.Key as TcpClient;
                 NetworkStream nStream = client.GetStream();
-                byte[] buff = new byte[1024*4];
-                if (b)
-                {
-                    //buff = Encoding.Unicode.GetBytes(nickName + " : " + msg);
-                    switch (packet.packet_Type)
-                    {
-                        case PacketType.Entry:
-                            {
-                                //Entry entry = (Entry)Packet.Deserialize(buff);
-                                Entry entry = (Entry)packet;
-                                EntryResult entryResult = new EntryResult();
-                                entryResult.packet_Type = PacketType.Entry_Result;
-                                entryResult.maxPlayerCount = num;
-                                entryResult.kindOfGame = entry.kindOfGame;
-                                Packet.Serialize(entryResult).CopyTo(buff, 0);
-                            }
-                            break;
-                        case PacketType.RollStart:
-                            {
-                                //RollStart rollStart = (RollStart)Packet.Deserialize(buff);
-                                RollStart rollStart = (RollStart)packet;
-                                RollStartResult rollStartResult = new RollStartResult();
-                                rollStartResult.remainRollCount = rollStart.remainRollCount;
-                                Packet.Serialize(rollStartResult).CopyTo(buff, 0);
-                            }
-                            break;
-                        case PacketType.RollEnd:
-                            {
-                                //RollEnd rollEnd = (RollEnd)Packet.Deserialize(buff);
-                                RollEnd rollEnd = (RollEnd)packet;
-                                RollEndResult rollEndResult = new RollEndResult();
-                                rollEndResult.dice1 = rollEnd.dice1;
-                                rollEndResult.dice2 = rollEnd.dice2;
-                                rollEndResult.dice3 = rollEnd.dice3;
-                                rollEndResult.dice4 = rollEnd.dice4;
-                                rollEndResult.dice5 = rollEnd.dice5;
-                                Packet.Serialize(rollEndResult).CopyTo(buff, 0);
-                            }
-                            break;
-                        case PacketType.Lock:
-                            {
-                                //Lock clock = (Lock)Packet.Deserialize(buff);
-                                Lock clock = (Lock)packet;
-                                LockResult lockResult = new LockResult();
-                                lockResult.lockNumber=clock.lockNumber;
-                                lockResult.isLock=clock.isLock;
-                                Packet.Serialize(lockResult).CopyTo(buff, 0);
-                            }
-                            break;
-                        case PacketType.Select:
-                            {
-                                //Select cselect = (Select)Packet.Deserialize(buff);
-                                Select cselect = (Select)packet;
-                                SelectResult selectResult = new SelectResult();
-                                selectResult.eScoreType = cselect.eScoreType;
-                                selectResult.iScore = cselect.iScore;
-                                Packet.Serialize(selectResult).CopyTo(buff, 0);
-                            }
-                            break;
-                        case PacketType.GameOver:
-                            {
-                               //GameOver gameover = (GameOver)Packet.Deserialize(buff);
-                                GameOver gameover = (GameOver)packet;
-                                GameOverResult gameoverResult = new GameOverResult();
-                                gameoverResult.result=gameover.result;
-                                Packet.Serialize(gameoverResult).CopyTo(buff, 0);
-                            }
-                            break;
-                        case PacketType.Chatting:
-                            {
-                                ChattingResult chattingResult = new ChattingResult();
-                                chattingResult.chat = msg;
-                                Packet.Serialize(chattingResult).CopyTo(buff, 0);
-                            }
-                            break;
-
-                        case PacketType.K_RollStart:
-                            {
-                                K_RollStart rollStart = (K_RollStart)packet;
-                                K_RollStartResult rollStartResult = new K_RollStartResult();
-                                Packet.Serialize(rollStartResult).CopyTo(buff, 0);
-                            }
-                            break;
-                        case PacketType.K_RollEnd:
-                            {
-                                K_RollEnd rollEnd = (K_RollEnd)packet;
-                                K_RollEndResult rollEndResult = new K_RollEndResult();
-                                rollEndResult.result = rollEnd.result;
-                                Packet.Serialize(rollEndResult).CopyTo(buff, 0);
-                            }
-                            break;
-                        case PacketType.K_Select:
-                            {
-                                K_Select select = (K_Select)packet;
-                                K_SelectResult selectResult = new K_SelectResult();
-                                //Enum 정리
-                                Packet.Serialize(selectResult).CopyTo(buff, 0);
-                            }
-                            break;
-                        case PacketType.K_GameOver:
-                            {
-                                K_GameOver gameover = (K_GameOver)packet;
-                                K_GameOverResult gameoverResult = new K_GameOverResult();
-                                gameoverResult.result=gameover.result;
-                                Packet.Serialize(gameoverResult).CopyTo(buff, 0);
-                            }
-                            break;
-                    }
-                }
-                else
-                {
-                    switch (packet.packet_Type)
-                    {
-                        case PacketType.Login:
-                            {
-                                LoginResult loginResult = new LoginResult();
-                                loginResult.packet_Type = PacketType.Login_Result;
-                                loginResult.uID = num;
-                                loginResult.LoginMessage = msg;
-                                loginResult.usernames = nickNames;
-                                Packet.Serialize(loginResult).CopyTo(buff, 0);
-                                //buff = Encoding.Unicode.GetBytes(msg);
-
-                            }
-                            break;
-                        case PacketType.Disconnect:
-                            {
-                                ChattingResult chattingResult = new ChattingResult();
-                                chattingResult.chat = msg;
-                                Packet.Serialize(chattingResult).CopyTo(buff, 0);
-                            }
-                            break;
-                    }
-                  
-                }
+                
                 nStream.Write(buff, 0, buff.Length);
                 nStream.Flush();
+                
             }
         }
     }
