@@ -39,7 +39,7 @@
             // tbPlayer1
             // 
             this.tbPlayer1.Location = new System.Drawing.Point(111, 70);
-            this.tbPlayer1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbPlayer1.Margin = new System.Windows.Forms.Padding(6);
             this.tbPlayer1.Name = "tbPlayer1";
             this.tbPlayer1.ReadOnly = true;
             this.tbPlayer1.Size = new System.Drawing.Size(206, 35);
@@ -48,7 +48,7 @@
             // tbPlayer2
             // 
             this.tbPlayer2.Location = new System.Drawing.Point(111, 148);
-            this.tbPlayer2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbPlayer2.Margin = new System.Windows.Forms.Padding(6);
             this.tbPlayer2.Name = "tbPlayer2";
             this.tbPlayer2.ReadOnly = true;
             this.tbPlayer2.Size = new System.Drawing.Size(206, 35);
@@ -57,7 +57,7 @@
             // tbPlayer3
             // 
             this.tbPlayer3.Location = new System.Drawing.Point(111, 228);
-            this.tbPlayer3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbPlayer3.Margin = new System.Windows.Forms.Padding(6);
             this.tbPlayer3.Name = "tbPlayer3";
             this.tbPlayer3.ReadOnly = true;
             this.tbPlayer3.Size = new System.Drawing.Size(206, 35);
@@ -66,7 +66,7 @@
             // tbPlayer4
             // 
             this.tbPlayer4.Location = new System.Drawing.Point(111, 304);
-            this.tbPlayer4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbPlayer4.Margin = new System.Windows.Forms.Padding(6);
             this.tbPlayer4.Name = "tbPlayer4";
             this.tbPlayer4.ReadOnly = true;
             this.tbPlayer4.Size = new System.Drawing.Size(206, 35);
@@ -76,9 +76,9 @@
             // 
             this.btnGameStart.Enabled = false;
             this.btnGameStart.Location = new System.Drawing.Point(353, 300);
-            this.btnGameStart.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnGameStart.Margin = new System.Windows.Forms.Padding(6);
             this.btnGameStart.Name = "btnGameStart";
-            this.btnGameStart.Size = new System.Drawing.Size(149, 46);
+            this.btnGameStart.Size = new System.Drawing.Size(181, 46);
             this.btnGameStart.TabIndex = 4;
             this.btnGameStart.Text = "게임 시작";
             this.btnGameStart.UseVisualStyleBackColor = true;
@@ -91,21 +91,21 @@
             "Yacht Dice"});
             this.cbGame.Location = new System.Drawing.Point(353, 70);
             this.cbGame.Name = "cbGame";
-            this.cbGame.Size = new System.Drawing.Size(149, 32);
+            this.cbGame.Size = new System.Drawing.Size(181, 32);
             this.cbGame.TabIndex = 6;
             // 
             // Lobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 418);
+            this.ClientSize = new System.Drawing.Size(570, 418);
             this.Controls.Add(this.cbGame);
             this.Controls.Add(this.btnGameStart);
             this.Controls.Add(this.tbPlayer4);
             this.Controls.Add(this.tbPlayer3);
             this.Controls.Add(this.tbPlayer2);
             this.Controls.Add(this.tbPlayer1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Lobby";
             this.Text = "Room";
             this.ResumeLayout(false);

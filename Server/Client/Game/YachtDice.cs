@@ -16,7 +16,8 @@ namespace Client
 {
     public partial class YachtDice : Form
     {
-        Thread m_tHandler;
+        Lobby m_fLobby;
+        Thread m_tHandler = null;
 
         private int m_iRollCount = 3;
         private int m_iRound = 1;
@@ -33,6 +34,11 @@ namespace Client
         TextBox[] m_P2Scores;
         TextBox[] m_P3Scores;
         TextBox[] m_P4Scores;
+
+        public Lobby Lobby { 
+            get { return m_fLobby; } 
+            set { m_fLobby = value; }
+        }
    
         public YachtDice()
         {
@@ -178,6 +184,9 @@ namespace Client
             }
 
             Reset();
+
+            if(m_iCurrPlayerID == SocketManager.GetInst().UID)
+                btnRoll.Enabled = true;
         }
 
         private void GetPacket()
@@ -215,26 +224,31 @@ namespace Client
                                 {
                                     pbDice1.Image = m_images[pkRER.dice1 - 1];
                                 }));
+                                m_arrDices[0] = pkRER.dice1;
 
                                 pbDice2.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice2.Image = m_images[pkRER.dice2 - 1];
                                 }));
+                                m_arrDices[1] = pkRER.dice2;
 
                                 pbDice3.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice3.Image = m_images[pkRER.dice3 - 1];
                                 }));
+                                m_arrDices[2] = pkRER.dice3;
 
                                 pbDice4.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice4.Image = m_images[pkRER.dice4 - 1];
                                 }));
+                                m_arrDices[3] = pkRER.dice4;
 
                                 pbDice5.Invoke(new MethodInvoker(() =>
                                 {
                                     pbDice5.Image = m_images[pkRER.dice5 - 1];
                                 }));
+                                m_arrDices[4] = pkRER.dice5;
                             }
 
                             TextBox[] arrTB = null;
@@ -256,24 +270,28 @@ namespace Client
                             LockResult pkLR = (LockResult)packet;
                             if (m_iCurrPlayerID != SocketManager.GetInst().UID)
                             {
+                                CheckBox cbTmp = null;
                                 switch (pkLR.lockNumber)
                                 {
                                     case 1:
-                                        cbDice1.Checked = pkLR.isLock;
+                                        cbTmp = cbDice1;
                                         break;
                                     case 2:
-                                        cbDice2.Checked = pkLR.isLock;
+                                        cbTmp = cbDice2;
                                         break;
                                     case 3:
-                                        cbDice3.Checked = pkLR.isLock;
+                                        cbTmp = cbDice3;
                                         break;
                                     case 4:
-                                        cbDice4.Checked = pkLR.isLock;
+                                        cbTmp = cbDice4;
                                         break;
                                     case 5:
-                                        cbDice5.Checked = pkLR.isLock;
+                                        cbTmp = cbDice5;
                                         break;
                                 }
+
+                                if (cbTmp.InvokeRequired)
+                                    cbTmp.Invoke(new MethodInvoker(() => cbTmp.Checked = pkLR.isLock));
                             }
                         }
                         break;
@@ -299,57 +317,73 @@ namespace Client
                                         break;
                                 }
 
+                                TextBox tbSelected = null;
                                 switch (pkSR.eScoreType)
                                 {
                                     case ScoreType.ACES:
-                                        arrTB[1].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[1];
                                         break;
                                     case ScoreType.DEUCES:
-                                        arrTB[2].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[2];
                                         break;
                                     case ScoreType.THREES:
-                                        arrTB[3].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[3];
                                         break;
                                     case ScoreType.FOURS:
-                                        arrTB[4].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[4];
                                         break;
                                     case ScoreType.FIVES:
-                                        arrTB[5].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[5];
                                         break;
                                     case ScoreType.SIXES:
-                                        arrTB[6].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[6];
                                         break;
                                     case ScoreType.CHOICE:
-                                        arrTB[9].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[9];
                                         break;
                                     case ScoreType.FOUR_OF_KIND:
-                                        arrTB[10].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[10];
                                         break;
                                     case ScoreType.FULLHOUSE:
-                                        arrTB[11].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[11];
                                         break;
                                     case ScoreType.SMALL_STRAIGHT:
-                                        arrTB[12].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[12];
                                         break;
                                     case ScoreType.LARGE_STRAIGHT:
-                                        arrTB[13].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[13];
                                         break;
                                     case ScoreType.YACHT:
-                                        arrTB[14].Text = Convert.ToString(pkSR.iScore);
+                                        tbSelected = arrTB[14];
                                         break;
                                 }
+
+                                tbSelected.Invoke(new Action(() =>
+                                {
+                                    tbSelected.Text = pkSR.iScore.ToString();
+                                    tbSelected.Enabled = false;
+                                }));
                             }
 
-                            if (SocketManager.GetInst().NickNameList.Count + 1 <= ++m_iCurrPlayerID)
+                            UpdateScore();
+                            if (SocketManager.GetInst().NickNameList.Count <= ++m_iCurrPlayerID)
                             {
                                 m_iCurrPlayerID = 0;
-                                UpdateRound();
+                                this.Invoke(new Action(() => UpdateRound()));
                             }
-
                             Reset();
                         }
                         break;
                     case PacketType.GameOver_Result:
+                        {
+                            GameOverResult pkGOR = (GameOverResult)packet;
+
+                            DialogResult dr = MessageBox.Show(pkGOR.result, "게임 결과", MessageBoxButtons.OK);
+                            if (dr == DialogResult.OK)
+                            {
+                                this.Invoke(new Action(() => BackToLobby()));
+                            }
+                        }
                         break;
                     case PacketType.Disconnect:
                         break;
@@ -357,10 +391,20 @@ namespace Client
             }
         }
 
-        // 플레이 턴이 들어왔을 때 초기상태로 되돌림
-        public void Reset()
+        private void BackToLobby()
         {
+            this.Invoke(new MethodInvoker(delegate
+            {
+                if (m_fLobby != null)
+                    m_fLobby.Show();
 
+                m_tHandler.Abort();
+                this.Close();
+            }));
+        }
+
+        private void UpdateScore()
+        {
             int iPlayerCount = SocketManager.GetInst().NickNameList.Count;
             UpdateTotalScore(m_P1Scores);
             if (2 <= iPlayerCount)
@@ -375,30 +419,70 @@ namespace Client
                     }
                 }
             }
+        }
 
+        // 플레이 턴이 들어왔을 때 초기상태로 되돌림
+        private void Reset()
+        {
+            // 롤카운트 리필
             m_iRollCount = 3;
+            if(RollDisplay.InvokeRequired)
+                RollDisplay.Invoke(new Action(() => RollDisplay.Text = m_iRollCount.ToString()));
 
+            // 자신이 현재 플레이어라면 주사위를 굴릴수 있게 세팅
             if(m_iCurrPlayerID == SocketManager.GetInst().UID)
             {
-                btnRoll.Enabled = true;
-                cbDice1.Enabled = false;
-                cbDice2.Enabled = false;
-                cbDice3.Enabled = false;
-                cbDice4.Enabled = false;
-                cbDice5.Enabled = false;
+                if (btnRoll.InvokeRequired)
+                    btnRoll.Invoke(new MethodInvoker(() => { btnRoll.Enabled = true; }));
             }
 
-            cbDice1.Checked = false;
-            cbDice2.Checked = false;
-            cbDice3.Checked = false;
-            cbDice4.Checked = false;
-            cbDice5.Checked = false;
+            // 다이스 전부 잠굼
+            if (cbDice1.InvokeRequired)
+                cbDice1.Invoke(new MethodInvoker(() => { cbDice1.Enabled = false; }));
 
-            pbDice1.Image = null;
-            pbDice2.Image = null;
-            pbDice3.Image = null;
-            pbDice4.Image = null;
-            pbDice5.Image = null;
+            if (cbDice2.InvokeRequired)
+                cbDice2.Invoke(new MethodInvoker(() => { cbDice2.Enabled = false; }));
+
+            if (cbDice3.InvokeRequired)
+                cbDice3.Invoke(new MethodInvoker(() => { cbDice3.Enabled = false; }));
+
+            if (cbDice4.InvokeRequired)
+                cbDice4.Invoke(new MethodInvoker(() => { cbDice4.Enabled = false; }));
+
+            if (cbDice5.InvokeRequired)
+                cbDice5.Invoke(new MethodInvoker(() => { cbDice5.Enabled = false; }));
+
+            // 다이스 락 체크 조건 초기화
+            if (cbDice1.InvokeRequired)
+                cbDice1.Invoke(new MethodInvoker(() => { cbDice1.Checked = false; }));
+
+            if (cbDice2.InvokeRequired)
+                cbDice2.Invoke(new MethodInvoker(() => { cbDice2.Checked = false; }));
+
+            if (cbDice3.InvokeRequired)
+                cbDice3.Invoke(new MethodInvoker(() => { cbDice3.Checked = false; }));
+
+            if (cbDice4.InvokeRequired)
+                cbDice4.Invoke(new MethodInvoker(() => { cbDice4.Checked = false; }));
+
+            if (cbDice5.InvokeRequired)
+                cbDice5.Invoke(new MethodInvoker(() => { cbDice5.Checked = false; }));
+
+            // 다이스 이미지 초기화
+            if (pbDice1.InvokeRequired)
+                pbDice1.Invoke(new MethodInvoker(() => { pbDice1.Image = null; }));
+
+            if (pbDice2.InvokeRequired)
+                pbDice2.Invoke(new MethodInvoker(() => { pbDice2.Image = null; }));
+
+            if (pbDice3.InvokeRequired)
+                pbDice3.Invoke(new MethodInvoker(() => { pbDice3.Image = null; }));
+
+            if (pbDice4.InvokeRequired)
+                pbDice4.Invoke(new MethodInvoker(() => { pbDice4.Image = null; }));
+
+            if (pbDice5.InvokeRequired)
+                pbDice5.Invoke(new MethodInvoker(() => { pbDice5.Image = null; }));
         }
 
         private void TurnEnd()
@@ -423,41 +507,99 @@ namespace Client
             int iSubScore = TextToScore(_arrTB[1]) + TextToScore(_arrTB[2]) + TextToScore(_arrTB[3])
                             + TextToScore(_arrTB[4]) + TextToScore(_arrTB[5]) + TextToScore(_arrTB[6]);
 
-            _arrTB[7].Text = iSubScore.ToString() + " / 63";
+            if (_arrTB[7].InvokeRequired)
+            {
+                _arrTB[7].Invoke(new MethodInvoker(() =>
+                {
+                    _arrTB[7].Text = iSubScore.ToString() + " / 63";
+                }));
+            }
 
             if (63 <= iSubScore)
-                _arrTB[8].Text = "v";
+            {
+                if (_arrTB[8].InvokeRequired)
+                {
+                    _arrTB[8].Invoke(new MethodInvoker(() =>
+                    {
+                        _arrTB[8].Text = "v";
+                    }));
+                }
+            }
 
             // TotalScore 갱신
             int iTotalScore = iSubScore + TextToScore(_arrTB[9]) + TextToScore(_arrTB[10]) + TextToScore(_arrTB[11])
                                 + TextToScore(_arrTB[12]) + TextToScore(_arrTB[13]) + TextToScore(_arrTB[14]);
-
-            _arrTB[15].Text = iTotalScore.ToString();
+            
+            if (_arrTB[15].InvokeRequired)
+                _arrTB[15].Invoke(new MethodInvoker(() => { _arrTB[15].Text = iTotalScore.ToString(); }));
         }
 
         public void UpdateRound()
         {
-            m_iRound++;
-            lbRoundDisplay.Text = m_iRound.ToString();
+            // 12 라운드 종료시 첫번째 플레이어가 게임 종료 패킷 전송
+            if (12 < ++m_iRound && 0 == SocketManager.GetInst().UID)
+            {
+                Dictionary<string, int> dicScore = new Dictionary<string, int>();
+
+                int iPlayerCount = SocketManager.GetInst().NickNameList.Count;
+                
+                dicScore.Add(txtPlayer1.Text, Convert.ToInt32(TextToScore(txtTotalScore1)));
+                if (2 <= iPlayerCount)
+                {
+                    dicScore.Add(txtPlayer2.Text, Convert.ToInt32(TextToScore(txtTotalScore2)));
+                    if (3 <= iPlayerCount)
+                    {
+                        dicScore.Add(txtPlayer3.Text, Convert.ToInt32(TextToScore(txtTotalScore3)));
+                        if (4 == iPlayerCount)
+                        {
+                            dicScore.Add(txtPlayer4.Text, Convert.ToInt32(TextToScore(txtTotalScore4)));
+                        }
+                    }
+                }
+
+                dicScore.OrderByDescending(item => item.Value);
+
+                string strResult = null;
+
+                int iRank = 0;
+                foreach (var item in dicScore)
+                {
+                    strResult += (++iRank).ToString();
+                    strResult += "등 : " + item.Key + " / " + item.Value.ToString() + "점\n";
+                }
+
+                // 패킷 전송
+                byte[] buff = new byte[1024 * 4];
+                GameOver pkGameOver = new GameOver();
+                pkGameOver.result = strResult;
+                Packet.Serialize(pkGameOver).CopyTo(buff, 0);
+                SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
+                SocketManager.GetInst().Stream.Flush();
+
+                return;
+            }
+
+            lbRoundDisplay.Invoke(new MethodInvoker(() =>
+            {
+                lbRoundDisplay.Text = m_iRound.ToString();
+            }));
         }
 
         private void ClearText(TextBox _TextBox)
         {
             if (true == _TextBox.Enabled)
-                _TextBox.Text = null;
+            {
+                if(_TextBox.InvokeRequired)
+                    _TextBox.Invoke(new MethodInvoker(() => { _TextBox.Text = null; }));
+            }
         }
 
         private int TextToScore(TextBox _TextBox)
         {
-            if (false == _TextBox.Enabled)
-            {
-                if (_TextBox.Text == String.Empty)
-                    return 0;
+            if (_TextBox.Text == String.Empty)
+                return 0;
 
-                return Int32.Parse(_TextBox.Text);
-            }
-
-            return 0;
+            return Int32.Parse(_TextBox.Text);
         }
 
         // 주사위를 굴리는 도중 입력 방지
@@ -475,30 +617,33 @@ namespace Client
         // 주사위가 굴려진후 입력 방지 해제
         private void UnlockRolling()
         {
-            cbDice1.Invoke(new MethodInvoker(() =>
+            if(m_iCurrPlayerID == SocketManager.GetInst().UID)
             {
-                cbDice1.Enabled = true;
-            }));
+                cbDice1.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice1.Enabled = true;
+                }));
 
-            cbDice2.Invoke(new MethodInvoker(() =>
-            {
-                cbDice2.Enabled = true;
-            }));
+                cbDice2.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice2.Enabled = true;
+                }));
 
-            cbDice3.Invoke(new MethodInvoker(() =>
-            {
-                cbDice3.Enabled = true;
-            }));
+                cbDice3.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice3.Enabled = true;
+                }));
 
-            cbDice4.Invoke(new MethodInvoker(() =>
-            {
-                cbDice4.Enabled = true;
-            }));
+                cbDice4.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice4.Enabled = true;
+                }));
 
-            cbDice5.Invoke(new MethodInvoker(() =>
-            {
-                cbDice5.Enabled = true;
-            }));
+                cbDice5.Invoke(new MethodInvoker(() =>
+                {
+                    cbDice5.Enabled = true;
+                }));
+            }
 
             if(m_iCurrPlayerID == SocketManager.GetInst().UID && 0 < m_iRollCount)
             {
@@ -535,7 +680,7 @@ namespace Client
             bool bChecked = cbChanged.Checked;
 
             int iNum = 0;
-            switch (cbChanged.Text)
+            switch (cbChanged.Name)
             {
                 case "cbDice1":
                     iNum = 1;
@@ -788,55 +933,55 @@ namespace Client
             byte[] buff = new byte[1024 * 4];
             Select pkSelect = new Select();
 
-            if(tbScore.Text.Contains("txtAcesScore"))
+            if(tbScore.Name.Contains("txtAcesScore"))
             {
                 pkSelect.eScoreType = ScoreType.ACES;
             }
-            else if(tbScore.Text.Contains("txtDeucesScore"))
+            else if(tbScore.Name.Contains("txtDeucesScore"))
             {
                 pkSelect.eScoreType = ScoreType.DEUCES;
             }
-            else if (tbScore.Text.Contains("txtThreesScore"))
+            else if (tbScore.Name.Contains("txtThreesScore"))
             {
                 pkSelect.eScoreType = ScoreType.THREES;
             }
-            else if (tbScore.Text.Contains("txtFoursScore"))
+            else if (tbScore.Name.Contains("txtFoursScore"))
             {
                 pkSelect.eScoreType = ScoreType.FOURS;
             }
-            else if (tbScore.Text.Contains("txtFivesScore"))
+            else if (tbScore.Name.Contains("txtFivesScore"))
             {
                 pkSelect.eScoreType = ScoreType.FIVES;
             }
-            else if (tbScore.Text.Contains("txtSixesScore"))
+            else if (tbScore.Name.Contains("txtSixesScore"))
             {
                 pkSelect.eScoreType = ScoreType.SIXES;
             }
-            else if (tbScore.Text.Contains("txtChoiceScore"))
+            else if (tbScore.Name.Contains("txtChoiceScore"))
             {
                 pkSelect.eScoreType = ScoreType.CHOICE;
             }
-            else if (tbScore.Text.Contains("txt4KindScore"))
+            else if (tbScore.Name.Contains("txt4KindScore"))
             {
                 pkSelect.eScoreType = ScoreType.FOUR_OF_KIND;
             }
-            else if (tbScore.Text.Contains("txtAcesScore"))
+            else if (tbScore.Name.Contains("txtAcesScore"))
             {
                 pkSelect.eScoreType = ScoreType.ACES;
             }
-            else if (tbScore.Text.Contains("txtFHScore"))
+            else if (tbScore.Name.Contains("txtFHScore"))
             {
                 pkSelect.eScoreType = ScoreType.FULLHOUSE;
             }
-            else if (tbScore.Text.Contains("txtSSScore"))
+            else if (tbScore.Name.Contains("txtSSScore"))
             {
                 pkSelect.eScoreType = ScoreType.SMALL_STRAIGHT;
             }
-            else if (tbScore.Text.Contains("txtSSScore"))
+            else if (tbScore.Name.Contains("txtSSScore"))
             {
                 pkSelect.eScoreType = ScoreType.LARGE_STRAIGHT;
             }
-            else if (tbScore.Text.Contains("txtYachtScore"))
+            else if (tbScore.Name.Contains("txtYachtScore"))
             {
                 pkSelect.eScoreType = ScoreType.SMALL_STRAIGHT;
             }
