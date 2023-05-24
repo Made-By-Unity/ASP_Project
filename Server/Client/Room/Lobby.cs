@@ -62,6 +62,8 @@ namespace Client.Room
                         this.Invoke(new Action(()=>this.Visible = false));
                         
                         Application.Run(fYacht);
+                        ChattingRoom chattingRoom = new ChattingRoom();
+                        Application.Run(chattingRoom);
                     }
                 }
             }
