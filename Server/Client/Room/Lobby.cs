@@ -113,5 +113,6 @@ namespace Client.Room
             SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
             SocketManager.GetInst().Stream.Flush();
         }
+
     }
 }

@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,9 +16,13 @@ namespace Client.Room
 {
     public partial class ChattingRoom : Form
     {
+        Thread m_tHandler = null;
         public ChattingRoom()
         {
             InitializeComponent();
+
+            m_tHandler = new Thread(GetPacket);
+            m_tHandler.Start();
         }
 
         private void ChattingRoom_Load(object sender, EventArgs e)
@@ -29,11 +34,14 @@ namespace Client.Room
             byte[] buff = new byte[1024 * 4];
             Chatting chat = new Chatting();
             chat.chat = textBox2.Text;
+            Packet.Serialize(chat).CopyTo(buff, 0);
             SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
             SocketManager.GetInst().Stream.Flush();
-            
+
             textBox2.Text = "";
             textBox2.Focus();
+
+
         }
         public void DisplayText(string text)
         {
@@ -46,6 +54,23 @@ namespace Client.Room
             }
             else
                 textBox1.AppendText(text + Environment.NewLine);
+        }
+        private void GetPacket()
+        {
+            while (true)
+            {
+                byte[] buffer = new byte[1024 * 4];
+                SocketManager.GetInst().Stream.Read(buffer, 0, buffer.Length);
+
+                Packet packet = (Packet)Packet.Deserialize(buffer);
+                if (packet.packet_Type == PacketType.Chatting_Result)
+                {
+                    ChattingResult pkChattingResult = (ChattingResult)packet;
+                    DisplayText(pkChattingResult.chat);
+                }
+
+
+            }
         }
     }
 }
