@@ -121,7 +121,7 @@ namespace Server
 
         public void SendMessageAll(string msg, string nickName, bool b, Packet packet)
         {
-            byte[] buff = new byte[1024 * 4];
+            byte[] buff = new byte[1024];
             switch (packet.packet_Type)
             {
                 case PacketType.Entry:
@@ -189,7 +189,7 @@ namespace Server
                 case PacketType.Chatting:
                     {
                         ChattingResult chattingResult = new ChattingResult();
-                        chattingResult.chat = msg;
+                        chattingResult.chat = nickName+" : "+msg;
                         Packet.Serialize(chattingResult).CopyTo(buff, 0);
                     }
                     break;

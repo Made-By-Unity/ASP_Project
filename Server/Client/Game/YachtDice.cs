@@ -193,7 +193,7 @@ namespace Client
         {
             while (true)
             {
-                byte[] buffer = new byte[1024 * 4];
+                byte[] buffer = new byte[1024];
                 SocketManager.GetInst().Stream.Read(buffer, 0, buffer.Length);
 
                 Packet packet = (Packet)Packet.Deserialize(buffer);
@@ -569,7 +569,7 @@ namespace Client
                 }
 
                 // 패킷 전송
-                byte[] buff = new byte[1024 * 4];
+                byte[] buff = new byte[1024];
                 GameOver pkGameOver = new GameOver();
                 pkGameOver.result = strResult;
                 Packet.Serialize(pkGameOver).CopyTo(buff, 0);
@@ -660,7 +660,7 @@ namespace Client
             LockRolling();
 
             // 패킷 전송
-            byte[] buff = new byte[1024 * 4];
+            byte[] buff = new byte[1024];
             RollStart pkRollStart = new RollStart();
             pkRollStart.remainRollCount = --m_iRollCount;
             Packet.Serialize(pkRollStart).CopyTo(buff, 0);
@@ -699,7 +699,7 @@ namespace Client
                     break;
             }
 
-            byte[] buff = new byte[1024 * 4];
+            byte[] buff = new byte[1024];
             Lock pkLock = new Lock();
             pkLock.isLock = bChecked;
             pkLock.lockNumber = iNum;
@@ -762,7 +762,7 @@ namespace Client
 
         private void RollEnd()
         {
-            byte[] buff = new byte[1024 * 4];
+            byte[] buff = new byte[1024];
             RollEnd pkRollEnd = new RollEnd();
             pkRollEnd.dice1 = m_arrDices[0];
             pkRollEnd.dice2 = m_arrDices[1];
@@ -930,7 +930,7 @@ namespace Client
             }
 
             // 패킷 전송
-            byte[] buff = new byte[1024 * 4];
+            byte[] buff = new byte[1024];
             Select pkSelect = new Select();
 
             if(tbScore.Name.Contains("txtAcesScore"))
