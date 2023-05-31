@@ -22,6 +22,7 @@ namespace Client.Room
             InitializeComponent();
 
             m_tHandler = new Thread(GetPacket);
+            m_tHandler.IsBackground = true;
             m_tHandler.Start();
         }
 

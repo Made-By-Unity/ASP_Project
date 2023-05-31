@@ -54,7 +54,6 @@ namespace Client.Title
         private void OpenLobby()
         {
             Lobby lobby = null;
-
             Thread thread = new Thread(() =>
             {
                 if(lobby == null)
@@ -80,7 +79,11 @@ namespace Client.Title
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SocketManager.GetInst().Binding(tbServerIP.Text, tbNickName.Text);
+            if(false == SocketManager.GetInst().Binding(tbServerIP.Text, tbNickName.Text))
+            {
+                MessageBox.Show("IP 주소를 확인해 주세요", "서버 연결 실패", MessageBoxButtons.OK);
+                return;
+            }
 
             m_tHandler = new Thread(GetPacket);
             m_tHandler.IsBackground = true;

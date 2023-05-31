@@ -24,7 +24,7 @@ namespace Client.Manager
 
         private SocketManager()
         {
-            m_ClientSocket = new TcpClient();
+            //m_ClientSocket = new TcpClient();
         }
 
         public static SocketManager GetInst()
@@ -61,10 +61,19 @@ namespace Client.Manager
             set { m_listNickName = value; }
         }
 
-        public void Binding(string _strServerIP, string _strNickName)
+        public bool Binding(string _strServerIP, string _strNickName)
         {
-            m_ClientSocket.Connect(_strServerIP, 9999);
-            
+            //m_ClientSocket.Connect(_strServerIP, 9999);
+
+            try
+            {
+                m_ClientSocket = new TcpClient(_strServerIP, 9999);
+            }
+            catch
+            {
+                return false;
+            }
+
             m_Stream = m_ClientSocket.GetStream();
             m_strNickName = _strNickName;
 
@@ -75,6 +84,7 @@ namespace Client.Manager
             Packet.Serialize(pkLogin).CopyTo(buff, 0);
             m_Stream.Write(buff, 0, buff.Length);
             m_Stream.Flush();
+            return true;
         }
     }
 }

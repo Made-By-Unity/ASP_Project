@@ -24,8 +24,11 @@ namespace Client.Room
         {
             InitializeComponent();
 
+            ChattingRoom chattingRoom = new ChattingRoom();
+            chattingRoom.Show();
+
             // 0번 플레이어(방장) 시 시작 버튼 활성화
-            if(0 == SocketManager.GetInst().UID)
+            if (0 == SocketManager.GetInst().UID)
             {
                 btnGameStart.Enabled = true;
             }
@@ -62,9 +65,6 @@ namespace Client.Room
                         YachtDice fYacht = new YachtDice();
                         fYacht.Lobby = this;
                         this.Invoke(new Action(()=>this.Visible = false));
-
-                        //ChattingRoom chattingRoom = new ChattingRoom();
-                        //chattingRoom.Show();
                         
                         Application.Run(fYacht);
                     }
