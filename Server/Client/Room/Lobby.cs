@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,6 +35,7 @@ namespace Client.Room
 
             cbGame.SelectedIndex = 0;
             m_tHandler = new Thread(GetPacket);
+            m_tHandler.IsBackground = true;
             m_tHandler.Start();
         }
 
@@ -60,10 +62,10 @@ namespace Client.Room
                         YachtDice fYacht = new YachtDice();
                         fYacht.Lobby = this;
                         this.Invoke(new Action(()=>this.Visible = false));
-                        
+
                         //ChattingRoom chattingRoom = new ChattingRoom();
                         //chattingRoom.Show();
-
+                        
                         Application.Run(fYacht);
                     }
                 }
@@ -72,7 +74,11 @@ namespace Client.Room
 
         public void Return()
         {
-            this.Invoke(new Action(() => this.Visible = true));            
+            this.Invoke(new Action(() => {
+                this.Visible = true;
+                m_tHandler = new Thread(GetPacket);
+                m_tHandler.Start();
+            }));            
         }
 
         private void UpdatePlayer()
@@ -114,5 +120,9 @@ namespace Client.Room
             SocketManager.GetInst().Stream.Flush();
         }
 
+        private void Lobby_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_tHandler.Abort();
+        }
     }
 }

@@ -45,6 +45,7 @@ namespace Client
             InitializeComponent();
 
             m_tHandler = new Thread(GetPacket);
+            m_tHandler.IsBackground = true;
             m_tHandler.Start();
 
             // 점수판 관리를 편하게 하기 위해 각 플레이어 점수판마다 하나씩 작성
@@ -993,6 +994,17 @@ namespace Client
 
             tbScore.Enabled = false;
             TurnEnd();
+        }
+
+        private void YachtDice_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Invoke(new MethodInvoker(delegate
+            {
+                if (m_fLobby != null)
+                    m_fLobby.Show();
+
+                m_tHandler.Abort();
+            }));
         }
     }
 }

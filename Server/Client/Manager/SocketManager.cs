@@ -77,6 +77,4 @@ namespace Client.Manager
             m_Stream.Flush();
         }
     }
-
-
 }

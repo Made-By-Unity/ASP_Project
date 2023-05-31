@@ -15,6 +15,7 @@ using Client.Manager;
 using System.IO;
 using System.Runtime.InteropServices.ComTypes;
 using Client.Room;
+using System.Diagnostics;
 
 namespace Client.Title
 {
@@ -26,6 +27,7 @@ namespace Client.Title
         {
             InitializeComponent();
         }
+
         private void GetPacket()
         {
             while (true)
@@ -55,8 +57,11 @@ namespace Client.Title
 
             Thread thread = new Thread(() =>
             {
-                lobby = new Lobby();
-                Application.Run(lobby);
+                if(lobby == null)
+                {
+                    lobby = new Lobby();
+                    Application.Run(lobby);
+                }
             });
 
             thread.Start();
