@@ -92,8 +92,9 @@ namespace Server
         {
             if (clientList.ContainsKey(clientSocket))
                 clientList.Remove(clientSocket);
-            Packet packet=new Packet();
+            Disconnect packet=new Disconnect();
             packet.packet_Type = PacketType.Disconnect;
+            packet.UserName = User;
             SendMessageAll(User + "님이 접속을 종료했습니다.", "", false, packet);
             //nickList에서 지워주기
             for(int i=0;i<nickNames.Count;i++)
@@ -239,9 +240,10 @@ namespace Server
                     break;
                 case PacketType.Disconnect:
                     {
-                        ChattingResult chattingResult = new ChattingResult();
-                        chattingResult.chat = msg;
-                        Packet.Serialize(chattingResult).CopyTo(buff, 0);
+                        DisconnectResult disconnectResult = new DisconnectResult();
+                        disconnectResult.UserName = ((Disconnect)packet).UserName;
+                        disconnectResult.chat = msg;
+                        Packet.Serialize(disconnectResult).CopyTo(buff, 0);
                     }
                     break;
             }

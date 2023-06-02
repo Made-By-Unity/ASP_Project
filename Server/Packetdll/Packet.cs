@@ -36,7 +36,8 @@ namespace Packetdll
         K_GameOver_Result,
 
 
-        Disconnect
+        Disconnect,
+        Disconnect_Result,
     }
 
     public enum ScoreType : int
@@ -216,9 +217,16 @@ namespace Packetdll
     public class Disconnect : Packet
     {
         public Disconnect() { packet_Type = PacketType.Disconnect; }
+        public string UserName { get; set; }
         public string chat { get; set; }
     }
-
+    [Serializable]
+    public class DisconnectResult : Packet
+    {
+        public DisconnectResult() { packet_Type = PacketType.Disconnect_Result; }
+        public string UserName { get; set; }
+        public string chat { get; set; }
+    }
 
     [Serializable]
     public class K_RollStart : Packet
