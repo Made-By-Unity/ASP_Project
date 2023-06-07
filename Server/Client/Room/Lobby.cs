@@ -19,13 +19,21 @@ namespace Client.Room
     public partial class Lobby : Form
     {
         Thread m_tHandler;
+        ChattingRoom m_fChat;
+
+        public ChattingRoom ChattingRoom
+        {
+            get { return m_fChat; }
+            set { m_fChat = value; }
+        }
+        
 
         public Lobby()
         {
             InitializeComponent();
 
-            ChattingRoom chattingRoom = new ChattingRoom();
-            chattingRoom.Show();
+            ChattingRoom = new ChattingRoom();
+            ChattingRoom.Show();
 
             // 0번 플레이어(방장) 시 시작 버튼 활성화
             if (0 == SocketManager.GetInst().UID)
@@ -64,10 +72,16 @@ namespace Client.Room
                     {
                         YachtDice fYacht = new YachtDice();
                         fYacht.Lobby = this;
+                        fYacht.ChattingRoom = ChattingRoom;
                         this.Invoke(new Action(()=>this.Visible = false));
                         
                         Application.Run(fYacht);
                     }
+                }
+                else if(packet.packet_Type == PacketType.Chatting_Result)
+                {
+                    ChattingResult pkChattingResult = (ChattingResult)packet;
+                    ChattingRoom.DisplayText(pkChattingResult.chat);
                 }
             }
         }

@@ -8,6 +8,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace Client
     public partial class YachtDice : Form
     {
         Lobby m_fLobby;
+        ChattingRoom m_fChat;
         Thread m_tHandler = null;
 
         private int m_iRollCount = 3;
@@ -38,6 +40,12 @@ namespace Client
         public Lobby Lobby { 
             get { return m_fLobby; } 
             set { m_fLobby = value; }
+        }
+
+        public ChattingRoom ChattingRoom
+        {
+            get { return m_fChat; }
+            set { m_fChat = value; }
         }
    
         public YachtDice()
@@ -387,6 +395,12 @@ namespace Client
                         }
                         break;
                     case PacketType.Disconnect:
+                        break;
+                    case PacketType.Chatting_Result:
+                        {
+                            ChattingResult pkChattingResult = (ChattingResult)packet;
+                            ChattingRoom.DisplayText(pkChattingResult.chat);
+                        }
                         break;
                 }
             }

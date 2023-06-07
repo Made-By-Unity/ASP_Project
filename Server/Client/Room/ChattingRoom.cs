@@ -16,14 +16,14 @@ namespace Client.Room
 {
     public partial class ChattingRoom : Form
     {
-        Thread m_tHandler = null;
+        //Thread m_tHandler = null;
         public ChattingRoom()
         {
             InitializeComponent();
 
-            m_tHandler = new Thread(GetPacket);
-            m_tHandler.IsBackground = true;
-            m_tHandler.Start();
+            //m_tHandler = new Thread(GetPacket);
+            //m_tHandler.IsBackground = true;
+            //m_tHandler.Start();
         }
 
         private void ChattingRoom_Load(object sender, EventArgs e)
@@ -56,6 +56,8 @@ namespace Client.Room
             else
                 textBox1.AppendText(text + Environment.NewLine);
         }
+
+        // 채팅 패킷은 무조건 밖에서 받아서 전달하도록 변경 이쪽은 폐기함
         private void GetPacket()
         {
             while (true)
@@ -69,8 +71,6 @@ namespace Client.Room
                     ChattingResult pkChattingResult = (ChattingResult)packet;
                     DisplayText(pkChattingResult.chat);
                 }
-
-
             }
         }
     }
