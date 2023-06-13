@@ -128,6 +128,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice3)).BeginInit();
@@ -139,7 +143,7 @@
             // 
             // pbDice1
             // 
-            this.pbDice1.Location = new System.Drawing.Point(37, 29);
+            this.pbDice1.Location = new System.Drawing.Point(29, 63);
             this.pbDice1.Name = "pbDice1";
             this.pbDice1.Size = new System.Drawing.Size(86, 78);
             this.pbDice1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,7 +156,7 @@
             this.btnRoll.Enabled = false;
             this.btnRoll.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRoll.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRoll.Location = new System.Drawing.Point(102, 492);
+            this.btnRoll.Location = new System.Drawing.Point(94, 526);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(91, 34);
             this.btnRoll.TabIndex = 1;
@@ -162,7 +166,7 @@
             // 
             // pbDice2
             // 
-            this.pbDice2.Location = new System.Drawing.Point(37, 121);
+            this.pbDice2.Location = new System.Drawing.Point(29, 155);
             this.pbDice2.Name = "pbDice2";
             this.pbDice2.Size = new System.Drawing.Size(86, 78);
             this.pbDice2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -171,7 +175,7 @@
             // 
             // pbDice3
             // 
-            this.pbDice3.Location = new System.Drawing.Point(37, 213);
+            this.pbDice3.Location = new System.Drawing.Point(29, 247);
             this.pbDice3.Name = "pbDice3";
             this.pbDice3.Size = new System.Drawing.Size(86, 78);
             this.pbDice3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,7 +184,7 @@
             // 
             // pbDice4
             // 
-            this.pbDice4.Location = new System.Drawing.Point(37, 305);
+            this.pbDice4.Location = new System.Drawing.Point(29, 339);
             this.pbDice4.Name = "pbDice4";
             this.pbDice4.Size = new System.Drawing.Size(86, 78);
             this.pbDice4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +193,7 @@
             // 
             // pbDice5
             // 
-            this.pbDice5.Location = new System.Drawing.Point(37, 397);
+            this.pbDice5.Location = new System.Drawing.Point(29, 431);
             this.pbDice5.Name = "pbDice5";
             this.pbDice5.Size = new System.Drawing.Size(86, 78);
             this.pbDice5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -245,7 +249,7 @@
             this.txtCategory.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtCategory.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtCategory.ForeColor = System.Drawing.Color.White;
-            this.txtCategory.Location = new System.Drawing.Point(309, 17);
+            this.txtCategory.Location = new System.Drawing.Point(311, 81);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.ReadOnly = true;
             this.txtCategory.Size = new System.Drawing.Size(91, 27);
@@ -259,7 +263,7 @@
             this.txtAces.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAces.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAces.ForeColor = System.Drawing.Color.White;
-            this.txtAces.Location = new System.Drawing.Point(309, 49);
+            this.txtAces.Location = new System.Drawing.Point(311, 113);
             this.txtAces.Name = "txtAces";
             this.txtAces.ReadOnly = true;
             this.txtAces.Size = new System.Drawing.Size(91, 27);
@@ -273,7 +277,7 @@
             this.txtDeuces.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeuces.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeuces.ForeColor = System.Drawing.Color.White;
-            this.txtDeuces.Location = new System.Drawing.Point(309, 81);
+            this.txtDeuces.Location = new System.Drawing.Point(311, 145);
             this.txtDeuces.Name = "txtDeuces";
             this.txtDeuces.ReadOnly = true;
             this.txtDeuces.Size = new System.Drawing.Size(91, 27);
@@ -287,7 +291,7 @@
             this.txtThrees.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThrees.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThrees.ForeColor = System.Drawing.Color.White;
-            this.txtThrees.Location = new System.Drawing.Point(309, 113);
+            this.txtThrees.Location = new System.Drawing.Point(311, 177);
             this.txtThrees.Name = "txtThrees";
             this.txtThrees.ReadOnly = true;
             this.txtThrees.Size = new System.Drawing.Size(91, 27);
@@ -301,7 +305,7 @@
             this.txtFours.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFours.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFours.ForeColor = System.Drawing.Color.White;
-            this.txtFours.Location = new System.Drawing.Point(309, 145);
+            this.txtFours.Location = new System.Drawing.Point(311, 209);
             this.txtFours.Name = "txtFours";
             this.txtFours.ReadOnly = true;
             this.txtFours.Size = new System.Drawing.Size(91, 27);
@@ -315,7 +319,7 @@
             this.txtFives.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFives.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFives.ForeColor = System.Drawing.Color.White;
-            this.txtFives.Location = new System.Drawing.Point(309, 177);
+            this.txtFives.Location = new System.Drawing.Point(311, 241);
             this.txtFives.Name = "txtFives";
             this.txtFives.ReadOnly = true;
             this.txtFives.Size = new System.Drawing.Size(91, 27);
@@ -329,7 +333,7 @@
             this.txtSixes.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixes.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixes.ForeColor = System.Drawing.Color.White;
-            this.txtSixes.Location = new System.Drawing.Point(309, 209);
+            this.txtSixes.Location = new System.Drawing.Point(311, 273);
             this.txtSixes.Name = "txtSixes";
             this.txtSixes.ReadOnly = true;
             this.txtSixes.Size = new System.Drawing.Size(91, 27);
@@ -343,7 +347,7 @@
             this.txtSubtotal.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotal.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotal.ForeColor = System.Drawing.Color.White;
-            this.txtSubtotal.Location = new System.Drawing.Point(309, 241);
+            this.txtSubtotal.Location = new System.Drawing.Point(311, 305);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.ReadOnly = true;
             this.txtSubtotal.Size = new System.Drawing.Size(91, 27);
@@ -357,7 +361,7 @@
             this.txtBonus.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonus.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonus.ForeColor = System.Drawing.Color.White;
-            this.txtBonus.Location = new System.Drawing.Point(309, 273);
+            this.txtBonus.Location = new System.Drawing.Point(311, 337);
             this.txtBonus.Name = "txtBonus";
             this.txtBonus.ReadOnly = true;
             this.txtBonus.Size = new System.Drawing.Size(91, 27);
@@ -371,7 +375,7 @@
             this.txtBonusAble1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonusAble1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonusAble1.ForeColor = System.Drawing.Color.White;
-            this.txtBonusAble1.Location = new System.Drawing.Point(406, 273);
+            this.txtBonusAble1.Location = new System.Drawing.Point(408, 337);
             this.txtBonusAble1.Name = "txtBonusAble1";
             this.txtBonusAble1.ReadOnly = true;
             this.txtBonusAble1.Size = new System.Drawing.Size(91, 27);
@@ -385,7 +389,7 @@
             this.txtSubtotalScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotalScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotalScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSubtotalScore1.Location = new System.Drawing.Point(406, 241);
+            this.txtSubtotalScore1.Location = new System.Drawing.Point(408, 305);
             this.txtSubtotalScore1.Name = "txtSubtotalScore1";
             this.txtSubtotalScore1.ReadOnly = true;
             this.txtSubtotalScore1.Size = new System.Drawing.Size(91, 27);
@@ -400,7 +404,7 @@
             this.txtSixesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixesScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSixesScore1.Location = new System.Drawing.Point(406, 209);
+            this.txtSixesScore1.Location = new System.Drawing.Point(408, 273);
             this.txtSixesScore1.Name = "txtSixesScore1";
             this.txtSixesScore1.ReadOnly = true;
             this.txtSixesScore1.Size = new System.Drawing.Size(91, 27);
@@ -415,7 +419,7 @@
             this.txtFivesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFivesScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFivesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFivesScore1.Location = new System.Drawing.Point(406, 177);
+            this.txtFivesScore1.Location = new System.Drawing.Point(408, 241);
             this.txtFivesScore1.Name = "txtFivesScore1";
             this.txtFivesScore1.ReadOnly = true;
             this.txtFivesScore1.Size = new System.Drawing.Size(91, 27);
@@ -430,7 +434,7 @@
             this.txtFoursScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFoursScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFoursScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFoursScore1.Location = new System.Drawing.Point(406, 145);
+            this.txtFoursScore1.Location = new System.Drawing.Point(408, 209);
             this.txtFoursScore1.Name = "txtFoursScore1";
             this.txtFoursScore1.ReadOnly = true;
             this.txtFoursScore1.Size = new System.Drawing.Size(91, 27);
@@ -445,7 +449,7 @@
             this.txtThreesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThreesScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThreesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtThreesScore1.Location = new System.Drawing.Point(406, 113);
+            this.txtThreesScore1.Location = new System.Drawing.Point(408, 177);
             this.txtThreesScore1.Name = "txtThreesScore1";
             this.txtThreesScore1.ReadOnly = true;
             this.txtThreesScore1.Size = new System.Drawing.Size(91, 27);
@@ -460,7 +464,7 @@
             this.txtDeucesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeucesScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeucesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDeucesScore1.Location = new System.Drawing.Point(406, 81);
+            this.txtDeucesScore1.Location = new System.Drawing.Point(408, 145);
             this.txtDeucesScore1.Name = "txtDeucesScore1";
             this.txtDeucesScore1.ReadOnly = true;
             this.txtDeucesScore1.Size = new System.Drawing.Size(91, 27);
@@ -475,7 +479,7 @@
             this.txtAcesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAcesScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAcesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAcesScore1.Location = new System.Drawing.Point(406, 49);
+            this.txtAcesScore1.Location = new System.Drawing.Point(408, 113);
             this.txtAcesScore1.Name = "txtAcesScore1";
             this.txtAcesScore1.ReadOnly = true;
             this.txtAcesScore1.Size = new System.Drawing.Size(91, 27);
@@ -490,7 +494,7 @@
             this.txtPlayer1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPlayer1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPlayer1.ForeColor = System.Drawing.Color.White;
-            this.txtPlayer1.Location = new System.Drawing.Point(406, 17);
+            this.txtPlayer1.Location = new System.Drawing.Point(408, 81);
             this.txtPlayer1.Name = "txtPlayer1";
             this.txtPlayer1.ReadOnly = true;
             this.txtPlayer1.Size = new System.Drawing.Size(91, 27);
@@ -505,7 +509,7 @@
             this.txtTotalScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotalScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotalScore1.ForeColor = System.Drawing.Color.White;
-            this.txtTotalScore1.Location = new System.Drawing.Point(406, 510);
+            this.txtTotalScore1.Location = new System.Drawing.Point(408, 574);
             this.txtTotalScore1.Name = "txtTotalScore1";
             this.txtTotalScore1.ReadOnly = true;
             this.txtTotalScore1.Size = new System.Drawing.Size(91, 27);
@@ -519,7 +523,7 @@
             this.txtYachtScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYachtScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYachtScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtYachtScore1.Location = new System.Drawing.Point(406, 478);
+            this.txtYachtScore1.Location = new System.Drawing.Point(408, 542);
             this.txtYachtScore1.Name = "txtYachtScore1";
             this.txtYachtScore1.ReadOnly = true;
             this.txtYachtScore1.Size = new System.Drawing.Size(91, 27);
@@ -534,7 +538,7 @@
             this.txtLSScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLSScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLSScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtLSScore1.Location = new System.Drawing.Point(406, 446);
+            this.txtLSScore1.Location = new System.Drawing.Point(408, 510);
             this.txtLSScore1.Name = "txtLSScore1";
             this.txtLSScore1.ReadOnly = true;
             this.txtLSScore1.Size = new System.Drawing.Size(91, 27);
@@ -549,7 +553,7 @@
             this.txtSSScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSSScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSSScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtSSScore1.Location = new System.Drawing.Point(406, 414);
+            this.txtSSScore1.Location = new System.Drawing.Point(408, 478);
             this.txtSSScore1.Name = "txtSSScore1";
             this.txtSSScore1.ReadOnly = true;
             this.txtSSScore1.Size = new System.Drawing.Size(91, 27);
@@ -564,7 +568,7 @@
             this.txtFHScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFHScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFHScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtFHScore1.Location = new System.Drawing.Point(406, 382);
+            this.txtFHScore1.Location = new System.Drawing.Point(408, 446);
             this.txtFHScore1.Name = "txtFHScore1";
             this.txtFHScore1.ReadOnly = true;
             this.txtFHScore1.Size = new System.Drawing.Size(91, 27);
@@ -579,7 +583,7 @@
             this.txt4KindScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4KindScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4KindScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt4KindScore1.Location = new System.Drawing.Point(406, 350);
+            this.txt4KindScore1.Location = new System.Drawing.Point(408, 414);
             this.txt4KindScore1.Name = "txt4KindScore1";
             this.txt4KindScore1.ReadOnly = true;
             this.txt4KindScore1.Size = new System.Drawing.Size(91, 27);
@@ -594,7 +598,7 @@
             this.txtChoiceScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoiceScore1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoiceScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtChoiceScore1.Location = new System.Drawing.Point(406, 318);
+            this.txtChoiceScore1.Location = new System.Drawing.Point(408, 382);
             this.txtChoiceScore1.Name = "txtChoiceScore1";
             this.txtChoiceScore1.ReadOnly = true;
             this.txtChoiceScore1.Size = new System.Drawing.Size(91, 27);
@@ -609,7 +613,7 @@
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotal.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotal.ForeColor = System.Drawing.Color.White;
-            this.txtTotal.Location = new System.Drawing.Point(309, 510);
+            this.txtTotal.Location = new System.Drawing.Point(311, 574);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(91, 27);
@@ -623,7 +627,7 @@
             this.txtYacht.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYacht.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYacht.ForeColor = System.Drawing.Color.White;
-            this.txtYacht.Location = new System.Drawing.Point(309, 478);
+            this.txtYacht.Location = new System.Drawing.Point(311, 542);
             this.txtYacht.Name = "txtYacht";
             this.txtYacht.ReadOnly = true;
             this.txtYacht.Size = new System.Drawing.Size(91, 27);
@@ -637,7 +641,7 @@
             this.txtLStraight.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLStraight.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLStraight.ForeColor = System.Drawing.Color.White;
-            this.txtLStraight.Location = new System.Drawing.Point(309, 446);
+            this.txtLStraight.Location = new System.Drawing.Point(311, 510);
             this.txtLStraight.Name = "txtLStraight";
             this.txtLStraight.ReadOnly = true;
             this.txtLStraight.Size = new System.Drawing.Size(91, 27);
@@ -651,7 +655,7 @@
             this.txtSStraight.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSStraight.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSStraight.ForeColor = System.Drawing.Color.White;
-            this.txtSStraight.Location = new System.Drawing.Point(309, 414);
+            this.txtSStraight.Location = new System.Drawing.Point(311, 478);
             this.txtSStraight.Name = "txtSStraight";
             this.txtSStraight.ReadOnly = true;
             this.txtSStraight.Size = new System.Drawing.Size(91, 27);
@@ -665,7 +669,7 @@
             this.txtFullHouse.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFullHouse.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFullHouse.ForeColor = System.Drawing.Color.White;
-            this.txtFullHouse.Location = new System.Drawing.Point(309, 382);
+            this.txtFullHouse.Location = new System.Drawing.Point(311, 446);
             this.txtFullHouse.Name = "txtFullHouse";
             this.txtFullHouse.ReadOnly = true;
             this.txtFullHouse.Size = new System.Drawing.Size(91, 27);
@@ -679,7 +683,7 @@
             this.txt4kind.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4kind.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4kind.ForeColor = System.Drawing.Color.White;
-            this.txt4kind.Location = new System.Drawing.Point(309, 350);
+            this.txt4kind.Location = new System.Drawing.Point(311, 414);
             this.txt4kind.Name = "txt4kind";
             this.txt4kind.ReadOnly = true;
             this.txt4kind.Size = new System.Drawing.Size(91, 27);
@@ -693,7 +697,7 @@
             this.txtChoice.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoice.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoice.ForeColor = System.Drawing.Color.White;
-            this.txtChoice.Location = new System.Drawing.Point(309, 318);
+            this.txtChoice.Location = new System.Drawing.Point(311, 382);
             this.txtChoice.Name = "txtChoice";
             this.txtChoice.ReadOnly = true;
             this.txtChoice.Size = new System.Drawing.Size(91, 27);
@@ -706,7 +710,7 @@
             this.cbDice1.AutoSize = true;
             this.cbDice1.Enabled = false;
             this.cbDice1.Font = new System.Drawing.Font("SUIT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice1.Location = new System.Drawing.Point(143, 61);
+            this.cbDice1.Location = new System.Drawing.Point(135, 95);
             this.cbDice1.Name = "cbDice1";
             this.cbDice1.Size = new System.Drawing.Size(52, 19);
             this.cbDice1.TabIndex = 45;
@@ -719,7 +723,7 @@
             this.cbDice2.AutoSize = true;
             this.cbDice2.Enabled = false;
             this.cbDice2.Font = new System.Drawing.Font("SUIT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice2.Location = new System.Drawing.Point(143, 153);
+            this.cbDice2.Location = new System.Drawing.Point(135, 187);
             this.cbDice2.Name = "cbDice2";
             this.cbDice2.Size = new System.Drawing.Size(52, 19);
             this.cbDice2.TabIndex = 46;
@@ -732,7 +736,7 @@
             this.cbDice3.AutoSize = true;
             this.cbDice3.Enabled = false;
             this.cbDice3.Font = new System.Drawing.Font("SUIT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice3.Location = new System.Drawing.Point(143, 245);
+            this.cbDice3.Location = new System.Drawing.Point(135, 279);
             this.cbDice3.Name = "cbDice3";
             this.cbDice3.Size = new System.Drawing.Size(52, 19);
             this.cbDice3.TabIndex = 47;
@@ -745,7 +749,7 @@
             this.cbDice4.AutoSize = true;
             this.cbDice4.Enabled = false;
             this.cbDice4.Font = new System.Drawing.Font("SUIT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice4.Location = new System.Drawing.Point(143, 337);
+            this.cbDice4.Location = new System.Drawing.Point(135, 371);
             this.cbDice4.Name = "cbDice4";
             this.cbDice4.Size = new System.Drawing.Size(52, 19);
             this.cbDice4.TabIndex = 48;
@@ -758,7 +762,7 @@
             this.cbDice5.AutoSize = true;
             this.cbDice5.Enabled = false;
             this.cbDice5.Font = new System.Drawing.Font("SUIT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice5.Location = new System.Drawing.Point(143, 429);
+            this.cbDice5.Location = new System.Drawing.Point(135, 463);
             this.cbDice5.Name = "cbDice5";
             this.cbDice5.Size = new System.Drawing.Size(52, 19);
             this.cbDice5.TabIndex = 49;
@@ -773,7 +777,7 @@
             this.txtTotalScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotalScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotalScore2.ForeColor = System.Drawing.Color.White;
-            this.txtTotalScore2.Location = new System.Drawing.Point(502, 510);
+            this.txtTotalScore2.Location = new System.Drawing.Point(504, 574);
             this.txtTotalScore2.Name = "txtTotalScore2";
             this.txtTotalScore2.ReadOnly = true;
             this.txtTotalScore2.Size = new System.Drawing.Size(91, 27);
@@ -788,7 +792,7 @@
             this.txtYachtScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYachtScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYachtScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtYachtScore2.Location = new System.Drawing.Point(502, 478);
+            this.txtYachtScore2.Location = new System.Drawing.Point(504, 542);
             this.txtYachtScore2.Name = "txtYachtScore2";
             this.txtYachtScore2.ReadOnly = true;
             this.txtYachtScore2.Size = new System.Drawing.Size(91, 27);
@@ -804,7 +808,7 @@
             this.txtLSScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLSScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLSScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtLSScore2.Location = new System.Drawing.Point(502, 446);
+            this.txtLSScore2.Location = new System.Drawing.Point(504, 510);
             this.txtLSScore2.Name = "txtLSScore2";
             this.txtLSScore2.ReadOnly = true;
             this.txtLSScore2.Size = new System.Drawing.Size(91, 27);
@@ -820,7 +824,7 @@
             this.txtSSScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSSScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSSScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtSSScore2.Location = new System.Drawing.Point(502, 414);
+            this.txtSSScore2.Location = new System.Drawing.Point(504, 478);
             this.txtSSScore2.Name = "txtSSScore2";
             this.txtSSScore2.ReadOnly = true;
             this.txtSSScore2.Size = new System.Drawing.Size(91, 27);
@@ -836,7 +840,7 @@
             this.txtFHScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFHScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFHScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtFHScore2.Location = new System.Drawing.Point(502, 382);
+            this.txtFHScore2.Location = new System.Drawing.Point(504, 446);
             this.txtFHScore2.Name = "txtFHScore2";
             this.txtFHScore2.ReadOnly = true;
             this.txtFHScore2.Size = new System.Drawing.Size(91, 27);
@@ -852,7 +856,7 @@
             this.txt4KindScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4KindScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4KindScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt4KindScore2.Location = new System.Drawing.Point(502, 350);
+            this.txt4KindScore2.Location = new System.Drawing.Point(504, 414);
             this.txt4KindScore2.Name = "txt4KindScore2";
             this.txt4KindScore2.ReadOnly = true;
             this.txt4KindScore2.Size = new System.Drawing.Size(91, 27);
@@ -868,7 +872,7 @@
             this.txtChoiceScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoiceScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoiceScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtChoiceScore2.Location = new System.Drawing.Point(502, 318);
+            this.txtChoiceScore2.Location = new System.Drawing.Point(504, 382);
             this.txtChoiceScore2.Name = "txtChoiceScore2";
             this.txtChoiceScore2.ReadOnly = true;
             this.txtChoiceScore2.Size = new System.Drawing.Size(91, 27);
@@ -884,7 +888,7 @@
             this.txtBonusAble2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonusAble2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonusAble2.ForeColor = System.Drawing.Color.White;
-            this.txtBonusAble2.Location = new System.Drawing.Point(502, 273);
+            this.txtBonusAble2.Location = new System.Drawing.Point(504, 337);
             this.txtBonusAble2.Name = "txtBonusAble2";
             this.txtBonusAble2.ReadOnly = true;
             this.txtBonusAble2.Size = new System.Drawing.Size(91, 27);
@@ -899,7 +903,7 @@
             this.txtSubtotalScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotalScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotalScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSubtotalScore2.Location = new System.Drawing.Point(502, 241);
+            this.txtSubtotalScore2.Location = new System.Drawing.Point(504, 305);
             this.txtSubtotalScore2.Name = "txtSubtotalScore2";
             this.txtSubtotalScore2.ReadOnly = true;
             this.txtSubtotalScore2.Size = new System.Drawing.Size(91, 27);
@@ -915,7 +919,7 @@
             this.txtSixesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixesScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSixesScore2.Location = new System.Drawing.Point(502, 209);
+            this.txtSixesScore2.Location = new System.Drawing.Point(504, 273);
             this.txtSixesScore2.Name = "txtSixesScore2";
             this.txtSixesScore2.ReadOnly = true;
             this.txtSixesScore2.Size = new System.Drawing.Size(91, 27);
@@ -931,7 +935,7 @@
             this.txtFivesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFivesScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFivesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFivesScore2.Location = new System.Drawing.Point(502, 177);
+            this.txtFivesScore2.Location = new System.Drawing.Point(504, 241);
             this.txtFivesScore2.Name = "txtFivesScore2";
             this.txtFivesScore2.ReadOnly = true;
             this.txtFivesScore2.Size = new System.Drawing.Size(91, 27);
@@ -947,7 +951,7 @@
             this.txtFoursScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFoursScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFoursScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFoursScore2.Location = new System.Drawing.Point(502, 145);
+            this.txtFoursScore2.Location = new System.Drawing.Point(504, 209);
             this.txtFoursScore2.Name = "txtFoursScore2";
             this.txtFoursScore2.ReadOnly = true;
             this.txtFoursScore2.Size = new System.Drawing.Size(91, 27);
@@ -963,7 +967,7 @@
             this.txtThreesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThreesScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThreesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtThreesScore2.Location = new System.Drawing.Point(502, 113);
+            this.txtThreesScore2.Location = new System.Drawing.Point(504, 177);
             this.txtThreesScore2.Name = "txtThreesScore2";
             this.txtThreesScore2.ReadOnly = true;
             this.txtThreesScore2.Size = new System.Drawing.Size(91, 27);
@@ -979,7 +983,7 @@
             this.txtDeucesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeucesScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeucesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDeucesScore2.Location = new System.Drawing.Point(502, 81);
+            this.txtDeucesScore2.Location = new System.Drawing.Point(504, 145);
             this.txtDeucesScore2.Name = "txtDeucesScore2";
             this.txtDeucesScore2.ReadOnly = true;
             this.txtDeucesScore2.Size = new System.Drawing.Size(91, 27);
@@ -995,7 +999,7 @@
             this.txtAcesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAcesScore2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAcesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAcesScore2.Location = new System.Drawing.Point(502, 49);
+            this.txtAcesScore2.Location = new System.Drawing.Point(504, 113);
             this.txtAcesScore2.Name = "txtAcesScore2";
             this.txtAcesScore2.ReadOnly = true;
             this.txtAcesScore2.Size = new System.Drawing.Size(91, 27);
@@ -1011,7 +1015,7 @@
             this.txtPlayer2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPlayer2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPlayer2.ForeColor = System.Drawing.Color.White;
-            this.txtPlayer2.Location = new System.Drawing.Point(502, 17);
+            this.txtPlayer2.Location = new System.Drawing.Point(504, 81);
             this.txtPlayer2.Name = "txtPlayer2";
             this.txtPlayer2.ReadOnly = true;
             this.txtPlayer2.Size = new System.Drawing.Size(91, 27);
@@ -1027,7 +1031,7 @@
             this.txtTotalScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotalScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotalScore3.ForeColor = System.Drawing.Color.White;
-            this.txtTotalScore3.Location = new System.Drawing.Point(599, 510);
+            this.txtTotalScore3.Location = new System.Drawing.Point(601, 574);
             this.txtTotalScore3.Name = "txtTotalScore3";
             this.txtTotalScore3.ReadOnly = true;
             this.txtTotalScore3.Size = new System.Drawing.Size(91, 27);
@@ -1042,7 +1046,7 @@
             this.txtYachtScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYachtScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYachtScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtYachtScore3.Location = new System.Drawing.Point(599, 478);
+            this.txtYachtScore3.Location = new System.Drawing.Point(601, 542);
             this.txtYachtScore3.Name = "txtYachtScore3";
             this.txtYachtScore3.ReadOnly = true;
             this.txtYachtScore3.Size = new System.Drawing.Size(91, 27);
@@ -1058,7 +1062,7 @@
             this.txtLSScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLSScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLSScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtLSScore3.Location = new System.Drawing.Point(599, 446);
+            this.txtLSScore3.Location = new System.Drawing.Point(601, 510);
             this.txtLSScore3.Name = "txtLSScore3";
             this.txtLSScore3.ReadOnly = true;
             this.txtLSScore3.Size = new System.Drawing.Size(91, 27);
@@ -1074,7 +1078,7 @@
             this.txtSSScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSSScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSSScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtSSScore3.Location = new System.Drawing.Point(599, 414);
+            this.txtSSScore3.Location = new System.Drawing.Point(601, 478);
             this.txtSSScore3.Name = "txtSSScore3";
             this.txtSSScore3.ReadOnly = true;
             this.txtSSScore3.Size = new System.Drawing.Size(91, 27);
@@ -1090,7 +1094,7 @@
             this.txtFHScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFHScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFHScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtFHScore3.Location = new System.Drawing.Point(599, 382);
+            this.txtFHScore3.Location = new System.Drawing.Point(601, 446);
             this.txtFHScore3.Name = "txtFHScore3";
             this.txtFHScore3.ReadOnly = true;
             this.txtFHScore3.Size = new System.Drawing.Size(91, 27);
@@ -1106,7 +1110,7 @@
             this.txt4KindScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4KindScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4KindScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt4KindScore3.Location = new System.Drawing.Point(599, 350);
+            this.txt4KindScore3.Location = new System.Drawing.Point(601, 414);
             this.txt4KindScore3.Name = "txt4KindScore3";
             this.txt4KindScore3.ReadOnly = true;
             this.txt4KindScore3.Size = new System.Drawing.Size(91, 27);
@@ -1122,7 +1126,7 @@
             this.txtChoiceScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoiceScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoiceScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtChoiceScore3.Location = new System.Drawing.Point(599, 318);
+            this.txtChoiceScore3.Location = new System.Drawing.Point(601, 382);
             this.txtChoiceScore3.Name = "txtChoiceScore3";
             this.txtChoiceScore3.ReadOnly = true;
             this.txtChoiceScore3.Size = new System.Drawing.Size(91, 27);
@@ -1138,7 +1142,7 @@
             this.txtBonusAble3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonusAble3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonusAble3.ForeColor = System.Drawing.Color.White;
-            this.txtBonusAble3.Location = new System.Drawing.Point(599, 273);
+            this.txtBonusAble3.Location = new System.Drawing.Point(601, 337);
             this.txtBonusAble3.Name = "txtBonusAble3";
             this.txtBonusAble3.ReadOnly = true;
             this.txtBonusAble3.Size = new System.Drawing.Size(91, 27);
@@ -1153,7 +1157,7 @@
             this.txtSubtotalScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotalScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotalScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSubtotalScore3.Location = new System.Drawing.Point(599, 241);
+            this.txtSubtotalScore3.Location = new System.Drawing.Point(601, 305);
             this.txtSubtotalScore3.Name = "txtSubtotalScore3";
             this.txtSubtotalScore3.ReadOnly = true;
             this.txtSubtotalScore3.Size = new System.Drawing.Size(91, 27);
@@ -1169,7 +1173,7 @@
             this.txtSixesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixesScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSixesScore3.Location = new System.Drawing.Point(599, 209);
+            this.txtSixesScore3.Location = new System.Drawing.Point(601, 273);
             this.txtSixesScore3.Name = "txtSixesScore3";
             this.txtSixesScore3.ReadOnly = true;
             this.txtSixesScore3.Size = new System.Drawing.Size(91, 27);
@@ -1185,7 +1189,7 @@
             this.txtFivesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFivesScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFivesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFivesScore3.Location = new System.Drawing.Point(599, 177);
+            this.txtFivesScore3.Location = new System.Drawing.Point(601, 241);
             this.txtFivesScore3.Name = "txtFivesScore3";
             this.txtFivesScore3.ReadOnly = true;
             this.txtFivesScore3.Size = new System.Drawing.Size(91, 27);
@@ -1201,7 +1205,7 @@
             this.txtFoursScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFoursScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFoursScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFoursScore3.Location = new System.Drawing.Point(599, 145);
+            this.txtFoursScore3.Location = new System.Drawing.Point(601, 209);
             this.txtFoursScore3.Name = "txtFoursScore3";
             this.txtFoursScore3.ReadOnly = true;
             this.txtFoursScore3.Size = new System.Drawing.Size(91, 27);
@@ -1217,7 +1221,7 @@
             this.txtThreesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThreesScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThreesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtThreesScore3.Location = new System.Drawing.Point(599, 113);
+            this.txtThreesScore3.Location = new System.Drawing.Point(601, 177);
             this.txtThreesScore3.Name = "txtThreesScore3";
             this.txtThreesScore3.ReadOnly = true;
             this.txtThreesScore3.Size = new System.Drawing.Size(91, 27);
@@ -1233,7 +1237,7 @@
             this.txtDeucesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeucesScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeucesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDeucesScore3.Location = new System.Drawing.Point(599, 81);
+            this.txtDeucesScore3.Location = new System.Drawing.Point(601, 145);
             this.txtDeucesScore3.Name = "txtDeucesScore3";
             this.txtDeucesScore3.ReadOnly = true;
             this.txtDeucesScore3.Size = new System.Drawing.Size(91, 27);
@@ -1249,7 +1253,7 @@
             this.txtAcesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAcesScore3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAcesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAcesScore3.Location = new System.Drawing.Point(599, 49);
+            this.txtAcesScore3.Location = new System.Drawing.Point(601, 113);
             this.txtAcesScore3.Name = "txtAcesScore3";
             this.txtAcesScore3.ReadOnly = true;
             this.txtAcesScore3.Size = new System.Drawing.Size(91, 27);
@@ -1265,7 +1269,7 @@
             this.txtPlayer3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPlayer3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPlayer3.ForeColor = System.Drawing.Color.White;
-            this.txtPlayer3.Location = new System.Drawing.Point(599, 17);
+            this.txtPlayer3.Location = new System.Drawing.Point(601, 81);
             this.txtPlayer3.Name = "txtPlayer3";
             this.txtPlayer3.ReadOnly = true;
             this.txtPlayer3.Size = new System.Drawing.Size(91, 27);
@@ -1281,7 +1285,7 @@
             this.txtTotalScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotalScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotalScore4.ForeColor = System.Drawing.Color.White;
-            this.txtTotalScore4.Location = new System.Drawing.Point(695, 510);
+            this.txtTotalScore4.Location = new System.Drawing.Point(697, 574);
             this.txtTotalScore4.Name = "txtTotalScore4";
             this.txtTotalScore4.ReadOnly = true;
             this.txtTotalScore4.Size = new System.Drawing.Size(91, 27);
@@ -1296,7 +1300,7 @@
             this.txtYachtScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYachtScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYachtScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtYachtScore4.Location = new System.Drawing.Point(695, 478);
+            this.txtYachtScore4.Location = new System.Drawing.Point(697, 542);
             this.txtYachtScore4.Name = "txtYachtScore4";
             this.txtYachtScore4.ReadOnly = true;
             this.txtYachtScore4.Size = new System.Drawing.Size(91, 27);
@@ -1312,7 +1316,7 @@
             this.txtLSScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLSScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLSScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtLSScore4.Location = new System.Drawing.Point(695, 446);
+            this.txtLSScore4.Location = new System.Drawing.Point(697, 510);
             this.txtLSScore4.Name = "txtLSScore4";
             this.txtLSScore4.ReadOnly = true;
             this.txtLSScore4.Size = new System.Drawing.Size(91, 27);
@@ -1328,7 +1332,7 @@
             this.txtSSScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSSScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSSScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtSSScore4.Location = new System.Drawing.Point(695, 414);
+            this.txtSSScore4.Location = new System.Drawing.Point(697, 478);
             this.txtSSScore4.Name = "txtSSScore4";
             this.txtSSScore4.ReadOnly = true;
             this.txtSSScore4.Size = new System.Drawing.Size(91, 27);
@@ -1344,7 +1348,7 @@
             this.txtFHScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFHScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFHScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtFHScore4.Location = new System.Drawing.Point(695, 382);
+            this.txtFHScore4.Location = new System.Drawing.Point(697, 446);
             this.txtFHScore4.Name = "txtFHScore4";
             this.txtFHScore4.ReadOnly = true;
             this.txtFHScore4.Size = new System.Drawing.Size(91, 27);
@@ -1360,7 +1364,7 @@
             this.txt4KindScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4KindScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4KindScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt4KindScore4.Location = new System.Drawing.Point(695, 350);
+            this.txt4KindScore4.Location = new System.Drawing.Point(697, 414);
             this.txt4KindScore4.Name = "txt4KindScore4";
             this.txt4KindScore4.ReadOnly = true;
             this.txt4KindScore4.Size = new System.Drawing.Size(91, 27);
@@ -1376,7 +1380,7 @@
             this.txtChoiceScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoiceScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoiceScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtChoiceScore4.Location = new System.Drawing.Point(695, 318);
+            this.txtChoiceScore4.Location = new System.Drawing.Point(697, 382);
             this.txtChoiceScore4.Name = "txtChoiceScore4";
             this.txtChoiceScore4.ReadOnly = true;
             this.txtChoiceScore4.Size = new System.Drawing.Size(91, 27);
@@ -1392,7 +1396,7 @@
             this.txtBonusAble4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonusAble4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonusAble4.ForeColor = System.Drawing.Color.White;
-            this.txtBonusAble4.Location = new System.Drawing.Point(695, 273);
+            this.txtBonusAble4.Location = new System.Drawing.Point(697, 337);
             this.txtBonusAble4.Name = "txtBonusAble4";
             this.txtBonusAble4.ReadOnly = true;
             this.txtBonusAble4.Size = new System.Drawing.Size(91, 27);
@@ -1407,7 +1411,7 @@
             this.txtSubtotalScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotalScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotalScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSubtotalScore4.Location = new System.Drawing.Point(695, 241);
+            this.txtSubtotalScore4.Location = new System.Drawing.Point(697, 305);
             this.txtSubtotalScore4.Name = "txtSubtotalScore4";
             this.txtSubtotalScore4.ReadOnly = true;
             this.txtSubtotalScore4.Size = new System.Drawing.Size(91, 27);
@@ -1423,7 +1427,7 @@
             this.txtSixesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixesScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSixesScore4.Location = new System.Drawing.Point(695, 209);
+            this.txtSixesScore4.Location = new System.Drawing.Point(697, 273);
             this.txtSixesScore4.Name = "txtSixesScore4";
             this.txtSixesScore4.ReadOnly = true;
             this.txtSixesScore4.Size = new System.Drawing.Size(91, 27);
@@ -1439,7 +1443,7 @@
             this.txtFivesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFivesScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFivesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFivesScore4.Location = new System.Drawing.Point(695, 177);
+            this.txtFivesScore4.Location = new System.Drawing.Point(697, 241);
             this.txtFivesScore4.Name = "txtFivesScore4";
             this.txtFivesScore4.ReadOnly = true;
             this.txtFivesScore4.Size = new System.Drawing.Size(91, 27);
@@ -1455,7 +1459,7 @@
             this.txtFoursScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFoursScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFoursScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFoursScore4.Location = new System.Drawing.Point(695, 145);
+            this.txtFoursScore4.Location = new System.Drawing.Point(697, 209);
             this.txtFoursScore4.Name = "txtFoursScore4";
             this.txtFoursScore4.ReadOnly = true;
             this.txtFoursScore4.Size = new System.Drawing.Size(91, 27);
@@ -1471,7 +1475,7 @@
             this.txtThreesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThreesScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThreesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtThreesScore4.Location = new System.Drawing.Point(695, 113);
+            this.txtThreesScore4.Location = new System.Drawing.Point(697, 177);
             this.txtThreesScore4.Name = "txtThreesScore4";
             this.txtThreesScore4.ReadOnly = true;
             this.txtThreesScore4.Size = new System.Drawing.Size(91, 27);
@@ -1487,7 +1491,7 @@
             this.txtDeucesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeucesScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeucesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDeucesScore4.Location = new System.Drawing.Point(695, 81);
+            this.txtDeucesScore4.Location = new System.Drawing.Point(697, 145);
             this.txtDeucesScore4.Name = "txtDeucesScore4";
             this.txtDeucesScore4.ReadOnly = true;
             this.txtDeucesScore4.Size = new System.Drawing.Size(91, 27);
@@ -1503,7 +1507,7 @@
             this.txtAcesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAcesScore4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAcesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAcesScore4.Location = new System.Drawing.Point(695, 49);
+            this.txtAcesScore4.Location = new System.Drawing.Point(697, 113);
             this.txtAcesScore4.Name = "txtAcesScore4";
             this.txtAcesScore4.ReadOnly = true;
             this.txtAcesScore4.Size = new System.Drawing.Size(91, 27);
@@ -1519,7 +1523,7 @@
             this.txtPlayer4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPlayer4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPlayer4.ForeColor = System.Drawing.Color.White;
-            this.txtPlayer4.Location = new System.Drawing.Point(695, 17);
+            this.txtPlayer4.Location = new System.Drawing.Point(697, 81);
             this.txtPlayer4.Name = "txtPlayer4";
             this.txtPlayer4.ReadOnly = true;
             this.txtPlayer4.Size = new System.Drawing.Size(91, 27);
@@ -1532,7 +1536,7 @@
             // 
             this.label3.BackColor = System.Drawing.Color.DimGray;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(309, 306);
+            this.label3.Location = new System.Drawing.Point(311, 370);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(478, 5);
             this.label3.TabIndex = 98;
@@ -1551,11 +1555,72 @@
             // 
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.RollDisplay);
-            this.groupBox2.Location = new System.Drawing.Point(24, 489);
+            this.groupBox2.Location = new System.Drawing.Point(16, 523);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(72, 35);
             this.groupBox2.TabIndex = 100;
             this.groupBox2.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(408, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(91, 27);
+            this.textBox1.TabIndex = 101;
+            this.textBox1.Text = "Player1";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.LightCoral;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(505, 48);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(91, 27);
+            this.textBox2.TabIndex = 102;
+            this.textBox2.Text = "Player2";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(601, 48);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(91, 27);
+            this.textBox3.TabIndex = 103;
+            this.textBox3.Text = "Player3";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.Black;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(697, 48);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(91, 27);
+            this.textBox4.TabIndex = 104;
+            this.textBox4.Text = "Player4";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // YachtDice
             // 
@@ -1563,7 +1628,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(792, 543);
+            this.ClientSize = new System.Drawing.Size(807, 617);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
@@ -1777,5 +1846,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
