@@ -235,4 +235,10 @@
   <data name="pyojipan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pyojipan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="arrow_tr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yachtresource\arrow_tr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crown_tr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yachtresource\crown_tr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
