@@ -1787,7 +1787,6 @@
             this.Name = "YachtDice";
             this.Text = "YachtDice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.YachtDice_FormClosed);
-            this.Load += new System.EventHandler(this.YachtDice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
