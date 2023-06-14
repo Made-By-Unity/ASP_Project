@@ -1624,7 +1624,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(807, 617);
+            this.ClientSize = new System.Drawing.Size(805, 617);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
