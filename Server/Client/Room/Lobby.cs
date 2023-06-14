@@ -114,11 +114,18 @@ namespace Client.Room
         private void UpdatePlayer()
         {
             List<string> listNickName = SocketManager.GetInst().NickNameList;
+
+            if(this.IsHandleCreated)
+            {
+                tbPlayer1.Text = "";
+                tbPlayer2.Text = "";
+                tbPlayer3.Text = "";
+                tbPlayer4.Text = "";
+            }
+            
             for (int i = 0; i < listNickName.Count; i++)
             {
                 TextBox tbPlayer = (Controls.Find("tbPlayer" + (i + 1).ToString(), true)[0] as TextBox);
-
-                tbPlayer.Invoke(new Action(() => { tbPlayer.Text = ""; }));
 
                 if(this.IsHandleCreated)
                 {
