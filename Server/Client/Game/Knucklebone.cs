@@ -60,6 +60,7 @@ namespace Client.Game
 
                 if (clickedButton.Name == "btnP1Roll")
                 {
+                    btnP1Roll.Enabled = false;
                     btnP2Roll.Enabled = false;
                     foreach (PictureBox pictureBox in m_P2Boxes)
                     {
@@ -73,6 +74,7 @@ namespace Client.Game
                     {
                         pictureBox.Enabled = false;
                     }
+                    btnP2Roll.Enabled = false;
                     btnP1Roll.Enabled = false;
                     targetPictureBox = pbP2Dice;
                 }
@@ -207,15 +209,13 @@ namespace Client.Game
             }
 
             // 서로 턴 넘기면서 굴리기
-            if (!btnP2Roll.Enabled)
+            if (clickedPictureBox.Parent == pnlP1Boxes) // panel1에 속한 PictureBox를 클릭한 경우
             {
-                btnP2Roll.Enabled = true;
-                btnP1Roll.Enabled = false;
+                btnP2Roll.Enabled = true; // 특정 버튼을 활성화
             }
-            else if (!btnP1Roll.Enabled)
+            else if (clickedPictureBox.Parent == pnlP2Boxes) // panel2에 속한 PictureBox를 클릭한 경우
             {
-                btnP1Roll.Enabled = true;
-                btnP2Roll.Enabled = false;
+                btnP1Roll.Enabled = true; // 특정 버튼을 활성화
             }
 
             lbP1ScoreSum.Text = SumLabelText(lbP1Row1Score, lbP1Row2Score, lbP1Row3Score).ToString();
@@ -375,9 +375,5 @@ namespace Client.Game
             }));
         }
 
-        private void Knucklebone_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

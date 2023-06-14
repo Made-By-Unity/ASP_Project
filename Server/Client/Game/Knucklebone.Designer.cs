@@ -545,7 +545,6 @@
             this.Name = "Knucklebone";
             this.Text = "Knucklebone";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Knucklebone_FormClosed);
-            this.Load += new System.EventHandler(this.Knucklebone_Load);
             this.pnlP2Boxes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbP2Box7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbP2Box4)).EndInit();
