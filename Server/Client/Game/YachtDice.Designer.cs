@@ -29,7 +29,6 @@
         private void InitializeComponent()
         { 
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YachtDice));
             this.btnRoll = new System.Windows.Forms.Button();
             this.RollDisplay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -156,9 +155,10 @@
             this.btnRoll.Enabled = false;
             this.btnRoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRoll.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRoll.Location = new System.Drawing.Point(94, 526);
+            this.btnRoll.Location = new System.Drawing.Point(175, 1052);
+            this.btnRoll.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnRoll.Name = "btnRoll";
-            this.btnRoll.Size = new System.Drawing.Size(91, 34);
+            this.btnRoll.Size = new System.Drawing.Size(169, 68);
             this.btnRoll.TabIndex = 1;
             this.btnRoll.Text = "Roll";
             this.btnRoll.UseVisualStyleBackColor = false;
@@ -168,9 +168,10 @@
             // 
             this.RollDisplay.AutoSize = true;
             this.RollDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.RollDisplay.Location = new System.Drawing.Point(17, 14);
+            this.RollDisplay.Location = new System.Drawing.Point(32, 28);
+            this.RollDisplay.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.RollDisplay.Name = "RollDisplay";
-            this.RollDisplay.Size = new System.Drawing.Size(14, 15);
+            this.RollDisplay.Size = new System.Drawing.Size(26, 29);
             this.RollDisplay.TabIndex = 4;
             this.RollDisplay.Text = "3";
             // 
@@ -178,9 +179,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(33, 14);
+            this.label2.Location = new System.Drawing.Point(61, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 15);
+            this.label2.Size = new System.Drawing.Size(45, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "/  3";
             // 
@@ -188,9 +190,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(18, 22);
+            this.label1.Location = new System.Drawing.Point(33, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.Size = new System.Drawing.Size(116, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "Round";
             // 
@@ -198,9 +201,10 @@
             // 
             this.lbRoundDisplay.AutoSize = true;
             this.lbRoundDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbRoundDisplay.Location = new System.Drawing.Point(38, 54);
+            this.lbRoundDisplay.Location = new System.Drawing.Point(71, 108);
+            this.lbRoundDisplay.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbRoundDisplay.Name = "lbRoundDisplay";
-            this.lbRoundDisplay.Size = new System.Drawing.Size(19, 20);
+            this.lbRoundDisplay.Size = new System.Drawing.Size(34, 37);
             this.lbRoundDisplay.TabIndex = 3;
             this.lbRoundDisplay.Text = "1";
             // 
@@ -211,10 +215,11 @@
             this.txtCategory.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtCategory.ForeColor = System.Drawing.Color.White;
-            this.txtCategory.Location = new System.Drawing.Point(311, 81);
+            this.txtCategory.Location = new System.Drawing.Point(578, 162);
+            this.txtCategory.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.ReadOnly = true;
-            this.txtCategory.Size = new System.Drawing.Size(91, 26);
+            this.txtCategory.Size = new System.Drawing.Size(167, 44);
             this.txtCategory.TabIndex = 10;
             this.txtCategory.Text = "Categories";
             // 
@@ -225,10 +230,11 @@
             this.txtAces.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAces.ForeColor = System.Drawing.Color.White;
-            this.txtAces.Location = new System.Drawing.Point(311, 113);
+            this.txtAces.Location = new System.Drawing.Point(578, 226);
+            this.txtAces.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAces.Name = "txtAces";
             this.txtAces.ReadOnly = true;
-            this.txtAces.Size = new System.Drawing.Size(91, 26);
+            this.txtAces.Size = new System.Drawing.Size(167, 44);
             this.txtAces.TabIndex = 11;
             this.txtAces.Text = "Aces";
             // 
@@ -239,10 +245,11 @@
             this.txtDeuces.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeuces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeuces.ForeColor = System.Drawing.Color.White;
-            this.txtDeuces.Location = new System.Drawing.Point(311, 145);
+            this.txtDeuces.Location = new System.Drawing.Point(578, 290);
+            this.txtDeuces.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtDeuces.Name = "txtDeuces";
             this.txtDeuces.ReadOnly = true;
-            this.txtDeuces.Size = new System.Drawing.Size(91, 26);
+            this.txtDeuces.Size = new System.Drawing.Size(167, 44);
             this.txtDeuces.TabIndex = 12;
             this.txtDeuces.Text = "Deucues";
             // 
@@ -253,10 +260,11 @@
             this.txtThrees.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThrees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThrees.ForeColor = System.Drawing.Color.White;
-            this.txtThrees.Location = new System.Drawing.Point(311, 177);
+            this.txtThrees.Location = new System.Drawing.Point(578, 354);
+            this.txtThrees.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtThrees.Name = "txtThrees";
             this.txtThrees.ReadOnly = true;
-            this.txtThrees.Size = new System.Drawing.Size(91, 26);
+            this.txtThrees.Size = new System.Drawing.Size(167, 44);
             this.txtThrees.TabIndex = 13;
             this.txtThrees.Text = "Threes";
             // 
@@ -267,10 +275,11 @@
             this.txtFours.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFours.ForeColor = System.Drawing.Color.White;
-            this.txtFours.Location = new System.Drawing.Point(311, 209);
+            this.txtFours.Location = new System.Drawing.Point(578, 418);
+            this.txtFours.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFours.Name = "txtFours";
             this.txtFours.ReadOnly = true;
-            this.txtFours.Size = new System.Drawing.Size(91, 26);
+            this.txtFours.Size = new System.Drawing.Size(167, 44);
             this.txtFours.TabIndex = 14;
             this.txtFours.Text = "Fours";
             // 
@@ -281,10 +290,11 @@
             this.txtFives.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFives.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFives.ForeColor = System.Drawing.Color.White;
-            this.txtFives.Location = new System.Drawing.Point(311, 241);
+            this.txtFives.Location = new System.Drawing.Point(578, 482);
+            this.txtFives.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFives.Name = "txtFives";
             this.txtFives.ReadOnly = true;
-            this.txtFives.Size = new System.Drawing.Size(91, 26);
+            this.txtFives.Size = new System.Drawing.Size(167, 44);
             this.txtFives.TabIndex = 15;
             this.txtFives.Text = "Fives";
             // 
@@ -295,10 +305,11 @@
             this.txtSixes.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixes.ForeColor = System.Drawing.Color.White;
-            this.txtSixes.Location = new System.Drawing.Point(311, 273);
+            this.txtSixes.Location = new System.Drawing.Point(578, 546);
+            this.txtSixes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSixes.Name = "txtSixes";
             this.txtSixes.ReadOnly = true;
-            this.txtSixes.Size = new System.Drawing.Size(91, 26);
+            this.txtSixes.Size = new System.Drawing.Size(167, 44);
             this.txtSixes.TabIndex = 16;
             this.txtSixes.Text = "Sixes";
             // 
@@ -309,10 +320,11 @@
             this.txtSubtotal.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotal.ForeColor = System.Drawing.Color.White;
-            this.txtSubtotal.Location = new System.Drawing.Point(311, 305);
+            this.txtSubtotal.Location = new System.Drawing.Point(578, 610);
+            this.txtSubtotal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.ReadOnly = true;
-            this.txtSubtotal.Size = new System.Drawing.Size(91, 26);
+            this.txtSubtotal.Size = new System.Drawing.Size(167, 44);
             this.txtSubtotal.TabIndex = 17;
             this.txtSubtotal.Text = "Subtotal";
             // 
@@ -323,10 +335,11 @@
             this.txtBonus.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonus.ForeColor = System.Drawing.Color.White;
-            this.txtBonus.Location = new System.Drawing.Point(311, 337);
+            this.txtBonus.Location = new System.Drawing.Point(578, 674);
+            this.txtBonus.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtBonus.Name = "txtBonus";
             this.txtBonus.ReadOnly = true;
-            this.txtBonus.Size = new System.Drawing.Size(91, 26);
+            this.txtBonus.Size = new System.Drawing.Size(167, 44);
             this.txtBonus.TabIndex = 18;
             this.txtBonus.Text = "+35 Bonus";
             // 
@@ -337,10 +350,11 @@
             this.txtBonusAble1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonusAble1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonusAble1.ForeColor = System.Drawing.Color.White;
-            this.txtBonusAble1.Location = new System.Drawing.Point(408, 337);
+            this.txtBonusAble1.Location = new System.Drawing.Point(758, 674);
+            this.txtBonusAble1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtBonusAble1.Name = "txtBonusAble1";
             this.txtBonusAble1.ReadOnly = true;
-            this.txtBonusAble1.Size = new System.Drawing.Size(91, 26);
+            this.txtBonusAble1.Size = new System.Drawing.Size(167, 44);
             this.txtBonusAble1.TabIndex = 27;
             this.txtBonusAble1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -351,10 +365,11 @@
             this.txtSubtotalScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotalScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotalScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSubtotalScore1.Location = new System.Drawing.Point(408, 305);
+            this.txtSubtotalScore1.Location = new System.Drawing.Point(758, 610);
+            this.txtSubtotalScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSubtotalScore1.Name = "txtSubtotalScore1";
             this.txtSubtotalScore1.ReadOnly = true;
-            this.txtSubtotalScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtSubtotalScore1.Size = new System.Drawing.Size(167, 44);
             this.txtSubtotalScore1.TabIndex = 26;
             this.txtSubtotalScore1.Text = "0 / 63";
             this.txtSubtotalScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -366,10 +381,11 @@
             this.txtSixesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixesScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSixesScore1.Location = new System.Drawing.Point(408, 273);
+            this.txtSixesScore1.Location = new System.Drawing.Point(758, 546);
+            this.txtSixesScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSixesScore1.Name = "txtSixesScore1";
             this.txtSixesScore1.ReadOnly = true;
-            this.txtSixesScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtSixesScore1.Size = new System.Drawing.Size(167, 44);
             this.txtSixesScore1.TabIndex = 25;
             this.txtSixesScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSixesScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -381,10 +397,11 @@
             this.txtFivesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFivesScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFivesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFivesScore1.Location = new System.Drawing.Point(408, 241);
+            this.txtFivesScore1.Location = new System.Drawing.Point(758, 482);
+            this.txtFivesScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFivesScore1.Name = "txtFivesScore1";
             this.txtFivesScore1.ReadOnly = true;
-            this.txtFivesScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtFivesScore1.Size = new System.Drawing.Size(167, 44);
             this.txtFivesScore1.TabIndex = 24;
             this.txtFivesScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFivesScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -396,10 +413,11 @@
             this.txtFoursScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFoursScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFoursScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFoursScore1.Location = new System.Drawing.Point(408, 209);
+            this.txtFoursScore1.Location = new System.Drawing.Point(758, 418);
+            this.txtFoursScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFoursScore1.Name = "txtFoursScore1";
             this.txtFoursScore1.ReadOnly = true;
-            this.txtFoursScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtFoursScore1.Size = new System.Drawing.Size(167, 44);
             this.txtFoursScore1.TabIndex = 23;
             this.txtFoursScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFoursScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -411,10 +429,11 @@
             this.txtThreesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThreesScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThreesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtThreesScore1.Location = new System.Drawing.Point(408, 177);
+            this.txtThreesScore1.Location = new System.Drawing.Point(758, 354);
+            this.txtThreesScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtThreesScore1.Name = "txtThreesScore1";
             this.txtThreesScore1.ReadOnly = true;
-            this.txtThreesScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtThreesScore1.Size = new System.Drawing.Size(167, 44);
             this.txtThreesScore1.TabIndex = 22;
             this.txtThreesScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtThreesScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -426,10 +445,11 @@
             this.txtDeucesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeucesScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeucesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDeucesScore1.Location = new System.Drawing.Point(408, 145);
+            this.txtDeucesScore1.Location = new System.Drawing.Point(758, 290);
+            this.txtDeucesScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtDeucesScore1.Name = "txtDeucesScore1";
             this.txtDeucesScore1.ReadOnly = true;
-            this.txtDeucesScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtDeucesScore1.Size = new System.Drawing.Size(167, 44);
             this.txtDeucesScore1.TabIndex = 21;
             this.txtDeucesScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDeucesScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -441,10 +461,11 @@
             this.txtAcesScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAcesScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAcesScore1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAcesScore1.Location = new System.Drawing.Point(408, 113);
+            this.txtAcesScore1.Location = new System.Drawing.Point(758, 226);
+            this.txtAcesScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAcesScore1.Name = "txtAcesScore1";
             this.txtAcesScore1.ReadOnly = true;
-            this.txtAcesScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtAcesScore1.Size = new System.Drawing.Size(167, 44);
             this.txtAcesScore1.TabIndex = 20;
             this.txtAcesScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAcesScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -456,10 +477,11 @@
             this.txtPlayer1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPlayer1.ForeColor = System.Drawing.Color.White;
-            this.txtPlayer1.Location = new System.Drawing.Point(408, 81);
+            this.txtPlayer1.Location = new System.Drawing.Point(758, 162);
+            this.txtPlayer1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPlayer1.Name = "txtPlayer1";
             this.txtPlayer1.ReadOnly = true;
-            this.txtPlayer1.Size = new System.Drawing.Size(91, 26);
+            this.txtPlayer1.Size = new System.Drawing.Size(167, 44);
             this.txtPlayer1.TabIndex = 19;
             this.txtPlayer1.Text = "Score";
             this.txtPlayer1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -471,10 +493,11 @@
             this.txtTotalScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotalScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotalScore1.ForeColor = System.Drawing.Color.White;
-            this.txtTotalScore1.Location = new System.Drawing.Point(408, 574);
+            this.txtTotalScore1.Location = new System.Drawing.Point(758, 1148);
+            this.txtTotalScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTotalScore1.Name = "txtTotalScore1";
             this.txtTotalScore1.ReadOnly = true;
-            this.txtTotalScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtTotalScore1.Size = new System.Drawing.Size(167, 44);
             this.txtTotalScore1.TabIndex = 44;
             this.txtTotalScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -485,10 +508,11 @@
             this.txtYachtScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYachtScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYachtScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtYachtScore1.Location = new System.Drawing.Point(408, 542);
+            this.txtYachtScore1.Location = new System.Drawing.Point(758, 1084);
+            this.txtYachtScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtYachtScore1.Name = "txtYachtScore1";
             this.txtYachtScore1.ReadOnly = true;
-            this.txtYachtScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtYachtScore1.Size = new System.Drawing.Size(167, 44);
             this.txtYachtScore1.TabIndex = 43;
             this.txtYachtScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtYachtScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -500,10 +524,11 @@
             this.txtLSScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLSScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLSScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtLSScore1.Location = new System.Drawing.Point(408, 510);
+            this.txtLSScore1.Location = new System.Drawing.Point(758, 1020);
+            this.txtLSScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtLSScore1.Name = "txtLSScore1";
             this.txtLSScore1.ReadOnly = true;
-            this.txtLSScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtLSScore1.Size = new System.Drawing.Size(167, 44);
             this.txtLSScore1.TabIndex = 42;
             this.txtLSScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLSScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -515,10 +540,11 @@
             this.txtSSScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSSScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSSScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtSSScore1.Location = new System.Drawing.Point(408, 478);
+            this.txtSSScore1.Location = new System.Drawing.Point(758, 956);
+            this.txtSSScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSSScore1.Name = "txtSSScore1";
             this.txtSSScore1.ReadOnly = true;
-            this.txtSSScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtSSScore1.Size = new System.Drawing.Size(167, 44);
             this.txtSSScore1.TabIndex = 41;
             this.txtSSScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSSScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -530,10 +556,11 @@
             this.txtFHScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFHScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFHScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtFHScore1.Location = new System.Drawing.Point(408, 446);
+            this.txtFHScore1.Location = new System.Drawing.Point(758, 892);
+            this.txtFHScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFHScore1.Name = "txtFHScore1";
             this.txtFHScore1.ReadOnly = true;
-            this.txtFHScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtFHScore1.Size = new System.Drawing.Size(167, 44);
             this.txtFHScore1.TabIndex = 40;
             this.txtFHScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFHScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -545,10 +572,11 @@
             this.txt4KindScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4KindScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4KindScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt4KindScore1.Location = new System.Drawing.Point(408, 414);
+            this.txt4KindScore1.Location = new System.Drawing.Point(758, 828);
+            this.txt4KindScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt4KindScore1.Name = "txt4KindScore1";
             this.txt4KindScore1.ReadOnly = true;
-            this.txt4KindScore1.Size = new System.Drawing.Size(91, 26);
+            this.txt4KindScore1.Size = new System.Drawing.Size(167, 44);
             this.txt4KindScore1.TabIndex = 39;
             this.txt4KindScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt4KindScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -560,10 +588,11 @@
             this.txtChoiceScore1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoiceScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoiceScore1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtChoiceScore1.Location = new System.Drawing.Point(408, 382);
+            this.txtChoiceScore1.Location = new System.Drawing.Point(758, 764);
+            this.txtChoiceScore1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtChoiceScore1.Name = "txtChoiceScore1";
             this.txtChoiceScore1.ReadOnly = true;
-            this.txtChoiceScore1.Size = new System.Drawing.Size(91, 26);
+            this.txtChoiceScore1.Size = new System.Drawing.Size(167, 44);
             this.txtChoiceScore1.TabIndex = 38;
             this.txtChoiceScore1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChoiceScore1.DoubleClick += new System.EventHandler(this.Score_DoubleClick);
@@ -575,10 +604,11 @@
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotal.ForeColor = System.Drawing.Color.White;
-            this.txtTotal.Location = new System.Drawing.Point(311, 574);
+            this.txtTotal.Location = new System.Drawing.Point(578, 1148);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(91, 26);
+            this.txtTotal.Size = new System.Drawing.Size(167, 44);
             this.txtTotal.TabIndex = 35;
             this.txtTotal.Text = "Total";
             // 
@@ -589,10 +619,11 @@
             this.txtYacht.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYacht.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYacht.ForeColor = System.Drawing.Color.White;
-            this.txtYacht.Location = new System.Drawing.Point(311, 542);
+            this.txtYacht.Location = new System.Drawing.Point(578, 1084);
+            this.txtYacht.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtYacht.Name = "txtYacht";
             this.txtYacht.ReadOnly = true;
-            this.txtYacht.Size = new System.Drawing.Size(91, 26);
+            this.txtYacht.Size = new System.Drawing.Size(167, 44);
             this.txtYacht.TabIndex = 34;
             this.txtYacht.Text = "Yacht";
             // 
@@ -603,10 +634,11 @@
             this.txtLStraight.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLStraight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLStraight.ForeColor = System.Drawing.Color.White;
-            this.txtLStraight.Location = new System.Drawing.Point(311, 510);
+            this.txtLStraight.Location = new System.Drawing.Point(578, 1020);
+            this.txtLStraight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtLStraight.Name = "txtLStraight";
             this.txtLStraight.ReadOnly = true;
-            this.txtLStraight.Size = new System.Drawing.Size(91, 26);
+            this.txtLStraight.Size = new System.Drawing.Size(167, 44);
             this.txtLStraight.TabIndex = 33;
             this.txtLStraight.Text = "L.Straight";
             // 
@@ -617,10 +649,11 @@
             this.txtSStraight.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSStraight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSStraight.ForeColor = System.Drawing.Color.White;
-            this.txtSStraight.Location = new System.Drawing.Point(311, 478);
+            this.txtSStraight.Location = new System.Drawing.Point(578, 956);
+            this.txtSStraight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSStraight.Name = "txtSStraight";
             this.txtSStraight.ReadOnly = true;
-            this.txtSStraight.Size = new System.Drawing.Size(91, 26);
+            this.txtSStraight.Size = new System.Drawing.Size(167, 44);
             this.txtSStraight.TabIndex = 32;
             this.txtSStraight.Text = "S.Straight";
             // 
@@ -631,10 +664,11 @@
             this.txtFullHouse.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFullHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFullHouse.ForeColor = System.Drawing.Color.White;
-            this.txtFullHouse.Location = new System.Drawing.Point(311, 446);
+            this.txtFullHouse.Location = new System.Drawing.Point(578, 892);
+            this.txtFullHouse.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFullHouse.Name = "txtFullHouse";
             this.txtFullHouse.ReadOnly = true;
-            this.txtFullHouse.Size = new System.Drawing.Size(91, 26);
+            this.txtFullHouse.Size = new System.Drawing.Size(167, 44);
             this.txtFullHouse.TabIndex = 31;
             this.txtFullHouse.Text = "Full House";
             // 
@@ -645,10 +679,11 @@
             this.txt4kind.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4kind.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4kind.ForeColor = System.Drawing.Color.White;
-            this.txt4kind.Location = new System.Drawing.Point(311, 414);
+            this.txt4kind.Location = new System.Drawing.Point(578, 828);
+            this.txt4kind.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt4kind.Name = "txt4kind";
             this.txt4kind.ReadOnly = true;
-            this.txt4kind.Size = new System.Drawing.Size(91, 26);
+            this.txt4kind.Size = new System.Drawing.Size(167, 44);
             this.txt4kind.TabIndex = 30;
             this.txt4kind.Text = "4 of a Kind";
             // 
@@ -659,10 +694,11 @@
             this.txtChoice.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoice.ForeColor = System.Drawing.Color.White;
-            this.txtChoice.Location = new System.Drawing.Point(311, 382);
+            this.txtChoice.Location = new System.Drawing.Point(578, 764);
+            this.txtChoice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtChoice.Name = "txtChoice";
             this.txtChoice.ReadOnly = true;
-            this.txtChoice.Size = new System.Drawing.Size(91, 26);
+            this.txtChoice.Size = new System.Drawing.Size(167, 44);
             this.txtChoice.TabIndex = 29;
             this.txtChoice.Text = "Choice";
             // 
@@ -671,9 +707,10 @@
             this.cbDice1.AutoSize = true;
             this.cbDice1.Enabled = false;
             this.cbDice1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice1.Location = new System.Drawing.Point(135, 95);
+            this.cbDice1.Location = new System.Drawing.Point(251, 190);
+            this.cbDice1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbDice1.Name = "cbDice1";
-            this.cbDice1.Size = new System.Drawing.Size(52, 19);
+            this.cbDice1.Size = new System.Drawing.Size(96, 33);
             this.cbDice1.TabIndex = 45;
             this.cbDice1.Text = "Lock";
             this.cbDice1.UseVisualStyleBackColor = true;
@@ -684,9 +721,10 @@
             this.cbDice2.AutoSize = true;
             this.cbDice2.Enabled = false;
             this.cbDice2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice2.Location = new System.Drawing.Point(135, 187);
+            this.cbDice2.Location = new System.Drawing.Point(251, 374);
+            this.cbDice2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbDice2.Name = "cbDice2";
-            this.cbDice2.Size = new System.Drawing.Size(52, 19);
+            this.cbDice2.Size = new System.Drawing.Size(96, 33);
             this.cbDice2.TabIndex = 46;
             this.cbDice2.Text = "Lock";
             this.cbDice2.UseVisualStyleBackColor = true;
@@ -697,9 +735,10 @@
             this.cbDice3.AutoSize = true;
             this.cbDice3.Enabled = false;
             this.cbDice3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice3.Location = new System.Drawing.Point(135, 279);
+            this.cbDice3.Location = new System.Drawing.Point(251, 558);
+            this.cbDice3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbDice3.Name = "cbDice3";
-            this.cbDice3.Size = new System.Drawing.Size(52, 19);
+            this.cbDice3.Size = new System.Drawing.Size(96, 33);
             this.cbDice3.TabIndex = 47;
             this.cbDice3.Text = "Lock";
             this.cbDice3.UseVisualStyleBackColor = true;
@@ -710,9 +749,10 @@
             this.cbDice4.AutoSize = true;
             this.cbDice4.Enabled = false;
             this.cbDice4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice4.Location = new System.Drawing.Point(135, 371);
+            this.cbDice4.Location = new System.Drawing.Point(251, 742);
+            this.cbDice4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbDice4.Name = "cbDice4";
-            this.cbDice4.Size = new System.Drawing.Size(52, 19);
+            this.cbDice4.Size = new System.Drawing.Size(96, 33);
             this.cbDice4.TabIndex = 48;
             this.cbDice4.Text = "Lock";
             this.cbDice4.UseVisualStyleBackColor = true;
@@ -723,9 +763,10 @@
             this.cbDice5.AutoSize = true;
             this.cbDice5.Enabled = false;
             this.cbDice5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDice5.Location = new System.Drawing.Point(135, 463);
+            this.cbDice5.Location = new System.Drawing.Point(251, 926);
+            this.cbDice5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cbDice5.Name = "cbDice5";
-            this.cbDice5.Size = new System.Drawing.Size(52, 19);
+            this.cbDice5.Size = new System.Drawing.Size(96, 33);
             this.cbDice5.TabIndex = 49;
             this.cbDice5.Text = "Lock";
             this.cbDice5.UseVisualStyleBackColor = true;
@@ -738,10 +779,11 @@
             this.txtTotalScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotalScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotalScore2.ForeColor = System.Drawing.Color.White;
-            this.txtTotalScore2.Location = new System.Drawing.Point(504, 574);
+            this.txtTotalScore2.Location = new System.Drawing.Point(936, 1148);
+            this.txtTotalScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTotalScore2.Name = "txtTotalScore2";
             this.txtTotalScore2.ReadOnly = true;
-            this.txtTotalScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtTotalScore2.Size = new System.Drawing.Size(167, 44);
             this.txtTotalScore2.TabIndex = 65;
             this.txtTotalScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotalScore2.Visible = false;
@@ -753,10 +795,11 @@
             this.txtYachtScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYachtScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYachtScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtYachtScore2.Location = new System.Drawing.Point(504, 542);
+            this.txtYachtScore2.Location = new System.Drawing.Point(936, 1084);
+            this.txtYachtScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtYachtScore2.Name = "txtYachtScore2";
             this.txtYachtScore2.ReadOnly = true;
-            this.txtYachtScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtYachtScore2.Size = new System.Drawing.Size(167, 44);
             this.txtYachtScore2.TabIndex = 64;
             this.txtYachtScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtYachtScore2.Visible = false;
@@ -769,10 +812,11 @@
             this.txtLSScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLSScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLSScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtLSScore2.Location = new System.Drawing.Point(504, 510);
+            this.txtLSScore2.Location = new System.Drawing.Point(936, 1020);
+            this.txtLSScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtLSScore2.Name = "txtLSScore2";
             this.txtLSScore2.ReadOnly = true;
-            this.txtLSScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtLSScore2.Size = new System.Drawing.Size(167, 44);
             this.txtLSScore2.TabIndex = 63;
             this.txtLSScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLSScore2.Visible = false;
@@ -785,10 +829,11 @@
             this.txtSSScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSSScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSSScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtSSScore2.Location = new System.Drawing.Point(504, 478);
+            this.txtSSScore2.Location = new System.Drawing.Point(936, 956);
+            this.txtSSScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSSScore2.Name = "txtSSScore2";
             this.txtSSScore2.ReadOnly = true;
-            this.txtSSScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtSSScore2.Size = new System.Drawing.Size(167, 44);
             this.txtSSScore2.TabIndex = 62;
             this.txtSSScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSSScore2.Visible = false;
@@ -801,10 +846,11 @@
             this.txtFHScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFHScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFHScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtFHScore2.Location = new System.Drawing.Point(504, 446);
+            this.txtFHScore2.Location = new System.Drawing.Point(936, 892);
+            this.txtFHScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFHScore2.Name = "txtFHScore2";
             this.txtFHScore2.ReadOnly = true;
-            this.txtFHScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtFHScore2.Size = new System.Drawing.Size(167, 44);
             this.txtFHScore2.TabIndex = 61;
             this.txtFHScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFHScore2.Visible = false;
@@ -817,10 +863,11 @@
             this.txt4KindScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4KindScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4KindScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt4KindScore2.Location = new System.Drawing.Point(504, 414);
+            this.txt4KindScore2.Location = new System.Drawing.Point(936, 828);
+            this.txt4KindScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt4KindScore2.Name = "txt4KindScore2";
             this.txt4KindScore2.ReadOnly = true;
-            this.txt4KindScore2.Size = new System.Drawing.Size(91, 26);
+            this.txt4KindScore2.Size = new System.Drawing.Size(167, 44);
             this.txt4KindScore2.TabIndex = 60;
             this.txt4KindScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt4KindScore2.Visible = false;
@@ -833,10 +880,11 @@
             this.txtChoiceScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoiceScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoiceScore2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtChoiceScore2.Location = new System.Drawing.Point(504, 382);
+            this.txtChoiceScore2.Location = new System.Drawing.Point(936, 764);
+            this.txtChoiceScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtChoiceScore2.Name = "txtChoiceScore2";
             this.txtChoiceScore2.ReadOnly = true;
-            this.txtChoiceScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtChoiceScore2.Size = new System.Drawing.Size(167, 44);
             this.txtChoiceScore2.TabIndex = 59;
             this.txtChoiceScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChoiceScore2.Visible = false;
@@ -849,10 +897,11 @@
             this.txtBonusAble2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonusAble2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonusAble2.ForeColor = System.Drawing.Color.White;
-            this.txtBonusAble2.Location = new System.Drawing.Point(504, 337);
+            this.txtBonusAble2.Location = new System.Drawing.Point(936, 674);
+            this.txtBonusAble2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtBonusAble2.Name = "txtBonusAble2";
             this.txtBonusAble2.ReadOnly = true;
-            this.txtBonusAble2.Size = new System.Drawing.Size(91, 26);
+            this.txtBonusAble2.Size = new System.Drawing.Size(167, 44);
             this.txtBonusAble2.TabIndex = 58;
             this.txtBonusAble2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBonusAble2.Visible = false;
@@ -864,10 +913,11 @@
             this.txtSubtotalScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotalScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotalScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSubtotalScore2.Location = new System.Drawing.Point(504, 305);
+            this.txtSubtotalScore2.Location = new System.Drawing.Point(936, 610);
+            this.txtSubtotalScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSubtotalScore2.Name = "txtSubtotalScore2";
             this.txtSubtotalScore2.ReadOnly = true;
-            this.txtSubtotalScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtSubtotalScore2.Size = new System.Drawing.Size(167, 44);
             this.txtSubtotalScore2.TabIndex = 57;
             this.txtSubtotalScore2.Text = "0 / 63";
             this.txtSubtotalScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -880,10 +930,11 @@
             this.txtSixesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixesScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSixesScore2.Location = new System.Drawing.Point(504, 273);
+            this.txtSixesScore2.Location = new System.Drawing.Point(936, 546);
+            this.txtSixesScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSixesScore2.Name = "txtSixesScore2";
             this.txtSixesScore2.ReadOnly = true;
-            this.txtSixesScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtSixesScore2.Size = new System.Drawing.Size(167, 44);
             this.txtSixesScore2.TabIndex = 56;
             this.txtSixesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSixesScore2.Visible = false;
@@ -896,10 +947,11 @@
             this.txtFivesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFivesScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFivesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFivesScore2.Location = new System.Drawing.Point(504, 241);
+            this.txtFivesScore2.Location = new System.Drawing.Point(936, 482);
+            this.txtFivesScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFivesScore2.Name = "txtFivesScore2";
             this.txtFivesScore2.ReadOnly = true;
-            this.txtFivesScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtFivesScore2.Size = new System.Drawing.Size(167, 44);
             this.txtFivesScore2.TabIndex = 55;
             this.txtFivesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFivesScore2.Visible = false;
@@ -912,10 +964,11 @@
             this.txtFoursScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFoursScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFoursScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFoursScore2.Location = new System.Drawing.Point(504, 209);
+            this.txtFoursScore2.Location = new System.Drawing.Point(936, 418);
+            this.txtFoursScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFoursScore2.Name = "txtFoursScore2";
             this.txtFoursScore2.ReadOnly = true;
-            this.txtFoursScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtFoursScore2.Size = new System.Drawing.Size(167, 44);
             this.txtFoursScore2.TabIndex = 54;
             this.txtFoursScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFoursScore2.Visible = false;
@@ -928,10 +981,11 @@
             this.txtThreesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThreesScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThreesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtThreesScore2.Location = new System.Drawing.Point(504, 177);
+            this.txtThreesScore2.Location = new System.Drawing.Point(936, 354);
+            this.txtThreesScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtThreesScore2.Name = "txtThreesScore2";
             this.txtThreesScore2.ReadOnly = true;
-            this.txtThreesScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtThreesScore2.Size = new System.Drawing.Size(167, 44);
             this.txtThreesScore2.TabIndex = 53;
             this.txtThreesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtThreesScore2.Visible = false;
@@ -944,10 +998,11 @@
             this.txtDeucesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeucesScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeucesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDeucesScore2.Location = new System.Drawing.Point(504, 145);
+            this.txtDeucesScore2.Location = new System.Drawing.Point(936, 290);
+            this.txtDeucesScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtDeucesScore2.Name = "txtDeucesScore2";
             this.txtDeucesScore2.ReadOnly = true;
-            this.txtDeucesScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtDeucesScore2.Size = new System.Drawing.Size(167, 44);
             this.txtDeucesScore2.TabIndex = 52;
             this.txtDeucesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDeucesScore2.Visible = false;
@@ -960,10 +1015,11 @@
             this.txtAcesScore2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAcesScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAcesScore2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAcesScore2.Location = new System.Drawing.Point(504, 113);
+            this.txtAcesScore2.Location = new System.Drawing.Point(936, 226);
+            this.txtAcesScore2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAcesScore2.Name = "txtAcesScore2";
             this.txtAcesScore2.ReadOnly = true;
-            this.txtAcesScore2.Size = new System.Drawing.Size(91, 26);
+            this.txtAcesScore2.Size = new System.Drawing.Size(167, 44);
             this.txtAcesScore2.TabIndex = 51;
             this.txtAcesScore2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAcesScore2.Visible = false;
@@ -976,10 +1032,11 @@
             this.txtPlayer2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPlayer2.ForeColor = System.Drawing.Color.White;
-            this.txtPlayer2.Location = new System.Drawing.Point(504, 81);
+            this.txtPlayer2.Location = new System.Drawing.Point(936, 162);
+            this.txtPlayer2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPlayer2.Name = "txtPlayer2";
             this.txtPlayer2.ReadOnly = true;
-            this.txtPlayer2.Size = new System.Drawing.Size(91, 26);
+            this.txtPlayer2.Size = new System.Drawing.Size(167, 44);
             this.txtPlayer2.TabIndex = 50;
             this.txtPlayer2.Text = "Score";
             this.txtPlayer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -992,10 +1049,11 @@
             this.txtTotalScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotalScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotalScore3.ForeColor = System.Drawing.Color.White;
-            this.txtTotalScore3.Location = new System.Drawing.Point(601, 574);
+            this.txtTotalScore3.Location = new System.Drawing.Point(1116, 1148);
+            this.txtTotalScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTotalScore3.Name = "txtTotalScore3";
             this.txtTotalScore3.ReadOnly = true;
-            this.txtTotalScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtTotalScore3.Size = new System.Drawing.Size(167, 44);
             this.txtTotalScore3.TabIndex = 81;
             this.txtTotalScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotalScore3.Visible = false;
@@ -1007,10 +1065,11 @@
             this.txtYachtScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYachtScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYachtScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtYachtScore3.Location = new System.Drawing.Point(601, 542);
+            this.txtYachtScore3.Location = new System.Drawing.Point(1116, 1084);
+            this.txtYachtScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtYachtScore3.Name = "txtYachtScore3";
             this.txtYachtScore3.ReadOnly = true;
-            this.txtYachtScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtYachtScore3.Size = new System.Drawing.Size(167, 44);
             this.txtYachtScore3.TabIndex = 80;
             this.txtYachtScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtYachtScore3.Visible = false;
@@ -1023,10 +1082,11 @@
             this.txtLSScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLSScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLSScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtLSScore3.Location = new System.Drawing.Point(601, 510);
+            this.txtLSScore3.Location = new System.Drawing.Point(1116, 1020);
+            this.txtLSScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtLSScore3.Name = "txtLSScore3";
             this.txtLSScore3.ReadOnly = true;
-            this.txtLSScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtLSScore3.Size = new System.Drawing.Size(167, 44);
             this.txtLSScore3.TabIndex = 79;
             this.txtLSScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLSScore3.Visible = false;
@@ -1039,10 +1099,11 @@
             this.txtSSScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSSScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSSScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtSSScore3.Location = new System.Drawing.Point(601, 478);
+            this.txtSSScore3.Location = new System.Drawing.Point(1116, 956);
+            this.txtSSScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSSScore3.Name = "txtSSScore3";
             this.txtSSScore3.ReadOnly = true;
-            this.txtSSScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtSSScore3.Size = new System.Drawing.Size(167, 44);
             this.txtSSScore3.TabIndex = 78;
             this.txtSSScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSSScore3.Visible = false;
@@ -1055,10 +1116,11 @@
             this.txtFHScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFHScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFHScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtFHScore3.Location = new System.Drawing.Point(601, 446);
+            this.txtFHScore3.Location = new System.Drawing.Point(1116, 892);
+            this.txtFHScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFHScore3.Name = "txtFHScore3";
             this.txtFHScore3.ReadOnly = true;
-            this.txtFHScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtFHScore3.Size = new System.Drawing.Size(167, 44);
             this.txtFHScore3.TabIndex = 77;
             this.txtFHScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFHScore3.Visible = false;
@@ -1071,10 +1133,11 @@
             this.txt4KindScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4KindScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4KindScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt4KindScore3.Location = new System.Drawing.Point(601, 414);
+            this.txt4KindScore3.Location = new System.Drawing.Point(1116, 828);
+            this.txt4KindScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt4KindScore3.Name = "txt4KindScore3";
             this.txt4KindScore3.ReadOnly = true;
-            this.txt4KindScore3.Size = new System.Drawing.Size(91, 26);
+            this.txt4KindScore3.Size = new System.Drawing.Size(167, 44);
             this.txt4KindScore3.TabIndex = 76;
             this.txt4KindScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt4KindScore3.Visible = false;
@@ -1087,10 +1150,11 @@
             this.txtChoiceScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoiceScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoiceScore3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtChoiceScore3.Location = new System.Drawing.Point(601, 382);
+            this.txtChoiceScore3.Location = new System.Drawing.Point(1116, 764);
+            this.txtChoiceScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtChoiceScore3.Name = "txtChoiceScore3";
             this.txtChoiceScore3.ReadOnly = true;
-            this.txtChoiceScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtChoiceScore3.Size = new System.Drawing.Size(167, 44);
             this.txtChoiceScore3.TabIndex = 75;
             this.txtChoiceScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChoiceScore3.Visible = false;
@@ -1103,10 +1167,11 @@
             this.txtBonusAble3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonusAble3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonusAble3.ForeColor = System.Drawing.Color.White;
-            this.txtBonusAble3.Location = new System.Drawing.Point(601, 337);
+            this.txtBonusAble3.Location = new System.Drawing.Point(1116, 674);
+            this.txtBonusAble3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtBonusAble3.Name = "txtBonusAble3";
             this.txtBonusAble3.ReadOnly = true;
-            this.txtBonusAble3.Size = new System.Drawing.Size(91, 26);
+            this.txtBonusAble3.Size = new System.Drawing.Size(167, 44);
             this.txtBonusAble3.TabIndex = 74;
             this.txtBonusAble3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBonusAble3.Visible = false;
@@ -1118,10 +1183,11 @@
             this.txtSubtotalScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotalScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotalScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSubtotalScore3.Location = new System.Drawing.Point(601, 305);
+            this.txtSubtotalScore3.Location = new System.Drawing.Point(1116, 610);
+            this.txtSubtotalScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSubtotalScore3.Name = "txtSubtotalScore3";
             this.txtSubtotalScore3.ReadOnly = true;
-            this.txtSubtotalScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtSubtotalScore3.Size = new System.Drawing.Size(167, 44);
             this.txtSubtotalScore3.TabIndex = 73;
             this.txtSubtotalScore3.Text = "0 / 63";
             this.txtSubtotalScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1134,10 +1200,11 @@
             this.txtSixesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixesScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSixesScore3.Location = new System.Drawing.Point(601, 273);
+            this.txtSixesScore3.Location = new System.Drawing.Point(1116, 546);
+            this.txtSixesScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSixesScore3.Name = "txtSixesScore3";
             this.txtSixesScore3.ReadOnly = true;
-            this.txtSixesScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtSixesScore3.Size = new System.Drawing.Size(167, 44);
             this.txtSixesScore3.TabIndex = 72;
             this.txtSixesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSixesScore3.Visible = false;
@@ -1150,10 +1217,11 @@
             this.txtFivesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFivesScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFivesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFivesScore3.Location = new System.Drawing.Point(601, 241);
+            this.txtFivesScore3.Location = new System.Drawing.Point(1116, 482);
+            this.txtFivesScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFivesScore3.Name = "txtFivesScore3";
             this.txtFivesScore3.ReadOnly = true;
-            this.txtFivesScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtFivesScore3.Size = new System.Drawing.Size(167, 44);
             this.txtFivesScore3.TabIndex = 71;
             this.txtFivesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFivesScore3.Visible = false;
@@ -1166,10 +1234,11 @@
             this.txtFoursScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFoursScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFoursScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFoursScore3.Location = new System.Drawing.Point(601, 209);
+            this.txtFoursScore3.Location = new System.Drawing.Point(1116, 418);
+            this.txtFoursScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFoursScore3.Name = "txtFoursScore3";
             this.txtFoursScore3.ReadOnly = true;
-            this.txtFoursScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtFoursScore3.Size = new System.Drawing.Size(167, 44);
             this.txtFoursScore3.TabIndex = 70;
             this.txtFoursScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFoursScore3.Visible = false;
@@ -1182,10 +1251,11 @@
             this.txtThreesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThreesScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThreesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtThreesScore3.Location = new System.Drawing.Point(601, 177);
+            this.txtThreesScore3.Location = new System.Drawing.Point(1116, 354);
+            this.txtThreesScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtThreesScore3.Name = "txtThreesScore3";
             this.txtThreesScore3.ReadOnly = true;
-            this.txtThreesScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtThreesScore3.Size = new System.Drawing.Size(167, 44);
             this.txtThreesScore3.TabIndex = 69;
             this.txtThreesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtThreesScore3.Visible = false;
@@ -1198,10 +1268,11 @@
             this.txtDeucesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeucesScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeucesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDeucesScore3.Location = new System.Drawing.Point(601, 145);
+            this.txtDeucesScore3.Location = new System.Drawing.Point(1116, 290);
+            this.txtDeucesScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtDeucesScore3.Name = "txtDeucesScore3";
             this.txtDeucesScore3.ReadOnly = true;
-            this.txtDeucesScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtDeucesScore3.Size = new System.Drawing.Size(167, 44);
             this.txtDeucesScore3.TabIndex = 68;
             this.txtDeucesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDeucesScore3.Visible = false;
@@ -1214,10 +1285,11 @@
             this.txtAcesScore3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAcesScore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAcesScore3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAcesScore3.Location = new System.Drawing.Point(601, 113);
+            this.txtAcesScore3.Location = new System.Drawing.Point(1116, 226);
+            this.txtAcesScore3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAcesScore3.Name = "txtAcesScore3";
             this.txtAcesScore3.ReadOnly = true;
-            this.txtAcesScore3.Size = new System.Drawing.Size(91, 26);
+            this.txtAcesScore3.Size = new System.Drawing.Size(167, 44);
             this.txtAcesScore3.TabIndex = 67;
             this.txtAcesScore3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAcesScore3.Visible = false;
@@ -1230,10 +1302,11 @@
             this.txtPlayer3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPlayer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPlayer3.ForeColor = System.Drawing.Color.White;
-            this.txtPlayer3.Location = new System.Drawing.Point(601, 81);
+            this.txtPlayer3.Location = new System.Drawing.Point(1116, 162);
+            this.txtPlayer3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPlayer3.Name = "txtPlayer3";
             this.txtPlayer3.ReadOnly = true;
-            this.txtPlayer3.Size = new System.Drawing.Size(91, 26);
+            this.txtPlayer3.Size = new System.Drawing.Size(167, 44);
             this.txtPlayer3.TabIndex = 66;
             this.txtPlayer3.Text = "Score";
             this.txtPlayer3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1246,10 +1319,11 @@
             this.txtTotalScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtTotalScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTotalScore4.ForeColor = System.Drawing.Color.White;
-            this.txtTotalScore4.Location = new System.Drawing.Point(697, 574);
+            this.txtTotalScore4.Location = new System.Drawing.Point(1294, 1148);
+            this.txtTotalScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTotalScore4.Name = "txtTotalScore4";
             this.txtTotalScore4.ReadOnly = true;
-            this.txtTotalScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtTotalScore4.Size = new System.Drawing.Size(167, 44);
             this.txtTotalScore4.TabIndex = 97;
             this.txtTotalScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotalScore4.Visible = false;
@@ -1261,10 +1335,11 @@
             this.txtYachtScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtYachtScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYachtScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtYachtScore4.Location = new System.Drawing.Point(697, 542);
+            this.txtYachtScore4.Location = new System.Drawing.Point(1294, 1084);
+            this.txtYachtScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtYachtScore4.Name = "txtYachtScore4";
             this.txtYachtScore4.ReadOnly = true;
-            this.txtYachtScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtYachtScore4.Size = new System.Drawing.Size(167, 44);
             this.txtYachtScore4.TabIndex = 96;
             this.txtYachtScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtYachtScore4.Visible = false;
@@ -1277,10 +1352,11 @@
             this.txtLSScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtLSScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtLSScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtLSScore4.Location = new System.Drawing.Point(697, 510);
+            this.txtLSScore4.Location = new System.Drawing.Point(1294, 1020);
+            this.txtLSScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtLSScore4.Name = "txtLSScore4";
             this.txtLSScore4.ReadOnly = true;
-            this.txtLSScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtLSScore4.Size = new System.Drawing.Size(167, 44);
             this.txtLSScore4.TabIndex = 95;
             this.txtLSScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLSScore4.Visible = false;
@@ -1293,10 +1369,11 @@
             this.txtSSScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSSScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSSScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtSSScore4.Location = new System.Drawing.Point(697, 478);
+            this.txtSSScore4.Location = new System.Drawing.Point(1294, 956);
+            this.txtSSScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSSScore4.Name = "txtSSScore4";
             this.txtSSScore4.ReadOnly = true;
-            this.txtSSScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtSSScore4.Size = new System.Drawing.Size(167, 44);
             this.txtSSScore4.TabIndex = 94;
             this.txtSSScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSSScore4.Visible = false;
@@ -1309,10 +1386,11 @@
             this.txtFHScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFHScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFHScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtFHScore4.Location = new System.Drawing.Point(697, 446);
+            this.txtFHScore4.Location = new System.Drawing.Point(1294, 892);
+            this.txtFHScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFHScore4.Name = "txtFHScore4";
             this.txtFHScore4.ReadOnly = true;
-            this.txtFHScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtFHScore4.Size = new System.Drawing.Size(167, 44);
             this.txtFHScore4.TabIndex = 93;
             this.txtFHScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFHScore4.Visible = false;
@@ -1325,10 +1403,11 @@
             this.txt4KindScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txt4KindScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt4KindScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt4KindScore4.Location = new System.Drawing.Point(697, 414);
+            this.txt4KindScore4.Location = new System.Drawing.Point(1294, 828);
+            this.txt4KindScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txt4KindScore4.Name = "txt4KindScore4";
             this.txt4KindScore4.ReadOnly = true;
-            this.txt4KindScore4.Size = new System.Drawing.Size(91, 26);
+            this.txt4KindScore4.Size = new System.Drawing.Size(167, 44);
             this.txt4KindScore4.TabIndex = 92;
             this.txt4KindScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt4KindScore4.Visible = false;
@@ -1341,10 +1420,11 @@
             this.txtChoiceScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtChoiceScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtChoiceScore4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtChoiceScore4.Location = new System.Drawing.Point(697, 382);
+            this.txtChoiceScore4.Location = new System.Drawing.Point(1294, 764);
+            this.txtChoiceScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtChoiceScore4.Name = "txtChoiceScore4";
             this.txtChoiceScore4.ReadOnly = true;
-            this.txtChoiceScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtChoiceScore4.Size = new System.Drawing.Size(167, 44);
             this.txtChoiceScore4.TabIndex = 91;
             this.txtChoiceScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChoiceScore4.Visible = false;
@@ -1357,10 +1437,11 @@
             this.txtBonusAble4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtBonusAble4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtBonusAble4.ForeColor = System.Drawing.Color.White;
-            this.txtBonusAble4.Location = new System.Drawing.Point(697, 337);
+            this.txtBonusAble4.Location = new System.Drawing.Point(1294, 674);
+            this.txtBonusAble4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtBonusAble4.Name = "txtBonusAble4";
             this.txtBonusAble4.ReadOnly = true;
-            this.txtBonusAble4.Size = new System.Drawing.Size(91, 26);
+            this.txtBonusAble4.Size = new System.Drawing.Size(167, 44);
             this.txtBonusAble4.TabIndex = 90;
             this.txtBonusAble4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBonusAble4.Visible = false;
@@ -1372,10 +1453,11 @@
             this.txtSubtotalScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSubtotalScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSubtotalScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSubtotalScore4.Location = new System.Drawing.Point(697, 305);
+            this.txtSubtotalScore4.Location = new System.Drawing.Point(1294, 610);
+            this.txtSubtotalScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSubtotalScore4.Name = "txtSubtotalScore4";
             this.txtSubtotalScore4.ReadOnly = true;
-            this.txtSubtotalScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtSubtotalScore4.Size = new System.Drawing.Size(167, 44);
             this.txtSubtotalScore4.TabIndex = 89;
             this.txtSubtotalScore4.Text = "0 / 63";
             this.txtSubtotalScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1388,10 +1470,11 @@
             this.txtSixesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtSixesScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSixesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSixesScore4.Location = new System.Drawing.Point(697, 273);
+            this.txtSixesScore4.Location = new System.Drawing.Point(1294, 546);
+            this.txtSixesScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSixesScore4.Name = "txtSixesScore4";
             this.txtSixesScore4.ReadOnly = true;
-            this.txtSixesScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtSixesScore4.Size = new System.Drawing.Size(167, 44);
             this.txtSixesScore4.TabIndex = 88;
             this.txtSixesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSixesScore4.Visible = false;
@@ -1404,10 +1487,11 @@
             this.txtFivesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFivesScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFivesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFivesScore4.Location = new System.Drawing.Point(697, 241);
+            this.txtFivesScore4.Location = new System.Drawing.Point(1294, 482);
+            this.txtFivesScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFivesScore4.Name = "txtFivesScore4";
             this.txtFivesScore4.ReadOnly = true;
-            this.txtFivesScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtFivesScore4.Size = new System.Drawing.Size(167, 44);
             this.txtFivesScore4.TabIndex = 87;
             this.txtFivesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFivesScore4.Visible = false;
@@ -1420,10 +1504,11 @@
             this.txtFoursScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtFoursScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtFoursScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFoursScore4.Location = new System.Drawing.Point(697, 209);
+            this.txtFoursScore4.Location = new System.Drawing.Point(1294, 418);
+            this.txtFoursScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtFoursScore4.Name = "txtFoursScore4";
             this.txtFoursScore4.ReadOnly = true;
-            this.txtFoursScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtFoursScore4.Size = new System.Drawing.Size(167, 44);
             this.txtFoursScore4.TabIndex = 86;
             this.txtFoursScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFoursScore4.Visible = false;
@@ -1436,10 +1521,11 @@
             this.txtThreesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtThreesScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtThreesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtThreesScore4.Location = new System.Drawing.Point(697, 177);
+            this.txtThreesScore4.Location = new System.Drawing.Point(1294, 354);
+            this.txtThreesScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtThreesScore4.Name = "txtThreesScore4";
             this.txtThreesScore4.ReadOnly = true;
-            this.txtThreesScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtThreesScore4.Size = new System.Drawing.Size(167, 44);
             this.txtThreesScore4.TabIndex = 85;
             this.txtThreesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtThreesScore4.Visible = false;
@@ -1452,10 +1538,11 @@
             this.txtDeucesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtDeucesScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtDeucesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDeucesScore4.Location = new System.Drawing.Point(697, 145);
+            this.txtDeucesScore4.Location = new System.Drawing.Point(1294, 290);
+            this.txtDeucesScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtDeucesScore4.Name = "txtDeucesScore4";
             this.txtDeucesScore4.ReadOnly = true;
-            this.txtDeucesScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtDeucesScore4.Size = new System.Drawing.Size(167, 44);
             this.txtDeucesScore4.TabIndex = 84;
             this.txtDeucesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDeucesScore4.Visible = false;
@@ -1468,10 +1555,11 @@
             this.txtAcesScore4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtAcesScore4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAcesScore4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAcesScore4.Location = new System.Drawing.Point(697, 113);
+            this.txtAcesScore4.Location = new System.Drawing.Point(1294, 226);
+            this.txtAcesScore4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAcesScore4.Name = "txtAcesScore4";
             this.txtAcesScore4.ReadOnly = true;
-            this.txtAcesScore4.Size = new System.Drawing.Size(91, 26);
+            this.txtAcesScore4.Size = new System.Drawing.Size(167, 44);
             this.txtAcesScore4.TabIndex = 83;
             this.txtAcesScore4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAcesScore4.Visible = false;
@@ -1484,10 +1572,11 @@
             this.txtPlayer4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtPlayer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPlayer4.ForeColor = System.Drawing.Color.White;
-            this.txtPlayer4.Location = new System.Drawing.Point(697, 81);
+            this.txtPlayer4.Location = new System.Drawing.Point(1294, 162);
+            this.txtPlayer4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPlayer4.Name = "txtPlayer4";
             this.txtPlayer4.ReadOnly = true;
-            this.txtPlayer4.Size = new System.Drawing.Size(91, 26);
+            this.txtPlayer4.Size = new System.Drawing.Size(167, 44);
             this.txtPlayer4.TabIndex = 82;
             this.txtPlayer4.Text = "Score";
             this.txtPlayer4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1497,18 +1586,21 @@
             // 
             this.label3.BackColor = System.Drawing.Color.DimGray;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(311, 370);
+            this.label3.Location = new System.Drawing.Point(578, 740);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(478, 5);
+            this.label3.Size = new System.Drawing.Size(888, 10);
             this.label3.TabIndex = 98;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lbRoundDisplay);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(200, 17);
+            this.groupBox1.Location = new System.Drawing.Point(371, 34);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(94, 91);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Size = new System.Drawing.Size(175, 182);
             this.groupBox1.TabIndex = 99;
             this.groupBox1.TabStop = false;
             // 
@@ -1516,9 +1608,11 @@
             // 
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.RollDisplay);
-            this.groupBox2.Location = new System.Drawing.Point(16, 523);
+            this.groupBox2.Location = new System.Drawing.Point(30, 1046);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(72, 35);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Size = new System.Drawing.Size(134, 70);
             this.groupBox2.TabIndex = 100;
             this.groupBox2.TabStop = false;
             // 
@@ -1529,10 +1623,11 @@
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(408, 48);
+            this.textBox1.Location = new System.Drawing.Point(758, 96);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(91, 26);
+            this.textBox1.Size = new System.Drawing.Size(167, 44);
             this.textBox1.TabIndex = 101;
             this.textBox1.Text = "Player1";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1544,10 +1639,11 @@
             this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(505, 48);
+            this.textBox2.Location = new System.Drawing.Point(938, 96);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(91, 26);
+            this.textBox2.Size = new System.Drawing.Size(167, 44);
             this.textBox2.TabIndex = 102;
             this.textBox2.Text = "Player2";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1559,10 +1655,11 @@
             this.textBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(601, 48);
+            this.textBox3.Location = new System.Drawing.Point(1116, 96);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(91, 26);
+            this.textBox3.Size = new System.Drawing.Size(167, 44);
             this.textBox3.TabIndex = 103;
             this.textBox3.Text = "Player3";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1574,19 +1671,21 @@
             this.textBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(697, 48);
+            this.textBox4.Location = new System.Drawing.Point(1294, 96);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(91, 26);
+            this.textBox4.Size = new System.Drawing.Size(167, 44);
             this.textBox4.TabIndex = 104;
             this.textBox4.Text = "Player4";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pbDice5
             // 
-            this.pbDice5.Location = new System.Drawing.Point(29, 431);
+            this.pbDice5.Location = new System.Drawing.Point(54, 862);
+            this.pbDice5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pbDice5.Name = "pbDice5";
-            this.pbDice5.Size = new System.Drawing.Size(86, 78);
+            this.pbDice5.Size = new System.Drawing.Size(160, 156);
             this.pbDice5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDice5.TabIndex = 0;
             this.pbDice5.TabStop = false;
@@ -1594,9 +1693,10 @@
             // pbDice4
             // 
             this.pbDice4.InitialImage = global::Client.Properties.Resources.p1_dice5;
-            this.pbDice4.Location = new System.Drawing.Point(29, 339);
+            this.pbDice4.Location = new System.Drawing.Point(54, 678);
+            this.pbDice4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pbDice4.Name = "pbDice4";
-            this.pbDice4.Size = new System.Drawing.Size(86, 78);
+            this.pbDice4.Size = new System.Drawing.Size(160, 156);
             this.pbDice4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDice4.TabIndex = 0;
             this.pbDice4.TabStop = false;
@@ -1605,27 +1705,30 @@
             // 
             this.pbDice3.ErrorImage = global::Client.Properties.Resources.roll;
             this.pbDice3.InitialImage = global::Client.Properties.Resources.p4_dice6;
-            this.pbDice3.Location = new System.Drawing.Point(29, 247);
+            this.pbDice3.Location = new System.Drawing.Point(54, 494);
+            this.pbDice3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pbDice3.Name = "pbDice3";
-            this.pbDice3.Size = new System.Drawing.Size(86, 78);
+            this.pbDice3.Size = new System.Drawing.Size(160, 156);
             this.pbDice3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDice3.TabIndex = 0;
             this.pbDice3.TabStop = false;
             // 
             // pbDice2
             // 
-            this.pbDice2.Location = new System.Drawing.Point(29, 155);
+            this.pbDice2.Location = new System.Drawing.Point(54, 310);
+            this.pbDice2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pbDice2.Name = "pbDice2";
-            this.pbDice2.Size = new System.Drawing.Size(86, 78);
+            this.pbDice2.Size = new System.Drawing.Size(160, 156);
             this.pbDice2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDice2.TabIndex = 0;
             this.pbDice2.TabStop = false;
             // 
             // pbDice1
             // 
-            this.pbDice1.Location = new System.Drawing.Point(29, 63);
+            this.pbDice1.Location = new System.Drawing.Point(54, 126);
+            this.pbDice1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pbDice1.Name = "pbDice1";
-            this.pbDice1.Size = new System.Drawing.Size(86, 78);
+            this.pbDice1.Size = new System.Drawing.Size(160, 156);
             this.pbDice1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDice1.TabIndex = 0;
             this.pbDice1.TabStop = false;
@@ -1633,20 +1736,20 @@
             // pbArrow1
             // 
             this.pbArrow1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbArrow1.Location = new System.Drawing.Point(426, 18);
-            this.pbArrow1.Margin = new System.Windows.Forms.Padding(2);
+            this.pbArrow1.Location = new System.Drawing.Point(791, 36);
+            this.pbArrow1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbArrow1.Name = "pbArrow1";
-            this.pbArrow1.Size = new System.Drawing.Size(54, 25);
+            this.pbArrow1.Size = new System.Drawing.Size(100, 50);
             this.pbArrow1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbArrow1.TabIndex = 105;
             this.pbArrow1.TabStop = false;
             // 
             // pbArrow2
             // 
-            this.pbArrow2.Location = new System.Drawing.Point(523, 18);
-            this.pbArrow2.Margin = new System.Windows.Forms.Padding(2);
+            this.pbArrow2.Location = new System.Drawing.Point(971, 36);
+            this.pbArrow2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbArrow2.Name = "pbArrow2";
-            this.pbArrow2.Size = new System.Drawing.Size(54, 25);
+            this.pbArrow2.Size = new System.Drawing.Size(100, 50);
             this.pbArrow2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbArrow2.TabIndex = 106;
             this.pbArrow2.TabStop = false;
@@ -1654,10 +1757,10 @@
             // pbArrow3
             // 
             this.pbArrow3.InitialImage = null;
-            this.pbArrow3.Location = new System.Drawing.Point(618, 18);
-            this.pbArrow3.Margin = new System.Windows.Forms.Padding(2);
+            this.pbArrow3.Location = new System.Drawing.Point(1148, 36);
+            this.pbArrow3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbArrow3.Name = "pbArrow3";
-            this.pbArrow3.Size = new System.Drawing.Size(54, 25);
+            this.pbArrow3.Size = new System.Drawing.Size(100, 50);
             this.pbArrow3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbArrow3.TabIndex = 107;
             this.pbArrow3.TabStop = false;
@@ -1665,21 +1768,21 @@
             // pbArrow4
             // 
             this.pbArrow4.InitialImage = null;
-            this.pbArrow4.Location = new System.Drawing.Point(713, 18);
-            this.pbArrow4.Margin = new System.Windows.Forms.Padding(2);
+            this.pbArrow4.Location = new System.Drawing.Point(1324, 36);
+            this.pbArrow4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbArrow4.Name = "pbArrow4";
-            this.pbArrow4.Size = new System.Drawing.Size(54, 25);
+            this.pbArrow4.Size = new System.Drawing.Size(100, 50);
             this.pbArrow4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbArrow4.TabIndex = 108;
             this.pbArrow4.TabStop = false;
             // 
             // YachtDice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(805, 530);
+            this.ClientSize = new System.Drawing.Size(1495, 1060);
             this.Controls.Add(this.pbArrow4);
             this.Controls.Add(this.pbArrow3);
             this.Controls.Add(this.pbArrow2);
@@ -1782,7 +1885,8 @@
             this.Controls.Add(this.pbDice3);
             this.Controls.Add(this.pbDice2);
             this.Controls.Add(this.pbDice1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "YachtDice";
             this.Text = "YachtDice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.YachtDice_FormClosed);

@@ -437,7 +437,9 @@ namespace Client
                     case PacketType.Chatting_Result:
                         {
                             ChattingResult pkChattingResult = (ChattingResult)packet;
-                            ChattingRoom.DisplayText(pkChattingResult.chat);
+
+                            if(m_fChat != null)
+                                ChattingRoom.DisplayText(pkChattingResult.chat);
                         }
                         break;
                 }
