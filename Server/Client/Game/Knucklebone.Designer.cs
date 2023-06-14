@@ -496,7 +496,7 @@
             // 
             // pbP2Dice
             // 
-            this.pbP2Dice.BackColor = System.Drawing.Color.DarkRed;
+            this.pbP2Dice.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pbP2Dice.InitialImage = global::Client.Properties.Resources.p4_dice0;
             this.pbP2Dice.Location = new System.Drawing.Point(660, 40);
             this.pbP2Dice.Margin = new System.Windows.Forms.Padding(2);
@@ -508,7 +508,7 @@
             // 
             // pbP1Dice
             // 
-            this.pbP1Dice.BackColor = System.Drawing.Color.Navy;
+            this.pbP1Dice.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pbP1Dice.InitialImage = global::Client.Properties.Resources.p4_dice0;
             this.pbP1Dice.Location = new System.Drawing.Point(66, 400);
             this.pbP1Dice.Margin = new System.Windows.Forms.Padding(2);
