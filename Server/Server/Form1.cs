@@ -61,7 +61,7 @@ namespace Server
                 ShowMessage("> Connection From Client");
 
                 NetworkStream stream = client.GetStream();
-                byte[] buffer = new byte[1024];
+                byte[] buffer = new byte[512];
                 int bytes = stream.Read(buffer, 0, buffer.Length);
 
                 Packet packet = (Packet)Packet.Deserialize(buffer);
@@ -122,7 +122,7 @@ namespace Server
 
         public void SendMessageAll(string msg, string nickName, bool b, Packet packet)
         {
-            byte[] buff = new byte[1024];
+            byte[] buff = new byte[512];
             switch (packet.packet_Type)
             {
                 case PacketType.Entry:
@@ -285,7 +285,7 @@ namespace Server
             NetworkStream nStream = null;
             try
             {
-                byte[] buff = new byte[1024];
+                byte[] buff = new byte[512];
                 string msg = string.Empty;
                 int bytes = 0;
                 while (true)

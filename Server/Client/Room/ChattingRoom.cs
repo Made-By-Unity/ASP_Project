@@ -32,7 +32,7 @@ namespace Client.Room
         }
         private void btnSend_Click(object sender, EventArgs e)
         {
-            byte[] buff = new byte[1024];
+            byte[] buff = new byte[512];
             Chatting chat = new Chatting();
             chat.chat = textBox2.Text;
             Packet.Serialize(chat).CopyTo(buff, 0);
@@ -62,7 +62,7 @@ namespace Client.Room
         {
             while (true)
             {
-                byte[] buffer = new byte[1024];
+                byte[] buffer = new byte[512];
                 SocketManager.GetInst().Stream.Read(buffer, 0, buffer.Length);
 
                 Packet packet = (Packet)Packet.Deserialize(buffer);
@@ -78,7 +78,7 @@ namespace Client.Room
         {
             if (e.KeyCode == Keys.Enter)
             {
-                byte[] buff = new byte[1024];
+                byte[] buff = new byte[512];
                 Chatting chat = new Chatting();
                 chat.chat = textBox2.Text;
                 Packet.Serialize(chat).CopyTo(buff, 0);

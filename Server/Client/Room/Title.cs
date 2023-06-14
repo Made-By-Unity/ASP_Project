@@ -32,7 +32,7 @@ namespace Client.Title
         {
             while (true)
             {
-                byte[] buffer = new byte[1024];
+                byte[] buffer = new byte[512];
                 SocketManager.GetInst().Stream.Read(buffer, 0, buffer.Length);
 
                 Packet packet = (Packet)Packet.Deserialize(buffer);
