@@ -31,6 +31,7 @@ namespace Client
         Image[] m_images = {
              Properties.Resources._1, Properties.Resources._2, Properties.Resources._3, Properties.Resources._4, Properties.Resources._5, Properties.Resources._6
         };
+        
 
         TextBox[] m_P1Scores;
         TextBox[] m_P2Scores;
@@ -1019,31 +1020,6 @@ namespace Client
 
                 m_tHandler.Abort();
             }));
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtChoice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void YachtDice_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

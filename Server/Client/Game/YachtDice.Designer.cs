@@ -219,7 +219,6 @@
             this.label2.Size = new System.Drawing.Size(25, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "/  3";
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label1
             // 
@@ -230,7 +229,6 @@
             this.label1.Size = new System.Drawing.Size(60, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Round";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // lbRoundDisplay
             // 
@@ -703,7 +701,6 @@
             this.txtChoice.Size = new System.Drawing.Size(91, 27);
             this.txtChoice.TabIndex = 29;
             this.txtChoice.Text = "Choice";
-            this.txtChoice.TextChanged += new System.EventHandler(this.TxtChoice_TextChanged);
             // 
             // cbDice1
             // 
@@ -1575,7 +1572,6 @@
             this.textBox1.TabIndex = 101;
             this.textBox1.Text = "Player1";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -1609,7 +1605,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Black;
+            this.textBox4.BackColor = System.Drawing.Color.LightGray;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -1730,7 +1726,6 @@
             this.Name = "YachtDice";
             this.Text = "YachtDice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.YachtDice_FormClosed);
-            this.Load += new System.EventHandler(this.YachtDice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbDice1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDice3)).EndInit();
