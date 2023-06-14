@@ -531,16 +531,17 @@ namespace Client
                 case 0:
                     m_curImage = m_p1Image;
                     break;
-                case 2:
+                case 1:
                     m_curImage = m_p2Image;
                     break;
-                case 3:
+                case 2:
                     m_curImage = m_p3Image;
                     break;
-                case 4:
+                case 3:
                     m_curImage = m_p4Image;
                     break;
             }
+
             // 다이스 이미지 초기화
             if (pbDice1.InvokeRequired)
                 pbDice1.Invoke(new MethodInvoker(() => { pbDice1.Image = m_curImage[0]; }));
