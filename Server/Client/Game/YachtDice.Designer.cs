@@ -1634,7 +1634,7 @@
             // 
             this.pbArrow1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbArrow1.Location = new System.Drawing.Point(426, 18);
-            this.pbArrow1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbArrow1.Margin = new System.Windows.Forms.Padding(2);
             this.pbArrow1.Name = "pbArrow1";
             this.pbArrow1.Size = new System.Drawing.Size(54, 25);
             this.pbArrow1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1644,7 +1644,7 @@
             // pbArrow2
             // 
             this.pbArrow2.Location = new System.Drawing.Point(523, 18);
-            this.pbArrow2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbArrow2.Margin = new System.Windows.Forms.Padding(2);
             this.pbArrow2.Name = "pbArrow2";
             this.pbArrow2.Size = new System.Drawing.Size(54, 25);
             this.pbArrow2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1655,7 +1655,7 @@
             // 
             this.pbArrow3.InitialImage = null;
             this.pbArrow3.Location = new System.Drawing.Point(618, 18);
-            this.pbArrow3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbArrow3.Margin = new System.Windows.Forms.Padding(2);
             this.pbArrow3.Name = "pbArrow3";
             this.pbArrow3.Size = new System.Drawing.Size(54, 25);
             this.pbArrow3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1666,7 +1666,7 @@
             // 
             this.pbArrow4.InitialImage = null;
             this.pbArrow4.Location = new System.Drawing.Point(713, 18);
-            this.pbArrow4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbArrow4.Margin = new System.Windows.Forms.Padding(2);
             this.pbArrow4.Name = "pbArrow4";
             this.pbArrow4.Size = new System.Drawing.Size(54, 25);
             this.pbArrow4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1787,6 +1787,7 @@
             this.Name = "YachtDice";
             this.Text = "YachtDice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.YachtDice_FormClosed);
+            this.Load += new System.EventHandler(this.YachtDice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

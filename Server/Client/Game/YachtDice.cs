@@ -1092,5 +1092,10 @@ namespace Client
                 m_tHandler.Abort();
             }));
         }
+
+        private void YachtDice_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
