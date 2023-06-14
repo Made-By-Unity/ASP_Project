@@ -374,5 +374,10 @@ namespace Client.Game
                     m_fLobby.Show();
             }));
         }
+
+        private void Knucklebone_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -234,6 +234,7 @@
             // 
             // pnlP2Boxes
             // 
+            this.pnlP2Boxes.BackColor = System.Drawing.Color.LightCoral;
             this.pnlP2Boxes.Controls.Add(this.pbP2Box7);
             this.pnlP2Boxes.Controls.Add(this.pbP2Box4);
             this.pnlP2Boxes.Controls.Add(this.pbP2Box1);
@@ -251,7 +252,7 @@
             // 
             // pbP2Box7
             // 
-            this.pbP2Box7.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP2Box7.BackColor = System.Drawing.Color.LightSalmon;
             this.pbP2Box7.Location = new System.Drawing.Point(218, 160);
             this.pbP2Box7.Margin = new System.Windows.Forms.Padding(2);
             this.pbP2Box7.Name = "pbP2Box7";
@@ -263,7 +264,7 @@
             // 
             // pbP2Box4
             // 
-            this.pbP2Box4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP2Box4.BackColor = System.Drawing.Color.LightSalmon;
             this.pbP2Box4.Location = new System.Drawing.Point(120, 160);
             this.pbP2Box4.Margin = new System.Windows.Forms.Padding(2);
             this.pbP2Box4.Name = "pbP2Box4";
@@ -275,7 +276,7 @@
             // 
             // pbP2Box1
             // 
-            this.pbP2Box1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP2Box1.BackColor = System.Drawing.Color.LightSalmon;
             this.pbP2Box1.Location = new System.Drawing.Point(23, 160);
             this.pbP2Box1.Margin = new System.Windows.Forms.Padding(2);
             this.pbP2Box1.Name = "pbP2Box1";
@@ -287,7 +288,7 @@
             // 
             // pbP2Box8
             // 
-            this.pbP2Box8.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP2Box8.BackColor = System.Drawing.Color.LightSalmon;
             this.pbP2Box8.Location = new System.Drawing.Point(218, 84);
             this.pbP2Box8.Margin = new System.Windows.Forms.Padding(2);
             this.pbP2Box8.Name = "pbP2Box8";
@@ -299,7 +300,7 @@
             // 
             // pbP2Box5
             // 
-            this.pbP2Box5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP2Box5.BackColor = System.Drawing.Color.LightSalmon;
             this.pbP2Box5.Location = new System.Drawing.Point(120, 84);
             this.pbP2Box5.Margin = new System.Windows.Forms.Padding(2);
             this.pbP2Box5.Name = "pbP2Box5";
@@ -311,7 +312,7 @@
             // 
             // pbP2Box2
             // 
-            this.pbP2Box2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP2Box2.BackColor = System.Drawing.Color.LightSalmon;
             this.pbP2Box2.Location = new System.Drawing.Point(23, 84);
             this.pbP2Box2.Margin = new System.Windows.Forms.Padding(2);
             this.pbP2Box2.Name = "pbP2Box2";
@@ -323,7 +324,7 @@
             // 
             // pbP2Box9
             // 
-            this.pbP2Box9.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP2Box9.BackColor = System.Drawing.Color.LightSalmon;
             this.pbP2Box9.Location = new System.Drawing.Point(218, 6);
             this.pbP2Box9.Margin = new System.Windows.Forms.Padding(2);
             this.pbP2Box9.Name = "pbP2Box9";
@@ -335,7 +336,7 @@
             // 
             // pbP2Box6
             // 
-            this.pbP2Box6.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP2Box6.BackColor = System.Drawing.Color.LightSalmon;
             this.pbP2Box6.Location = new System.Drawing.Point(120, 6);
             this.pbP2Box6.Margin = new System.Windows.Forms.Padding(2);
             this.pbP2Box6.Name = "pbP2Box6";
@@ -347,7 +348,7 @@
             // 
             // pbP2Box3
             // 
-            this.pbP2Box3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP2Box3.BackColor = System.Drawing.Color.LightSalmon;
             this.pbP2Box3.Location = new System.Drawing.Point(23, 6);
             this.pbP2Box3.Margin = new System.Windows.Forms.Padding(2);
             this.pbP2Box3.Name = "pbP2Box3";
@@ -359,6 +360,7 @@
             // 
             // pnlP1Boxes
             // 
+            this.pnlP1Boxes.BackColor = System.Drawing.Color.SteelBlue;
             this.pnlP1Boxes.Controls.Add(this.pbP1Box7);
             this.pnlP1Boxes.Controls.Add(this.pbP1Box4);
             this.pnlP1Boxes.Controls.Add(this.pbP1Box1);
@@ -376,7 +378,7 @@
             // 
             // pbP1Box7
             // 
-            this.pbP1Box7.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP1Box7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pbP1Box7.Location = new System.Drawing.Point(213, 164);
             this.pbP1Box7.Margin = new System.Windows.Forms.Padding(2);
             this.pbP1Box7.Name = "pbP1Box7";
@@ -389,7 +391,7 @@
             // 
             // pbP1Box4
             // 
-            this.pbP1Box4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP1Box4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pbP1Box4.Location = new System.Drawing.Point(115, 164);
             this.pbP1Box4.Margin = new System.Windows.Forms.Padding(2);
             this.pbP1Box4.Name = "pbP1Box4";
@@ -402,7 +404,7 @@
             // 
             // pbP1Box1
             // 
-            this.pbP1Box1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP1Box1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pbP1Box1.Location = new System.Drawing.Point(17, 164);
             this.pbP1Box1.Margin = new System.Windows.Forms.Padding(2);
             this.pbP1Box1.Name = "pbP1Box1";
@@ -415,7 +417,7 @@
             // 
             // pbP1Box8
             // 
-            this.pbP1Box8.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP1Box8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pbP1Box8.Location = new System.Drawing.Point(213, 86);
             this.pbP1Box8.Margin = new System.Windows.Forms.Padding(2);
             this.pbP1Box8.Name = "pbP1Box8";
@@ -428,7 +430,7 @@
             // 
             // pbP1Box5
             // 
-            this.pbP1Box5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP1Box5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pbP1Box5.Location = new System.Drawing.Point(115, 86);
             this.pbP1Box5.Margin = new System.Windows.Forms.Padding(2);
             this.pbP1Box5.Name = "pbP1Box5";
@@ -441,7 +443,7 @@
             // 
             // pbP1Box2
             // 
-            this.pbP1Box2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP1Box2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pbP1Box2.Location = new System.Drawing.Point(17, 86);
             this.pbP1Box2.Margin = new System.Windows.Forms.Padding(2);
             this.pbP1Box2.Name = "pbP1Box2";
@@ -454,7 +456,7 @@
             // 
             // pbP1Box9
             // 
-            this.pbP1Box9.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP1Box9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pbP1Box9.Location = new System.Drawing.Point(213, 8);
             this.pbP1Box9.Margin = new System.Windows.Forms.Padding(2);
             this.pbP1Box9.Name = "pbP1Box9";
@@ -467,7 +469,7 @@
             // 
             // pbP1Box6
             // 
-            this.pbP1Box6.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP1Box6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pbP1Box6.Location = new System.Drawing.Point(115, 8);
             this.pbP1Box6.Margin = new System.Windows.Forms.Padding(2);
             this.pbP1Box6.Name = "pbP1Box6";
@@ -480,7 +482,7 @@
             // 
             // pbP1Box3
             // 
-            this.pbP1Box3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pbP1Box3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.pbP1Box3.Location = new System.Drawing.Point(17, 8);
             this.pbP1Box3.Margin = new System.Windows.Forms.Padding(2);
             this.pbP1Box3.Name = "pbP1Box3";
@@ -493,6 +495,7 @@
             // 
             // pbP2Dice
             // 
+            this.pbP2Dice.BackColor = System.Drawing.Color.DarkRed;
             this.pbP2Dice.InitialImage = global::Client.Properties.Resources.p4_dice0;
             this.pbP2Dice.Location = new System.Drawing.Point(660, 40);
             this.pbP2Dice.Margin = new System.Windows.Forms.Padding(2);
@@ -504,6 +507,7 @@
             // 
             // pbP1Dice
             // 
+            this.pbP1Dice.BackColor = System.Drawing.Color.Navy;
             this.pbP1Dice.InitialImage = global::Client.Properties.Resources.p4_dice0;
             this.pbP1Dice.Location = new System.Drawing.Point(66, 400);
             this.pbP1Dice.Margin = new System.Windows.Forms.Padding(2);
@@ -539,6 +543,7 @@
             this.Name = "Knucklebone";
             this.Text = "Knucklebone";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Knucklebone_FormClosed);
+            this.Load += new System.EventHandler(this.Knucklebone_Load);
             this.pnlP2Boxes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbP2Box7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbP2Box4)).EndInit();
