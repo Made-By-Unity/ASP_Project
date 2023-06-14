@@ -89,5 +89,35 @@ namespace Client.Title
             m_tHandler.IsBackground = true;
             m_tHandler.Start();
         }
+
+        private void LbNickName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LbIP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbNickName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbServerIP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Title_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,62 +33,94 @@
             this.lbIP = new System.Windows.Forms.Label();
             this.lbNickName = new System.Windows.Forms.Label();
             this.tbServerIP = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(97, 140);
+            this.btnLogin.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLogin.Font = new System.Drawing.Font("SUIT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnLogin.Location = new System.Drawing.Point(130, 188);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(76, 31);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "로그인";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // tbNickName
             // 
-            this.tbNickName.Location = new System.Drawing.Point(82, 98);
+            this.tbNickName.Font = new System.Drawing.Font("SUIT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbNickName.Location = new System.Drawing.Point(110, 156);
+            this.tbNickName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbNickName.Name = "tbNickName";
-            this.tbNickName.Size = new System.Drawing.Size(168, 21);
+            this.tbNickName.Size = new System.Drawing.Size(181, 24);
             this.tbNickName.TabIndex = 1;
+            this.tbNickName.TextChanged += new System.EventHandler(this.TbNickName_TextChanged);
             // 
             // lbIP
             // 
             this.lbIP.AutoSize = true;
-            this.lbIP.Location = new System.Drawing.Point(23, 49);
+            this.lbIP.Font = new System.Drawing.Font("SUIT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbIP.Location = new System.Drawing.Point(42, 128);
             this.lbIP.Name = "lbIP";
-            this.lbIP.Size = new System.Drawing.Size(52, 12);
+            this.lbIP.Size = new System.Drawing.Size(52, 16);
             this.lbIP.TabIndex = 3;
             this.lbIP.Text = "서버 IP :";
+            this.lbIP.Click += new System.EventHandler(this.LbIP_Click);
             // 
             // lbNickName
             // 
             this.lbNickName.AutoSize = true;
-            this.lbNickName.Location = new System.Drawing.Point(26, 101);
+            this.lbNickName.Font = new System.Drawing.Font("SUIT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbNickName.Location = new System.Drawing.Point(46, 160);
             this.lbNickName.Name = "lbNickName";
-            this.lbNickName.Size = new System.Drawing.Size(49, 12);
+            this.lbNickName.Size = new System.Drawing.Size(48, 16);
             this.lbNickName.TabIndex = 4;
             this.lbNickName.Text = "닉네임 :";
+            this.lbNickName.Click += new System.EventHandler(this.LbNickName_Click);
             // 
             // tbServerIP
             // 
-            this.tbServerIP.Location = new System.Drawing.Point(82, 46);
+            this.tbServerIP.Font = new System.Drawing.Font("SUIT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbServerIP.Location = new System.Drawing.Point(110, 124);
+            this.tbServerIP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbServerIP.Name = "tbServerIP";
-            this.tbServerIP.Size = new System.Drawing.Size(168, 21);
+            this.tbServerIP.Size = new System.Drawing.Size(181, 24);
             this.tbServerIP.TabIndex = 5;
+            this.tbServerIP.TextChanged += new System.EventHandler(this.TbServerIP_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Client.Properties.Resources.pyojipan;
+            this.pictureBox1.InitialImage = global::Client.Properties.Resources.pyojipan;
+            this.pictureBox1.Location = new System.Drawing.Point(42, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(265, 107);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // Title
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 188);
+            this.ClientSize = new System.Drawing.Size(344, 236);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbServerIP);
             this.Controls.Add(this.lbNickName);
             this.Controls.Add(this.lbIP);
             this.Controls.Add(this.tbNickName);
             this.Controls.Add(this.btnLogin);
+            this.Font = new System.Drawing.Font("SUIT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Title";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Title_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,5 +133,6 @@
         private System.Windows.Forms.Label lbIP;
         private System.Windows.Forms.Label lbNickName;
         private System.Windows.Forms.TextBox tbServerIP;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
