@@ -144,13 +144,6 @@
       <Name>Packetdll</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\yachtresource\p1dice\dice6.png" />
-    <None Include="Resources\yachtresource\p1dice\dice5.png" />
-    <None Include="Resources\yachtresource\p1dice\dice4.png" />
-    <None Include="Resources\yachtresource\p1dice\dice3.png" />
-    <None Include="Resources\yachtresource\p1dice\dice2.png" />
-    <None Include="Resources\yachtresource\p1dice\dice1.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
