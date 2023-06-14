@@ -77,7 +77,7 @@ namespace Client.Manager
             m_Stream = m_ClientSocket.GetStream();
             m_strNickName = _strNickName;
 
-            byte[] buff = new byte[512];
+            byte[] buff = new byte[1024 * 4];
             Login pkLogin = new Login();
             pkLogin.packet_Type = PacketType.Login;
             pkLogin.nickName = m_strNickName;

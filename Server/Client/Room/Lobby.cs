@@ -55,7 +55,7 @@ namespace Client.Room
         {
             while (true)
             {
-                byte[] buffer = new byte[512];
+                byte[] buffer = new byte[1024 * 4];
                 SocketManager.GetInst().Stream.Read(buffer, 0, buffer.Length);
 
                 Packet packet = (Packet)Packet.Deserialize(buffer);
@@ -63,20 +63,12 @@ namespace Client.Room
                 {
                     LoginResult pkLoginResult = (LoginResult)packet;
                     SocketManager.GetInst().NickNameList = pkLoginResult.usernames;
-
-                    if(m_fChat != null)
-                        m_fChat.DisplayText(pkLoginResult.LoginMessage);
-
                     UpdatePlayer();
                 }
                 else if (packet.packet_Type == PacketType.Disconnect_Result)
                 {
                     DisconnectResult pkDisconncetResult = (DisconnectResult)packet;
                     SocketManager.GetInst().NickNameList.Remove(pkDisconncetResult.UserName);
-
-                    if (m_fChat != null)
-                        m_fChat.DisplayText(pkDisconncetResult.chat);
-
                     UpdatePlayer();
                 }
                 else if(packet.packet_Type == PacketType.Entry_Result)
@@ -105,9 +97,7 @@ namespace Client.Room
                 else if(packet.packet_Type == PacketType.Chatting_Result)
                 {
                     ChattingResult pkChattingResult = (ChattingResult)packet;
-
-                    if(m_fChat != null)
-                        ChattingRoom.DisplayText(pkChattingResult.chat);
+                    ChattingRoom.DisplayText(pkChattingResult.chat);
                 }
             }
         }
@@ -155,7 +145,7 @@ namespace Client.Room
         {
             string strSelected = cbGame.SelectedItem.ToString();
 
-            byte[] buff = new byte[512];
+            byte[] buff = new byte[1024 * 4];
             Entry pkEntry = new Entry();
             pkEntry.packet_Type = PacketType.Entry;
 

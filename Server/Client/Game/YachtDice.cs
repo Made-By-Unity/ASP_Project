@@ -239,7 +239,7 @@ namespace Client
         {
             while (true)
             {
-                byte[] buffer = new byte[512];
+                byte[] buffer = new byte[1024*4];
                 SocketManager.GetInst().Stream.Read(buffer, 0, buffer.Length);
 
                 Packet packet = (Packet)Packet.Deserialize(buffer);
@@ -531,17 +531,16 @@ namespace Client
                 case 0:
                     m_curImage = m_p1Image;
                     break;
-                case 1:
+                case 2:
                     m_curImage = m_p2Image;
                     break;
-                case 2:
+                case 3:
                     m_curImage = m_p3Image;
                     break;
-                case 3:
+                case 4:
                     m_curImage = m_p4Image;
                     break;
             }
-
             // 다이스 이미지 초기화
             if (pbDice1.InvokeRequired)
                 pbDice1.Invoke(new MethodInvoker(() => { pbDice1.Image = m_curImage[0]; }));
@@ -656,7 +655,7 @@ namespace Client
                 }
 
                 // 패킷 전송
-                byte[] buff = new byte[512];
+                byte[] buff = new byte[1024 * 4];
                 GameOver pkGameOver = new GameOver();
                 pkGameOver.result = strResult;
                 Packet.Serialize(pkGameOver).CopyTo(buff, 0);
@@ -747,7 +746,7 @@ namespace Client
             LockRolling();
 
             // 패킷 전송
-            byte[] buff = new byte[512];
+            byte[] buff = new byte[1024 * 4];
             RollStart pkRollStart = new RollStart();
             pkRollStart.remainRollCount = --m_iRollCount;
             Packet.Serialize(pkRollStart).CopyTo(buff, 0);
@@ -786,7 +785,7 @@ namespace Client
                     break;
             }
 
-            byte[] buff = new byte[512];
+            byte[] buff = new byte[1024 * 4];
             Lock pkLock = new Lock();
             pkLock.isLock = bChecked;
             pkLock.lockNumber = iNum;
@@ -849,7 +848,7 @@ namespace Client
 
         private void RollEnd()
         {
-            byte[] buff = new byte[512];
+            byte[] buff = new byte[1024 * 4];
             RollEnd pkRollEnd = new RollEnd();
             pkRollEnd.dice1 = m_arrDices[0];
             pkRollEnd.dice2 = m_arrDices[1];
@@ -1017,7 +1016,7 @@ namespace Client
             }
 
             // 패킷 전송
-            byte[] buff = new byte[512];
+            byte[] buff = new byte[1024 * 4];
             Select pkSelect = new Select();
 
             if(tbScore.Name.Contains("txtAcesScore"))
@@ -1091,11 +1090,6 @@ namespace Client
 
                 m_tHandler.Abort();
             }));
-        }
-
-        private void YachtDice_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

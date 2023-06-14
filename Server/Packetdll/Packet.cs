@@ -71,7 +71,7 @@ namespace Packetdll
         {
             try
             {
-                MemoryStream ms = new MemoryStream(512); // packet size will be maximum 4k
+                MemoryStream ms = new MemoryStream(1024 * 4); // packet size will be maximum 4k
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(ms, data);
                 return ms.ToArray();
@@ -86,7 +86,7 @@ namespace Packetdll
         {
             try
             {
-                MemoryStream ms = new MemoryStream(512);
+                MemoryStream ms = new MemoryStream(1024 * 4);
                 ms.Write(data, 0, data.Length);
 
                 ms.Position = 0;
