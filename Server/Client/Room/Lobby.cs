@@ -1,4 +1,5 @@
-﻿using Client.Manager;
+﻿using Client.Game;
+using Client.Manager;
 using Packetdll;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,12 @@ namespace Client.Room
                     SocketManager.GetInst().NickNameList = pkLoginResult.usernames;
                     UpdatePlayer();
                 }
+                else if(packet.packet_Type == PacketType.Disconnect_Result)
+                {
+                    DisconnectResult pkDisconncetResult = (DisconnectResult)packet;
+                    SocketManager.GetInst().NickNameList.Remove(pkDisconncetResult.UserName);
+                    UpdatePlayer();
+                }
                 else if(packet.packet_Type == PacketType.Entry_Result)
                 {
                     EntryResult pkEntryResult = (EntryResult)packet;
@@ -77,6 +84,15 @@ namespace Client.Room
                         
                         Application.Run(fYacht);
                     }
+                    else if(2 == pkEntryResult.kindOfGame)
+                    {
+                        Knucklebone fKB = new Knucklebone();
+                        fKB.Lobby = this;
+                        this.Invoke(new Action(() => this.Visible = false));
+
+                        Application.Run(fKB);
+                    }
+                    
                 }
                 else if(packet.packet_Type == PacketType.Chatting_Result)
                 {
@@ -101,6 +117,7 @@ namespace Client.Room
             for (int i = 0; i < listNickName.Count; i++)
             {
                 TextBox tbPlayer = (Controls.Find("tbPlayer" + (i + 1).ToString(), true)[0] as TextBox);
+                tbPlayer.Text = "";
 
                 if(this.IsHandleCreated)
                 {
@@ -127,6 +144,10 @@ namespace Client.Room
             if ("Yacht Dice" == strSelected)
             {
                 pkEntry.kindOfGame = 1;
+            }
+            else if("Knucklebone" == strSelected)
+            {
+                pkEntry.kindOfGame = 2;
             }
 
             Packet.Serialize(pkEntry).CopyTo(buff, 0);

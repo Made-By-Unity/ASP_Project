@@ -90,17 +90,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 568);
+            this.label1.Location = new System.Drawing.Point(143, 757);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 18);
+            this.label1.Size = new System.Drawing.Size(102, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Player1 :";
             // 
             // pbP1Dice
             // 
-            this.pbP1Dice.Location = new System.Drawing.Point(94, 601);
+            this.pbP1Dice.Location = new System.Drawing.Point(122, 801);
+            this.pbP1Dice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Dice.Name = "pbP1Dice";
-            this.pbP1Dice.Size = new System.Drawing.Size(141, 121);
+            this.pbP1Dice.Size = new System.Drawing.Size(183, 161);
             this.pbP1Dice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Dice.TabIndex = 1;
             this.pbP1Dice.TabStop = false;
@@ -108,26 +110,29 @@
             // lbP1ScoreSum
             // 
             this.lbP1ScoreSum.AutoSize = true;
-            this.lbP1ScoreSum.Location = new System.Drawing.Point(198, 568);
+            this.lbP1ScoreSum.Location = new System.Drawing.Point(257, 757);
+            this.lbP1ScoreSum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbP1ScoreSum.Name = "lbP1ScoreSum";
-            this.lbP1ScoreSum.Size = new System.Drawing.Size(18, 18);
+            this.lbP1ScoreSum.Size = new System.Drawing.Size(23, 24);
             this.lbP1ScoreSum.TabIndex = 2;
             this.lbP1ScoreSum.Text = "0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(959, 26);
+            this.label3.Location = new System.Drawing.Point(1247, 35);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 18);
+            this.label3.Size = new System.Drawing.Size(110, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Player2 : ";
             // 
             // pbP2Dice
             // 
-            this.pbP2Dice.Location = new System.Drawing.Point(943, 59);
+            this.pbP2Dice.Location = new System.Drawing.Point(1226, 79);
+            this.pbP2Dice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Dice.Name = "pbP2Dice";
-            this.pbP2Dice.Size = new System.Drawing.Size(141, 121);
+            this.pbP2Dice.Size = new System.Drawing.Size(183, 161);
             this.pbP2Dice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Dice.TabIndex = 1;
             this.pbP2Dice.TabStop = false;
@@ -135,25 +140,28 @@
             // lbP2ScoreSum
             // 
             this.lbP2ScoreSum.AutoSize = true;
-            this.lbP2ScoreSum.Location = new System.Drawing.Point(1044, 26);
+            this.lbP2ScoreSum.Location = new System.Drawing.Point(1357, 35);
+            this.lbP2ScoreSum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbP2ScoreSum.Name = "lbP2ScoreSum";
-            this.lbP2ScoreSum.Size = new System.Drawing.Size(18, 18);
+            this.lbP2ScoreSum.Size = new System.Drawing.Size(23, 24);
             this.lbP2ScoreSum.TabIndex = 2;
             this.lbP2ScoreSum.Text = "0";
             // 
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(126, 427);
+            this.label5.Location = new System.Drawing.Point(164, 569);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1000, 2);
+            this.label5.Size = new System.Drawing.Size(1300, 3);
             this.label5.TabIndex = 3;
             // 
             // btnP1Roll
             // 
-            this.btnP1Roll.Location = new System.Drawing.Point(126, 765);
+            this.btnP1Roll.Location = new System.Drawing.Point(164, 1020);
+            this.btnP1Roll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnP1Roll.Name = "btnP1Roll";
-            this.btnP1Roll.Size = new System.Drawing.Size(75, 23);
+            this.btnP1Roll.Size = new System.Drawing.Size(98, 31);
             this.btnP1Roll.TabIndex = 4;
             this.btnP1Roll.Text = "Roll";
             this.btnP1Roll.UseVisualStyleBackColor = true;
@@ -162,9 +170,10 @@
             // pbP1Box3
             // 
             this.pbP1Box3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP1Box3.Location = new System.Drawing.Point(25, 13);
+            this.pbP1Box3.Location = new System.Drawing.Point(32, 17);
+            this.pbP1Box3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Box3.Name = "pbP1Box3";
-            this.pbP1Box3.Size = new System.Drawing.Size(107, 100);
+            this.pbP1Box3.Size = new System.Drawing.Size(139, 133);
             this.pbP1Box3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Box3.TabIndex = 5;
             this.pbP1Box3.TabStop = false;
@@ -174,9 +183,10 @@
             // pbP1Box2
             // 
             this.pbP1Box2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP1Box2.Location = new System.Drawing.Point(25, 129);
+            this.pbP1Box2.Location = new System.Drawing.Point(32, 172);
+            this.pbP1Box2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Box2.Name = "pbP1Box2";
-            this.pbP1Box2.Size = new System.Drawing.Size(107, 100);
+            this.pbP1Box2.Size = new System.Drawing.Size(139, 133);
             this.pbP1Box2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Box2.TabIndex = 5;
             this.pbP1Box2.TabStop = false;
@@ -186,9 +196,10 @@
             // pbP1Box1
             // 
             this.pbP1Box1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP1Box1.Location = new System.Drawing.Point(25, 245);
+            this.pbP1Box1.Location = new System.Drawing.Point(32, 327);
+            this.pbP1Box1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Box1.Name = "pbP1Box1";
-            this.pbP1Box1.Size = new System.Drawing.Size(107, 100);
+            this.pbP1Box1.Size = new System.Drawing.Size(139, 133);
             this.pbP1Box1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Box1.TabIndex = 5;
             this.pbP1Box1.TabStop = false;
@@ -198,9 +209,10 @@
             // pbP1Box6
             // 
             this.pbP1Box6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP1Box6.Location = new System.Drawing.Point(164, 13);
+            this.pbP1Box6.Location = new System.Drawing.Point(213, 17);
+            this.pbP1Box6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Box6.Name = "pbP1Box6";
-            this.pbP1Box6.Size = new System.Drawing.Size(107, 100);
+            this.pbP1Box6.Size = new System.Drawing.Size(139, 133);
             this.pbP1Box6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Box6.TabIndex = 5;
             this.pbP1Box6.TabStop = false;
@@ -210,9 +222,10 @@
             // pbP1Box5
             // 
             this.pbP1Box5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP1Box5.Location = new System.Drawing.Point(164, 129);
+            this.pbP1Box5.Location = new System.Drawing.Point(213, 172);
+            this.pbP1Box5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Box5.Name = "pbP1Box5";
-            this.pbP1Box5.Size = new System.Drawing.Size(107, 100);
+            this.pbP1Box5.Size = new System.Drawing.Size(139, 133);
             this.pbP1Box5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Box5.TabIndex = 5;
             this.pbP1Box5.TabStop = false;
@@ -222,9 +235,10 @@
             // pbP1Box4
             // 
             this.pbP1Box4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP1Box4.Location = new System.Drawing.Point(164, 245);
+            this.pbP1Box4.Location = new System.Drawing.Point(213, 327);
+            this.pbP1Box4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Box4.Name = "pbP1Box4";
-            this.pbP1Box4.Size = new System.Drawing.Size(107, 100);
+            this.pbP1Box4.Size = new System.Drawing.Size(139, 133);
             this.pbP1Box4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Box4.TabIndex = 5;
             this.pbP1Box4.TabStop = false;
@@ -234,9 +248,10 @@
             // pbP1Box9
             // 
             this.pbP1Box9.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP1Box9.Location = new System.Drawing.Point(304, 13);
+            this.pbP1Box9.Location = new System.Drawing.Point(395, 17);
+            this.pbP1Box9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Box9.Name = "pbP1Box9";
-            this.pbP1Box9.Size = new System.Drawing.Size(107, 100);
+            this.pbP1Box9.Size = new System.Drawing.Size(139, 133);
             this.pbP1Box9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Box9.TabIndex = 5;
             this.pbP1Box9.TabStop = false;
@@ -246,9 +261,10 @@
             // pbP1Box8
             // 
             this.pbP1Box8.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP1Box8.Location = new System.Drawing.Point(304, 129);
+            this.pbP1Box8.Location = new System.Drawing.Point(395, 172);
+            this.pbP1Box8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Box8.Name = "pbP1Box8";
-            this.pbP1Box8.Size = new System.Drawing.Size(107, 100);
+            this.pbP1Box8.Size = new System.Drawing.Size(139, 133);
             this.pbP1Box8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Box8.TabIndex = 5;
             this.pbP1Box8.TabStop = false;
@@ -258,9 +274,10 @@
             // pbP1Box7
             // 
             this.pbP1Box7.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP1Box7.Location = new System.Drawing.Point(304, 245);
+            this.pbP1Box7.Location = new System.Drawing.Point(395, 327);
+            this.pbP1Box7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP1Box7.Name = "pbP1Box7";
-            this.pbP1Box7.Size = new System.Drawing.Size(107, 100);
+            this.pbP1Box7.Size = new System.Drawing.Size(139, 133);
             this.pbP1Box7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP1Box7.TabIndex = 5;
             this.pbP1Box7.TabStop = false;
@@ -270,9 +287,10 @@
             // pbP2Box3
             // 
             this.pbP2Box3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP2Box3.Location = new System.Drawing.Point(32, 9);
+            this.pbP2Box3.Location = new System.Drawing.Point(42, 12);
+            this.pbP2Box3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Box3.Name = "pbP2Box3";
-            this.pbP2Box3.Size = new System.Drawing.Size(107, 100);
+            this.pbP2Box3.Size = new System.Drawing.Size(139, 133);
             this.pbP2Box3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Box3.TabIndex = 5;
             this.pbP2Box3.TabStop = false;
@@ -281,9 +299,10 @@
             // pbP2Box6
             // 
             this.pbP2Box6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP2Box6.Location = new System.Drawing.Point(171, 9);
+            this.pbP2Box6.Location = new System.Drawing.Point(222, 12);
+            this.pbP2Box6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Box6.Name = "pbP2Box6";
-            this.pbP2Box6.Size = new System.Drawing.Size(107, 100);
+            this.pbP2Box6.Size = new System.Drawing.Size(139, 133);
             this.pbP2Box6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Box6.TabIndex = 5;
             this.pbP2Box6.TabStop = false;
@@ -292,9 +311,10 @@
             // pbP2Box9
             // 
             this.pbP2Box9.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP2Box9.Location = new System.Drawing.Point(311, 9);
+            this.pbP2Box9.Location = new System.Drawing.Point(404, 12);
+            this.pbP2Box9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Box9.Name = "pbP2Box9";
-            this.pbP2Box9.Size = new System.Drawing.Size(107, 100);
+            this.pbP2Box9.Size = new System.Drawing.Size(139, 133);
             this.pbP2Box9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Box9.TabIndex = 5;
             this.pbP2Box9.TabStop = false;
@@ -303,9 +323,10 @@
             // pbP2Box2
             // 
             this.pbP2Box2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP2Box2.Location = new System.Drawing.Point(32, 125);
+            this.pbP2Box2.Location = new System.Drawing.Point(42, 167);
+            this.pbP2Box2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Box2.Name = "pbP2Box2";
-            this.pbP2Box2.Size = new System.Drawing.Size(107, 100);
+            this.pbP2Box2.Size = new System.Drawing.Size(139, 133);
             this.pbP2Box2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Box2.TabIndex = 5;
             this.pbP2Box2.TabStop = false;
@@ -314,9 +335,10 @@
             // pbP2Box5
             // 
             this.pbP2Box5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP2Box5.Location = new System.Drawing.Point(171, 125);
+            this.pbP2Box5.Location = new System.Drawing.Point(222, 167);
+            this.pbP2Box5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Box5.Name = "pbP2Box5";
-            this.pbP2Box5.Size = new System.Drawing.Size(107, 100);
+            this.pbP2Box5.Size = new System.Drawing.Size(139, 133);
             this.pbP2Box5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Box5.TabIndex = 5;
             this.pbP2Box5.TabStop = false;
@@ -325,9 +347,10 @@
             // pbP2Box8
             // 
             this.pbP2Box8.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP2Box8.Location = new System.Drawing.Point(311, 125);
+            this.pbP2Box8.Location = new System.Drawing.Point(404, 167);
+            this.pbP2Box8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Box8.Name = "pbP2Box8";
-            this.pbP2Box8.Size = new System.Drawing.Size(107, 100);
+            this.pbP2Box8.Size = new System.Drawing.Size(139, 133);
             this.pbP2Box8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Box8.TabIndex = 5;
             this.pbP2Box8.TabStop = false;
@@ -336,9 +359,10 @@
             // pbP2Box1
             // 
             this.pbP2Box1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP2Box1.Location = new System.Drawing.Point(32, 241);
+            this.pbP2Box1.Location = new System.Drawing.Point(42, 321);
+            this.pbP2Box1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Box1.Name = "pbP2Box1";
-            this.pbP2Box1.Size = new System.Drawing.Size(107, 100);
+            this.pbP2Box1.Size = new System.Drawing.Size(139, 133);
             this.pbP2Box1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Box1.TabIndex = 5;
             this.pbP2Box1.TabStop = false;
@@ -347,9 +371,10 @@
             // pbP2Box4
             // 
             this.pbP2Box4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP2Box4.Location = new System.Drawing.Point(171, 241);
+            this.pbP2Box4.Location = new System.Drawing.Point(222, 321);
+            this.pbP2Box4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Box4.Name = "pbP2Box4";
-            this.pbP2Box4.Size = new System.Drawing.Size(107, 100);
+            this.pbP2Box4.Size = new System.Drawing.Size(139, 133);
             this.pbP2Box4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Box4.TabIndex = 5;
             this.pbP2Box4.TabStop = false;
@@ -358,9 +383,10 @@
             // pbP2Box7
             // 
             this.pbP2Box7.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pbP2Box7.Location = new System.Drawing.Point(311, 241);
+            this.pbP2Box7.Location = new System.Drawing.Point(404, 321);
+            this.pbP2Box7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbP2Box7.Name = "pbP2Box7";
-            this.pbP2Box7.Size = new System.Drawing.Size(107, 100);
+            this.pbP2Box7.Size = new System.Drawing.Size(139, 133);
             this.pbP2Box7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbP2Box7.TabIndex = 5;
             this.pbP2Box7.TabStop = false;
@@ -369,62 +395,69 @@
             // lbP2Row1Score
             // 
             this.lbP2Row1Score.AutoSize = true;
-            this.lbP2Row1Score.Location = new System.Drawing.Point(406, 388);
+            this.lbP2Row1Score.Location = new System.Drawing.Point(528, 517);
+            this.lbP2Row1Score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbP2Row1Score.Name = "lbP2Row1Score";
-            this.lbP2Row1Score.Size = new System.Drawing.Size(18, 18);
+            this.lbP2Row1Score.Size = new System.Drawing.Size(23, 24);
             this.lbP2Row1Score.TabIndex = 6;
             this.lbP2Row1Score.Text = "0";
             // 
             // lbP2Row2Score
             // 
             this.lbP2Row2Score.AutoSize = true;
-            this.lbP2Row2Score.Location = new System.Drawing.Point(540, 388);
+            this.lbP2Row2Score.Location = new System.Drawing.Point(702, 517);
+            this.lbP2Row2Score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbP2Row2Score.Name = "lbP2Row2Score";
-            this.lbP2Row2Score.Size = new System.Drawing.Size(18, 18);
+            this.lbP2Row2Score.Size = new System.Drawing.Size(23, 24);
             this.lbP2Row2Score.TabIndex = 6;
             this.lbP2Row2Score.Text = "0";
             // 
             // lbP2Row3Score
             // 
             this.lbP2Row3Score.AutoSize = true;
-            this.lbP2Row3Score.Location = new System.Drawing.Point(685, 388);
+            this.lbP2Row3Score.Location = new System.Drawing.Point(890, 517);
+            this.lbP2Row3Score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbP2Row3Score.Name = "lbP2Row3Score";
-            this.lbP2Row3Score.Size = new System.Drawing.Size(18, 18);
+            this.lbP2Row3Score.Size = new System.Drawing.Size(23, 24);
             this.lbP2Row3Score.TabIndex = 6;
             this.lbP2Row3Score.Text = "0";
             // 
             // lbP1Row3Score
             // 
             this.lbP1Row3Score.AutoSize = true;
-            this.lbP1Row3Score.Location = new System.Drawing.Point(685, 442);
+            this.lbP1Row3Score.Location = new System.Drawing.Point(890, 589);
+            this.lbP1Row3Score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbP1Row3Score.Name = "lbP1Row3Score";
-            this.lbP1Row3Score.Size = new System.Drawing.Size(18, 18);
+            this.lbP1Row3Score.Size = new System.Drawing.Size(23, 24);
             this.lbP1Row3Score.TabIndex = 6;
             this.lbP1Row3Score.Text = "0";
             // 
             // lbP1Row2Score
             // 
             this.lbP1Row2Score.AutoSize = true;
-            this.lbP1Row2Score.Location = new System.Drawing.Point(540, 442);
+            this.lbP1Row2Score.Location = new System.Drawing.Point(702, 589);
+            this.lbP1Row2Score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbP1Row2Score.Name = "lbP1Row2Score";
-            this.lbP1Row2Score.Size = new System.Drawing.Size(18, 18);
+            this.lbP1Row2Score.Size = new System.Drawing.Size(23, 24);
             this.lbP1Row2Score.TabIndex = 6;
             this.lbP1Row2Score.Text = "0";
             // 
             // lbP1Row1Score
             // 
             this.lbP1Row1Score.AutoSize = true;
-            this.lbP1Row1Score.Location = new System.Drawing.Point(406, 442);
+            this.lbP1Row1Score.Location = new System.Drawing.Point(528, 589);
+            this.lbP1Row1Score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbP1Row1Score.Name = "lbP1Row1Score";
-            this.lbP1Row1Score.Size = new System.Drawing.Size(18, 18);
+            this.lbP1Row1Score.Size = new System.Drawing.Size(23, 24);
             this.lbP1Row1Score.TabIndex = 6;
             this.lbP1Row1Score.Text = "0";
             // 
             // btnP2Roll
             // 
-            this.btnP2Roll.Location = new System.Drawing.Point(979, 218);
+            this.btnP2Roll.Location = new System.Drawing.Point(1273, 291);
+            this.btnP2Roll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnP2Roll.Name = "btnP2Roll";
-            this.btnP2Roll.Size = new System.Drawing.Size(75, 23);
+            this.btnP2Roll.Size = new System.Drawing.Size(98, 31);
             this.btnP2Roll.TabIndex = 7;
             this.btnP2Roll.Text = "Roll";
             this.btnP2Roll.UseVisualStyleBackColor = true;
@@ -441,9 +474,10 @@
             this.pnlP2Boxes.Controls.Add(this.pbP2Box9);
             this.pnlP2Boxes.Controls.Add(this.pbP2Box6);
             this.pnlP2Boxes.Controls.Add(this.pbP2Box3);
-            this.pnlP2Boxes.Location = new System.Drawing.Point(327, 17);
+            this.pnlP2Boxes.Location = new System.Drawing.Point(425, 23);
+            this.pnlP2Boxes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlP2Boxes.Name = "pnlP2Boxes";
-            this.pnlP2Boxes.Size = new System.Drawing.Size(447, 358);
+            this.pnlP2Boxes.Size = new System.Drawing.Size(581, 477);
             this.pnlP2Boxes.TabIndex = 8;
             // 
             // pnlP1Boxes
@@ -457,16 +491,17 @@
             this.pnlP1Boxes.Controls.Add(this.pbP1Box9);
             this.pnlP1Boxes.Controls.Add(this.pbP1Box6);
             this.pnlP1Boxes.Controls.Add(this.pbP1Box3);
-            this.pnlP1Boxes.Location = new System.Drawing.Point(334, 477);
+            this.pnlP1Boxes.Location = new System.Drawing.Point(434, 636);
+            this.pnlP1Boxes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlP1Boxes.Name = "pnlP1Boxes";
-            this.pnlP1Boxes.Size = new System.Drawing.Size(439, 364);
+            this.pnlP1Boxes.Size = new System.Drawing.Size(571, 485);
             this.pnlP1Boxes.TabIndex = 9;
             // 
             // Knucklebone
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 861);
+            this.ClientSize = new System.Drawing.Size(1485, 1148);
             this.Controls.Add(this.pnlP1Boxes);
             this.Controls.Add(this.pnlP2Boxes);
             this.Controls.Add(this.btnP2Roll);
@@ -484,8 +519,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pbP1Dice);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Knucklebone";
             this.Text = "Knucklebone";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Knucklebone_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pbP1Dice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbP2Dice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbP1Box3)).EndInit();

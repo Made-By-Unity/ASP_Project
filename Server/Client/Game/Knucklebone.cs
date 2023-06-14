@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Room;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,19 @@ namespace Client.Game
 {
     public partial class Knucklebone : Form
     {
+        Lobby m_fLobby;
+
         private int m_DiceNumber = 0;
 
         System.Drawing.Image[] m_images = {
              Properties.Resources._1, Properties.Resources._2, Properties.Resources._3, Properties.Resources._4, Properties.Resources._5, Properties.Resources._6
         };
 
+        public Lobby Lobby
+        {
+            get { return m_fLobby; }
+            set { m_fLobby = value; }
+        }
 
         public Knucklebone()
         {
@@ -356,6 +364,15 @@ namespace Client.Game
             }
 
             return n_sum;
+        }
+
+        private void Knucklebone_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Invoke(new MethodInvoker(delegate
+            {
+                if (m_fLobby != null)
+                    m_fLobby.Show();
+            }));
         }
     }
 }

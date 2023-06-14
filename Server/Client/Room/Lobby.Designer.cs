@@ -88,7 +88,8 @@
             // 
             this.cbGame.FormattingEnabled = true;
             this.cbGame.Items.AddRange(new object[] {
-            "Yacht Dice"});
+            "Yacht Dice",
+            "Knucklebone"});
             this.cbGame.Location = new System.Drawing.Point(354, 69);
             this.cbGame.Name = "cbGame";
             this.cbGame.Size = new System.Drawing.Size(181, 32);
