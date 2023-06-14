@@ -29,12 +29,7 @@
         private void InitializeComponent()
         { 
             this.components = new System.ComponentModel.Container();
-            this.pbDice1 = new System.Windows.Forms.PictureBox();
             this.btnRoll = new System.Windows.Forms.Button();
-            this.pbDice2 = new System.Windows.Forms.PictureBox();
-            this.pbDice3 = new System.Windows.Forms.PictureBox();
-            this.pbDice4 = new System.Windows.Forms.PictureBox();
-            this.pbDice5 = new System.Windows.Forms.PictureBox();
             this.RollDisplay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -132,23 +127,19 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice5)).BeginInit();
+            this.pbDice5 = new System.Windows.Forms.PictureBox();
+            this.pbDice4 = new System.Windows.Forms.PictureBox();
+            this.pbDice3 = new System.Windows.Forms.PictureBox();
+            this.pbDice2 = new System.Windows.Forms.PictureBox();
+            this.pbDice1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbDice1
-            // 
-            this.pbDice1.Location = new System.Drawing.Point(29, 63);
-            this.pbDice1.Name = "pbDice1";
-            this.pbDice1.Size = new System.Drawing.Size(86, 78);
-            this.pbDice1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDice1.TabIndex = 0;
-            this.pbDice1.TabStop = false;
             // 
             // btnRoll
             // 
@@ -163,42 +154,6 @@
             this.btnRoll.Text = "Roll";
             this.btnRoll.UseVisualStyleBackColor = false;
             this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
-            // 
-            // pbDice2
-            // 
-            this.pbDice2.Location = new System.Drawing.Point(29, 155);
-            this.pbDice2.Name = "pbDice2";
-            this.pbDice2.Size = new System.Drawing.Size(86, 78);
-            this.pbDice2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDice2.TabIndex = 0;
-            this.pbDice2.TabStop = false;
-            // 
-            // pbDice3
-            // 
-            this.pbDice3.Location = new System.Drawing.Point(29, 247);
-            this.pbDice3.Name = "pbDice3";
-            this.pbDice3.Size = new System.Drawing.Size(86, 78);
-            this.pbDice3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDice3.TabIndex = 0;
-            this.pbDice3.TabStop = false;
-            // 
-            // pbDice4
-            // 
-            this.pbDice4.Location = new System.Drawing.Point(29, 339);
-            this.pbDice4.Name = "pbDice4";
-            this.pbDice4.Size = new System.Drawing.Size(86, 78);
-            this.pbDice4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDice4.TabIndex = 0;
-            this.pbDice4.TabStop = false;
-            // 
-            // pbDice5
-            // 
-            this.pbDice5.Location = new System.Drawing.Point(29, 431);
-            this.pbDice5.Name = "pbDice5";
-            this.pbDice5.Size = new System.Drawing.Size(86, 78);
-            this.pbDice5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDice5.TabIndex = 0;
-            this.pbDice5.TabStop = false;
             // 
             // RollDisplay
             // 
@@ -1618,6 +1573,54 @@
             this.textBox4.Text = "Player4";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pbDice5
+            // 
+            this.pbDice5.Location = new System.Drawing.Point(29, 431);
+            this.pbDice5.Name = "pbDice5";
+            this.pbDice5.Size = new System.Drawing.Size(86, 78);
+            this.pbDice5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDice5.TabIndex = 0;
+            this.pbDice5.TabStop = false;
+            // 
+            // pbDice4
+            // 
+            this.pbDice4.InitialImage = global::Client.Properties.Resources.p1_dice5;
+            this.pbDice4.Location = new System.Drawing.Point(29, 339);
+            this.pbDice4.Name = "pbDice4";
+            this.pbDice4.Size = new System.Drawing.Size(86, 78);
+            this.pbDice4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDice4.TabIndex = 0;
+            this.pbDice4.TabStop = false;
+            // 
+            // pbDice3
+            // 
+            this.pbDice3.ErrorImage = global::Client.Properties.Resources.roll;
+            this.pbDice3.InitialImage = global::Client.Properties.Resources.p4_dice6;
+            this.pbDice3.Location = new System.Drawing.Point(29, 247);
+            this.pbDice3.Name = "pbDice3";
+            this.pbDice3.Size = new System.Drawing.Size(86, 78);
+            this.pbDice3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDice3.TabIndex = 0;
+            this.pbDice3.TabStop = false;
+            // 
+            // pbDice2
+            // 
+            this.pbDice2.Location = new System.Drawing.Point(29, 155);
+            this.pbDice2.Name = "pbDice2";
+            this.pbDice2.Size = new System.Drawing.Size(86, 78);
+            this.pbDice2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDice2.TabIndex = 0;
+            this.pbDice2.TabStop = false;
+            // 
+            // pbDice1
+            // 
+            this.pbDice1.Location = new System.Drawing.Point(29, 63);
+            this.pbDice1.Name = "pbDice1";
+            this.pbDice1.Size = new System.Drawing.Size(86, 78);
+            this.pbDice1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDice1.TabIndex = 0;
+            this.pbDice1.TabStop = false;
+            // 
             // YachtDice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1726,15 +1729,15 @@
             this.Name = "YachtDice";
             this.Text = "YachtDice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.YachtDice_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDice5)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDice1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
