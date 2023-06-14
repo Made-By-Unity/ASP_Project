@@ -243,6 +243,7 @@ namespace Server
                         DisconnectResult disconnectResult = new DisconnectResult();
                         disconnectResult.UserName = ((Disconnect)packet).UserName;
                         disconnectResult.chat = msg;
+                        disconnectResult.packet_Type = PacketType.Disconnect_Result;
                         Packet.Serialize(disconnectResult).CopyTo(buff, 0);
                     }
                     break;
