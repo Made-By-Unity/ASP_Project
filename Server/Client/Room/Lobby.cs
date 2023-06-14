@@ -65,7 +65,7 @@ namespace Client.Room
                     SocketManager.GetInst().NickNameList = pkLoginResult.usernames;
                     UpdatePlayer();
                 }
-                else if(packet.packet_Type == PacketType.Disconnect_Result)
+                else if (packet.packet_Type == PacketType.Disconnect_Result)
                 {
                     DisconnectResult pkDisconncetResult = (DisconnectResult)packet;
                     SocketManager.GetInst().NickNameList.Remove(pkDisconncetResult.UserName);

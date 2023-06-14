@@ -28,10 +28,24 @@ namespace Client
         private int m_iCurrPlayerID = 0;
 
         int[] m_arrDices = new int[5];
+
         Image[] m_images = {
              Properties.Resources._1, Properties.Resources._2, Properties.Resources._3, Properties.Resources._4, Properties.Resources._5, Properties.Resources._6
         };
-        
+
+        Image[] m_p1Image = { Properties.Resources.p1_dice0, Properties.Resources.p1_dice1, Properties.Resources.p1_dice2, 
+                                Properties.Resources.p1_dice3, Properties.Resources.p1_dice4, Properties.Resources.p1_dice5, Properties.Resources.p1_dice6 };
+
+        Image[] m_p2Image = { Properties.Resources.p2_dice0, Properties.Resources.p2_dice1, Properties.Resources.p2_dice2,
+                                Properties.Resources.p2_dice3, Properties.Resources.p2_dice4, Properties.Resources.p2_dice5, Properties.Resources.p2_dice6 };
+
+        Image[] m_p3Image = { Properties.Resources.p3_dice0, Properties.Resources.p3_dice1, Properties.Resources.p3_dice2,
+                                Properties.Resources.p3_dice3, Properties.Resources.p3_dice4, Properties.Resources.p3_dice5, Properties.Resources.p3_dice6 };
+
+        Image[] m_p4Image = { Properties.Resources.p4_dice0, Properties.Resources.p4_dice1, Properties.Resources.p4_dice2,
+                                Properties.Resources.p4_dice3, Properties.Resources.p4_dice4, Properties.Resources.p4_dice5, Properties.Resources.p4_dice6};
+
+        Image[] m_curImage = null;
 
         TextBox[] m_P1Scores;
         TextBox[] m_P2Scores;
@@ -56,6 +70,14 @@ namespace Client
             m_tHandler = new Thread(GetPacket);
             m_tHandler.IsBackground = true;
             m_tHandler.Start();
+
+            m_curImage = m_p1Image;
+
+            pbDice1.Image = m_curImage[0];
+            pbDice2.Image = m_curImage[0];
+            pbDice3.Image = m_curImage[0];
+            pbDice4.Image = m_curImage[0];
+            pbDice5.Image = m_curImage[0];
 
             // 점수판 관리를 편하게 하기 위해 각 플레이어 점수판마다 하나씩 작성
             m_P1Scores = new TextBox[16] { txtPlayer1,
@@ -227,36 +249,37 @@ namespace Client
                     case PacketType.RollEnd_Result:
                         {
                             tmrRoll.Stop();
+
                             RollEndResult pkRER = (RollEndResult)packet;
                             if (m_iCurrPlayerID != SocketManager.GetInst().UID)
                             {
                                 pbDice1.Invoke(new MethodInvoker(() =>
                                 {
-                                    pbDice1.Image = m_images[pkRER.dice1 - 1];
+                                    pbDice1.Image = m_curImage[pkRER.dice1];
                                 }));
                                 m_arrDices[0] = pkRER.dice1;
 
                                 pbDice2.Invoke(new MethodInvoker(() =>
                                 {
-                                    pbDice2.Image = m_images[pkRER.dice2 - 1];
+                                    pbDice2.Image = m_curImage[pkRER.dice2];
                                 }));
                                 m_arrDices[1] = pkRER.dice2;
 
                                 pbDice3.Invoke(new MethodInvoker(() =>
                                 {
-                                    pbDice3.Image = m_images[pkRER.dice3 - 1];
+                                    pbDice3.Image = m_curImage[pkRER.dice3];
                                 }));
                                 m_arrDices[2] = pkRER.dice3;
 
                                 pbDice4.Invoke(new MethodInvoker(() =>
                                 {
-                                    pbDice4.Image = m_images[pkRER.dice4 - 1];
+                                    pbDice4.Image = m_curImage[pkRER.dice4];
                                 }));
                                 m_arrDices[3] = pkRER.dice4;
 
                                 pbDice5.Invoke(new MethodInvoker(() =>
                                 {
-                                    pbDice5.Image = m_images[pkRER.dice5 - 1];
+                                    pbDice5.Image = m_curImage[pkRER.dice5];
                                 }));
                                 m_arrDices[4] = pkRER.dice5;
                             }
@@ -452,7 +475,7 @@ namespace Client
                     btnRoll.Invoke(new MethodInvoker(() => { btnRoll.Enabled = true; }));
             }
 
-            // 다이스 전부 잠굼
+            // 다이스 전부 잠금
             if (cbDice1.InvokeRequired)
                 cbDice1.Invoke(new MethodInvoker(() => { cbDice1.Enabled = false; }));
 
@@ -484,21 +507,36 @@ namespace Client
             if (cbDice5.InvokeRequired)
                 cbDice5.Invoke(new MethodInvoker(() => { cbDice5.Checked = false; }));
 
+            switch (m_iCurrPlayerID)
+            {
+                case 0:
+                    m_curImage = m_p1Image;
+                    break;
+                case 2:
+                    m_curImage = m_p2Image;
+                    break;
+                case 3:
+                    m_curImage = m_p3Image;
+                    break;
+                case 4:
+                    m_curImage = m_p4Image;
+                    break;
+            }
             // 다이스 이미지 초기화
             if (pbDice1.InvokeRequired)
-                pbDice1.Invoke(new MethodInvoker(() => { pbDice1.Image = null; }));
+                pbDice1.Invoke(new MethodInvoker(() => { pbDice1.Image = m_curImage[0]; }));
 
             if (pbDice2.InvokeRequired)
-                pbDice2.Invoke(new MethodInvoker(() => { pbDice2.Image = null; }));
+                pbDice2.Invoke(new MethodInvoker(() => { pbDice2.Image = m_curImage[0]; }));
 
             if (pbDice3.InvokeRequired)
-                pbDice3.Invoke(new MethodInvoker(() => { pbDice3.Image = null; }));
+                pbDice3.Invoke(new MethodInvoker(() => { pbDice3.Image = m_curImage[0]; }));
 
             if (pbDice4.InvokeRequired)
-                pbDice4.Invoke(new MethodInvoker(() => { pbDice4.Image = null; }));
+                pbDice4.Invoke(new MethodInvoker(() => { pbDice4.Image = m_curImage[0]; }));
 
             if (pbDice5.InvokeRequired)
-                pbDice5.Invoke(new MethodInvoker(() => { pbDice5.Image = null; }));
+                pbDice5.Invoke(new MethodInvoker(() => { pbDice5.Image = m_curImage[0]; }));
         }
 
         private void TurnEnd()
@@ -737,27 +775,27 @@ namespace Client
                 if (false == cbDice1.Checked)
                 {
                     m_arrDices[0] = random.Next(1, 7);
-                    pbDice1.Image = m_images[m_arrDices[0] - 1];
+                    pbDice1.Image = m_curImage[m_arrDices[0]];
                 }
                 if (false == cbDice2.Checked)
                 {
                     m_arrDices[1] = random.Next(1, 7);
-                    pbDice2.Image = m_images[m_arrDices[1] - 1];
+                    pbDice2.Image = m_curImage[m_arrDices[1]];
                 }
                 if (false == cbDice3.Checked)
                 {
                     m_arrDices[2] = random.Next(1, 7);
-                    pbDice3.Image = m_images[m_arrDices[2] - 1];
+                    pbDice3.Image = m_curImage[m_arrDices[2]];
                 }
                 if (false == cbDice4.Checked)
                 {
                     m_arrDices[3] = random.Next(1, 7);
-                    pbDice4.Image = m_images[m_arrDices[3] - 1];
+                    pbDice4.Image = m_curImage[m_arrDices[3]];
                 }
                 if (false == cbDice5.Checked)
                 {
                     m_arrDices[4] = random.Next(1, 7);
-                    pbDice5.Image = m_images[m_arrDices[4] - 1];
+                    pbDice5.Image = m_curImage[m_arrDices[4]];
                 }
 
                 m_iRollRandomCount++;
