@@ -73,5 +73,21 @@ namespace Client.Room
                 }
             }
         }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                byte[] buff = new byte[1024];
+                Chatting chat = new Chatting();
+                chat.chat = textBox2.Text;
+                Packet.Serialize(chat).CopyTo(buff, 0);
+                SocketManager.GetInst().Stream.Write(buff, 0, buff.Length);
+                SocketManager.GetInst().Stream.Flush();
+
+                textBox2.Text = "";
+                textBox2.Focus();
+            }
+        }
     }
 }
