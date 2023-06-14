@@ -52,6 +52,8 @@ namespace Client
         TextBox[] m_P3Scores;
         TextBox[] m_P4Scores;
 
+        PictureBox[] m_pbArrows = null;
+
         public Lobby Lobby { 
             get { return m_fLobby; } 
             set { m_fLobby = value; }
@@ -71,6 +73,11 @@ namespace Client
             m_tHandler.IsBackground = true;
             m_tHandler.Start();
 
+            // arrow 배열초기화
+            m_pbArrows = new PictureBox[4] { pbArrow1, pbArrow2, pbArrow3, pbArrow4 };
+            m_pbArrows[0].Image = Properties.Resources.arrow;
+
+            // 이미지 ?로 초기화
             m_curImage = m_p1Image;
 
             pbDice1.Image = m_curImage[0];
@@ -151,8 +158,11 @@ namespace Client
             // 현재 게임에 접속한 인원수대로 점수표 활성화
             int iPlayerCount = SocketManager.GetInst().NickNameList.Count;
             txtPlayer1.Text = SocketManager.GetInst().NickNameList[0];
+
+            Size sizeForm = new Size(520, 656);
             if(2 <= iPlayerCount)
             {
+                sizeForm = new Size(614, 656);
                 txtPlayer2.Text = SocketManager.GetInst().NickNameList[1];
                 foreach (TextBox control in m_P2Scores)
                 {
@@ -161,6 +171,7 @@ namespace Client
 
                 if(3 <= iPlayerCount)
                 {
+                    sizeForm = new Size(712, 656);
                     txtPlayer3.Text = SocketManager.GetInst().NickNameList[2];
                     foreach (TextBox control in m_P3Scores)
                     {
@@ -169,6 +180,7 @@ namespace Client
 
                     if (4 == iPlayerCount)
                     {
+                        sizeForm = new Size(821, 656);
                         txtPlayer4.Text = SocketManager.GetInst().NickNameList[3];
                         foreach (TextBox control in m_P4Scores)
                         {
@@ -177,6 +189,8 @@ namespace Client
                     }
                 }
             }
+
+            this.Size = sizeForm;
 
             // 자신의 점수판만 활성화
             switch (SocketManager.GetInst().UID)
@@ -475,6 +489,9 @@ namespace Client
                     btnRoll.Invoke(new MethodInvoker(() => { btnRoll.Enabled = true; }));
             }
 
+            // Arrow 위치 변경
+            ChangeArrow();
+
             // 다이스 전부 잠금
             if (cbDice1.InvokeRequired)
                 cbDice1.Invoke(new MethodInvoker(() => { cbDice1.Enabled = false; }));
@@ -586,6 +603,19 @@ namespace Client
             
             if (_arrTB[15].InvokeRequired)
                 _arrTB[15].Invoke(new MethodInvoker(() => { _arrTB[15].Text = iTotalScore.ToString(); }));
+        }
+
+        private void ChangeArrow()
+        {
+            if (!this.IsHandleCreated)
+                return;
+
+            foreach (PictureBox pb in m_pbArrows)
+            {
+                pb.Invoke(new MethodInvoker(() => { pb.Image = null; }));
+            }
+
+            m_pbArrows[m_iCurrPlayerID].Invoke(new Action(() => { m_pbArrows[m_iCurrPlayerID].Image = Properties.Resources.arrow; }));
         }
 
         public void UpdateRound()
