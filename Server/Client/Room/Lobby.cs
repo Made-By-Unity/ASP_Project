@@ -167,5 +167,10 @@ namespace Client.Room
         {
             m_tHandler.Abort();
         }
+
+        private void CbGame_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
