@@ -117,10 +117,10 @@ namespace Client.Room
 
             if(this.IsHandleCreated)
             {
-                tbPlayer1.Text = "";
-                tbPlayer2.Text = "";
-                tbPlayer3.Text = "";
-                tbPlayer4.Text = "";
+                tbPlayer1.Invoke(new Action(() => { tbPlayer1.Text = ""; }));
+                tbPlayer2.Invoke(new Action(() => { tbPlayer2.Text = ""; }));
+                tbPlayer3.Invoke(new Action(() => { tbPlayer3.Text = ""; }));
+                tbPlayer4.Invoke(new Action(() => { tbPlayer4.Text = ""; }));
             }
             
             for (int i = 0; i < listNickName.Count; i++)
