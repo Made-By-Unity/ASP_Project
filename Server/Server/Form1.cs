@@ -90,8 +90,7 @@ namespace Server
         }
         private void Disconnected(TcpClient clientSocket, string User)
         {
-            if (clientList.ContainsKey(clientSocket))
-                clientList.Remove(clientSocket);
+            
             Disconnect packet=new Disconnect();
             packet.packet_Type = PacketType.Disconnect;
             packet.UserName = User;
@@ -106,6 +105,8 @@ namespace Server
                 }
             }
             num--;
+            if (clientList.ContainsKey(clientSocket))
+                clientList.Remove(clientSocket);
         }
         private void ShowMessage(string text)
         {
