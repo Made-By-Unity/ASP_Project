@@ -220,6 +220,7 @@ namespace Client.Game
 
             lbP1ScoreSum.Text = SumLabelText(lbP1Row1Score, lbP1Row2Score, lbP1Row3Score).ToString();
             lbP2ScoreSum.Text = SumLabelText(lbP2Row1Score, lbP2Row2Score, lbP2Row3Score).ToString();
+            CheckGameEnd();
         }
 
         //같은 열 동일 주사위 삭제
@@ -365,6 +366,45 @@ namespace Client.Game
 
             return n_sum;
         }
+        private void CheckGameEnd()
+        {
+            bool P1GameEnd = true;
+            bool P2GameEnd = true;
+            int label1Value = int.Parse(lbP1ScoreSum.Text);
+            int label2Value = int.Parse(lbP2ScoreSum.Text);
+
+            foreach (PictureBox pictureBox in pnlP1Boxes.Controls)
+            {
+                if (pictureBox.Image == null)
+                {
+                    P1GameEnd = false;
+                    break;
+                }
+            }
+
+            foreach (PictureBox pictureBox in pnlP2Boxes.Controls)
+            {
+                if (pictureBox.Image == null)
+                {
+                    P2GameEnd = false;
+                    break;
+                }
+            }
+
+            if (P1GameEnd || P2GameEnd)
+            {
+                if (label1Value > label2Value)
+                {
+                    MessageBox.Show("Player1 이 승리하였습니다!");
+                }
+                else if (label1Value < label2Value)
+                {
+                    MessageBox.Show("Player2 이 승리하였습니다!");
+                }
+            }
+        }
+
+
 
         private void Knucklebone_FormClosed(object sender, FormClosedEventArgs e)
         {
