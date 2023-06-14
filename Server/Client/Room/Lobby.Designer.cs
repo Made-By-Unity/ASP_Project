@@ -41,52 +41,52 @@
             // tbPlayer1
             // 
             this.tbPlayer1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbPlayer1.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPlayer1.Location = new System.Drawing.Point(59, 34);
             this.tbPlayer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPlayer1.Name = "tbPlayer1";
             this.tbPlayer1.ReadOnly = true;
-            this.tbPlayer1.Size = new System.Drawing.Size(113, 26);
+            this.tbPlayer1.Size = new System.Drawing.Size(113, 27);
             this.tbPlayer1.TabIndex = 0;
             // 
             // tbPlayer2
             // 
             this.tbPlayer2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbPlayer2.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPlayer2.Location = new System.Drawing.Point(59, 74);
             this.tbPlayer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPlayer2.Name = "tbPlayer2";
             this.tbPlayer2.ReadOnly = true;
-            this.tbPlayer2.Size = new System.Drawing.Size(113, 26);
+            this.tbPlayer2.Size = new System.Drawing.Size(113, 27);
             this.tbPlayer2.TabIndex = 1;
             // 
             // tbPlayer3
             // 
             this.tbPlayer3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbPlayer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbPlayer3.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPlayer3.Location = new System.Drawing.Point(59, 114);
             this.tbPlayer3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPlayer3.Name = "tbPlayer3";
             this.tbPlayer3.ReadOnly = true;
-            this.tbPlayer3.Size = new System.Drawing.Size(113, 26);
+            this.tbPlayer3.Size = new System.Drawing.Size(113, 27);
             this.tbPlayer3.TabIndex = 2;
             // 
             // tbPlayer4
             // 
             this.tbPlayer4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbPlayer4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbPlayer4.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPlayer4.Location = new System.Drawing.Point(59, 152);
             this.tbPlayer4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPlayer4.Name = "tbPlayer4";
             this.tbPlayer4.ReadOnly = true;
-            this.tbPlayer4.Size = new System.Drawing.Size(113, 26);
+            this.tbPlayer4.Size = new System.Drawing.Size(113, 27);
             this.tbPlayer4.TabIndex = 3;
             // 
             // btnGameStart
             // 
             this.btnGameStart.BackColor = System.Drawing.Color.Moccasin;
             this.btnGameStart.Enabled = false;
-            this.btnGameStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnGameStart.Font = new System.Drawing.Font("SUIT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGameStart.Location = new System.Drawing.Point(191, 150);
             this.btnGameStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGameStart.Name = "btnGameStart";
