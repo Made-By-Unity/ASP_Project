@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Title));
             this.btnLogin = new System.Windows.Forms.Button();
             this.tbNickName = new System.Windows.Forms.TextBox();
             this.lbIP = new System.Windows.Forms.Label();
@@ -56,7 +57,7 @@
             this.tbNickName.Location = new System.Drawing.Point(79, 156);
             this.tbNickName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbNickName.Name = "tbNickName";
-            this.tbNickName.Size = new System.Drawing.Size(181, 37);
+            this.tbNickName.Size = new System.Drawing.Size(181, 22);
             this.tbNickName.TabIndex = 1;
             this.tbNickName.TextChanged += new System.EventHandler(this.TbNickName_TextChanged);
             // 
@@ -66,7 +67,7 @@
             this.lbIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIP.Location = new System.Drawing.Point(13, 129);
             this.lbIP.Name = "lbIP";
-            this.lbIP.Size = new System.Drawing.Size(104, 30);
+            this.lbIP.Size = new System.Drawing.Size(56, 16);
             this.lbIP.TabIndex = 3;
             this.lbIP.Text = "서버 IP :";
             this.lbIP.Click += new System.EventHandler(this.LbIP_Click);
@@ -77,7 +78,7 @@
             this.lbNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNickName.Location = new System.Drawing.Point(20, 156);
             this.lbNickName.Name = "lbNickName";
-            this.lbNickName.Size = new System.Drawing.Size(92, 30);
+            this.lbNickName.Size = new System.Drawing.Size(49, 16);
             this.lbNickName.TabIndex = 4;
             this.lbNickName.Text = "닉네임 :";
             this.lbNickName.Click += new System.EventHandler(this.LbNickName_Click);
@@ -88,7 +89,7 @@
             this.tbServerIP.Location = new System.Drawing.Point(79, 124);
             this.tbServerIP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbServerIP.Name = "tbServerIP";
-            this.tbServerIP.Size = new System.Drawing.Size(181, 37);
+            this.tbServerIP.Size = new System.Drawing.Size(181, 22);
             this.tbServerIP.TabIndex = 0;
             this.tbServerIP.TextChanged += new System.EventHandler(this.TbServerIP_TextChanged);
             // 
@@ -104,7 +105,7 @@
             // 
             // Title
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 236);
             this.Controls.Add(this.pictureBox1);
@@ -115,6 +116,7 @@
             this.Controls.Add(this.btnLogin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Title";
             this.Text = "Login";
